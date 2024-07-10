@@ -1,0 +1,3 @@
+[submodule "DDEINT"]
+	path = DDEINT
+	url = https://github.com/WhitmanOptiLab/DDEINT.git
