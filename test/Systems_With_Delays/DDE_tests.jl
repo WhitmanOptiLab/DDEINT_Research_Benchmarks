@@ -2,6 +2,9 @@ using DifferentialEquations
 using CSV, DataFrames
 using Plots
 
+ABS_TOL = 1e-9
+REL_TOL = 1e-9
+
 # Breast Cancer Model
 function bc_model(du, u, h, p, t)
     p0, q0, v0, d0, p1, q1, v1, d1, d2, beta0, beta1, tau = p
@@ -36,10 +39,11 @@ u0 = [1.0, 1.0, 1.0]
 prob = DDEProblem(bc_model, u0, h, tspan, p; constant_lags = lags)
 
 alg = MethodOfSteps(Tsit5())
-sol = solve(prob, alg)
+# use dormand prince method for stiff 
+sol = solve(prob, alg, reltol=REL_TOL, abstol=ABS_TOL)
 
 # Interpolate the solution at finer intervals
-t_interp = range(0, stop=10, length=500)
+t_interp = range(0, stop=10, length=1000)
 sol_interp = sol(t_interp)
 
 # Save interpolated solution to CSV
@@ -98,10 +102,10 @@ u0 = [93, (1 / (1 + p.R / p.r)) * 93, (1 / (p.R * p.Vstr)) * (1 / (1 + p.r / p.R
 tspan = (0.0, 1000.0)
 
 prob = DDEProblem(ddefun, u0, history, tspan, p; constant_lags = [tau], tstops = [600])
-sol = solve(prob, MethodOfSteps(Tsit5()))
+sol = solve(prob, MethodOfSteps(Tsit5()), reltol=REL_TOL, abstol=ABS_TOL)
 
 # Interpolate the solution at finer intervals
-t_interp = range(0, stop=1000, length=500)
+t_interp = range(0, stop=1000, length=1000)
 sol_interp = sol(t_interp)
 
 # Save interpolated solution to CSV
@@ -135,10 +139,10 @@ tspan = (0.0, 50.0)
 lags = [tau]
 
 prob = DDEProblem(repressilator_model, u0, h, tspan, nothing; constant_lags=lags)
-sol = solve(prob, MethodOfSteps(Tsit5()))
+sol = solve(prob, MethodOfSteps(Tsit5()), reltol=REL_TOL, abstol=ABS_TOL)
 
 # Interpolate the solution at finer intervals
-t_interp = range(0, stop=50, length=500)
+t_interp = range(0, stop=50, length=1000)
 sol_interp = sol(t_interp)
 
 # Save interpolated solution to CSV
@@ -150,42 +154,42 @@ println("Repressilator model solved successfully")
 
 
 # Define the SIR model with delay
-function sir_model(du, u, h, p, t)
-    β, γ, τ = p
-    S_τ = h(p, t - τ)[1]
-    I_τ = h(p, t - τ)[2]
+# function sir_model(du, u, h, p, t)
+#     β, γ, τ = p
+#     S_τ = h(p, t - τ)[1]
+#     I_τ = h(p, t - τ)[2]
     
-    du[1] = -β * u[1] * u[2]                  # dS/dt
-    du[2] = β * S_τ * I_τ - γ * u[2]           # dI/dt
-    du[3] = γ * u[2]                           # dR/dt
-end
+#     du[1] = -β * u[1] * u[2]                  # dS/dt
+#     du[2] = β * S_τ * I_τ - γ * u[2]           # dI/dt
+#     du[3] = γ * u[2]                           # dR/dt
+# end
 
-# Define the history function
-h(p, t) = [1000, 1, 0]  # Initial conditions: S = 1000, I = 1, R = 0
+# # Define the history function
+# h(p, t) = [1000, 1, 0]  # Initial conditions: S = 1000, I = 1, R = 0
 
-# Parameters
-β = 0.5
-γ = 0.1
-τ = 1.0
-p = (β, γ, τ)
+# # Parameters
+# β = 0.5
+# γ = 0.1
+# τ = 1.0
+# p = (β, γ, τ)
 
-# Initial conditions and time span
-u0 = [0.9, 0.1, 0.0]
-tspan = (0.0, 100.0)
-lags = [τ]
+# # Initial conditions and time span
+# u0 = [0.9, 0.1, 0.0]
+# tspan = (0.0, 100.0)
+# lags = [τ]
 
-# Define and solve the DDE problem
-prob = DDEProblem(sir_model, u0, h, tspan, p; constant_lags=lags)
-alg = MethodOfSteps(Tsit5())
-sol = solve(prob, alg)
+# # Define and solve the DDE problem
+# prob = DDEProblem(sir_model, u0, h, tspan, p; constant_lags=lags)
+# alg = MethodOfSteps(Tsit5())
+# sol = solve(prob, alg, reltol=REL_TOL, abstol=ABS_TOL)
 
-# Interpolate the solution at finer intervals
-t_interp = range(0, stop=100, length=500)
-sol_interp = sol(t_interp)
+# # Interpolate the solution at finer intervals
+# t_interp = range(0, stop=100, length=1000)
+# sol_interp = sol(t_interp)
 
-# Save interpolated solution to CSV
-data = DataFrame(time=t_interp, S=sol_interp[1,:], I=sol_interp[2,:], R=sol_interp[3,:])
-CSV.write("data/sir_model_jl.csv", data)
+# # Save interpolated solution to CSV
+# data = DataFrame(time=t_interp, S=sol_interp[1,:], I=sol_interp[2,:], R=sol_interp[3,:])
+# CSV.write("data/sir_model_jl.csv", data)
 
-# print
-println("SIR model with delay solved successfully")
+# # print
+# println("SIR model with delay solved successfully")

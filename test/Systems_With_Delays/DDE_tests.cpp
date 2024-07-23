@@ -4,6 +4,11 @@
 #include <iostream>
 #include <fstream>
 
+#include <ctime>
+
+#define ABS_TOL 1e-9
+#define REL_TOL 1e-9
+
 // Breast cancer model
 
 // Define the delay
@@ -124,9 +129,10 @@ const double gamma_L = 0.1;
 
 // Define the DDE function
 void sir_model(size_t num_eq, double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history) {
+    double S_tau = history.at_time(t - tau4, 0); // S(t - tau)
     double I_tau = history.at_time(t - tau4, 1); // I(t - tau)
-    du[0] = -beta_L * u[0] * I_tau;
-    du[1] = beta * u[0] * I_tau - gamma_L * u[1];
+    du[0] = -beta_L * u[0] * u[1];
+    du[1] = beta * S_tau * I_tau - gamma_L * u[1];
     du[2] = gamma_L * u[1];
 }
 
@@ -151,7 +157,14 @@ int main()
 
         DDEint_dopri_5<bc_model> dde_solver(3, max_delays, prehistory);
 
-        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, 1e-6, 1e-6);
+        // Measure the time taken to solve the problem
+        std::clock_t start = std::clock();
+        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, ABS_TOL, REL_TOL);
+        // Measure the time taken to solve the problem
+        std::clock_t end = std::clock();
+
+        double elapsed_time = (end - start) / (double) CLOCKS_PER_SEC;
+        std::cout << "Breast Cancer Model took " << elapsed_time << " seconds to solve." << std::endl;
 
         // Prepare data for plotting
         std::vector<double> time_points;
@@ -189,7 +202,7 @@ int main()
 
         DDEint_dopri_5<ddefun> dde_solver(3, max_delays, prehistory);
 
-        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, 1e-6, 1e-6);
+        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 20000, ABS_TOL, REL_TOL);
 
         // Prepare data for plotting
         std::vector<double> time_points;
@@ -226,7 +239,7 @@ int main()
 
         DDEint_dopri_5<repressilator_model> dde_solver(3, max_delays, prehistory);
 
-        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, 1e-6, 1e-6);
+        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, ABS_TOL, REL_TOL);
 
         // Prepare data for plotting
         std::vector<double> time_points;
@@ -250,42 +263,42 @@ int main()
         file.close();
     }
 
-    std::cout << "Running the SIR Model..." << std::endl;
-    {
-        // Initial conditions and time span
-        std::vector<double> u0 = {0.9, 0.1, 0.0}; // S(0), I(0), R(0)
-        double t_initial = 0.0;
-        double t_final = 100.0;
+    // std::cout << "Running the SIR Model..." << std::endl;
+    // {
+    //     // Initial conditions and time span
+    //     std::vector<double> u0 = {0.9, 0.1, 0.0}; // S(0), I(0), R(0)
+    //     double t_initial = 0.0;
+    //     double t_final = 100.0;
 
-        // Create the DDE problem and solve it
-        std::vector<std::function<double(double)>> prehistory = {history_S, history_I, history_R};
-        std::vector<double> max_delays = {tau4, tau4, tau4}; // Ensure the size matches the number of equations
+    //     // Create the DDE problem and solve it
+    //     std::vector<std::function<double(double)>> prehistory = {history_S, history_I, history_R};
+    //     std::vector<double> max_delays = {tau4, tau4, tau4}; // Ensure the size matches the number of equations
 
-        DDEint_dopri_5<sir_model> dde_solver(3, max_delays, prehistory);
+    //     DDEint_dopri_5<sir_model> dde_solver(3, max_delays, prehistory);
 
-        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, 1e-6, 1e-6);
+    //     std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, ABS_TOL, REL_TOL);
 
-        // Prepare data for plotting
-        std::vector<double> time_points;
-        std::vector<double> S_values;
-        std::vector<double> I_values;
-        std::vector<double> R_values;
+    //     // Prepare data for plotting
+    //     std::vector<double> time_points;
+    //     std::vector<double> S_values;
+    //     std::vector<double> I_values;
+    //     std::vector<double> R_values;
 
-        for (const auto& row : solution) {
-            time_points.push_back(row[0]);
-            S_values.push_back(row[1]);
-            I_values.push_back(row[2]);
-            R_values.push_back(row[3]);
-        }
+    //     for (const auto& row : solution) {
+    //         time_points.push_back(row[0]);
+    //         S_values.push_back(row[1]);
+    //         I_values.push_back(row[2]);
+    //         R_values.push_back(row[3]);
+    //     }
 
-        // Save the data to a csv file
-        std::ofstream file("data/sir_model_cpp.csv");
-        file << "Time,S,I,R\n";
-        for (size_t i = 0; i < time_points.size(); ++i) {
-            file << time_points[i] << "," << S_values[i] << "," << I_values[i] << "," << R_values[i] << "\n";
-        }
-        file.close();
-    }
+    //     // Save the data to a csv file
+    //     std::ofstream file("data/sir_model_cpp.csv");
+    //     file << "Time,S,I,R\n";
+    //     for (size_t i = 0; i < time_points.size(); ++i) {
+    //         file << time_points[i] << "," << S_values[i] << "," << I_values[i] << "," << R_values[i] << "\n";
+    //     }
+    //     file.close();
+    // }
 
     return 0;
 }
