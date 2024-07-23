@@ -150,9 +150,9 @@ int main() {
     auto start_time = std::chrono::high_resolution_clock::now();
     std::vector<std::vector<double>> laplacian_out = test_laplacian.run(0, 1, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
     auto end_time = std::chrono::high_resolution_clock::now();
-    double execution_time = std::chrono::duration<double>(end_time - start_time).count();
+    double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
-    std::cout << "Execution time: " << execution_time << " seconds\n";
+    std::cout << "Execution time: " << execution_time << " milliseconds\n";
 
     //print_statistics(laplacian_out, execution_time);
 
