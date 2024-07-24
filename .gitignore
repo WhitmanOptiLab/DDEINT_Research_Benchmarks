@@ -34,3 +34,5 @@
 bench
 .vscode/
 .venv/
+
+./2d_Heat_Equation/.ipynb_checkpoints

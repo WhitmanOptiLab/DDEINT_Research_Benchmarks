@@ -3,7 +3,7 @@
 #include <chrono>
 #include <iomanip>
 
-
+#include <fstream>
 // 2d heat eqaution
 void laplacian(size_t n, double t, std::vector<double> &y, std::vector<double> &dydt, History<double, double>& hist) {
     
@@ -154,7 +154,31 @@ int main() {
 
     std::cout << "Execution time: " << execution_time << " milliseconds\n";
 
-    //print_statistics(laplacian_out, execution_time);
+    // Write laplacian_out to a CSV file
+    std::ofstream outfile("data/laplacian_out.csv");
+    if (outfile.is_open()) {
+        // Set the precision for writing the values
+        outfile << std::fixed << std::setprecision(6);
+
+        // Write the header
+        outfile << "x,y,u\n";
+
+        // Write the data to the file
+        for (size_t j = 0; j < ny_loc; j++) {
+            for (size_t i = 0; i < nx_loc; i++) {
+                size_t idx = i + j * nx_loc;
+                double x = i * dx;
+                double y = j * dy;
+                outfile << x << "," << y << "," << laplacian_out.back()[idx] << "\n";
+            }
+        }
+
+        outfile.close();
+        std::cout << "laplacian_out.csv created successfully.\n";
+    } else {
+        std::cerr << "Unable to create laplacian_out.csv\n";
+    }
+
 
     return 0;
 }
