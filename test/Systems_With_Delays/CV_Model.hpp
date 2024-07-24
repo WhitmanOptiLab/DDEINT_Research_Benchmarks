@@ -67,7 +67,7 @@ double history_H(double t)
     return (1 / (p.R * p.Vstr)) * (1 / (1 + p.r / p.R)) * 93;
 }
 
-void CV_Model()
+double CV_Model()
 {
     std::cout << "Running DDE solver..." << std::endl;
   
@@ -118,4 +118,6 @@ void CV_Model()
             file << time_points[i] << "," << Pa_values[i] << "," << Pv_values[i] << "," << heart_rate[i] << "\n";
         }
         file.close();
+
+        return elapsed_time;
 }

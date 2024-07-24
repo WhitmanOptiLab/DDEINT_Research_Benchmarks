@@ -1,19 +1,21 @@
+module RS_Model
+
 using DifferentialEquations
 using CSV, DataFrames
-using Plots
 using Dates
+using Plots
 
-ABS_TOL = 1e-9
-REL_TOL = 1e-9
+const ABS_TOL = 1e-9
+const REL_TOL = 1e-9
 
 # Repressilator Model
-tau = 0.1
-const beta = 50
-const n = 2
-const k = 1
-const gamma = 1
+const tau = 0.1
+const beta = 50.0
+const n = 2.0
+const k = 1.0
+const gamma = 1.0
 
-function repressilator_model(du, u, h, p, t)
+@inline function repressilator_model(du::Vector{Float64}, u::Vector{Float64}, h, p, t::Float64)
     x3_tau = h(p, t - tau)[3]
     x1_tau = h(p, t - tau)[1]
     x2_tau = h(p, t - tau)[2]
@@ -23,28 +25,29 @@ function repressilator_model(du, u, h, p, t)
     du[3] = beta / (1 + (x2_tau / k)^n) - gamma * u[3]
 end
 
-h(p, t) = ones(3)
+@inline h(p, t) = ones(3)
 
-u0 = [1.0, 1.0, 1.2]
-tspan = (0.0, 50.0)
-lags = [tau]
+const u0 = [1.0, 1.0, 1.2]
+const tspan = (0.0, 50.0)
+const lags = [tau]
 
-prob = DDEProblem(repressilator_model, u0, h, tspan, nothing; constant_lags=lags)
+function Run_Repressilator_Model()
+    prob = DDEProblem(repressilator_model, u0, h, tspan, nothing; constant_lags=lags)
 
-println("Solving Repressilator model...")
-# Solve the DDE problem
-# Measured the time taken to solve the problem
-start = Dates.now()
-sol = solve(prob, MethodOfSteps(Tsit5()), reltol=REL_TOL, abstol=ABS_TOL)
-println("It took ", Dates.now() - start, " seconds to solve the Repressilator model")
+    println("Solving Repressilator model...")
+    start = Dates.now()
+    sol = solve(prob, MethodOfSteps(Tsit5()), reltol=REL_TOL, abstol=ABS_TOL)
+    elapsed_time = Dates.now() - start
+    println("It took ", elapsed_time, " seconds to solve the Repressilator model")
+    
+    t_interp = range(0, stop=50, length=1000)
+    sol_interp = sol(t_interp)
+    
+    data = DataFrame(time=t_interp, x1=sol_interp[1,:], x2=sol_interp[2,:], x3=sol_interp[3,:])
+    CSV.write("data/repressilator_model_jl.csv", data)
+    
+    println("Repressilator model solved successfully")
+    return elapsed_time
+end
 
-# Interpolate the solution at finer intervals
-t_interp = range(0, stop=50, length=1000)
-sol_interp = sol(t_interp)
-
-# Save interpolated solution to CSV
-data = DataFrame(time=t_interp, x1=sol_interp[1,:], x2=sol_interp[2,:], x3=sol_interp[3,:])
-CSV.write("data/repressilator_model_jl.csv", data)
-
-# print
-println("Repressilator model solved successfully")
+end # module

@@ -36,7 +36,7 @@ double history_func(double t)
     return 1.0;
 }
 
-void RS_Model() 
+double RS_Model() 
 {
     std::cout << "Running DDE solver..." << std::endl;
 
@@ -87,4 +87,5 @@ void RS_Model()
     }
     file.close();
     
+    return elapsed_time;
 }

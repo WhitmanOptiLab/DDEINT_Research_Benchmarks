@@ -44,7 +44,7 @@ double history_function(double t)
     return 1.0;
 }
 
-void BC_Model() 
+double BC_Model() 
 {
     std::cout << "Running DDE solver..." << std::endl;
     std::cout << "Running the Breast Cancer Model..." << std::endl;
@@ -93,4 +93,6 @@ void BC_Model()
         file << time_points[i] << "," << u1_values[i] << "," << u2_values[i] << "," << u3_values[i] << "\n";
     }
     file.close();
+
+    return elapsed_time;
 }

@@ -1,10 +1,12 @@
+module CV_Model
+
 using DifferentialEquations
 using CSV, DataFrames
 using Plots
 using Dates
 
-ABS_TOL = 1e-9
-REL_TOL = 1e-9
+const ABS_TOL = 1e-9
+const REL_TOL = 1e-9
 
 # Cardiovascular Model
 struct Params
@@ -24,11 +26,10 @@ struct Params
     gammaH::Float64
 end
 
-p = Params(1.55, 519, 1.05, 0.068, 67.9, 93, 93, 93, 0.84, 7, 7, 7, 1.17, 0)
+const params = Params(1.55, 519, 1.05, 0.068, 67.9, 93, 93, 93, 0.84, 7, 7, 7, 1.17, 0)
+const tau = 4.0
 
-tau = 4.0
-
-function ddefun(du, u, h, p, t)
+@inline function ddefun(du::Vector{Float64}, u::Vector{Float64}, h, p::Params, t::Float64)
     R = t <= 600 ? 1.05 : 0.21 * exp(600 - t) + 0.84
     ylag = h(p, t - tau)
     Patau = ylag[1]
@@ -43,7 +44,7 @@ function ddefun(du, u, h, p, t)
     du[3] = (p.alphaH * Ts) / (1 + p.gammaH * Tp) - p.betaH * Tp
 end
 
-function history(p, t)
+@inline function history(p::Params, t::Float64)
     P0 = 93
     Paval = P0
     Pvval = (1 / (1 + p.R / p.r)) * P0
@@ -51,24 +52,27 @@ function history(p, t)
     return [Paval, Pvval, Hval]
 end
 
-u0 = [93, (1 / (1 + p.R / p.r)) * 93, (1 / (p.R * p.Vstr)) * (1 / (1 + p.r / p.R)) * 93]
-tspan = (0.0, 1000.0)
+const u0 = [93, (1 / (1 + params.R / params.r)) * 93, (1 / (params.R * params.Vstr)) * (1 / (1 + params.r / params.R)) * 93]
+const tspan = (0.0, 1000.0)
 
-prob = DDEProblem(ddefun, u0, history, tspan, p; constant_lags = [tau], tstops = [600])
+function Run_CV_Model()
+    prob = DDEProblem(ddefun, u0, history, tspan, params; constant_lags = [tau], tstops = [600])
+    alg = MethodOfSteps(Tsit5())
 
-println("Solving Cardiovascular model...")
+    println("Solving Cardiovascular model...")
+    start = Dates.now()
+    sol = solve(prob, alg, reltol=REL_TOL, abstol=ABS_TOL)
+    elapsed_time = Dates.now() - start
+    println("It took ", elapsed_time, " seconds to solve the Cardiovascular model")
+    
+    t_interp = range(0, stop=1000, length=1000)
+    sol_interp = sol(t_interp)
+    
+    data = DataFrame(time=t_interp, Pa=sol_interp[1,:], Pv=sol_interp[2,:], HR=sol_interp[3,:])
+    CSV.write("data/cardiovascular_model_jl.csv", data)
+    
+    println("Cardiovascular model solved successfully")
+    return elapsed_time
+end
 
-start = Dates.now()
-sol = solve(prob, MethodOfSteps(Tsit5()), reltol=REL_TOL, abstol=ABS_TOL)
-println("It took ", Dates.now() - start, " seconds to solve the Cardiovascular model")
-
-# Interpolate the solution at finer intervals
-t_interp = range(0, stop=1000, length=1000)
-sol_interp = sol(t_interp)
-
-# Save interpolated solution to CSV
-data = DataFrame(time=t_interp, Pa=sol_interp[1,:], Pv=sol_interp[2,:], HR=sol_interp[3,:])
-CSV.write("data/cardiovascular_model_jl.csv", data)
-
-# print 
-println("Cardiovascular model solved successfully")
+end # module

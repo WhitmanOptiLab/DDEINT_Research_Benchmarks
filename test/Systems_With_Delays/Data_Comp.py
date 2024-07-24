@@ -10,8 +10,6 @@ cv_jl_sol = pd.read_csv('data/cardiovascular_model_jl.csv')
 repressilator_cpp_sol = pd.read_csv('data/repressilator_model_cpp.csv')
 repressilator_jl_sol = pd.read_csv('data/repressilator_model_jl.csv')
 
-# sir_cpp_sol = pd.read_csv('data/sir_model_cpp.csv')
-# sir_jl_sol = pd.read_csv('data/sir_model_jl.csv')
 
 # create two plots with two subplots each
 bc_fig, bc_axs = plt.subplots(1, 2, figsize=(20, 10))
@@ -76,26 +74,37 @@ rm_axs[1].set_xlabel('Time')
 rm_axs[1].set_ylabel('Values')
 rm_axs[1].legend()
 
-# sir_model_cpp.csv has Time, S, I, R
-# sir_model_jl.csv has timestamp, S, I, R
-# sir_axs[0].plot(sir_cpp_sol['Time'], sir_cpp_sol['S'], label='S')
-# sir_axs[0].plot(sir_cpp_sol['Time'], sir_cpp_sol['I'], label='I')
-# sir_axs[0].plot(sir_cpp_sol['Time'], sir_cpp_sol['R'], label='R')
-# sir_axs[0].set_title('DDEInt SIR Model Solution')
-# sir_axs[0].set_xlabel('Time')
-# sir_axs[0].set_ylabel('Values')
-# sir_axs[0].legend()
-
-# sir_axs[1].plot(sir_jl_sol['time'], sir_jl_sol['S'], label='S')
-# sir_axs[1].plot(sir_jl_sol['time'], sir_jl_sol['I'], label='I')
-# sir_axs[1].plot(sir_jl_sol['time'], sir_jl_sol['R'], label='R')
-# sir_axs[1].set_title('DifferenitalEquations.jl SIR Model Solution')
-# sir_axs[1].set_xlabel('Time')
-# sir_axs[1].set_ylabel('Values')
-# sir_axs[1].legend()
-
 # save the plots
 bc_fig.savefig('plots/bc_model_comp.png')
 cv_fig.savefig('plots/cv_model_comp.png')
 rm_fig.savefig('plots/repressilator_model_comp.png')
-# sir_fig.savefig('plots/sir_model_comp.png')
+
+# Load the elapsed times
+ddeint_time = pd.read_csv('dde_elapsed_times_cpp.csv')
+julia_time = pd.read_csv('dde_elapsed_times_jl.csv')
+
+# Convert the execution times to seconds (both were in milliseconds)
+ddeint_time['execution_time'] = ddeint_time['execution_time'].astype(float) / 1000
+julia_time['execution_time'] = julia_time['execution_time'].str.replace(' milliseconds', '').astype(float) / 1000
+
+# Create a plot for the elapsed times
+time_fig, time_ax = plt.subplots(figsize=(14, 10))
+
+# Plot elapsed times
+width = 0.4  # the width of the bars
+x = range(len(ddeint_time['model']))
+
+time_ax.bar(x, ddeint_time['execution_time'], width=width, label='C++', align='center')
+time_ax.bar([i + width for i in x], julia_time['execution_time'], width=width, label='Julia', align='center')
+
+# Adding labels and title
+time_ax.set_xlabel('Model')
+time_ax.set_ylabel('Execution Time (seconds)')
+time_ax.set_title('Execution Time Comparison Between Julia and C++')
+time_ax.set_xticks([i + width / 2 for i in x])
+time_ax.set_xticklabels(ddeint_time['model'])
+time_ax.legend()
+
+# Show and save the plot
+plt.show()
+time_fig.savefig('plots/execution_time_comp.png')
