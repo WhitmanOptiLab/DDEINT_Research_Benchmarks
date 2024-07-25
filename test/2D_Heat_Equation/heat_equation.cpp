@@ -95,42 +95,13 @@ void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vecto
 }
 
 
-void print_statistics(const std::vector<std::vector<double>>& results, double execution_time) {
-    size_t num_steps = results.size();
-    //size_t num_evaluations = solver.get_num_evaluations();
-    const std::vector<double>& initial_values = results.front();
-    const std::vector<double>& final_values = results.back();
-    
-    double min_value = std::numeric_limits<double>::max();
-    double max_value = std::numeric_limits<double>::lowest();
-
-    for (const auto& step : results) {
-        for (double val : step) {
-            if (val < min_value) min_value = val;
-            if (val > max_value) max_value = val;
-        }
-    }
 
 
-    std::cout << "Solver Statistics:\n";
-    std::cout << "------------------\n";
-    std::cout << "Number of steps taken: " << num_steps << "\n";
-    std::cout << "Execution time (seconds): " << execution_time << "\n";
-    std::cout << "Initial values: ";
-    for (double val : initial_values) {
-        std::cout << val << " ";
-    }
-    std::cout << "\nFinal values: ";
-    for (double val : final_values) {
-        std::cout << val << " ";
-    }
-    std::cout << "\n";
-    std::cout << "Minimum value encountered: " << min_value << "\n";
-    std::cout << "Maximum value encountered: " << max_value << "\n";
-}
-
-
-
+//update DDE library so that it does  not return a vector of all the snapshots but only the last snapshot of the time it finished. Outside of the ring buffer we are not saving any other snapshots.
+//optimize m_output array. check to see where its being updated. 
+// change test case to take snapshots 1/20th for a 1sec. basically call run 20 times and get the last snapshot of each run
+//check the DDE library to see if its not saving all the history in the ringbuffer. we not storing any data in the ringbuffer. 
+//parameters for ringbuffer should basically be zero in this test case.
 
 int main() {
     double (*dummy_prehist)(double) = [](double) { return 0.0; };
@@ -144,10 +115,11 @@ int main() {
     const double dy = 1.0 / (ny_loc - 1);
     int num_eq = nx_loc * ny_loc;
 
-    initialize_y(nx_loc, ny_loc, dx, dy ,init_cond_laplacian); //nx_loc, ny_loc, dx, dy, y
-    DDEint_dopri_5<laplacian> test_laplacian(num_eq, init_cond_laplacian, no_prehist);
 
-    auto start_time = std::chrono::high_resolution_clock::now();
+    initialize_y(nx_loc, ny_loc, dx, dy ,init_cond_laplacian); //nx_loc, ny_loc, dx, dy, y
+    DDEint_dopri_5<laplacian> test_laplacian(num_eq, init_cond_laplacian, no_prehist); //initial condition here should be a vector of zeros because there is no history.
+
+    auto start_time = std::chrono::high_resolution_clock::now();       //to= 0, tf =1, init_cond, init_h, h_min, max_steps, abs, rel, verbose
     std::vector<std::vector<double>> laplacian_out = test_laplacian.run(0, 1, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
     auto end_time = std::chrono::high_resolution_clock::now();
     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
@@ -182,6 +154,7 @@ int main() {
 
     return 0;
 }
+
 
 
 
