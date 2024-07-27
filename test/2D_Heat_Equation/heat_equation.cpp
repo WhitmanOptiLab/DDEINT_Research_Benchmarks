@@ -116,40 +116,56 @@ int main() {
     int num_eq = nx_loc * ny_loc;
 
 
+    std::vector<double> hist_init_cond(num_eq, 0.0); //initial condition here should be a vector of zeros because there is no history.  
+    DDEint_dopri_5<laplacian> test_laplacian(num_eq, hist_init_cond, no_prehist); //initial condition here should be a vector of zeros because there is no history.
+
     initialize_y(nx_loc, ny_loc, dx, dy ,init_cond_laplacian); //nx_loc, ny_loc, dx, dy, y
-    DDEint_dopri_5<laplacian> test_laplacian(num_eq, init_cond_laplacian, no_prehist); //initial condition here should be a vector of zeros because there is no history.
 
     auto start_time = std::chrono::high_resolution_clock::now();       //to= 0, tf =1, init_cond, init_h, h_min, max_steps, abs, rel, verbose
-    std::vector<std::vector<double>> laplacian_out = test_laplacian.run(0, 1, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+
+    double dt = 0.05; // Time step of 1/20th of a second
+    double tf = 1.0; // Final time
+    int num_steps = tf / dt; // Number of time steps
+    std::vector<std::vector<double>> snapshots; 
+    std::vector<std::vector<double>> laplacian_out;
+    for (int step = 0; step < num_steps; ++step) {
+        double t_start = step * dt;
+        double t_end = (step + 1) * dt;
+        snapshots = test_laplacian.run(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+        // laplacian_out[step] = snapshots[0]; // Store the last snapshot
+        // init_cond_laplacian = snapshots[0]; // Update the initial condition for the next time step
+    }
+
+
     auto end_time = std::chrono::high_resolution_clock::now();
     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
     std::cout << "Execution time: " << execution_time << " milliseconds\n";
 
     // Write laplacian_out to a CSV file
-    std::ofstream outfile("data/laplacian_out.csv");
-    if (outfile.is_open()) {
-        // Set the precision for writing the values
-        outfile << std::fixed << std::setprecision(6);
+    // std::ofstream outfile("data/laplacian_out.csv");
+    // if (outfile.is_open()) {
+    //     // Set the precision for writing the values
+    //     outfile << std::fixed << std::setprecision(6);
 
-        // Write the header
-        outfile << "x,y,u\n";
+    //     // Write the header
+    //     outfile << "x,y,u\n";
 
-        // Write the data to the file
-        for (size_t j = 0; j < ny_loc; j++) {
-            for (size_t i = 0; i < nx_loc; i++) {
-                size_t idx = i + j * nx_loc;
-                double x = i * dx;
-                double y = j * dy;
-                outfile << x << "," << y << "," << laplacian_out.back()[idx] << "\n";
-            }
-        }
+    //     // Write the data to the file
+    //     for (size_t j = 0; j < ny_loc; j++) {
+    //         for (size_t i = 0; i < nx_loc; i++) {
+    //             size_t idx = i + j * nx_loc;
+    //             double x = i * dx;
+    //             double y = j * dy;
+    //             outfile << x << "," << y << "," << laplacian_out.back()[idx] << "\n";
+    //         }
+    //     }
 
-        outfile.close();
-        std::cout << "laplacian_out.csv created successfully.\n";
-    } else {
-        std::cerr << "Unable to create laplacian_out.csv\n";
-    }
+    //     outfile.close();
+    //     std::cout << "laplacian_out.csv created successfully.\n";
+    // } else {
+    //     std::cerr << "Unable to create laplacian_out.csv\n";
+    // }
 
 
     return 0;
