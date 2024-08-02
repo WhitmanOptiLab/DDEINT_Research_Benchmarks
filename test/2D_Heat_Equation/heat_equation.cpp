@@ -95,48 +95,20 @@ void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vecto
 }
 
 
-void print_statistics(const std::vector<std::vector<double>>& results, double execution_time) {
-    size_t num_steps = results.size();
-    //size_t num_evaluations = solver.get_num_evaluations();
-    const std::vector<double>& initial_values = results.front();
-    const std::vector<double>& final_values = results.back();
-    
-    double min_value = std::numeric_limits<double>::max();
-    double max_value = std::numeric_limits<double>::lowest();
 
-    for (const auto& step : results) {
-        for (double val : step) {
-            if (val < min_value) min_value = val;
-            if (val > max_value) max_value = val;
-        }
-    }
-
-
-    std::cout << "Solver Statistics:\n";
-    std::cout << "------------------\n";
-    std::cout << "Number of steps taken: " << num_steps << "\n";
-    std::cout << "Execution time (seconds): " << execution_time << "\n";
-    std::cout << "Initial values: ";
-    for (double val : initial_values) {
-        std::cout << val << " ";
-    }
-    std::cout << "\nFinal values: ";
-    for (double val : final_values) {
-        std::cout << val << " ";
-    }
-    std::cout << "\n";
-    std::cout << "Minimum value encountered: " << min_value << "\n";
-    std::cout << "Maximum value encountered: " << max_value << "\n";
-}
-
-
+//update DDE library so that it does  not return a vector of all the snapshots but only the last snapshot of the time it finished. Outside of the ring buffer we are not saving any other snapshots.
+//optimize m_output array. check to see where its being updated. 
+// change test case to take snapshots 1/20th for a 1sec. basically call run 20 times and get the last snapshot of each run
+//check the DDE library to see if its not saving all the history in the ringbuffer. we not storing any data in the ringbuffer. 
+//parameters for ringbuffer should basically be zero in this test case.
 
 
 int main() {
+    // Dummy prehistory function (returns 0.0 for all inputs)
     double (*dummy_prehist)(double) = [](double) { return 0.0; };
     std::vector<std::function<double(double)>> no_prehist(100, dummy_prehist);
 
-
+    // Initial conditions for the Laplacian
     std::vector<double> init_cond_laplacian;
     size_t nx_loc = 32;
     size_t ny_loc = 32;
@@ -144,44 +116,65 @@ int main() {
     const double dy = 1.0 / (ny_loc - 1);
     int num_eq = nx_loc * ny_loc;
 
-    initialize_y(nx_loc, ny_loc, dx, dy ,init_cond_laplacian); //nx_loc, ny_loc, dx, dy, y
-    DDEint_dopri_5<laplacian> test_laplacian(num_eq, init_cond_laplacian, no_prehist);
+    // Initialize the initial condition vector
+    std::vector<double> hist_init_cond(num_eq, 0.0);
+    DDEint_dopri_5<laplacian> test_laplacian(num_eq, hist_init_cond, no_prehist);
+
+    // Initialize the state
+    initialize_y(nx_loc, ny_loc, dx, dy, init_cond_laplacian);
 
     auto start_time = std::chrono::high_resolution_clock::now();
-    std::vector<std::vector<double>> laplacian_out = test_laplacian.run(0, 1, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+
+    double dt = 0.05; // Time step
+    double tf = 1.0; // Final time
+    int num_steps = tf / dt; // Number of time steps
+
+    for (int step = 0; step < num_steps; ++step) {
+        double t_start = step * dt;
+        double t_end = (step + 1) * dt;
+
+        if (step == 0) {
+            // Initialize the integrator at the first step
+            test_laplacian.initialize(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+        } else {
+            // Continue the integration for subsequent steps
+            test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
+        }
+    }
+
     auto end_time = std::chrono::high_resolution_clock::now();
     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
     std::cout << "Execution time: " << execution_time << " milliseconds\n";
 
-    // Write laplacian_out to a CSV file
-    std::ofstream outfile("data/laplacian_out.csv");
-    if (outfile.is_open()) {
-        // Set the precision for writing the values
-        outfile << std::fixed << std::setprecision(6);
-
-        // Write the header
-        outfile << "x,y,u\n";
-
-        // Write the data to the file
-        for (size_t j = 0; j < ny_loc; j++) {
-            for (size_t i = 0; i < nx_loc; i++) {
-                size_t idx = i + j * nx_loc;
-                double x = i * dx;
-                double y = j * dy;
-                outfile << x << "," << y << "," << laplacian_out.back()[idx] << "\n";
-            }
-        }
-
-        outfile.close();
-        std::cout << "laplacian_out.csv created successfully.\n";
-    } else {
-        std::cerr << "Unable to create laplacian_out.csv\n";
-    }
-
-
     return 0;
 }
+
+    // // Write laplacian_out to a CSV file
+    // std::ofstream outfile("data/laplacian_out.csv");
+    // if (outfile.is_open()) {
+    //     // Set the precision for writing the values
+    //     outfile << std::fixed << std::setprecision(6);
+
+    //     // Write the header
+    //     outfile << "x,y,u\n";
+
+    //     // Write the data to the file
+    //     for (size_t j = 0; j < ny_loc; j++) {
+    //         for (size_t i = 0; i < nx_loc; i++) {
+    //             size_t idx = i + j * nx_loc;
+    //             double x = i * dx;
+    //             double y = j * dy;
+    //             outfile << x << "," << y << "," << laplacian_out.back()[idx] << "\n";
+    //         }
+    //     }
+
+    //     outfile.close();
+    //     std::cout << "laplacian_out.csv created successfully.\n";
+    // } else {
+    //     std::cerr << "Unable to create laplacian_out.csv\n";
+    // }
+
 
 
 
