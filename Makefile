@@ -1,46 +1,42 @@
-SHELL := /bin/bash
 CC = g++
-CFLAGS = -std=c++17 -IDDEINT -Icpp_utils
-PYTHON = python3
-PIP = .venv/bin/pip
-PYTHON_RUN = .venv/bin/python
-VENV = .venv
-CPP_TARGET = test/run_cpp
-JL_SCRIPT = test/main.jl
-PY_SCRIPT = test/main.py
+CFLAGS = -std=c++17 -g -O0
+INCLUDE = -IDDEINT 
 
-.PHONY: all run run_cpp run_jl setup_py run_py clean help
+BUILD_DIR = build
+PERF_DIR = perf_output
+PLOT_DIR = plots
 
-all: setup_py 
+# Create the necessary directories
+.PHONY: directories
+directories:
+	mkdir -p $(BUILD_DIR)
+	mkdir -p $(PERF_DIR)
+	mkdir -p $(PLOT_DIR)
 
-run: run_cpp run_jl run_py
+.PHONY: all BCTest clean
 
-run_cpp: $(CPP_TARGET)
+all: directories BCTest
 
-$(CPP_TARGET): test/main.cpp
-	@echo "Compiling C++ code..."
-	@$(CC) $(CFLAGS) test/main.cpp -o $(CPP_TARGET)
-	@echo "Running C++ code..."
-	@./$(CPP_TARGET)
+# Compile the Breast Cancer model test and run performance test
+BCTest: $(BUILD_DIR)/bc_test
 
-run_jl: $(JL_SCRIPT)
-	@echo "Running Julia code..."
-	@julia $(JL_SCRIPT)
-
-setup_py:
-	@if [ ! -d "$(VENV)" ]; then \
-		echo "Setting up Python environment..."; \
-		$(PYTHON) -m venv $(VENV); \
-		$(PIP) install pandas matplotlib; \
+$(BUILD_DIR)/bc_test: directories test/Breast_Cancer_Model/bc_model.cpp test/Breast_Cancer_Model/bc_functions.cpp
+	@echo "Compiling Breast Cancer Model Test"
+	$(CC) $(CFLAGS) $(INCLUDE) test/Breast_Cancer_Model/bc_model.cpp test/Breast_Cancer_Model/bc_functions.cpp -o $(BUILD_DIR)/bc_test
+	@echo "Running Breast Cancer Model Test"
+	@perf record -g ./$(BUILD_DIR)/bc_test
+	@if [ -f $(PERF_DIR)/perf.data ]; then \
+		echo "Generating Flame Graph"; \
+		perf script > $(PERF_DIR)/out.perf; \
+		./utils/FlameGraph/stackcollapse-perf.pl $(PERF_DIR)/out.perf > $(PERF_DIR)/out.folded; \
+		./utils/FlameGraph/flamegraph.pl --color=java --hash --title="Breast Cancer Model" $(PERF_DIR)/out.folded > $(PLOT_DIR)/bc_model.svg; \
+		echo "Cleaning up"; \
+		rm -f $(PERF_DIR)/*; \
 	else \
-		echo "Python environment already set up."; \
+		echo "Error: perf.data file not found"; \
+		exit 1; \
 	fi
 
-run_py: $(PY_SCRIPT) setup_py
-	@echo "Running Python code..."
-	@$(PYTHON_RUN) $(PY_SCRIPT)
-
 clean:
-	@echo "Cleaning up..."
-	@rm -rf $(VENV) $(CPP_TARGET)
-	@rm -f test/run_cpp
+	rm -rf $(BUILD_DIR) $(PERF_DIR) $(PLOT_DIR)
+

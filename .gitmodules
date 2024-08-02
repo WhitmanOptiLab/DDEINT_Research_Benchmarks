@@ -4,3 +4,9 @@
 [submodule "external/benchmark"]
 	path = external/benchmark
 	url = https://github.com/google/benchmark.git
+[submodule "utils/FlameGraph"]
+	path = utils/FlameGraph
+	url = https://github.com/brendangregg/FlameGraph.git
+[submodule "utils/benchmark"]
+	path = utils/benchmark
+	url = https://github.com/google/benchmark.git
