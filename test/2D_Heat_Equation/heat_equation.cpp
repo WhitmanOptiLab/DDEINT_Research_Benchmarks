@@ -95,6 +95,36 @@ void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vecto
 }
 
 
+void write_to_csv(const std::vector<std::vector<double>>& data, const std::string& filename) {
+    // Create a CSV file
+    std::ofstream file(filename);
+
+    // Check if file is open
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return;
+    }
+
+    // Write header
+    file << "time";
+    for (size_t i = 0; i < data[0].size() - 1; ++i) {
+        file << ",y" << i + 1;
+    }
+    file << std::endl;
+
+    // Write data
+    for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); ++i) {
+            file << row[i];
+            if (i < row.size() - 1) {
+                file << ",";
+            }
+        }
+        file << std::endl;
+    }
+
+    file.close();
+}
 
 //update DDE library so that it does  not return a vector of all the snapshots but only the last snapshot of the time it finished. Outside of the ring buffer we are not saving any other snapshots.
 //optimize m_output array. check to see where its being updated. 
@@ -122,6 +152,9 @@ int main() {
 
     // Initialize the state
     initialize_y(nx_loc, ny_loc, dx, dy, init_cond_laplacian);
+    
+    std::vector<std::vector<double>> output;
+    std::vector<std::vector<double>> transformed_output;
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -135,46 +168,26 @@ int main() {
 
         if (step == 0) {
             // Initialize the integrator at the first step
-            test_laplacian.initialize(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+            output = test_laplacian.initialize(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
         } else {
             // Continue the integration for subsequent steps
-            test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
+           output = test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
         }
     }
+
 
     auto end_time = std::chrono::high_resolution_clock::now();
     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
     std::cout << "Execution time: " << execution_time << " milliseconds\n";
 
+      // Print the output
+   
+    write_to_csv(output, "data/heat_equation_output.csv");
+
+
     return 0;
 }
-
-    // // Write laplacian_out to a CSV file
-    // std::ofstream outfile("data/laplacian_out.csv");
-    // if (outfile.is_open()) {
-    //     // Set the precision for writing the values
-    //     outfile << std::fixed << std::setprecision(6);
-
-    //     // Write the header
-    //     outfile << "x,y,u\n";
-
-    //     // Write the data to the file
-    //     for (size_t j = 0; j < ny_loc; j++) {
-    //         for (size_t i = 0; i < nx_loc; i++) {
-    //             size_t idx = i + j * nx_loc;
-    //             double x = i * dx;
-    //             double y = j * dy;
-    //             outfile << x << "," << y << "," << laplacian_out.back()[idx] << "\n";
-    //         }
-    //     }
-
-    //     outfile.close();
-    //     std::cout << "laplacian_out.csv created successfully.\n";
-    // } else {
-    //     std::cerr << "Unable to create laplacian_out.csv\n";
-    // }
-
 
 
 
