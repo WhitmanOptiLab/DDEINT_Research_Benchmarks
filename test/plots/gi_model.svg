@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" width="1200" height="422" onload="init(evt)" viewBox="0 0 1200 422" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg version="1.1" width="1200" height="358" onload="init(evt)" viewBox="0 0 1200 358" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <!-- Flame graph stack visualization. See https://github.com/brendangregg/FlameGraph for latest version, and http://www.brendangregg.com/flamegraphs.html for examples. -->
 <!-- NOTES:  -->
 <defs>
@@ -421,285 +421,301 @@
 	}
 ]]>
 </script>
-<rect x="0.0" y="0" width="1200.0" height="422.0" fill="url(#background)"  />
+<rect x="0.0" y="0" width="1200.0" height="358.0" fill="url(#background)"  />
 <text id="title" x="600.00" y="24" >gi_model</text>
-<text id="details" x="10.00" y="405" > </text>
+<text id="details" x="10.00" y="341" > </text>
 <text id="unzoom" x="10.00" y="24" class="hide">Reset Zoom</text>
 <text id="search" x="1090.00" y="24" >Search</text>
 <text id="ignorecase" x="1174.00" y="24" >ic</text>
-<text id="matched" x="1090.00" y="405" > </text>
+<text id="matched" x="1090.00" y="341" > </text>
 <g id="frames">
 <g >
-<title>load_elf_binary (44,022 samples, 0.33%)</title><rect x="1186.1" y="245" width="3.9" height="15.0" fill="rgb(220,79,79)" rx="2" ry="2" />
-<text  x="1189.15" y="255.5" ></text>
+<title>tlb_finish_mmu (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="165" width="135.8" height="15.0" fill="rgb(250,123,123)" rx="2" ry="2" />
+<text  x="1053.11" y="175.5" >tlb_finish_mmu</text>
 </g>
 <g >
-<title>DDEint_dopri_5&lt;&amp; (8,212,048 samples, 60.91%)</title><rect x="467.5" y="277" width="718.6" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
-<text  x="470.46" y="287.5" >DDEint_dopri_5&lt;&amp;</text>
+<title>free_pages_and_swap_cache (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="133" width="135.8" height="15.0" fill="rgb(219,78,78)" rx="2" ry="2" />
+<text  x="1053.11" y="143.5" >free_pages_and_sw..</text>
 </g>
 <g >
-<title>__x64_sys_execve (44,022 samples, 0.33%)</title><rect x="1186.1" y="293" width="3.9" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
-<text  x="1189.15" y="303.5" ></text>
+<title>gi_dde (10,295,606 samples, 63.05%)</title><rect x="306.1" y="165" width="744.0" height="15.0" fill="rgb(207,60,60)" rx="2" ry="2" />
+<text  x="309.12" y="175.5" >gi_dde</text>
 </g>
 <g >
-<title>do_filp_open (2,214,357 samples, 16.42%)</title><rect x="214.3" y="117" width="193.8" height="15.0" fill="rgb(206,59,59)" rx="2" ry="2" />
-<text  x="217.28" y="127.5" >do_filp_open</text>
+<title>do_exit (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="213" width="135.8" height="15.0" fill="rgb(229,92,92)" rx="2" ry="2" />
+<text  x="1053.11" y="223.5" >do_exit</text>
 </g>
 <g >
-<title>CompoundRingBuffer&lt;std::array&lt;double, 5ul&gt;, double&gt;::bisect (1,623,264 samples, 12.04%)</title><rect x="598.3" y="197" width="142.0" height="15.0" fill="rgb(208,208,62)" rx="2" ry="2" />
-<text  x="601.28" y="207.5" >CompoundRingBuffer..</text>
+<title>do_syscall_64 (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="261" width="135.8" height="15.0" fill="rgb(204,57,57)" rx="2" ry="2" />
+<text  x="1053.11" y="271.5" >do_syscall_64</text>
 </g>
 <g >
-<title>[ld-linux-x86-64.so.2] (2,214,357 samples, 16.42%)</title><rect x="214.3" y="213" width="193.8" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="217.28" y="223.5" >[ld-linux-x86-64.so.2]</text>
+<title>all (16,329,460 samples, 100%)</title><rect x="10.0" y="309" width="1180.0" height="15.0" fill="rgb(209,63,63)" rx="2" ry="2" />
+<text  x="13.00" y="319.5" ></text>
 </g>
 <g >
-<title>bprm_execve (678,654 samples, 5.03%)</title><rect x="408.1" y="261" width="59.4" height="15.0" fill="rgb(214,71,71)" rx="2" ry="2" />
-<text  x="411.07" y="271.5" >bprm_e..</text>
+<title>__x64_sys_execve (1,031,437 samples, 6.32%)</title><rect x="231.6" y="229" width="74.5" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
+<text  x="234.59" y="239.5" >__x64_sy..</text>
 </g>
 <g >
-<title>path_openat (2,214,357 samples, 16.42%)</title><rect x="214.3" y="101" width="193.8" height="15.0" fill="rgb(248,120,120)" rx="2" ry="2" />
-<text  x="217.28" y="111.5" >path_openat</text>
+<title>[unknown] (56,845 samples, 0.35%)</title><rect x="1185.9" y="277" width="4.1" height="15.0" fill="rgb(205,58,58)" rx="2" ry="2" />
+<text  x="1188.89" y="287.5" ></text>
 </g>
 <g >
-<title>_get_random_bytes (678,654 samples, 5.03%)</title><rect x="408.1" y="197" width="59.4" height="15.0" fill="rgb(200,50,50)" rx="2" ry="2" />
-<text  x="411.07" y="207.5" >_get_r..</text>
+<title>vm_mmap_pgoff (3,066,483 samples, 18.78%)</title><rect x="10.0" y="85" width="221.6" height="15.0" fill="rgb(235,102,102)" rx="2" ry="2" />
+<text  x="13.00" y="95.5" >vm_mmap_pgoff</text>
 </g>
 <g >
-<title>do_dentry_open (2,214,357 samples, 16.42%)</title><rect x="214.3" y="69" width="193.8" height="15.0" fill="rgb(241,110,110)" rx="2" ry="2" />
-<text  x="217.28" y="79.5" >do_dentry_open</text>
+<title>__tlb_batch_free_encoded_pages (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="149" width="135.8" height="15.0" fill="rgb(200,51,51)" rx="2" ry="2" />
+<text  x="1053.11" y="159.5" >__tlb_batch_free_..</text>
 </g>
 <g >
-<title>perf-exec (44,022 samples, 0.33%)</title><rect x="1186.1" y="357" width="3.9" height="15.0" fill="rgb(229,93,93)" rx="2" ry="2" />
-<text  x="1189.15" y="367.5" ></text>
-</g>
-<g >
-<title>entry_SYSCALL_64_after_hwframe (44,022 samples, 0.33%)</title><rect x="1186.1" y="325" width="3.9" height="15.0" fill="rgb(215,72,72)" rx="2" ry="2" />
-<text  x="1189.15" y="335.5" ></text>
-</g>
-<g >
-<title>do_syscall_64 (2,214,357 samples, 16.42%)</title><rect x="214.3" y="165" width="193.8" height="15.0" fill="rgb(204,57,57)" rx="2" ry="2" />
-<text  x="217.28" y="175.5" >do_syscall_64</text>
-</g>
-<g >
-<title>native_write_msr (44,022 samples, 0.33%)</title><rect x="1186.1" y="165" width="3.9" height="15.0" fill="rgb(236,102,102)" rx="2" ry="2" />
-<text  x="1189.15" y="175.5" ></text>
-</g>
-<g >
-<title>begin_new_exec (44,022 samples, 0.33%)</title><rect x="1186.1" y="229" width="3.9" height="15.0" fill="rgb(244,114,114)" rx="2" ry="2" />
-<text  x="1189.15" y="239.5" ></text>
-</g>
-<g >
-<title>main (8,212,048 samples, 60.91%)</title><rect x="467.5" y="293" width="718.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="470.46" y="303.5" >main</text>
-</g>
-<g >
-<title>entry_SYSCALL_64_after_hwframe (678,654 samples, 5.03%)</title><rect x="408.1" y="325" width="59.4" height="15.0" fill="rgb(215,72,72)" rx="2" ry="2" />
-<text  x="411.07" y="335.5" >entry_..</text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (2,214,357 samples, 16.42%)</title><rect x="214.3" y="245" width="193.8" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="217.28" y="255.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>std::vector&lt;double, std::allocator&lt;double&gt; &gt;::_M_move_assign (1,770,496 samples, 13.13%)</title><rect x="1031.2" y="245" width="154.9" height="15.0" fill="rgb(175,175,50)" rx="2" ry="2" />
-<text  x="1034.20" y="255.5" >std::vector&lt;double,..</text>
-</g>
-<g >
-<title>bprm_execve (44,022 samples, 0.33%)</title><rect x="1186.1" y="261" width="3.9" height="15.0" fill="rgb(214,71,71)" rx="2" ry="2" />
-<text  x="1189.15" y="271.5" ></text>
-</g>
-<g >
-<title>entry_SYSCALL_64_after_hwframe (2,214,357 samples, 16.42%)</title><rect x="214.3" y="181" width="193.8" height="15.0" fill="rgb(215,72,72)" rx="2" ry="2" />
-<text  x="217.28" y="191.5" >entry_SYSCALL_64_after_hw..</text>
-</g>
-<g >
-<title>do_execveat_common.isra.0 (678,654 samples, 5.03%)</title><rect x="408.1" y="277" width="59.4" height="15.0" fill="rgb(229,92,92)" rx="2" ry="2" />
-<text  x="411.07" y="287.5" >do_exe..</text>
-</g>
-<g >
-<title>do_sys_openat2 (2,214,357 samples, 16.42%)</title><rect x="214.3" y="133" width="193.8" height="15.0" fill="rgb(252,127,127)" rx="2" ry="2" />
-<text  x="217.28" y="143.5" >do_sys_openat2</text>
-</g>
-<g >
-<title>std::vector&lt;double, std::allocator&lt;double&gt; &gt;::operator= (1,770,496 samples, 13.13%)</title><rect x="1031.2" y="261" width="154.9" height="15.0" fill="rgb(217,217,65)" rx="2" ry="2" />
-<text  x="1034.20" y="271.5" >std::vector&lt;double,..</text>
-</g>
-<g >
-<title>_start (8,212,048 samples, 60.91%)</title><rect x="467.5" y="341" width="718.6" height="15.0" fill="rgb(244,114,114)" rx="2" ry="2" />
-<text  x="470.46" y="351.5" >_start</text>
-</g>
-<g >
-<title>file_ra_state_init (2,214,357 samples, 16.42%)</title><rect x="214.3" y="53" width="193.8" height="15.0" fill="rgb(232,97,97)" rx="2" ry="2" />
-<text  x="217.28" y="63.5" >file_ra_state_init</text>
-</g>
-<g >
-<title>crng_make_state (678,654 samples, 5.03%)</title><rect x="408.1" y="181" width="59.4" height="15.0" fill="rgb(237,104,104)" rx="2" ry="2" />
-<text  x="411.07" y="191.5" >crng_m..</text>
-</g>
-<g >
-<title>std::queue&lt;std::vector&lt;double, std::allocator&lt;double&gt; &gt;, std::deque&lt;std::vector&lt;double, std::allocator&lt;double&gt; &gt;, std::allocator&lt;std::vector&lt;double, std::allocator&lt;double&gt; &gt; &gt; &gt; &gt;::pop (1,385,666 samples, 10.28%)</title><rect x="909.9" y="261" width="121.3" height="15.0" fill="rgb(197,197,58)" rx="2" ry="2" />
-<text  x="912.93" y="271.5" >std::queue&lt;std:..</text>
-</g>
-<g >
-<title>arch_mmap_rnd (678,654 samples, 5.03%)</title><rect x="408.1" y="229" width="59.4" height="15.0" fill="rgb(205,58,58)" rx="2" ry="2" />
-<text  x="411.07" y="239.5" >arch_m..</text>
-</g>
-<g >
-<title>load_elf_binary (678,654 samples, 5.03%)</title><rect x="408.1" y="245" width="59.4" height="15.0" fill="rgb(220,79,79)" rx="2" ry="2" />
-<text  x="411.07" y="255.5" >load_e..</text>
-</g>
-<g >
-<title>do_syscall_64 (678,654 samples, 5.03%)</title><rect x="408.1" y="309" width="59.4" height="15.0" fill="rgb(204,57,57)" rx="2" ry="2" />
-<text  x="411.07" y="319.5" >do_sys..</text>
-</g>
-<g >
-<title>[unknown] (678,654 samples, 5.03%)</title><rect x="408.1" y="341" width="59.4" height="15.0" fill="rgb(205,58,58)" rx="2" ry="2" />
-<text  x="411.07" y="351.5" >[unkno..</text>
-</g>
-<g >
-<title>get_random_u64 (678,654 samples, 5.03%)</title><rect x="408.1" y="213" width="59.4" height="15.0" fill="rgb(235,102,102)" rx="2" ry="2" />
-<text  x="411.07" y="223.5" >get_ra..</text>
-</g>
-<g >
-<title>std::_Vector_base&lt;double, std::allocator&lt;double&gt; &gt;::_Vector_impl_data::_M_swap_data (1,770,496 samples, 13.13%)</title><rect x="1031.2" y="229" width="154.9" height="15.0" fill="rgb(201,201,59)" rx="2" ry="2" />
-<text  x="1034.20" y="239.5" >std::_Vector_base&lt;d..</text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (4,548,526 samples, 33.73%)</title><rect x="10.0" y="341" width="398.1" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="13.00" y="351.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>crng_fast_key_erasure (678,654 samples, 5.03%)</title><rect x="408.1" y="165" width="59.4" height="15.0" fill="rgb(210,65,65)" rx="2" ry="2" />
-<text  x="411.07" y="175.5" >crng_f..</text>
-</g>
-<g >
-<title>__x64_sys_execve (678,654 samples, 5.03%)</title><rect x="408.1" y="293" width="59.4" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
-<text  x="411.07" y="303.5" >__x64_..</text>
-</g>
-<g >
-<title>_dl_catch_exception (2,214,357 samples, 16.42%)</title><rect x="214.3" y="261" width="193.8" height="15.0" fill="rgb(253,127,127)" rx="2" ry="2" />
-<text  x="217.28" y="271.5" >_dl_catch_exception</text>
-</g>
-<g >
-<title>all (13,483,250 samples, 100%)</title><rect x="10.0" y="373" width="1180.0" height="15.0" fill="rgb(209,63,63)" rx="2" ry="2" />
-<text  x="13.00" y="383.5" ></text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (4,548,526 samples, 33.73%)</title><rect x="10.0" y="293" width="398.1" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="13.00" y="303.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>gi_model (13,439,228 samples, 99.67%)</title><rect x="10.0" y="357" width="1176.1" height="15.0" fill="rgb(237,104,104)" rx="2" ry="2" />
-<text  x="13.00" y="367.5" >gi_model</text>
-</g>
-<g >
-<title>chacha_permute (678,654 samples, 5.03%)</title><rect x="408.1" y="133" width="59.4" height="15.0" fill="rgb(249,121,121)" rx="2" ry="2" />
-<text  x="411.07" y="143.5" >chacha..</text>
-</g>
-<g >
-<title>inode_to_bdi (2,214,357 samples, 16.42%)</title><rect x="214.3" y="37" width="193.8" height="15.0" fill="rgb(203,54,54)" rx="2" ry="2" />
-<text  x="217.28" y="47.5" >inode_to_bdi</text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (2,334,169 samples, 17.31%)</title><rect x="10.0" y="245" width="204.3" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="13.00" y="255.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>std::_Vector_base&lt;double, std::allocator&lt;double&gt; &gt;::_Vector_impl_data::_M_copy_data (1,770,496 samples, 13.13%)</title><rect x="1031.2" y="213" width="154.9" height="15.0" fill="rgb(201,201,59)" rx="2" ry="2" />
-<text  x="1034.20" y="223.5" >std::_Vector_base&lt;d..</text>
-</g>
-<g >
-<title>[libc.so.6] (8,212,048 samples, 60.91%)</title><rect x="467.5" y="309" width="718.6" height="15.0" fill="rgb(220,79,79)" rx="2" ry="2" />
-<text  x="470.46" y="319.5" >[libc.so.6]</text>
-</g>
-<g >
-<title>__libc_start_main (8,212,048 samples, 60.91%)</title><rect x="467.5" y="325" width="718.6" height="15.0" fill="rgb(234,99,99)" rx="2" ry="2" />
-<text  x="470.46" y="335.5" >__libc_start_main</text>
-</g>
-<g >
-<title>std::vector&lt;double, std::allocator&lt;double&gt; &gt;::operator[] (1,937,840 samples, 14.37%)</title><rect x="740.3" y="213" width="169.6" height="15.0" fill="rgb(222,222,67)" rx="2" ry="2" />
-<text  x="743.34" y="223.5" >std::vector&lt;double, s..</text>
-</g>
-<g >
-<title>vfs_open (2,214,357 samples, 16.42%)</title><rect x="214.3" y="85" width="193.8" height="15.0" fill="rgb(229,93,93)" rx="2" ry="2" />
-<text  x="217.28" y="95.5" >vfs_open</text>
-</g>
-<g >
-<title>perf_ctx_enable (44,022 samples, 0.33%)</title><rect x="1186.1" y="197" width="3.9" height="15.0" fill="rgb(225,86,86)" rx="2" ry="2" />
-<text  x="1189.15" y="207.5" ></text>
-</g>
-<g >
-<title>chacha_block_generic (678,654 samples, 5.03%)</title><rect x="408.1" y="149" width="59.4" height="15.0" fill="rgb(245,116,116)" rx="2" ry="2" />
-<text  x="411.07" y="159.5" >chacha..</text>
-</g>
-<g >
-<title>do_syscall_64 (44,022 samples, 0.33%)</title><rect x="1186.1" y="309" width="3.9" height="15.0" fill="rgb(204,57,57)" rx="2" ry="2" />
-<text  x="1189.15" y="319.5" ></text>
-</g>
-<g >
-<title>std::deque&lt;std::vector&lt;double, std::allocator&lt;double&gt; &gt;, std::allocator&lt;std::vector&lt;double, std::allocator&lt;double&gt; &gt; &gt; &gt;::pop_front (1,385,666 samples, 10.28%)</title><rect x="909.9" y="245" width="121.3" height="15.0" fill="rgb(199,199,59)" rx="2" ry="2" />
-<text  x="912.93" y="255.5" >std::deque&lt;std:..</text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (2,214,357 samples, 16.42%)</title><rect x="214.3" y="197" width="193.8" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="217.28" y="207.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (2,214,357 samples, 16.42%)</title><rect x="214.3" y="229" width="193.8" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="217.28" y="239.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>DDEint&lt;&amp; (5,055,886 samples, 37.50%)</title><rect x="467.5" y="245" width="442.4" height="15.0" fill="rgb(214,70,70)" rx="2" ry="2" />
-<text  x="470.46" y="255.5" >DDEint&lt;&amp;</text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (2,334,169 samples, 17.31%)</title><rect x="10.0" y="261" width="204.3" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="13.00" y="271.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>__intel_pmu_enable_all.isra.0 (44,022 samples, 0.33%)</title><rect x="1186.1" y="181" width="3.9" height="15.0" fill="rgb(238,105,105)" rx="2" ry="2" />
-<text  x="1189.15" y="191.5" ></text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (4,548,526 samples, 33.73%)</title><rect x="10.0" y="309" width="398.1" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="13.00" y="319.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>do_execveat_common.isra.0 (44,022 samples, 0.33%)</title><rect x="1186.1" y="277" width="3.9" height="15.0" fill="rgb(229,92,92)" rx="2" ry="2" />
-<text  x="1189.15" y="287.5" ></text>
-</g>
-<g >
-<title>gi_dde (5,055,886 samples, 37.50%)</title><rect x="467.5" y="229" width="442.4" height="15.0" fill="rgb(207,60,60)" rx="2" ry="2" />
-<text  x="470.46" y="239.5" >gi_dde</text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (4,548,526 samples, 33.73%)</title><rect x="10.0" y="325" width="398.1" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
-<text  x="13.00" y="335.5" >[ld-linux-x86-64.so.2]</text>
-</g>
-<g >
-<title>DDEint_dopri_5&lt;&amp; (5,055,886 samples, 37.50%)</title><rect x="467.5" y="261" width="442.4" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
-<text  x="470.46" y="271.5" >DDEint_dopri_5&lt;&amp;</text>
-</g>
-<g >
-<title>[unknown] (44,022 samples, 0.33%)</title><rect x="1186.1" y="341" width="3.9" height="15.0" fill="rgb(205,58,58)" rx="2" ry="2" />
-<text  x="1189.15" y="351.5" ></text>
-</g>
-<g >
-<title>perf_event_exec (44,022 samples, 0.33%)</title><rect x="1186.1" y="213" width="3.9" height="15.0" fill="rgb(214,71,71)" rx="2" ry="2" />
-<text  x="1189.15" y="223.5" ></text>
-</g>
-<g >
-<title>[ld-linux-x86-64.so.2] (4,548,526 samples, 33.73%)</title><rect x="10.0" y="277" width="398.1" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="277" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
 <text  x="13.00" y="287.5" >[ld-linux-x86-64.so.2]</text>
 </g>
 <g >
-<title>__x64_sys_openat (2,214,357 samples, 16.42%)</title><rect x="214.3" y="149" width="193.8" height="15.0" fill="rgb(251,125,125)" rx="2" ry="2" />
-<text  x="217.28" y="159.5" >__x64_sys_openat</text>
+<title>[unknown] (1,031,437 samples, 6.32%)</title><rect x="231.6" y="277" width="74.5" height="15.0" fill="rgb(205,58,58)" rx="2" ry="2" />
+<text  x="234.59" y="287.5" >[unknown]</text>
 </g>
 <g >
-<title>History&lt;double, double&gt;::at_time (1,623,264 samples, 12.04%)</title><rect x="598.3" y="213" width="142.0" height="15.0" fill="rgb(209,209,62)" rx="2" ry="2" />
-<text  x="601.28" y="223.5" >History&lt;double, do..</text>
+<title>begin_new_exec (56,845 samples, 0.35%)</title><rect x="1185.9" y="165" width="4.1" height="15.0" fill="rgb(244,114,114)" rx="2" ry="2" />
+<text  x="1188.89" y="175.5" ></text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="261" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="271.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>DDEint&lt;&amp; (10,295,606 samples, 63.05%)</title><rect x="306.1" y="181" width="744.0" height="15.0" fill="rgb(214,70,70)" rx="2" ry="2" />
+<text  x="309.12" y="191.5" >DDEint&lt;&amp;</text>
+</g>
+<g >
+<title>main (10,295,606 samples, 63.05%)</title><rect x="306.1" y="229" width="744.0" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="309.12" y="239.5" >main</text>
+</g>
+<g >
+<title>native_write_msr (56,845 samples, 0.35%)</title><rect x="1185.9" y="101" width="4.1" height="15.0" fill="rgb(236,102,102)" rx="2" ry="2" />
+<text  x="1188.89" y="111.5" ></text>
+</g>
+<g >
+<title>perf_ctx_enable (56,845 samples, 0.35%)</title><rect x="1185.9" y="133" width="4.1" height="15.0" fill="rgb(225,86,86)" rx="2" ry="2" />
+<text  x="1188.89" y="143.5" ></text>
+</g>
+<g >
+<title>do_syscall_64 (3,066,483 samples, 18.78%)</title><rect x="10.0" y="101" width="221.6" height="15.0" fill="rgb(204,57,57)" rx="2" ry="2" />
+<text  x="13.00" y="111.5" >do_syscall_64</text>
+</g>
+<g >
+<title>RingBuffer&lt;std::array&lt;double, 5ul&gt; &gt;::operator[] (2,074,644 samples, 12.70%)</title><rect x="900.2" y="117" width="149.9" height="15.0" fill="rgb(199,199,58)" rx="2" ry="2" />
+<text  x="903.19" y="127.5" >RingBuffer&lt;std::arr..</text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="165" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="175.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>CompoundRingBuffer&lt;std::array&lt;double, 5ul&gt;, double&gt;::bisect (5,914,259 samples, 36.22%)</title><rect x="306.1" y="133" width="427.4" height="15.0" fill="rgb(208,208,62)" rx="2" ry="2" />
+<text  x="309.12" y="143.5" >CompoundRingBuffer&lt;std::array&lt;double, 5ul&gt;, double&gt;::bisect</text>
+</g>
+<g >
+<title>__intel_pmu_enable_all.isra.0 (56,845 samples, 0.35%)</title><rect x="1185.9" y="117" width="4.1" height="15.0" fill="rgb(238,105,105)" rx="2" ry="2" />
+<text  x="1188.89" y="127.5" ></text>
+</g>
+<g >
+<title>RingBuffer&lt;double&gt;::operator[] (2,828,655 samples, 17.32%)</title><rect x="529.1" y="117" width="204.4" height="15.0" fill="rgb(228,228,69)" rx="2" ry="2" />
+<text  x="532.10" y="127.5" >RingBuffer&lt;double&gt;::operat..</text>
+</g>
+<g >
+<title>folios_put_refs (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="117" width="135.8" height="15.0" fill="rgb(254,129,129)" rx="2" ry="2" />
+<text  x="1053.11" y="127.5" >folios_put_refs</text>
+</g>
+<g >
+<title>__x64_sys_execve (56,845 samples, 0.35%)</title><rect x="1185.9" y="229" width="4.1" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
+<text  x="1188.89" y="239.5" ></text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="181" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="191.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>do_execveat_common.isra.0 (1,031,437 samples, 6.32%)</title><rect x="231.6" y="213" width="74.5" height="15.0" fill="rgb(229,92,92)" rx="2" ry="2" />
+<text  x="234.59" y="223.5" >do_execv..</text>
+</g>
+<g >
+<title>do_execveat_common.isra.0 (56,845 samples, 0.35%)</title><rect x="1185.9" y="213" width="4.1" height="15.0" fill="rgb(229,92,92)" rx="2" ry="2" />
+<text  x="1188.89" y="223.5" ></text>
+</g>
+<g >
+<title>std::vector&lt;double, std::allocator&lt;double&gt; &gt;::at (2,306,703 samples, 14.13%)</title><rect x="733.5" y="101" width="166.7" height="15.0" fill="rgb(191,191,56)" rx="2" ry="2" />
+<text  x="736.50" y="111.5" >std::vector&lt;double, s..</text>
+</g>
+<g >
+<title>perf_event_exec (56,845 samples, 0.35%)</title><rect x="1185.9" y="149" width="4.1" height="15.0" fill="rgb(214,71,71)" rx="2" ry="2" />
+<text  x="1188.89" y="159.5" ></text>
+</g>
+<g >
+<title>uncharge_folio (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="85" width="135.8" height="15.0" fill="rgb(219,77,77)" rx="2" ry="2" />
+<text  x="1053.11" y="95.5" >uncharge_folio</text>
+</g>
+<g >
+<title>RingBuffer&lt;double&gt;::operator[] (2,306,703 samples, 14.13%)</title><rect x="733.5" y="117" width="166.7" height="15.0" fill="rgb(228,228,69)" rx="2" ry="2" />
+<text  x="736.50" y="127.5" >RingBuffer&lt;double&gt;::o..</text>
+</g>
+<g >
+<title>do_syscall_64 (56,845 samples, 0.35%)</title><rect x="1185.9" y="245" width="4.1" height="15.0" fill="rgb(204,57,57)" rx="2" ry="2" />
+<text  x="1188.89" y="255.5" ></text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="213" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="223.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>[libc.so.6] (10,295,606 samples, 63.05%)</title><rect x="306.1" y="245" width="744.0" height="15.0" fill="rgb(220,79,79)" rx="2" ry="2" />
+<text  x="309.12" y="255.5" >[libc.so.6]</text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="149" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="159.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>elf_load (1,031,437 samples, 6.32%)</title><rect x="231.6" y="165" width="74.5" height="15.0" fill="rgb(253,127,127)" rx="2" ry="2" />
+<text  x="234.59" y="175.5" >elf_load</text>
+</g>
+<g >
+<title>load_elf_binary (1,031,437 samples, 6.32%)</title><rect x="231.6" y="181" width="74.5" height="15.0" fill="rgb(220,79,79)" rx="2" ry="2" />
+<text  x="234.59" y="191.5" >load_elf..</text>
+</g>
+<g >
+<title>__libc_start_main (10,295,606 samples, 63.05%)</title><rect x="306.1" y="261" width="744.0" height="15.0" fill="rgb(234,99,99)" rx="2" ry="2" />
+<text  x="309.12" y="271.5" >__libc_start_main</text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="197" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="207.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (56,845 samples, 0.35%)</title><rect x="1185.9" y="261" width="4.1" height="15.0" fill="rgb(215,72,72)" rx="2" ry="2" />
+<text  x="1188.89" y="271.5" ></text>
+</g>
+<g >
+<title>do_mmap (1,031,437 samples, 6.32%)</title><rect x="231.6" y="133" width="74.5" height="15.0" fill="rgb(225,87,87)" rx="2" ry="2" />
+<text  x="234.59" y="143.5" >do_mmap</text>
+</g>
+<g >
+<title>History&lt;double, double&gt;::at_time (10,295,606 samples, 63.05%)</title><rect x="306.1" y="149" width="744.0" height="15.0" fill="rgb(209,209,62)" rx="2" ry="2" />
+<text  x="309.12" y="159.5" >History&lt;double, double&gt;::at_time</text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="229" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="239.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>do_vmi_munmap (1,031,437 samples, 6.32%)</title><rect x="231.6" y="101" width="74.5" height="15.0" fill="rgb(253,127,127)" rx="2" ry="2" />
+<text  x="234.59" y="111.5" >do_vmi_m..</text>
+</g>
+<g >
+<title>DDEint_dopri_5&lt;&amp; (10,295,606 samples, 63.05%)</title><rect x="306.1" y="197" width="744.0" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
+<text  x="309.12" y="207.5" >DDEint_dopri_5&lt;&amp;</text>
+</g>
+<g >
+<title>do_mmap (3,066,483 samples, 18.78%)</title><rect x="10.0" y="69" width="221.6" height="15.0" fill="rgb(225,87,87)" rx="2" ry="2" />
+<text  x="13.00" y="79.5" >do_mmap</text>
+</g>
+<g >
+<title>do_syscall_64 (1,031,437 samples, 6.32%)</title><rect x="231.6" y="245" width="74.5" height="15.0" fill="rgb(204,57,57)" rx="2" ry="2" />
+<text  x="234.59" y="255.5" >do_sysca..</text>
+</g>
+<g >
+<title>perf-exec (56,845 samples, 0.35%)</title><rect x="1185.9" y="293" width="4.1" height="15.0" fill="rgb(229,93,93)" rx="2" ry="2" />
+<text  x="1188.89" y="303.5" ></text>
+</g>
+<g >
+<title>bprm_execve (1,031,437 samples, 6.32%)</title><rect x="231.6" y="197" width="74.5" height="15.0" fill="rgb(214,71,71)" rx="2" ry="2" />
+<text  x="234.59" y="207.5" >bprm_exe..</text>
+</g>
+<g >
+<title>gi_model (16,272,615 samples, 99.65%)</title><rect x="10.0" y="293" width="1175.9" height="15.0" fill="rgb(237,104,104)" rx="2" ry="2" />
+<text  x="13.00" y="303.5" >gi_model</text>
+</g>
+<g >
+<title>load_elf_binary (56,845 samples, 0.35%)</title><rect x="1185.9" y="181" width="4.1" height="15.0" fill="rgb(220,79,79)" rx="2" ry="2" />
+<text  x="1188.89" y="191.5" ></text>
+</g>
+<g >
+<title>__mmput (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="197" width="135.8" height="15.0" fill="rgb(248,120,120)" rx="2" ry="2" />
+<text  x="1053.11" y="207.5" >__mmput</text>
+</g>
+<g >
+<title>__mem_cgroup_uncharge_folios (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="101" width="135.8" height="15.0" fill="rgb(223,84,84)" rx="2" ry="2" />
+<text  x="1053.11" y="111.5" >__mem_cgroup_unch..</text>
+</g>
+<g >
+<title>can_modify_mm (1,031,437 samples, 6.32%)</title><rect x="231.6" y="85" width="74.5" height="15.0" fill="rgb(211,66,66)" rx="2" ry="2" />
+<text  x="234.59" y="95.5" >can_modi..</text>
+</g>
+<g >
+<title>History&lt;double, double&gt;::interpolate (4,381,347 samples, 26.83%)</title><rect x="733.5" y="133" width="316.6" height="15.0" fill="rgb(187,187,54)" rx="2" ry="2" />
+<text  x="736.50" y="143.5" >History&lt;double, double&gt;::interpolate</text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (3,066,483 samples, 18.78%)</title><rect x="10.0" y="117" width="221.6" height="15.0" fill="rgb(215,72,72)" rx="2" ry="2" />
+<text  x="13.00" y="127.5" >entry_SYSCALL_64_after_hwframe</text>
+</g>
+<g >
+<title>exit_mmap (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="181" width="135.8" height="15.0" fill="rgb(234,99,99)" rx="2" ry="2" />
+<text  x="1053.11" y="191.5" >exit_mmap</text>
+</g>
+<g >
+<title>mmap_region (1,031,437 samples, 6.32%)</title><rect x="231.6" y="117" width="74.5" height="15.0" fill="rgb(228,92,92)" rx="2" ry="2" />
+<text  x="234.59" y="127.5" >mmap_reg..</text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="133" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="143.5" >[ld-linux-x86-64.so.2]</text>
+</g>
+<g >
+<title>vm_mmap_pgoff (1,031,437 samples, 6.32%)</title><rect x="231.6" y="149" width="74.5" height="15.0" fill="rgb(235,102,102)" rx="2" ry="2" />
+<text  x="234.59" y="159.5" >vm_mmap_..</text>
+</g>
+<g >
+<title>mmap_region (3,066,483 samples, 18.78%)</title><rect x="10.0" y="53" width="221.6" height="15.0" fill="rgb(228,92,92)" rx="2" ry="2" />
+<text  x="13.00" y="63.5" >mmap_region</text>
+</g>
+<g >
+<title>do_group_exit (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="229" width="135.8" height="15.0" fill="rgb(216,73,73)" rx="2" ry="2" />
+<text  x="1053.11" y="239.5" >do_group_exit</text>
+</g>
+<g >
+<title>DDEint_dopri_5&lt;&amp; (10,295,606 samples, 63.05%)</title><rect x="306.1" y="213" width="744.0" height="15.0" fill="rgb(246,117,117)" rx="2" ry="2" />
+<text  x="309.12" y="223.5" >DDEint_dopri_5&lt;&amp;</text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (1,031,437 samples, 6.32%)</title><rect x="231.6" y="261" width="74.5" height="15.0" fill="rgb(215,72,72)" rx="2" ry="2" />
+<text  x="234.59" y="271.5" >entry_SY..</text>
+</g>
+<g >
+<title>__x64_sys_exit_group (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="245" width="135.8" height="15.0" fill="rgb(210,64,64)" rx="2" ry="2" />
+<text  x="1053.11" y="255.5" >__x64_sys_exit_gr..</text>
+</g>
+<g >
+<title>entry_SYSCALL_64_after_hwframe (1,879,089 samples, 11.51%)</title><rect x="1050.1" y="277" width="135.8" height="15.0" fill="rgb(215,72,72)" rx="2" ry="2" />
+<text  x="1053.11" y="287.5" >entry_SYSCALL_64_..</text>
+</g>
+<g >
+<title>_start (10,295,606 samples, 63.05%)</title><rect x="306.1" y="277" width="744.0" height="15.0" fill="rgb(244,114,114)" rx="2" ry="2" />
+<text  x="309.12" y="287.5" >_start</text>
+</g>
+<g >
+<title>bprm_execve (56,845 samples, 0.35%)</title><rect x="1185.9" y="197" width="4.1" height="15.0" fill="rgb(214,71,71)" rx="2" ry="2" />
+<text  x="1188.89" y="207.5" ></text>
+</g>
+<g >
+<title>perf_event_mmap (3,066,483 samples, 18.78%)</title><rect x="10.0" y="37" width="221.6" height="15.0" fill="rgb(226,89,89)" rx="2" ry="2" />
+<text  x="13.00" y="47.5" >perf_event_mmap</text>
+</g>
+<g >
+<title>[ld-linux-x86-64.so.2] (3,066,483 samples, 18.78%)</title><rect x="10.0" y="245" width="221.6" height="15.0" fill="rgb(242,112,112)" rx="2" ry="2" />
+<text  x="13.00" y="255.5" >[ld-linux-x86-64.so.2]</text>
 </g>
 </g>
 </svg>
