@@ -59,6 +59,10 @@ compile_and_test() {
     perf record -o $PERF_DIR/perf.data -g ./$BUILD_DIR/$output_file
     if [ $? -eq 0 ]; then
         echo "Perf record completed successfully"
+        cd $PERF_DIR
+        perf report > ${output_file}_perf_report.txt
+        echo "Perf report saved to $PERF_DIR/${output_file}_perf_report.txt"
+        cd ..
     else
         echo "Perf record failed"
     fi
@@ -77,5 +81,5 @@ compile_and_test "$GI_SRC" "$GI_OUTPUT"
 
 # clean up
 echo "Cleaning up"
-rm -rf $BUILD_DIR $PERF_DIR
+rm -rf $BUILD_DIR 
 
