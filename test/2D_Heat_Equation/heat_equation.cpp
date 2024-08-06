@@ -95,43 +95,39 @@ void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vecto
 }
 
 
-void write_to_csv(const std::vector<std::vector<double>>& data, const std::string& filename) {
-    // Create a CSV file
+void write_to_csv(const std::vector<double>& time ,const std::vector<double>& data, const std::string& filename) {
     std::ofstream file(filename);
 
-    // Check if file is open
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;
-        return;
+        return; 
+
     }
 
-    // Write header
-    file << "time";
-    for (size_t i = 0; i < data[0].size() - 1; ++i) {
-        file << ",y" << i + 1;
+    file << "time,||u||_rms" << std::endl;
+    for (size_t i = 0; i < time.size(); ++i) {
+        file << time[i] << "," << data[i] << std::endl;
     }
+
+    
+    
     file << std::endl;
 
-    // Write data
-    for (const auto& row : data) {
-        for (size_t i = 0; i < row.size(); ++i) {
-            file << row[i];
-            if (i < row.size() - 1) {
-                file << ",";
-            }
-        }
-        file << std::endl;
-    }
-
     file.close();
+}
+
+double calculate_rms(const std::vector<double>& values) {
+    double sum_of_squares = 0.0;
+    for (double value : values) {
+        sum_of_squares += value * value;
+    }
+    double mean = sum_of_squares / values.size();
+    return sqrt(mean);
 }
 
 //update DDE library so that it does  not return a vector of all the snapshots but only the last snapshot of the time it finished. Outside of the ring buffer we are not saving any other snapshots.
 //optimize m_output array. check to see where its being updated. 
 // change test case to take snapshots 1/20th for a 1sec. basically call run 20 times and get the last snapshot of each run
-//check the DDE library to see if its not saving all the history in the ringbuffer. we not storing any data in the ringbuffer. 
-//parameters for ringbuffer should basically be zero in this test case.
-
 
 int main() {
     // Dummy prehistory function (returns 0.0 for all inputs)
@@ -153,8 +149,9 @@ int main() {
     // Initialize the state
     initialize_y(nx_loc, ny_loc, dx, dy, init_cond_laplacian);
     
-    std::vector<std::vector<double>> output;
-    std::vector<std::vector<double>> transformed_output;
+    std::vector<double> output, time;
+    std::vector<std::vector<double>> snapshots;
+    snapshots.reserve(20);
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -169,9 +166,13 @@ int main() {
         if (step == 0) {
             // Initialize the integrator at the first step
             output = test_laplacian.initialize(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+            snapshots.push_back(output);
+            time.push_back(test_laplacian.get_t());
         } else {
             // Continue the integration for subsequent steps
            output = test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
+           snapshots.push_back(output);
+           time.push_back(test_laplacian.get_t());
         }
     }
 
@@ -180,10 +181,27 @@ int main() {
     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
     std::cout << "Execution time: " << execution_time << " milliseconds\n";
+    //output.insert(output.begin(), tf);
+    while (!output.empty()) {
+        output.pop_back();
+    }
+    // Calculate the rms of each snapshot
+    int col_width = 25; 
+    std::cout << std::left;
+    std::cout << std::setw(col_width) << "time" << std::setw(col_width) << "||u||_rms " << std::endl;
+    for (size_t i = 0; i < snapshots.size(); ++i) {
+        double rms = calculate_rms(snapshots[i]);
+        output.push_back(rms);
+        std::cout << std::scientific;
+        std::cout << std::setprecision(16);
+        std::cout << std::setw(col_width) << time[i] << std::setw(col_width) << rms << std::endl;
 
-      // Print the output
-   
-    write_to_csv(output, "data/heat_equation_output.csv");
+        
+    }
+     
+
+    
+    write_to_csv(time, output, "data/heat_equation_output.csv");
 
 
     return 0;
