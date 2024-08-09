@@ -95,19 +95,49 @@ void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vecto
 }
 
 
+void write_to_csv(const std::vector<double>& time ,const std::vector<double>& data, const std::string& filename) {
+    std::ofstream file(filename);
 
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return; 
+
+    }
+
+    file << "time,||u||_rms" << std::endl;
+    for (size_t i = 0; i < time.size(); ++i) {
+        file << time[i] << "," << data[i] << std::endl;
+    }
+
+    
+    
+    file << std::endl;
+
+    file.close();
+}
+
+double calculate_rms(const std::vector<double>& values) {
+    double sum_of_squares = 0.0;
+    for (double value : values) {
+        sum_of_squares += value * value;
+    }
+    double mean = sum_of_squares / values.size();
+    return sqrt(mean);
+}
 
 //update DDE library so that it does  not return a vector of all the snapshots but only the last snapshot of the time it finished. Outside of the ring buffer we are not saving any other snapshots.
 //optimize m_output array. check to see where its being updated. 
 // change test case to take snapshots 1/20th for a 1sec. basically call run 20 times and get the last snapshot of each run
+
 //check the DDE library to see if its not saving all the history in the ringbuffer. we not storing any data in the ringbuffer. 
 //parameters for ringbuffer should basically be zero in this test case.
 
 int main() {
+    // Dummy prehistory function (returns 0.0 for all inputs)
     double (*dummy_prehist)(double) = [](double) { return 0.0; };
     std::vector<std::function<double(double)>> no_prehist(100, dummy_prehist);
 
-
+    // Initial conditions for the Laplacian
     std::vector<double> init_cond_laplacian;
     size_t nx_loc = 32;
     size_t ny_loc = 32;
@@ -116,24 +146,38 @@ int main() {
     int num_eq = nx_loc * ny_loc;
 
 
-    std::vector<double> hist_init_cond(num_eq, 0.0); //initial condition here should be a vector of zeros because there is no history.  
-    DDEint_dopri_5<laplacian> test_laplacian(num_eq, hist_init_cond, no_prehist); //initial condition here should be a vector of zeros because there is no history.
+    // Initialize the initial condition vector
+    std::vector<double> hist_init_cond(num_eq, 0.0);
+    DDEint_dopri_5<laplacian> test_laplacian(num_eq, hist_init_cond, no_prehist);
 
-    initialize_y(nx_loc, ny_loc, dx, dy ,init_cond_laplacian); //nx_loc, ny_loc, dx, dy, y
+    // Initialize the state
+    initialize_y(nx_loc, ny_loc, dx, dy, init_cond_laplacian);
+    
+    std::vector<double> output, time;
+    std::vector<std::vector<double>> snapshots;
+    snapshots.reserve(20);
 
-    auto start_time = std::chrono::high_resolution_clock::now();       //to= 0, tf =1, init_cond, init_h, h_min, max_steps, abs, rel, verbose
+    auto start_time = std::chrono::high_resolution_clock::now();
 
-    double dt = 0.05; // Time step of 1/20th of a second
+    double dt = 0.05; // Time step
     double tf = 1.0; // Final time
     int num_steps = tf / dt; // Number of time steps
-    std::vector<std::vector<double>> snapshots; 
-    std::vector<std::vector<double>> laplacian_out;
+
     for (int step = 0; step < num_steps; ++step) {
         double t_start = step * dt;
         double t_end = (step + 1) * dt;
-        snapshots = test_laplacian.run(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
-        // laplacian_out[step] = snapshots[0]; // Store the last snapshot
-        // init_cond_laplacian = snapshots[0]; // Update the initial condition for the next time step
+
+        if (step == 0) {
+            // Initialize the integrator at the first step
+            output = test_laplacian.run(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+            snapshots.push_back(output);
+            time.push_back(test_laplacian.get_t());
+        } else {
+            // Continue the integration for subsequent steps
+           output = test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
+           snapshots.push_back(output);
+           time.push_back(test_laplacian.get_t());
+        }
     }
 
 
@@ -141,46 +185,27 @@ int main() {
     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
 
     std::cout << "Execution time: " << execution_time << " milliseconds\n";
+    //output.insert(output.begin(), tf);
+    while (!output.empty()) {
+        output.pop_back();
+    }
+    // Calculate the rms of each snapshot
+    int col_width = 25; 
+    std::cout << std::left;
+    std::cout << std::setw(col_width) << "time" << std::setw(col_width) << "||u||_rms " << std::endl;
+    for (size_t i = 0; i < snapshots.size(); ++i) {
+        double rms = calculate_rms(snapshots[i]);
+        output.push_back(rms);
+        std::cout << std::scientific;
+        std::cout << std::setprecision(16);
+        std::cout << std::setw(col_width) << time[i] << std::setw(col_width) << rms << std::endl;
 
-    // Write laplacian_out to a CSV file
-    // std::ofstream outfile("data/laplacian_out.csv");
-    // if (outfile.is_open()) {
-    //     // Set the precision for writing the values
-    //     outfile << std::fixed << std::setprecision(6);
+        
+    }
+     
 
-    //     // Write the header
-    //     outfile << "x,y,u\n";
-
-    //     // Write the data to the file
-    //     for (size_t j = 0; j < ny_loc; j++) {
-    //         for (size_t i = 0; i < nx_loc; i++) {
-    //             size_t idx = i + j * nx_loc;
-    //             double x = i * dx;
-    //             double y = j * dy;
-    //             outfile << x << "," << y << "," << laplacian_out.back()[idx] << "\n";
-    //         }
-    //     }
-
-    //     outfile.close();
-    //     std::cout << "laplacian_out.csv created successfully.\n";
-    // } else {
-    //     std::cerr << "Unable to create laplacian_out.csv\n";
-    // }
-
+    
+    write_to_csv(time, output, "data/heat_equation_output.csv");
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
