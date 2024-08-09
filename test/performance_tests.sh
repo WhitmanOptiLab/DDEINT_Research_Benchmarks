@@ -17,6 +17,9 @@ CV_OUTPUT="cv_model"
 GI_SRC="Glucose_Insulin_Model/gi_functions.cpp Glucose_Insulin_Model/gi_model.cpp"
 GI_OUTPUT="gi_model"
 
+HE_SRC="2D_Heat_Equation/heat_equation.cpp"
+HE_OUTPUT="heat_equation"
+
 # create necessary directories
 BUILD_DIR="build"
 PERF_DIR="perf_output"
@@ -72,13 +75,16 @@ compile_and_test() {
 }
 
 # Breast Cancer Model
-compile_and_test "$BC_SRC" "$BC_OUTPUT"
+# compile_and_test "$BC_SRC" "$BC_OUTPUT"
 
-# Cardiovascular Model
-compile_and_test "$CV_SRC" "$CV_OUTPUT"
+# # Cardiovascular Model
+# compile_and_test "$CV_SRC" "$CV_OUTPUT"
 
-# Glucose Insulin Model
-compile_and_test "$GI_SRC" "$GI_OUTPUT"
+# # Glucose Insulin Model
+# compile_and_test "$GI_SRC" "$GI_OUTPUT"
+
+# 2D Heat Equation
+compile_and_test "$HE_SRC" "$HE_OUTPUT"
 
 # clean up
 echo "Cleaning up"
