@@ -129,6 +129,9 @@ double calculate_rms(const std::vector<double>& values) {
 //optimize m_output array. check to see where its being updated. 
 // change test case to take snapshots 1/20th for a 1sec. basically call run 20 times and get the last snapshot of each run
 
+//check the DDE library to see if its not saving all the history in the ringbuffer. we not storing any data in the ringbuffer. 
+//parameters for ringbuffer should basically be zero in this test case.
+
 int main() {
     // Dummy prehistory function (returns 0.0 for all inputs)
     double (*dummy_prehist)(double) = [](double) { return 0.0; };
@@ -141,6 +144,7 @@ int main() {
     const double dx = 1.0 / (nx_loc - 1);
     const double dy = 1.0 / (ny_loc - 1);
     int num_eq = nx_loc * ny_loc;
+
 
     // Initialize the initial condition vector
     std::vector<double> hist_init_cond(num_eq, 0.0);
@@ -203,19 +207,5 @@ int main() {
     
     write_to_csv(time, output, "data/heat_equation_output.csv");
 
-
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
