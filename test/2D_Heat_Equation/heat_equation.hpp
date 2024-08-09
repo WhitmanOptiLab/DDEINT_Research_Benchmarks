@@ -4,24 +4,9 @@
 #include <vector>
 #include <cmath>
 #include "../../DDEINT/dopri/ddeint_dopri_5.hpp"  
+#include "laplacian.hpp"
 
 
-
-
-// Forward declaration of the History class
-template <typename S, typename T> class History;
-
-// // Struct to hold problem parameters
-// struct LaplacianParams {
-//     double xl = 0.0;
-//     double xu = 1.0;
-//     double yl = 0.0;
-//     double yu = 1.0;
-//     double kx = 1.0; 
-//     double ky = 1.0; 
-//     size_t nx_loc = 32; 
-//     size_t ny_loc = 32; 
-// };
 
 // Function declarations
 void laplacian(size_t n, double t, std::vector<double>& y, std::vector<double>& dydt, History<double, double>& hist);
