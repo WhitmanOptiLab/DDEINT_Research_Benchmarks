@@ -165,7 +165,7 @@ int main() {
 
         if (step == 0) {
             // Initialize the integrator at the first step
-            output = test_laplacian.initialize(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+            output = test_laplacian.run(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
             snapshots.push_back(output);
             time.push_back(test_laplacian.get_t());
         } else {

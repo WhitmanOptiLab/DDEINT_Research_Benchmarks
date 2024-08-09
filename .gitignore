@@ -36,3 +36,6 @@ bench
 .venv/
 
 ./2d_Heat_Equation/.ipynb_checkpoints
+./2d_Heat_Equation/build/*
+./2d_Heat_Equation/data/*
+
