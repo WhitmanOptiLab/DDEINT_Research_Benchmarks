@@ -8,13 +8,13 @@ CFLAGS="-std=c++17 -g"
 INCLUDES="-IDDEINT"
 
 # the source files
-BC_SRC="Breast_Cancer_Model/bc_functions.cpp Breast_Cancer_Model/bc_model.cpp"
+BC_SRC="Breast_Cancer_Model/bc_model_fi.cpp"
 BC_OUTPUT="bc_model"
 
-CV_SRC="Cardiovascular_Model/cv_functions.cpp Cardiovascular_Model/cv_model.cpp"
+CV_SRC="Cardiovascular_Model/cv_model_fi.cpp"
 CV_OUTPUT="cv_model"
 
-GI_SRC="Glucose_Insulin_Model/gi_functions.cpp Glucose_Insulin_Model/gi_model.cpp"
+GI_SRC="Glucose_Insulin_Model/gi_model_fi.cpp"
 GI_OUTPUT="gi_model"
 
 HE_SRC="2D_Heat_Equation/heat_equation.cpp"
@@ -34,7 +34,8 @@ if [ "$(uname)" != "Linux" ]; then
 fi
 
 # Function to generate FlameGraph
-generate_flamegraph() {
+generate_flamegraph() 
+{
     local output_file=$1
     echo "Generating Flame Graph for $output_file"
     if [ -f $PERF_DIR/perf.data ]; then
@@ -52,7 +53,8 @@ generate_flamegraph() {
 }
 
 # compile and run performance test for each model
-compile_and_test() {
+compile_and_test() 
+{
     local src_files=$1
     local output_file=$2
     echo "Compiling $output_file"
@@ -75,16 +77,16 @@ compile_and_test() {
 }
 
 # Breast Cancer Model
-# compile_and_test "$BC_SRC" "$BC_OUTPUT"
+compile_and_test "$BC_SRC" "$BC_OUTPUT"
 
-# # Cardiovascular Model
-# compile_and_test "$CV_SRC" "$CV_OUTPUT"
+# Cardiovascular Model
+compile_and_test "$CV_SRC" "$CV_OUTPUT"
 
-# # Glucose Insulin Model
-# compile_and_test "$GI_SRC" "$GI_OUTPUT"
+# Glucose Insulin Model
+compile_and_test "$GI_SRC" "$GI_OUTPUT"
 
 # 2D Heat Equation
-compile_and_test "$HE_SRC" "$HE_OUTPUT"
+# compile_and_test "$HE_SRC" "$HE_OUTPUT"
 
 # clean up
 echo "Cleaning up"
