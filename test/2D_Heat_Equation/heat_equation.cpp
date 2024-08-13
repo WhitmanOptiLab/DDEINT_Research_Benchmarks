@@ -5,12 +5,12 @@
 
 #include <fstream>
 // 2d heat eqaution
-void laplacian(size_t n, double t, std::vector<double> &y, std::vector<double> &dydt, History<double, double>& hist) {
+void laplacian(double t, std::vector<double> &y, std::vector<double> &dydt, History<double, double>& hist) {
     
     // Check for size mismatch
-    if (n != y.size() || n != dydt.size()) {
-        throw std::runtime_error("Size mismatch in laplacian function");
-    }
+    // if (n != y.size() || n != dydt.size()) {
+    //     throw std::runtime_error("Size mismatch in laplacian function");
+    // }
     //Boundary conditions
     double xl = 0.0;
     double xu = 1.0;
@@ -125,13 +125,6 @@ double calculate_rms(const std::vector<double>& values) {
     return sqrt(mean);
 }
 
-//update DDE library so that it does  not return a vector of all the snapshots but only the last snapshot of the time it finished. Outside of the ring buffer we are not saving any other snapshots.
-//optimize m_output array. check to see where its being updated. 
-// change test case to take snapshots 1/20th for a 1sec. basically call run 20 times and get the last snapshot of each run
-
-//check the DDE library to see if its not saving all the history in the ringbuffer. we not storing any data in the ringbuffer. 
-//parameters for ringbuffer should basically be zero in this test case.
-
 int main() {
     // Dummy prehistory function (returns 0.0 for all inputs)
     double (*dummy_prehist)(double) = [](double) { return 0.0; };
@@ -148,64 +141,75 @@ int main() {
 
     // Initialize the initial condition vector
     std::vector<double> hist_init_cond(num_eq, 0.0);
-    DDEint_dopri_5<laplacian> test_laplacian(num_eq, hist_init_cond, no_prehist);
+    DoPri_5<laplacian> test_laplacian(num_eq, hist_init_cond, no_prehist);
 
     // Initialize the state
     initialize_y(nx_loc, ny_loc, dx, dy, init_cond_laplacian);
     
-    std::vector<double> output, time;
+    std::vector<double> output;
     std::vector<std::vector<double>> snapshots;
     snapshots.reserve(20);
 
     auto start_time = std::chrono::high_resolution_clock::now();
-
-    double dt = 0.05; // Time step
-    double tf = 1.0; // Final time
-    int num_steps = tf / dt; // Number of time steps
-
-    for (int step = 0; step < num_steps; ++step) {
-        double t_start = step * dt;
-        double t_end = (step + 1) * dt;
-
-        if (step == 0) {
-            // Initialize the integrator at the first step
-            output = test_laplacian.run(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
-            snapshots.push_back(output);
-            time.push_back(test_laplacian.get_t());
-        } else {
-            // Continue the integration for subsequent steps
-           output = test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
-           snapshots.push_back(output);
-           time.push_back(test_laplacian.get_t());
-        }
-    }
-
-
+   
+    // Run the integration        step, t_initial, dt, init_conds, initial_h, min_h, max_steps, absolute_tolerance, relative_tolerance, verbose
+    //output = test_laplacian.solve(20, 0.0, 0.05, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+    output = test_laplacian.run(0.0, 1.0, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+   
     auto end_time = std::chrono::high_resolution_clock::now();
     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
-
     std::cout << "Execution time: " << execution_time << " milliseconds\n";
-    //output.insert(output.begin(), tf);
-    while (!output.empty()) {
-        output.pop_back();
-    }
-    // Calculate the rms of each snapshot
-    int col_width = 25; 
-    std::cout << std::left;
-    std::cout << std::setw(col_width) << "time" << std::setw(col_width) << "||u||_rms " << std::endl;
-    for (size_t i = 0; i < snapshots.size(); ++i) {
-        double rms = calculate_rms(snapshots[i]);
-        output.push_back(rms);
-        std::cout << std::scientific;
-        std::cout << std::setprecision(16);
-        std::cout << std::setw(col_width) << time[i] << std::setw(col_width) << rms << std::endl;
+
+
+return 0;
+}
+    // double dt = 0.05; // Time step
+    // double tf = 1.0; // Final time
+    // int num_steps = tf / dt; // Number of time steps
+
+//     for (int step = 0; step < num_steps; ++step) {
+//         double t_start = step * dt;
+//         double t_end = (step + 1) * dt;
+
+//         if (step == 0) {
+//             // Initialize the integrator at the first step
+//             output = test_laplacian.run(t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+//             snapshots.push_back(output);
+//             time.push_back(test_laplacian.get_t());
+//         } else {
+//             // Continue the integration for subsequent steps
+//            output = test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
+//            snapshots.push_back(output);
+//            time.push_back(test_laplacian.get_t());
+//         }
+//     }
+
+
+//     auto end_time = std::chrono::high_resolution_clock::now();
+//     double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
+
+//     std::cout << "Execution time: " << execution_time << " milliseconds\n";
+//     //output.insert(output.begin(), tf);
+//     while (!output.empty()) {
+//         output.pop_back();
+//     }
+//     // Calculate the rms of each snapshot
+//     int col_width = 25; 
+//     std::cout << std::left;
+//     std::cout << std::setw(col_width) << "time" << std::setw(col_width) << "||u||_rms " << std::endl;
+//     for (size_t i = 0; i < snapshots.size(); ++i) {
+//         double rms = calculate_rms(snapshots[i]);
+//         output.push_back(rms);
+//         std::cout << std::scientific;
+//         std::cout << std::setprecision(16);
+//         std::cout << std::setw(col_width) << time[i] << std::setw(col_width) << rms << std::endl;
 
         
-    }
+//     }
      
 
     
-    write_to_csv(time, output, "data/heat_equation_output.csv");
+//     write_to_csv(time, output, "data/heat_equation_output.csv");
 
-    return 0;
-}
+//     return 0;
+// }
