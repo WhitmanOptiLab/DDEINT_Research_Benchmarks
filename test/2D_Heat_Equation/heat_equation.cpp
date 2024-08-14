@@ -174,7 +174,7 @@ int main() {
             time.push_back(test_laplacian.get_t());
         } else {
             // Continue the integration for subsequent steps
-           output = test_laplacian.continue_integration(t_end, 0.0005, 50000, 1e-10, 1e-5, false);
+           output = test_laplacian.continue_integration(t_end, 50000,  false);
            snapshots.push_back(output);
            time.push_back(test_laplacian.get_t());
         }
