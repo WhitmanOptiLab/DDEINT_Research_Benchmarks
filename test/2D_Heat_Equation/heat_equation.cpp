@@ -96,16 +96,6 @@ void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vecto
 
 
 
-// should this be a member function of DDEint_dopri_5?
-void log_step(double time, const std::vector<double>& state, std::string filename) {
-    std::ofstream file(filename, std::ios::app);
-    file << time << ",";
-    for (double val : state) {
-        file << val << ",";
-    }
-    std::endl(file);
-}
-
 
 double calculate_rms(const std::vector<double>& values) {
     double sum_of_squares = 0.0;
@@ -147,9 +137,9 @@ int main() {
     double t_start = 0.0;
     double t_end = 1.0;
 
-     //output = test_laplacian.run(20,t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+     test_laplacian.run(10 ,t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
 
-     test_laplacian.run(20, t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, log_step, false);
+     //test_laplacian.run(0, t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, nullptr, false);
      
 
     auto end_time = std::chrono::high_resolution_clock::now();
