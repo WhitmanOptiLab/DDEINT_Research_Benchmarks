@@ -106,6 +106,9 @@ double calculate_rms(const std::vector<double>& values) {
     return sqrt(mean);
 }
 
+void dummy_callback(double time, const std::vector<double>& state) {
+    std::cout << "Time: " << time << ", RMS: " << calculate_rms(state) << std::endl;
+}
 
 
 int main() {
@@ -137,9 +140,9 @@ int main() {
     double t_start = 0.0;
     double t_end = 1.0;
 
-     test_laplacian.run(10 ,t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
+     //test_laplacian.run(10 ,t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
 
-     //test_laplacian.run(0, t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, nullptr, false);
+     test_laplacian.run(10, t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, *dummy_callback, false);
      
 
     auto end_time = std::chrono::high_resolution_clock::now();
