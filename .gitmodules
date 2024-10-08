@@ -4,3 +4,6 @@
 [submodule "utils/benchmark"]
 	path = utils/benchmark
 	url = https://github.com/google/benchmark.git
+[submodule "DDEINT"]
+	path = DDEINT
+	url = https://github.com/WhitmanOptiLab/DDEINT.git
