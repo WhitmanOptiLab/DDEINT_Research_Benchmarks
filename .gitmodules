@@ -1,6 +1,3 @@
-[submodule "DDEINT"]
-	path = DDEINT
-	url = https://github.com/WhitmanOptiLab/DDEINT.git
 [submodule "utils/FlameGraph"]
 	path = utils/FlameGraph
 	url = https://github.com/brendangregg/FlameGraph.git
