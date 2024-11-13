@@ -7,6 +7,3 @@
 [submodule "DDEINT"]
 	path = DDEINT
 	url = https://github.com/WhitmanOptiLab/DDEINT.git
-cd DDEINT
-git fetch --all
-git submodule update --init --recursive
