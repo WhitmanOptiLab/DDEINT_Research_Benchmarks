@@ -4,7 +4,7 @@
 
 # the compiler flags
 CC="g++"
-CFLAGS="-std=c++17 -g"
+CFLAGS="-std=c++17 -g -lDDEInt"
 INCLUDES="-IDDEINT"
 
 # the source files
