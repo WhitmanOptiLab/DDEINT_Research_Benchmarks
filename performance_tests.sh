@@ -4,21 +4,11 @@
 
 # the compiler flags
 CC="g++"
-CFLAGS="-std=c++17 -g -lDDEInt"
-INCLUDES="-IDDEINT"
+CFLAGS="-std=c++17 -g"
+INCLUDES="-I./DDEINT"
 
-# the source files
-BC_SRC="Breast_Cancer_Model/bc_model_fi.cpp"
-BC_OUTPUT="bc_model"
-
-CV_SRC="Cardiovascular_Model/cv_model_fi.cpp"
-CV_OUTPUT="cv_model"
-
-GI_SRC="Glucose_Insulin_Model/gi_model_fi.cpp"
-GI_OUTPUT="gi_model"
-
-HE_SRC="2D_Heat_Equation/heat_equation.cpp"
-HE_OUTPUT="heat_equation"
+# get all cpp files in the Tests directory
+TESTS_SRC="Test_Cases/*.cpp"
 
 # create necessary directories
 BUILD_DIR="build"
@@ -40,8 +30,8 @@ generate_flamegraph()
     echo "Generating Flame Graph for $output_file"
     if [ -f $PERF_DIR/perf.data ]; then
         perf script -i $PERF_DIR/perf.data > $PERF_DIR/out.perf
-        ../utils/FlameGraph/stackcollapse-perf.pl $PERF_DIR/out.perf > $PERF_DIR/out.folded
-        ../utils/FlameGraph/flamegraph.pl --color=java --title="$output_file" $PERF_DIR/out.folded > $PLOT_DIR/$output_file.svg
+        ./utils/FlameGraph/stackcollapse-perf.pl $PERF_DIR/out.perf > $PERF_DIR/out.folded
+        ./utils/FlameGraph/flamegraph.pl --color=java --title="$output_file" $PERF_DIR/out.folded > $PLOT_DIR/$output_file.svg
         if [ -f $PLOT_DIR/$output_file.svg ]; then
             echo "Flame Graph saved to $PLOT_DIR/$output_file.svg"
         else
@@ -58,7 +48,7 @@ compile_and_test()
     local src_files=$1
     local output_file=$2
     echo "Compiling $output_file"
-    time $CC $CFLAGS $INCLUDES $src_files -o $BUILD_DIR/$output_file
+    $CC $CFLAGS $INCLUDES $src_files -o $BUILD_DIR/$output_file
 
     echo "Running $output_file Test"
     perf record -o $PERF_DIR/perf.data -g ./$BUILD_DIR/$output_file
@@ -76,17 +66,12 @@ compile_and_test()
     generate_flamegraph $output_file
 }
 
-# Breast Cancer Model
-compile_and_test "$BC_SRC" "$BC_OUTPUT"
-
-# Cardiovascular Model
-#compile_and_test "$CV_SRC" "$CV_OUTPUT"
-
-# Glucose Insulin Model
-#compile_and_test "$GI_SRC" "$GI_OUTPUT"
-
-# 2D Heat Equation
-# compile_and_test "$HE_SRC" "$HE_OUTPUT"
+# Compile and run performance tests for each test file
+for test_file in $TESTS_SRC
+do
+    test_name=$(basename $test_file .cpp)
+    compile_and_test $test_file $test_name
+done
 
 # clean up
 echo "Cleaning up"

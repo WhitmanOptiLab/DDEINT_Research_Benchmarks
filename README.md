@@ -1,2 +1,3 @@
 # DDEINT_Research_Benchmarks
-Repo to hold experimental cases to test DDEINT to other DDE/ODE Solvers
+
+This repository contains experimental cases to test the DDEINT library against other Delay Differential Equation (DDE) and Ordinary Differential Equation (ODE) solvers. The goal is to benchmark the performance and accuracy of DDEINT in various scenarios.

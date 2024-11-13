@@ -1,7 +1,8 @@
-#include "DDEInt/Methods/Dormand_Prince/DoPri_5.hpp"
+#include "Methods/Dormand_Prince/DoPri_5.hpp"
 #include <fstream>
 #include <iostream>
 #include <chrono>
+#include <iomanip>
 
 #define ABS_TOL 1e-9
 #define REL_TOL 1e-9
@@ -59,22 +60,8 @@ int main()
     const auto end{std::chrono::high_resolution_clock::now()};
     const std::chrono::duration<double> elapsed_seconds{end - start};
     // Print time(diff between two times)
-    std::cout << "Time Taken: ";
-    std::cout << elapsed_seconds.count() << "\n";
-
-    // Write the solution to a file
-    std::ofstream file("data/dde_bc_model.csv");
-    if (!file.is_open())
-    {
-        std::cerr << "Error opening file" << std::endl;
-        return 1;
-    }
-    file << "t,y1,y2,y3,e1,e2,e3\n";
-    for (size_t i = 0; i < results.times.size(); i++)
-    {
-        file << std::setprecision(10) << results.times[i] << "," << results.solutions[i][0] << "," << results.solutions[i][1] << "," << results.solutions[i][2] << "," << results.error_estimates[i][0] << "," << results.error_estimates[i][1] << "," << results.error_estimates[i][2] << "\n";
-    }
-    file.close();
+    std::cout << "Time Taken: " << elapsed_seconds.count() << std::endl;
+    
 
     return 0;
 }
