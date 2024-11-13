@@ -13,8 +13,9 @@ TESTS_SRC="Test_Cases/*.cpp"
 # create necessary directories
 BUILD_DIR="build"
 PERF_DIR="perf_output"
-PLOT_DIR="plots"
 DATA_DIR="data"
+PLOT_DIR="data/plots"
+PERF_DATA_DIR="data/perf_data"
 mkdir -p $BUILD_DIR $PERF_DIR $PLOT_DIR $DATA_DIR
 
 # make sure this is a linux machine
@@ -56,8 +57,8 @@ compile_and_test()
         echo "Perf record completed successfully"
         cd $PERF_DIR
         # save perf report to file in data directory
-        perf report > ../$DATA_DIR/${output_file}_perf_report.txt
-        echo "Perf report saved to $DATA_DIR/${output_file}_perf_report.txt"
+        perf report > ../$PERF_DATA_DIR/${output_file}_perf_report.txt
+        echo "Perf report saved to $PERF_DATA_DIR/${output_file}_perf_report.txt"
         cd ..
     else
         echo "Perf record failed"
