@@ -1,8 +1,7 @@
-#include "../../DDEINT/dopri/DoPri_5.hpp"
-
+#include "../../Methods/Dormand_Prince/DoPri_5.hpp"
+#include <fstream>
 #include <iostream>
-#include <ctime>
-#include <tuple>
+#include <chrono>
 
 #define ABS_TOL 1e-9
 #define REL_TOL 1e-9
@@ -41,45 +40,39 @@ double history_bc(double t)
 
 int main()
 {
-    std::cout << "Running DDE solver..." << std::endl;
-    std::cout << "Running the Breast Cancer Model..." << std::endl;
-    
     // Initial conditions and time span
     std::vector<double> u0 = {1.0, 1.0, 1.0};
     double t_i = 0.0;
     double t_f = 10.0;
-    double dt = 0.1;
-    int time_step = t_f / dt;
 
     // Create the DDE problem and solve it
     std::vector<std::function<double(double)>> prehistory = {history_bc, history_bc, history_bc};
-    std::vector<double> max_delays = {1.0, 1.0, 1.0}; // Ensure the size matches the number of equations
+    std::vector<double> max_delays = {bc_p.tau, bc_p.tau, bc_p.tau}; // Ensure the size matches the number of equations
 
     DoPri_5<bc_dde> dde_solver(3, max_delays, prehistory);
+    Results results;
+    dde_solver.initialize(0, 0.1, 1e-5, u0, ABS_TOL, REL_TOL);
+    // Start clock
+    const auto start{std::chrono::high_resolution_clock::now()};
+    results = dde_solver.solve(t_i, t_f, 200, 100000);
+    // Stop timer
+    const auto end{std::chrono::high_resolution_clock::now()};
+    const std::chrono::duration<double> elapsed_seconds{end - start};
+    // Print time(diff between two times)
+    std::cout << "Time Taken: ";
+    std::cout << elapsed_seconds.count() << "\n";
 
-    std::vector<double> times;
-    std::vector<std::vector<double>> solutions;
-
-    // Measure the time taken to solve the problem
-    std::clock_t start = std::clock();
-    std::tuple<std::vector<double>, std::vector<std::vector<double>>> solution = dde_solver.solve(time_step, t_i, dt, u0, 0.1, 1e-5, 10000, ABS_TOL, REL_TOL);
-    // Measure the time taken to solve the problem
-    std::clock_t end = std::clock();
-
-    times = std::get<0>(solution);
-    solutions = std::get<1>(solution);
-
-    double elapsed_time = (end - start) / (double) CLOCKS_PER_SEC;
-    // convert to milliseconds
-    elapsed_time = elapsed_time * 1000;
-    std::cout << "Breast Cancer Model took " << elapsed_time << " milliseconds to solve." << std::endl;
-
-    // Output the solution to a csv file
-    std::ofstream file("../data/bc_model_fi.csv");
-    file << "t,y1,y2,y3\n";
-    for (size_t i = 0; i < times.size(); i++)
+    // Write the solution to a file
+    std::ofstream file("data/dde_bc_model.csv");
+    if (!file.is_open())
     {
-        file << times[i] << "," << solutions[i][0] << "," << solutions[i][1] << "," << solutions[i][2] << "\n";
+        std::cerr << "Error opening file" << std::endl;
+        return 1;
+    }
+    file << "t,y1,y2,y3,e1,e2,e3\n";
+    for (size_t i = 0; i < results.times.size(); i++)
+    {
+        file << std::setprecision(10) << results.times[i] << "," << results.solutions[i][0] << "," << results.solutions[i][1] << "," << results.solutions[i][2] << "," << results.error_estimates[i][0] << "," << results.error_estimates[i][1] << "," << results.error_estimates[i][2] << "\n";
     }
     file.close();
 
