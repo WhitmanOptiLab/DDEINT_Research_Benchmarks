@@ -6,4 +6,4 @@
 	url = https://github.com/google/benchmark.git
 [submodule "DDEINT"]
 	path = DDEINT
-	url = https://github.com/WhitmanOptiLab/DDEINT.git
+	url = git@github.com:WhitmanOptiLab/DDEINT.git
