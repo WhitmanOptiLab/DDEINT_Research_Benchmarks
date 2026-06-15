@@ -1,6 +1,6 @@
 #include "../../utils/benchmark/include/benchmark/benchmark.h"
 #include "bc_functions.hpp"
-#include "../../DDEINT/dopri/ddeint_dopri_5.hpp"
+#include "../../DDEINT/Methods/Dormand_Prince/DoPri_5.hpp"
 
 // Define the absolute and relative tolerances
 #define ABS_TOL 1e-9
