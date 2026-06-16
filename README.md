@@ -34,7 +34,7 @@ cd ..
 Uses Google Benchmark to measure solver speed across different models. To run test on DDEINT:
 
 ```
-cd DDEINT_tests
+cd tests
 bash benchmark_tests.sh
 ```
 
@@ -45,7 +45,7 @@ The results will be saved to `tests/data/bench_data`
 Uses Linux `perf` and [FlameGraph](https://github.com/brendangregg/FlameGraph) to profile solver CPU performance and generate flame graphs for each model.
 
 ```
-cd DDEINT_tests
+cd tests
 bash performance_tests.sh
 ```
 The results will be saved to `tests/data/perf_data` & `tests/data/perf_plots`
