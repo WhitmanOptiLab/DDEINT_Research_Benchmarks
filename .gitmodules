@@ -10,3 +10,6 @@
 [submodule "external_libraries/dde_solver"]
 	path = external_libraries/dde_solver
 	url = https://github.com/WarrenWeckesser/dde_solver.git
+[submodule "external_libraries/dde"]
+	path = external_libraries/dde
+	url = https://github.com/mrc-ide/dde.git
