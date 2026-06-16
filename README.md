@@ -31,14 +31,14 @@ cd ..
 
 ## Running Benchmark Tests
 
-Uses Google Benchmark to measure solver speed across different models.
+Uses Google Benchmark to measure solver speed across different models. To run test on DDEINT:
 
 ```
-cd test
+cd DDEINT_tests
 bash benchmark_tests.sh
 ```
 
-The results will be saved to `test/data/`
+The results will be saved to `DDEINT_tests/data/`
 
 ## Running Performance Tests
 
