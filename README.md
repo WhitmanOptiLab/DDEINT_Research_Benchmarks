@@ -34,6 +34,7 @@ cd ..
 Uses Google Benchmark to measure solver speed across different models.
 
 ```
+cd test
 bash benchmark_tests.sh
 ```
 
