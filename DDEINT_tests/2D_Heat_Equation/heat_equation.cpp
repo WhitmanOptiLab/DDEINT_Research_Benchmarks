@@ -5,8 +5,10 @@
 
 #include <fstream>
 // 2d heat eqaution
-void laplacian(size_t n, double t, std::vector<double> &y, std::vector<double> &dydt, History<double, double>& hist) {
+void laplacian(double t, std::vector<double> &y, std::vector<double> &dydt, History<double, double>& hist) {
     
+    size_t n = y.size();
+
     // Check for size mismatch
     if (n != y.size() || n != dydt.size()) {
         throw std::runtime_error("Size mismatch in laplacian function");
@@ -112,46 +114,25 @@ void dummy_callback(double time, const std::vector<double>& state) {
 
 
 int main() {
-    // Dummy prehistory function (returns 0.0 for all inputs)
-    double (*dummy_prehist)(double) = [](double) { return 0.0; };
-    std::vector<std::function<double(double)>> no_prehist(100, dummy_prehist);
-
     // Initial conditions for the Laplacian
-    std::vector<double> init_cond_laplacian;
     size_t nx_loc = 32;
     size_t ny_loc = 32;
     const double dx = 1.0 / (nx_loc - 1);
     const double dy = 1.0 / (ny_loc - 1);
     int num_eq = nx_loc * ny_loc;
-
-
-    // Initialize the initial condition vector
-    std::vector<double> hist_init_cond(num_eq, 0.0);
-    DDEint_dopri_5<laplacian> test_laplacian(num_eq, hist_init_cond, no_prehist);
-
-    // Initialize the state
+    std::vector<double> init_cond_laplacian;
     initialize_y(nx_loc, ny_loc, dx, dy, init_cond_laplacian);
+
+
+    // no delays or prehistory
+    std::vector<std::function<double(double)>> prehistory(num_eq, [](double) { return 0.0; });
+    std::vector<double> max_delays (num_eq, 0.0);
     
-    std::vector<std::vector<double>> output; 
+    // solving
+    DoPri_5<laplacian> dde_solver(num_eq, max_delays, prehistory);
+    dde_solver.initialize(0, 0.005, 0.0005, init_cond_laplacian, 1e-10, 1e-5, false, true);
+    Results results = dde_solver.solve(0.0, 1.0, 50, 50000);
 
-    
-    auto start_time = std::chrono::high_resolution_clock::now();
-
-    double t_start = 0.0;
-    double t_end = 1.0;
-
-     //test_laplacian.run(10 ,t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, false);
-
-     test_laplacian.run(10, t_start, t_end, init_cond_laplacian, 0.005, 0.0005, 50000, 1e-10, 1e-5, *dummy_callback, false);
-     
-
-    auto end_time = std::chrono::high_resolution_clock::now();
-    double execution_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
-
-    std::cout << "Execution time: " << execution_time << " milliseconds\n";
- 
-
-    
 
     return 0;
 }

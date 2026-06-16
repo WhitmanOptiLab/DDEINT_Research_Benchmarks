@@ -24,7 +24,7 @@ template <typename S, typename T> class History;
 // };
 
 // Function declarations
-void laplacian(size_t n, double t, std::vector<double>& y, std::vector<double>& dydt, History<double, double>& hist);
+void laplacian(double t, std::vector<double>& y, std::vector<double>& dydt, History<double, double>& hist);
 void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vector<double>& y);
 void print_statistics(const std::vector<std::vector<double>>& results, double execution_time);
 
