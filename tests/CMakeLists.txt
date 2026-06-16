@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_subdirectory(../utils/benchmark build_benchmark)
 
 # Include directories
-include_directories(../DDEINT ../utils/benchmark/include ../test/Glucose_Insulin_Model ../test/Cardiovascular_Model ../test/Breast_Cancer_Model)
+include_directories(../DDEINT ../utils/benchmark/include ../tests/Glucose_Insulin_Model ../tests/Cardiovascular_Model ../tests/Breast_Cancer_Model)
 
 # Glucose Insulin Model
 set(GI_SOURCES

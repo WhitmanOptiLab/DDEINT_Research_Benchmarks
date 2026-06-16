@@ -1,8 +1,9 @@
 #include "cv_functions.hpp"
-#include "../../DDEINT/dopri/ddeint_dopri_5.hpp"
+#include "../../DDEINT/Methods/Dormand_Prince/DoPri_5.hpp"
 
 #include <iostream>
 #include <ctime>
+#include <iomanip>
 #include <fstream>
 
 #define ABS_TOL 1e-9
@@ -22,18 +23,10 @@ int main()
     std::vector<std::function<double(double)>> prehistory = {history_Pa, history_Pv, history_H};
     std::vector<double> max_delays = {4.0, 4.0, 4.0}; // Ensure the size matches the number of equations
 
-    DDEint_dopri_5<cv_dde> dde_solver(3, max_delays, prehistory);
+    DoPri_5<cv_dde> dde_solver(3,max_delays, prehistory);
+    dde_solver.initialize(0, 0.1, 1e-5, u0, ABS_TOL, REL_TOL, false, true);
+    Results results = dde_solver.solve(t_initial, t_final, 500, 20000);
 
-    // Measure the time taken to solve the problem
-    std::clock_t start = std::clock();
-    std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 20000, ABS_TOL, REL_TOL);
-    // Measure the time taken to solve the problem
-    std::clock_t end = std::clock();
-
-    double elapsed_time = (end - start) / (double) CLOCKS_PER_SEC;
-    // conver to milliseconds
-    elapsed_time = elapsed_time * 1000;
-    std::cout << "Cardiovascular Model took " << elapsed_time << " milliseconds to solve." << std::endl;
 
     // Prepare data for plotting
     std::vector<double> time_points;
@@ -41,12 +34,12 @@ int main()
     std::vector<double> Pv_values;
     std::vector<double> heart_rate;
 
-    for (const auto& row : solution) 
+    for (size_t i = 0; i < results.times.size(); i++)
     {
-        time_points.push_back(row[0]);
-        Pa_values.push_back(row[1]);
-        Pv_values.push_back(row[2]);
-        heart_rate.push_back(row[3]); // H(t) is the third element
+        time_points.push_back(results.times[i]);
+        Pa_values.push_back(results.solutions[i][0]);
+        Pv_values.push_back(results.solutions[i][1]);
+        heart_rate.push_back(results.solutions[i][2]); // H(t) is the third element
     }
 
     // save the data to a csv file

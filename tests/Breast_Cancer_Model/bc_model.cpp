@@ -1,8 +1,9 @@
-#include "../../DDEINT/dopri/ddeint_dopri_5.hpp"
+#include "../../DDEINT/Methods/Dormand_Prince/DoPri_5.hpp"
 #include "bc_functions.hpp"
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 #include <ctime>
 
 #define ABS_TOL 1e-9
@@ -15,25 +16,16 @@ int main()
     
     // Initial conditions and time span
     std::vector<double> u0 = {1.0, 1.0, 1.0};
-    double t_i = 0.0;
-    double t_f = 10.0;
+    double t_initial = 0.0;
+    double t_final = 10.0;
 
     // Create the DDE problem and solve it
     std::vector<std::function<double(double)>> prehistory = {history_bc, history_bc, history_bc};
     std::vector<double> max_delays = {1.0, 1.0, 1.0}; // Ensure the size matches the number of equations
 
-    DDEint_dopri_5<bc_dde> dde_solver(3, max_delays, prehistory);
-
-    // Measure the time taken to solve the problem
-    std::clock_t start = std::clock();
-    std::vector<std::vector<double>> solution = dde_solver.run(t_i, t_f, u0, 0.1, 1e-5, 10000, ABS_TOL, REL_TOL);
-    // Measure the time taken to solve the problem
-    std::clock_t end = std::clock();
-
-    double elapsed_time = (end - start) / (double) CLOCKS_PER_SEC;
-    // convert to milliseconds
-    elapsed_time = elapsed_time * 1000;
-    std::cout << "Breast Cancer Model took " << elapsed_time << " milliseconds to solve." << std::endl;
+    DoPri_5<bc_dde> dde_solver(3, max_delays, prehistory);
+    dde_solver.initialize(0, 0.1, 1e-5, u0, ABS_TOL, REL_TOL, false, true);
+    Results results = dde_solver.solve(t_initial, t_final, 500, 10000);
 
     // Prepare data for plotting
     std::vector<double> time_points;
@@ -41,12 +33,12 @@ int main()
     std::vector<double> u2_values;
     std::vector<double> u3_values;
 
-    for (const auto& row : solution) 
+    for (size_t i; i < results.times.size(); i++)
     {
-        time_points.push_back(row[0]);
-        u1_values.push_back(row[1]);
-        u2_values.push_back(row[2]);
-        u3_values.push_back(row[3]);
+        time_points.push_back(results.times[i]);
+        u1_values.push_back(results.solutions[i][0]);
+        u2_values.push_back(results.solutions[i][1]);
+        u3_values.push_back(results.solutions[i][2]);
     }
 
     // save the data to a csv file

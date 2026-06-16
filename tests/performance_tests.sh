@@ -75,13 +75,13 @@ compile_and_test() {
 }
 
 # Breast Cancer Model
-# compile_and_test "$BC_SRC" "$BC_OUTPUT"
+compile_and_test "$BC_SRC" "$BC_OUTPUT"
 
 # # Cardiovascular Model
-# compile_and_test "$CV_SRC" "$CV_OUTPUT"
+compile_and_test "$CV_SRC" "$CV_OUTPUT"
 
 # # Glucose Insulin Model
-# compile_and_test "$GI_SRC" "$GI_OUTPUT"
+compile_and_test "$GI_SRC" "$GI_OUTPUT"
 
 # 2D Heat Equation
 compile_and_test "$HE_SRC" "$HE_OUTPUT"
