@@ -38,6 +38,13 @@ cd test
 bash benchmark_tests.sh
 ```
 
-The results will be saved to `data/`
+The results will be saved to `test/data/`
 
+## Running Performance Tests
 
+Uses Linux `perf` and [FlameGraph](https://github.com/brendangregg/FlameGraph) to profile solver CPU performance and generate flame graphs for each model.
+
+```
+cd test
+bash performance_tests.sh
+```
