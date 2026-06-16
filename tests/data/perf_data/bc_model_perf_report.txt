@@ -1,0 +1,1166 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 21  of event 'cpu/cycles/P'
+# Event count (approx.): 9807252
+#
+# Children      Self  Command   Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  ........  ........  ....................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    81.13%     0.00%  bc_model  bc_model              [.] _start
+            |
+            ---_start
+               __libc_start_main
+               0x7577a9e2a1ca
+               main
+               |          
+               |--68.77%--DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--45.29%--DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          
+               |          |           --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |          |                     |          
+               |          |                     |--11.21%--pow
+               |          |                     |          
+               |          |                      --11.08%--0x7577aa19138e
+               |          |          
+               |          |--12.17%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |          
+               |           --11.30%--std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::end() const
+               |                     __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+               |          
+                --12.37%--0x7577a9f8b7e1
+
+    81.13%     0.00%  bc_model  libc.so.6             [.] __libc_start_main
+            |
+            ---__libc_start_main
+               0x7577a9e2a1ca
+               main
+               |          
+               |--68.77%--DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--45.29%--DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          
+               |          |           --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |          |                     |          
+               |          |                     |--11.21%--pow
+               |          |                     |          
+               |          |                      --11.08%--0x7577aa19138e
+               |          |          
+               |          |--12.17%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |          
+               |           --11.30%--std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::end() const
+               |                     __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+               |          
+                --12.37%--0x7577a9f8b7e1
+
+    81.13%     0.00%  bc_model  libc.so.6             [.] 0x00007577a9e2a1ca
+            |
+            ---0x7577a9e2a1ca
+               main
+               |          
+               |--68.77%--DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--45.29%--DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          
+               |          |           --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |          |                     |          
+               |          |                     |--11.21%--pow
+               |          |                     |          
+               |          |                      --11.08%--0x7577aa19138e
+               |          |          
+               |          |--12.17%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |          
+               |           --11.30%--std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::end() const
+               |                     __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+               |          
+                --12.37%--0x7577a9f8b7e1
+
+    81.13%     0.00%  bc_model  bc_model              [.] main
+            |
+            ---main
+               |          
+               |--68.77%--DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--45.29%--DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          
+               |          |           --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |          |                     |          
+               |          |                     |--11.21%--pow
+               |          |                     |          
+               |          |                      --11.08%--0x7577aa19138e
+               |          |          
+               |          |--12.17%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |          
+               |           --11.30%--std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::end() const
+               |                     __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+               |          
+                --12.37%--0x7577a9f8b7e1
+
+    68.77%     0.00%  bc_model  bc_model              [.] DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |
+            ---DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--45.29%--DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          
+               |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          
+               |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          |          
+               |           --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |                     |          
+               |                     |--11.21%--pow
+               |                     |          
+               |                      --11.08%--0x7577aa19138e
+               |          
+               |--12.17%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          
+                --11.30%--std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+                          std::vector<double, std::allocator<double> >::end() const
+                          __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+
+    68.77%     0.00%  bc_model  bc_model              [.] DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |
+            ---DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--45.29%--DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          
+               |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          
+               |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          |          
+               |           --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |                     |          
+               |                     |--11.21%--pow
+               |                     |          
+               |                      --11.08%--0x7577aa19138e
+               |          
+               |--12.17%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          
+                --11.30%--std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+                          std::vector<double, std::allocator<double> >::end() const
+                          __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+
+    68.77%     0.00%  bc_model  bc_model              [.] DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |
+            ---DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--45.29%--DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          
+               |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          
+               |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          |          
+               |           --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |                     |          
+               |                     |--11.21%--pow
+               |                     |          
+               |                      --11.08%--0x7577aa19138e
+               |          
+               |--12.17%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          
+                --11.30%--std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+                          std::vector<double, std::allocator<double> >::end() const
+                          __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+
+    45.29%    11.21%  bc_model  bc_model              [.] bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          
+            |--34.08%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          |          
+            |          |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |          |          |          
+            |          |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+            |          |          
+            |           --11.08%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+            |                     0x7577aa19138e
+            |          
+             --11.21%--_start
+                       __libc_start_main
+                       0x7577a9e2a1ca
+                       main
+                       DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                       bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                       __gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+                       pow
+
+    45.29%     0.00%  bc_model  bc_model              [.] DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |
+            ---DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          
+               |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          
+               |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          
+                --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+                          |          
+                          |--11.21%--pow
+                          |          
+                           --11.08%--0x7577aa19138e
+
+    45.29%     0.00%  bc_model  bc_model              [.] DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |
+            ---DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          
+               |--23.00%--bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          
+               |           --11.59%--RingBuffer<double>::operator[](unsigned long)
+               |          
+                --22.29%--__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+                          |          
+                          |--11.21%--pow
+                          |          
+                           --11.08%--0x7577aa19138e
+
+    23.39%    12.17%  bc_model  libm.so.6             [.] pow
+            |          
+            |--12.17%--_start
+            |          __libc_start_main
+            |          0x7577a9e2a1ca
+            |          main
+            |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |          DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |          DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |          History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+            |          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+            |          
+             --11.21%--pow
+
+    23.00%    23.00%  bc_model  bc_model              [.] History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |
+            ---_start
+               __libc_start_main
+               0x7577a9e2a1ca
+               main
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          
+                --11.59%--RingBuffer<double>::operator[](unsigned long)
+
+    23.00%     0.00%  bc_model  bc_model              [.] bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |
+            ---bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          
+                --11.59%--RingBuffer<double>::operator[](unsigned long)
+
+    22.29%     0.00%  bc_model  bc_model              [.] __gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+            |
+            ---__gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               |          
+               |--11.21%--pow
+               |          
+                --11.08%--0x7577aa19138e
+
+    17.88%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa534548
+            |
+            ---0x7577aa534548
+               0x7577aa53575e
+               0x7577aa533f46
+               |          
+               |--12.23%--0x7577aa537789
+               |          0x7577aa524ae3
+               |          0x7577aa520141
+               |          
+               |--4.86%--0x7577aa537584
+               |          0x7577aa51641c
+               |          0x7577aa534c94
+               |          0x7577aa52b5ee
+               |          0x7577aa52b2a6
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          mksaveddirty_shift
+               |          
+                --0.78%--0x7577aa537177
+                          |          
+                           --0.69%--0x7577aa51c4d1
+                                     asm_exc_page_fault
+                                     exc_page_fault
+                                     do_user_addr_fault
+                                     handle_mm_fault
+
+    17.88%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa53575e
+            |
+            ---0x7577aa53575e
+               0x7577aa533f46
+               |          
+               |--12.23%--0x7577aa537789
+               |          0x7577aa524ae3
+               |          0x7577aa520141
+               |          
+               |--4.86%--0x7577aa537584
+               |          0x7577aa51641c
+               |          0x7577aa534c94
+               |          0x7577aa52b5ee
+               |          0x7577aa52b2a6
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          mksaveddirty_shift
+               |          
+                --0.78%--0x7577aa537177
+                          |          
+                           --0.69%--0x7577aa51c4d1
+                                     asm_exc_page_fault
+                                     exc_page_fault
+                                     do_user_addr_fault
+                                     handle_mm_fault
+
+    17.88%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa533f46
+            |
+            ---0x7577aa533f46
+               |          
+               |--12.23%--0x7577aa537789
+               |          0x7577aa524ae3
+               |          0x7577aa520141
+               |          
+               |--4.86%--0x7577aa537584
+               |          0x7577aa51641c
+               |          0x7577aa534c94
+               |          0x7577aa52b5ee
+               |          0x7577aa52b2a6
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          mksaveddirty_shift
+               |          
+                --0.78%--0x7577aa537177
+                          |          
+                           --0.69%--0x7577aa51c4d1
+                                     asm_exc_page_fault
+                                     exc_page_fault
+                                     do_user_addr_fault
+                                     handle_mm_fault
+
+    12.37%    12.37%  bc_model  [kernel.kallsyms]     [k] filemap_map_pages
+            |
+            ---_start
+               __libc_start_main
+               0x7577a9e2a1ca
+               main
+               0x7577a9f8b7e1
+
+    12.37%     0.00%  bc_model  libc.so.6             [.] 0x00007577a9f8b7e1
+            |
+            ---0x7577a9f8b7e1
+
+    12.23%    12.23%  bc_model  ld-linux-x86-64.so.2  [.] 0x000000000000b13e
+            |
+            ---0x7577aa534548
+               0x7577aa53575e
+               0x7577aa533f46
+               0x7577aa537789
+               0x7577aa524ae3
+               0x7577aa520141
+
+    12.23%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa537789
+            |
+            ---0x7577aa537789
+               0x7577aa524ae3
+               0x7577aa520141
+
+    12.23%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa524ae3
+            |
+            ---0x7577aa524ae3
+               0x7577aa520141
+
+    12.23%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa520141
+            |
+            ---0x7577aa520141
+
+    12.17%     0.00%  bc_model  bc_model              [.] History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+            |
+            ---History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+
+    12.17%     0.00%  bc_model  bc_model              [.] CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+            |
+            ---CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+
+    11.59%     0.00%  bc_model  bc_model              [.] RingBuffer<double>::operator[](unsigned long)
+            |
+            ---RingBuffer<double>::operator[](unsigned long)
+
+    11.30%    11.30%  bc_model  bc_model              [.] RingBuffer<std::array<double, 2ul> >::wrap(unsigned long) const
+            |
+            ---_start
+               __libc_start_main
+               0x7577a9e2a1ca
+               main
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::end() const
+               __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+
+    11.30%     0.00%  bc_model  bc_model              [.] std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+            |
+            ---std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::end() const
+               __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+
+    11.30%     0.00%  bc_model  bc_model              [.] std::vector<double, std::allocator<double> >::end() const
+            |
+            ---std::vector<double, std::allocator<double> >::end() const
+               __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+
+    11.30%     0.00%  bc_model  bc_model              [.] __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+            |
+            ---__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >::__normal_iterator(double const* const&)
+
+    11.08%    11.08%  bc_model  libm.so.6             [.] 0x000000000007a374
+            |
+            ---_start
+               __libc_start_main
+               0x7577a9e2a1ca
+               main
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               bc_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               __gnu_cxx::__promote_2<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0))), std::__is_integer<decltype (((__gnu_cxx::__promote_2<double, std::__is_integer<double>::__value>::__type)(0))+((__gnu_cxx::__promote_2<int, std::__is_integer<int>::__value>::__type)(0)))>::__value>::__type std::pow<double, int>(double, int)
+               0x7577aa19138e
+
+    11.08%     0.00%  bc_model  libm.so.6             [.] 0x00007577aa19138e
+            |
+            ---0x7577aa19138e
+
+     5.55%     0.00%  bc_model  [kernel.kallsyms]     [.] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               |          
+                --4.86%--__handle_mm_fault
+                          handle_pte_fault
+                          mksaveddirty_shift
+
+     5.55%     0.00%  bc_model  [kernel.kallsyms]     [.] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               |          
+                --4.86%--__handle_mm_fault
+                          handle_pte_fault
+                          mksaveddirty_shift
+
+     5.55%     0.00%  bc_model  [kernel.kallsyms]     [.] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               handle_mm_fault
+               |          
+                --4.86%--__handle_mm_fault
+                          handle_pte_fault
+                          mksaveddirty_shift
+
+     5.55%     0.00%  bc_model  [kernel.kallsyms]     [.] handle_mm_fault
+            |
+            ---handle_mm_fault
+               |          
+                --4.86%--__handle_mm_fault
+                          handle_pte_fault
+                          mksaveddirty_shift
+
+     4.86%     4.86%  bc_model  [kernel.kallsyms]     [k] kernel_init_pages
+            |
+            ---0x7577aa534548
+               0x7577aa53575e
+               0x7577aa533f46
+               0x7577aa537584
+               0x7577aa51641c
+               0x7577aa534c94
+               0x7577aa52b5ee
+               0x7577aa52b2a6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa537584
+            |
+            ---0x7577aa537584
+               0x7577aa51641c
+               0x7577aa534c94
+               0x7577aa52b5ee
+               0x7577aa52b2a6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa51641c
+            |
+            ---0x7577aa51641c
+               0x7577aa534c94
+               0x7577aa52b5ee
+               0x7577aa52b2a6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa534c94
+            |
+            ---0x7577aa534c94
+               0x7577aa52b5ee
+               0x7577aa52b2a6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa52b5ee
+            |
+            ---0x7577aa52b5ee
+               0x7577aa52b2a6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa52b2a6
+            |
+            ---0x7577aa52b2a6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  [kernel.kallsyms]     [.] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  [kernel.kallsyms]     [.] handle_pte_fault
+            |
+            ---handle_pte_fault
+               mksaveddirty_shift
+
+     4.86%     0.00%  bc_model  [kernel.kallsyms]     [.] mksaveddirty_shift
+            |
+            ---mksaveddirty_shift
+
+     1.07%     0.00%  bc_model  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               |          
+                --0.97%--__x64_sys_execve
+                          do_execveat_common.isra.0
+                          bprm_execve
+                          bprm_execve.part.0
+                          exec_binprm
+                          load_elf_binary
+                          |          
+                           --0.89%--elf_load
+                                     vm_mmap
+                                     vm_mmap_pgoff
+                                     do_mmap
+                                     mmap_region
+                                     __mmap_region
+                                     perf_event_mmap
+                                     perf_event_mmap_event
+                                     build_id_parse_nofault
+                                     __build_id_parse
+                                     freader_fetch
+                                     freader_get_folio
+                                     __filemap_get_folio_mpol
+                                     filemap_get_entry
+
+     1.07%     0.00%  bc_model  [kernel.kallsyms]     [.] do_syscall_64
+            |
+            ---do_syscall_64
+               x64_sys_call
+               |          
+                --0.97%--__x64_sys_execve
+                          do_execveat_common.isra.0
+                          bprm_execve
+                          bprm_execve.part.0
+                          exec_binprm
+                          load_elf_binary
+                          |          
+                           --0.89%--elf_load
+                                     vm_mmap
+                                     vm_mmap_pgoff
+                                     do_mmap
+                                     mmap_region
+                                     __mmap_region
+                                     perf_event_mmap
+                                     perf_event_mmap_event
+                                     build_id_parse_nofault
+                                     __build_id_parse
+                                     freader_fetch
+                                     freader_get_folio
+                                     __filemap_get_folio_mpol
+                                     filemap_get_entry
+
+     1.07%     0.00%  bc_model  [kernel.kallsyms]     [.] x64_sys_call
+            |
+            ---x64_sys_call
+               |          
+                --0.97%--__x64_sys_execve
+                          do_execveat_common.isra.0
+                          bprm_execve
+                          bprm_execve.part.0
+                          exec_binprm
+                          load_elf_binary
+                          |          
+                           --0.89%--elf_load
+                                     vm_mmap
+                                     vm_mmap_pgoff
+                                     do_mmap
+                                     mmap_region
+                                     __mmap_region
+                                     perf_event_mmap
+                                     perf_event_mmap_event
+                                     build_id_parse_nofault
+                                     __build_id_parse
+                                     freader_fetch
+                                     freader_get_folio
+                                     __filemap_get_folio_mpol
+                                     filemap_get_entry
+
+     0.98%     0.00%  bc_model  [kernel.kallsyms]     [.] vm_mmap_pgoff
+            |
+            ---vm_mmap_pgoff
+               do_mmap
+               |          
+                --0.96%--mmap_region
+                          __mmap_region
+                          |          
+                           --0.89%--perf_event_mmap
+                                     perf_event_mmap_event
+                                     build_id_parse_nofault
+                                     __build_id_parse
+                                     freader_fetch
+                                     freader_get_folio
+                                     __filemap_get_folio_mpol
+                                     filemap_get_entry
+
+     0.98%     0.00%  bc_model  [kernel.kallsyms]     [.] do_mmap
+            |
+            ---do_mmap
+               |          
+                --0.96%--mmap_region
+                          __mmap_region
+                          |          
+                           --0.89%--perf_event_mmap
+                                     perf_event_mmap_event
+                                     build_id_parse_nofault
+                                     __build_id_parse
+                                     freader_fetch
+                                     freader_get_folio
+                                     __filemap_get_folio_mpol
+                                     filemap_get_entry
+
+     0.97%     0.00%  bc_model  [unknown]             [k] 0x000078bb822eef3b
+            |
+            ---0x78bb822eef3b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+                --0.89%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.97%     0.00%  bc_model  [kernel.kallsyms]     [.] __x64_sys_execve
+            |
+            ---__x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+                --0.89%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.97%     0.00%  bc_model  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+            |
+            ---do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+                --0.89%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.97%     0.00%  bc_model  [kernel.kallsyms]     [.] bprm_execve
+            |
+            ---bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+                --0.89%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.97%     0.00%  bc_model  [kernel.kallsyms]     [.] bprm_execve.part.0
+            |
+            ---bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+                --0.89%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.97%     0.00%  bc_model  [kernel.kallsyms]     [.] exec_binprm
+            |
+            ---exec_binprm
+               load_elf_binary
+               |          
+                --0.89%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.97%     0.00%  bc_model  [kernel.kallsyms]     [.] load_elf_binary
+            |
+            ---load_elf_binary
+               |          
+                --0.89%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.96%     0.00%  bc_model  [kernel.kallsyms]     [.] mmap_region
+            |
+            ---mmap_region
+               __mmap_region
+               |          
+                --0.89%--perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.96%     0.00%  bc_model  [kernel.kallsyms]     [.] __mmap_region
+            |
+            ---__mmap_region
+               |          
+                --0.89%--perf_event_mmap
+                          perf_event_mmap_event
+                          build_id_parse_nofault
+                          __build_id_parse
+                          freader_fetch
+                          freader_get_folio
+                          __filemap_get_folio_mpol
+                          filemap_get_entry
+
+     0.89%     0.89%  bc_model  [kernel.kallsyms]     [k] freader_get_folio
+            |
+            ---0x78bb822eef3b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               elf_load
+               vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+               freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] elf_load
+            |
+            ---elf_load
+               vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+               freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] vm_mmap
+            |
+            ---vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+               freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_event_mmap
+            |
+            ---perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+               freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_event_mmap_event
+            |
+            ---perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+               freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] build_id_parse_nofault
+            |
+            ---build_id_parse_nofault
+               __build_id_parse
+               freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] __build_id_parse
+            |
+            ---__build_id_parse
+               freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] freader_fetch
+            |
+            ---freader_fetch
+               freader_get_folio
+               __filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] __filemap_get_folio_mpol
+            |
+            ---__filemap_get_folio_mpol
+               filemap_get_entry
+
+     0.89%     0.00%  bc_model  [kernel.kallsyms]     [.] filemap_get_entry
+            |
+            ---filemap_get_entry
+
+     0.78%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa537177
+            |
+            ---0x7577aa537177
+               |          
+                --0.69%--0x7577aa51c4d1
+                          asm_exc_page_fault
+                          exc_page_fault
+                          do_user_addr_fault
+                          handle_mm_fault
+
+     0.69%     0.69%  bc_model  [kernel.kallsyms]     [k] lruvec_stat_mod_folio
+            |
+            ---0x7577aa534548
+               0x7577aa53575e
+               0x7577aa533f46
+               0x7577aa537177
+               0x7577aa51c4d1
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+
+     0.69%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa51c4d1
+            |
+            ---0x7577aa51c4d1
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+
+     0.09%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa51c47c
+     0.09%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa521121
+     0.09%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007577aa53ad2c
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] __x64_sys_mmap
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] ksys_mmap_pgoff
+     0.09%     0.09%  bc_model  [kernel.kallsyms]     [k] perf_iterate_sb.constprop.0
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] begin_new_exec
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] __set_task_comm
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_event_comm
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_event_comm_event.constprop.0
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_iterate_ctx
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_event_comm_output
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] __perf_event_header__init_id
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] local_clock
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] local_clock_noinstr
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] sched_clock_noinstr
+     0.09%     0.00%  bc_model  [kernel.kallsyms]     [.] native_sched_clock
+     0.08%     0.08%  bc_model  [kernel.kallsyms]     [k] vm_get_page_prot
+     0.08%     0.00%  bc_model  [kernel.kallsyms]     [.] __mmap_setup
+     0.08%     0.00%  bc_model  [kernel.kallsyms]     [.] mas_find
+     0.08%     0.00%  bc_model  [kernel.kallsyms]     [.] mas_next_slot
+     0.01%     0.00%  perf-exe  [unknown]             [k] 0x000078bb822eef3b
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] do_syscall_64
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] x64_sys_call
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] __x64_sys_execve
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] bprm_execve
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] bprm_execve.part.0
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] exec_binprm
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] load_elf_binary
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] begin_new_exec
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_exec
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_enable_on_exec
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] ctx_resched
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] ctx_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] visit_groups_merge.constprop.0.isra.0
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] merge_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] event_sched_in
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] __get_unmapped_area
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] mm_get_unmapped_area_vmflags
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] arch_get_unmapped_area_topdown
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] get_mmap_base
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] asm_sysvec_reschedule_ipi
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] sysvec_reschedule_ipi
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] irqentry_exit
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] raw_irqentry_exit_cond_resched
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] preempt_schedule_irq
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] __schedule
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] finish_task_switch.isra.0
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] __perf_event_task_sched_in
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_event_sched_in
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] ctx_sched_in
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] visit_groups_merge.constprop.0.isra.0
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] merge_sched_in
+     0.01%     0.00%  bc_model  [kernel.kallsyms]     [.] event_sched_in
+     0.01%     0.01%  perf-exe  [kernel.kallsyms]     [k] srso_alias_return_thunk
+     0.01%     0.01%  bc_model  [kernel.kallsyms]     [k] sched_clock
+     0.00%     0.00%  bc_model  [kernel.kallsyms]     [k] perf_event_update_userpage
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [k] perf_event_update_userpage
+     0.00%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_ibs_add
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_ibs_add
+     0.00%     0.00%  bc_model  [kernel.kallsyms]     [.] perf_ibs_start
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_ibs_start
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [k] calc_timer_values
+     0.00%     0.00%  bc_model  [kernel.kallsyms]     [k] calc_timer_values
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

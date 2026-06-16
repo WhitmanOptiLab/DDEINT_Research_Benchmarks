@@ -5,6 +5,7 @@
 #include <ctime>
 #include <iomanip>
 #include <fstream>
+#include <filesystem>
 
 #define ABS_TOL 1e-9
 #define REL_TOL 1e-9
@@ -40,14 +41,18 @@ int main()
         insulin_values.push_back(results.solutions[i][1]); // G(t) and I(t)
     }
 
-    // Save the data to a CSV file
-    std::ofstream file("../data/gi_model_cpp.csv");
+    // Get the executable's directory and build path from there
+    std::filesystem::path data_path = std::filesystem::canonical("/proc/self/exe").parent_path().parent_path() / "data" / "csv_files" / "gi_model_cpp.csv";
+    std::filesystem::create_directories(data_path.parent_path());
+    std::ofstream file(data_path);
     file << "Time,Glucose,Insulin\n";
-    for (size_t i = 0; i < time_points.size(); ++i) 
+    for (size_t i = 0; i < time_points.size(); i++ )
     {
-        file << std::setprecision(10) <<  time_points[i] << "," << glucose_values[i] << "," << insulin_values[i] << "\n";
+        file << std::setprecision(10) << time_points[i] << "," << glucose_values[i] << "," << insulin_values[i] << "\n";
     }
     file.close();
+
+            
 
     return 0;
 }

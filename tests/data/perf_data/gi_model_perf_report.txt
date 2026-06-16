@@ -1,0 +1,1731 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 26  of event 'cpu/cycles/P'
+# Event count (approx.): 16290175
+#
+# Children      Self  Command   Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  ........  ........  ....................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    79.96%     0.00%  gi_model  gi_model              [.] _start
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               |          
+               |--66.53%--DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          
+               |          |--51.94%--DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          |          |          
+               |          |          |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          |          |          
+               |          |          |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          |          
+               |          |          |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                      --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |                                std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          |          
+               |          |--7.66%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |          |          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          |          
+               |           --6.92%--std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+               |                     std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+               |          
+               |--6.74%--std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream<std::filesystem::__cxx11::path, std::filesystem::__cxx11::path>(std::filesystem::__cxx11::path const&, std::_Ios_Openmode)
+               |          std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+               |          std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               |          std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               |          fopen
+               |          _IO_file_fopen
+               |          _IO_file_open
+               |          open64
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_openat
+               |          do_sys_openat2
+               |          do_file_open
+               |          path_openat
+               |          do_open
+               |          do_truncate
+               |          notify_change
+               |          ext4_setattr
+               |          ext4_truncate
+               |          ext4_ext_truncate
+               |          __es_remove_extent
+               |          
+                --6.69%--std::ostream& std::ostream::_M_insert<double>(double)
+                          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+                          0x7a761250d285
+                          vsnprintf
+                          0x7a761206a6c5
+                          0x7a761206335c
+                          0x7a7612061ef0
+
+    79.96%     0.00%  gi_model  libc.so.6             [.] __libc_start_main
+            |
+            ---__libc_start_main
+               0x7a761202a1ca
+               main
+               |          
+               |--66.53%--DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          
+               |          |--51.94%--DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          |          |          
+               |          |          |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          |          |          
+               |          |          |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          |          
+               |          |          |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                      --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |                                std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          |          
+               |          |--7.66%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |          |          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          |          
+               |           --6.92%--std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+               |                     std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+               |          
+               |--6.74%--std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream<std::filesystem::__cxx11::path, std::filesystem::__cxx11::path>(std::filesystem::__cxx11::path const&, std::_Ios_Openmode)
+               |          std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+               |          std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               |          std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               |          fopen
+               |          _IO_file_fopen
+               |          _IO_file_open
+               |          open64
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_openat
+               |          do_sys_openat2
+               |          do_file_open
+               |          path_openat
+               |          do_open
+               |          do_truncate
+               |          notify_change
+               |          ext4_setattr
+               |          ext4_truncate
+               |          ext4_ext_truncate
+               |          __es_remove_extent
+               |          
+                --6.69%--std::ostream& std::ostream::_M_insert<double>(double)
+                          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+                          0x7a761250d285
+                          vsnprintf
+                          0x7a761206a6c5
+                          0x7a761206335c
+                          0x7a7612061ef0
+
+    79.96%     0.00%  gi_model  libc.so.6             [.] 0x00007a761202a1ca
+            |
+            ---0x7a761202a1ca
+               main
+               |          
+               |--66.53%--DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          
+               |          |--51.94%--DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          |          |          
+               |          |          |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          |          |          
+               |          |          |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          |          
+               |          |          |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                      --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |                                std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          |          
+               |          |--7.66%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |          |          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          |          
+               |           --6.92%--std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+               |                     std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+               |          
+               |--6.74%--std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream<std::filesystem::__cxx11::path, std::filesystem::__cxx11::path>(std::filesystem::__cxx11::path const&, std::_Ios_Openmode)
+               |          std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+               |          std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               |          std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               |          fopen
+               |          _IO_file_fopen
+               |          _IO_file_open
+               |          open64
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_openat
+               |          do_sys_openat2
+               |          do_file_open
+               |          path_openat
+               |          do_open
+               |          do_truncate
+               |          notify_change
+               |          ext4_setattr
+               |          ext4_truncate
+               |          ext4_ext_truncate
+               |          __es_remove_extent
+               |          
+                --6.69%--std::ostream& std::ostream::_M_insert<double>(double)
+                          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+                          0x7a761250d285
+                          vsnprintf
+                          0x7a761206a6c5
+                          0x7a761206335c
+                          0x7a7612061ef0
+
+    79.96%     0.00%  gi_model  gi_model              [.] main
+            |
+            ---main
+               |          
+               |--66.53%--DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          
+               |          |--51.94%--DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          
+               |          |          |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          |          
+               |          |          |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          |          |          
+               |          |          |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          |          |          
+               |          |          |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          |          
+               |          |          |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                      --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |                                std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          |          
+               |          |--7.66%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |          |          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |          |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          |          
+               |           --6.92%--std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+               |                     std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+               |          
+               |--6.74%--std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream<std::filesystem::__cxx11::path, std::filesystem::__cxx11::path>(std::filesystem::__cxx11::path const&, std::_Ios_Openmode)
+               |          std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+               |          std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               |          std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               |          fopen
+               |          _IO_file_fopen
+               |          _IO_file_open
+               |          open64
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_openat
+               |          do_sys_openat2
+               |          do_file_open
+               |          path_openat
+               |          do_open
+               |          do_truncate
+               |          notify_change
+               |          ext4_setattr
+               |          ext4_truncate
+               |          ext4_ext_truncate
+               |          __es_remove_extent
+               |          
+                --6.69%--std::ostream& std::ostream::_M_insert<double>(double)
+                          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+                          0x7a761250d285
+                          vsnprintf
+                          0x7a761206a6c5
+                          0x7a761206335c
+                          0x7a7612061ef0
+
+    66.53%     0.00%  gi_model  gi_model              [.] DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |
+            ---DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          
+               |--51.94%--DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          
+               |          |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          
+               |          |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          |          
+               |          |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          |          
+               |          |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          
+               |           --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |                     |          
+               |                      --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |                                std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          
+               |--7.66%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          
+                --6.92%--std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+                          std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+
+    66.53%     0.00%  gi_model  gi_model              [.] DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |
+            ---DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          
+               |--51.94%--DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          
+               |          |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          
+               |          |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          |          
+               |          |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          |          
+               |          |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          
+               |           --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |                     |          
+               |                      --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |                                std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          
+               |--7.66%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          
+                --6.92%--std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+                          std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+
+    51.94%     7.10%  gi_model  gi_model              [.] DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          
+            |--44.85%--DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          |          
+            |          |--23.13%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+            |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |          |          |          
+            |          |          |--15.23%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |          |          |          |          
+            |          |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+            |          |          |          |          
+            |          |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+            |          |          |          
+            |          |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+            |          |          
+            |           --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |                     |          
+            |                      --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+            |                                std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+            |          
+             --7.10%--_start
+                       __libc_start_main
+                       0x7a761202a1ca
+                       main
+                       DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                       gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                       gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+                       History<double, double>::at_time(double, unsigned long, unsigned long*)
+                       History<double, double>::interpolate(double, unsigned long, unsigned long)
+
+    51.94%     0.00%  gi_model  gi_model              [.] DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |
+            ---DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          
+               |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          
+               |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          
+               |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          
+               |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          
+               |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          
+                --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+                          History<double, double>::at_time(double, unsigned long, unsigned long*)
+                          History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          |          
+                           --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+                                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+
+    51.94%     0.00%  gi_model  gi_model              [.] DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |
+            ---DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          
+               |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          
+               |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          
+               |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          
+               |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          
+               |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          
+                --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+                          History<double, double>::at_time(double, unsigned long, unsigned long*)
+                          History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          |          
+                           --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+                                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+
+    51.94%     0.00%  gi_model  gi_model              [.] gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |
+            ---gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          
+               |--30.23%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          
+               |          |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |          
+               |          |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |          
+               |          |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          
+               |           --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          
+                --21.72%--gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+                          History<double, double>::at_time(double, unsigned long, unsigned long*)
+                          History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          |          
+                           --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+                                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+
+    51.94%     0.00%  gi_model  gi_model              [.] History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |
+            ---History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          
+               |--44.05%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          
+               |          |--14.02%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --7.23%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          |          
+               |           --8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          
+                --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+
+    44.05%     0.00%  gi_model  gi_model              [.] History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |
+            ---History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          
+               |--14.02%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          
+               |           --7.23%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+               |          
+                --8.43%--RingBuffer<double>::operator[](unsigned long)
+
+    30.23%     0.00%  gi_model  gi_model              [.] gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+            |
+            ---gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          
+               |--22.33%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          
+               |          |--8.43%--RingBuffer<double>::operator[](unsigned long)
+               |          |          
+               |           --6.80%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          
+                --7.90%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+
+    21.92%     0.00%  gi_model  gi_model              [.] RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+            |
+            ---RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          
+                --7.23%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+
+    21.72%     0.00%  gi_model  gi_model              [.] gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |
+            ---gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          
+                --7.23%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+                          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+
+    19.22%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761288a548
+            |
+            ---0x7a761288a548
+               0x7a761288b75e
+               0x7a7612889f46
+               |          
+               |--8.59%--0x7a761288e39c
+               |          0x7a7612890dbb
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          perf_event_mmap
+               |          perf_event_mmap_event
+               |          build_id_parse_nofault
+               |          __build_id_parse
+               |          
+               |--7.59%--0x7a761288d789
+               |          0x7a761287a90f
+               |          
+                --3.04%--0x7a761288d41c
+                          0x7a761286de67
+                          _dl_catch_exception
+                          0x7a761286da2d
+                          0x7a7612874529
+                          0x7a7612872f79
+                          0x7a7612890d2c
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_mmap
+                          ksys_mmap_pgoff
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          __perf_addr_filters_adjust
+
+    19.22%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761288b75e
+            |
+            ---0x7a761288b75e
+               0x7a7612889f46
+               |          
+               |--8.59%--0x7a761288e39c
+               |          0x7a7612890dbb
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          perf_event_mmap
+               |          perf_event_mmap_event
+               |          build_id_parse_nofault
+               |          __build_id_parse
+               |          
+               |--7.59%--0x7a761288d789
+               |          0x7a761287a90f
+               |          
+                --3.04%--0x7a761288d41c
+                          0x7a761286de67
+                          _dl_catch_exception
+                          0x7a761286da2d
+                          0x7a7612874529
+                          0x7a7612872f79
+                          0x7a7612890d2c
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_mmap
+                          ksys_mmap_pgoff
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          __perf_addr_filters_adjust
+
+    19.22%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a7612889f46
+            |
+            ---0x7a7612889f46
+               |          
+               |--8.59%--0x7a761288e39c
+               |          0x7a7612890dbb
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          perf_event_mmap
+               |          perf_event_mmap_event
+               |          build_id_parse_nofault
+               |          __build_id_parse
+               |          
+               |--7.59%--0x7a761288d789
+               |          0x7a761287a90f
+               |          
+                --3.04%--0x7a761288d41c
+                          0x7a761286de67
+                          _dl_catch_exception
+                          0x7a761286da2d
+                          0x7a7612874529
+                          0x7a7612872f79
+                          0x7a7612890d2c
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_mmap
+                          ksys_mmap_pgoff
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          __perf_addr_filters_adjust
+
+    19.15%     0.00%  gi_model  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               |          
+               |--8.59%--__x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          perf_event_mmap
+               |          perf_event_mmap_event
+               |          build_id_parse_nofault
+               |          __build_id_parse
+               |          
+               |--6.74%--__x64_sys_openat
+               |          do_sys_openat2
+               |          do_file_open
+               |          path_openat
+               |          do_open
+               |          do_truncate
+               |          notify_change
+               |          ext4_setattr
+               |          ext4_truncate
+               |          ext4_ext_truncate
+               |          __es_remove_extent
+               |          
+               |--3.04%--__x64_sys_mmap
+               |          ksys_mmap_pgoff
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          perf_event_mmap
+               |          __perf_addr_filters_adjust
+               |          
+                --0.78%--__x64_sys_execve
+                          do_execveat_common.isra.0
+                          bprm_execve
+                          bprm_execve.part.0
+                          exec_binprm
+                          load_elf_binary
+
+    19.15%     0.00%  gi_model  [kernel.kallsyms]     [.] do_syscall_64
+            |
+            ---do_syscall_64
+               x64_sys_call
+               |          
+               |--8.59%--__x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          perf_event_mmap
+               |          perf_event_mmap_event
+               |          build_id_parse_nofault
+               |          __build_id_parse
+               |          
+               |--6.74%--__x64_sys_openat
+               |          do_sys_openat2
+               |          do_file_open
+               |          path_openat
+               |          do_open
+               |          do_truncate
+               |          notify_change
+               |          ext4_setattr
+               |          ext4_truncate
+               |          ext4_ext_truncate
+               |          __es_remove_extent
+               |          
+               |--3.04%--__x64_sys_mmap
+               |          ksys_mmap_pgoff
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          perf_event_mmap
+               |          __perf_addr_filters_adjust
+               |          
+                --0.78%--__x64_sys_execve
+                          do_execveat_common.isra.0
+                          bprm_execve
+                          bprm_execve.part.0
+                          exec_binprm
+                          load_elf_binary
+
+    19.15%     0.00%  gi_model  [kernel.kallsyms]     [.] x64_sys_call
+            |
+            ---x64_sys_call
+               |          
+               |--8.59%--__x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          perf_event_mmap
+               |          perf_event_mmap_event
+               |          build_id_parse_nofault
+               |          __build_id_parse
+               |          
+               |--6.74%--__x64_sys_openat
+               |          do_sys_openat2
+               |          do_file_open
+               |          path_openat
+               |          do_open
+               |          do_truncate
+               |          notify_change
+               |          ext4_setattr
+               |          ext4_truncate
+               |          ext4_ext_truncate
+               |          __es_remove_extent
+               |          
+               |--3.04%--__x64_sys_mmap
+               |          ksys_mmap_pgoff
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          perf_event_mmap
+               |          __perf_addr_filters_adjust
+               |          
+                --0.78%--__x64_sys_execve
+                          do_execveat_common.isra.0
+                          bprm_execve
+                          bprm_execve.part.0
+                          exec_binprm
+                          load_elf_binary
+
+    15.66%     7.23%  gi_model  gi_model              [.] RingBuffer<double>::operator[](unsigned long)
+            |          
+            |--8.43%--RingBuffer<double>::operator[](unsigned long)
+            |          
+             --7.23%--_start
+                       __libc_start_main
+                       0x7a761202a1ca
+                       main
+                       DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                       gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                       gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+                       History<double, double>::at_time(double, unsigned long, unsigned long*)
+                       History<double, double>::interpolate(double, unsigned long, unsigned long)
+                       RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+                       std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+
+    15.66%     8.43%  gi_model  gi_model              [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+            |          
+            |--8.43%--_start
+            |          __libc_start_main
+            |          0x7a761202a1ca
+            |          main
+            |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |          DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+            |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |          History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |          RingBuffer<double>::operator[](unsigned long)
+            |          
+             --7.23%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long) const
+
+    11.63%     0.00%  gi_model  [kernel.kallsyms]     [.] perf_event_mmap
+            |
+            ---perf_event_mmap
+               |          
+               |--8.59%--perf_event_mmap_event
+               |          build_id_parse_nofault
+               |          __build_id_parse
+               |          
+                --3.04%--__perf_addr_filters_adjust
+
+     8.59%     8.59%  gi_model  [kernel.kallsyms]     [k] prepend_path
+            |
+            ---0x7a761288a548
+               0x7a761288b75e
+               0x7a7612889f46
+               0x7a761288e39c
+               0x7a7612890dbb
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761288e39c
+            |
+            ---0x7a761288e39c
+               0x7a7612890dbb
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a7612890dbb
+            |
+            ---0x7a7612890dbb
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  [kernel.kallsyms]     [.] __x64_sys_mprotect
+            |
+            ---__x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  [kernel.kallsyms]     [.] do_mprotect_pkey
+            |
+            ---do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  [kernel.kallsyms]     [.] mprotect_fixup
+            |
+            ---mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  [kernel.kallsyms]     [.] perf_event_mmap_event
+            |
+            ---perf_event_mmap_event
+               build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  [kernel.kallsyms]     [.] build_id_parse_nofault
+            |
+            ---build_id_parse_nofault
+               __build_id_parse
+
+     8.59%     0.00%  gi_model  [kernel.kallsyms]     [.] __build_id_parse
+            |
+            ---__build_id_parse
+
+     7.90%     7.90%  gi_model  gi_model              [.] std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+
+     7.66%     7.66%  gi_model  gi_model              [.] RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     7.66%     0.00%  gi_model  gi_model              [.] std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+            |
+            ---std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     7.66%     0.00%  gi_model  gi_model              [.] std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+            |
+            ---std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     7.66%     0.00%  gi_model  gi_model              [.] std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+            |
+            ---std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     7.66%     0.00%  gi_model  gi_model              [.] std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+            |
+            ---std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     7.59%     7.59%  gi_model  [kernel.kallsyms]     [k] finish_fault
+            |
+            ---0x7a761288a548
+               0x7a761288b75e
+               0x7a7612889f46
+               0x7a761288d789
+               0x7a761287a90f
+
+     7.59%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761288d789
+            |
+            ---0x7a761288d789
+               0x7a761287a90f
+
+     7.59%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761287a90f
+            |
+            ---0x7a761287a90f
+
+     7.49%     7.49%  gi_model  gi_model              [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::operator[](unsigned long) const
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+
+     7.00%     7.00%  gi_model  gi_model              [.] RingBuffer<double>::operator[](unsigned long) const
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+
+     6.92%     6.92%  gi_model  gi_model              [.] void std::_Destroy<std::array<double, 2ul>*>(std::array<double, 2ul>*, std::array<double, 2ul>*)
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+               std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+
+     6.92%     0.00%  gi_model  gi_model              [.] std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+            |
+            ---std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>::operator()(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&) const
+               std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+
+     6.92%     0.00%  gi_model  gi_model              [.] std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+            |
+            ---std::vector<double, std::allocator<double> >& std::forward<std::vector<double, std::allocator<double> >&>(std::remove_reference<std::vector<double, std::allocator<double> >&>::type&)
+
+     6.80%     6.80%  gi_model  gi_model              [.] std::vector<double, std::allocator<double> >::operator[](unsigned long) const
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               gi_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#2}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+
+     6.74%     6.74%  gi_model  [kernel.kallsyms]     [k] crc32c
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream<std::filesystem::__cxx11::path, std::filesystem::__cxx11::path>(std::filesystem::__cxx11::path const&, std::_Ios_Openmode)
+               std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+               std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               fopen
+               _IO_file_fopen
+               _IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  gi_model              [.] std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream<std::filesystem::__cxx11::path, std::filesystem::__cxx11::path>(std::filesystem::__cxx11::path const&, std::_Ios_Openmode)
+            |
+            ---std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream<std::filesystem::__cxx11::path, std::filesystem::__cxx11::path>(std::filesystem::__cxx11::path const&, std::_Ios_Openmode)
+               std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+               std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               fopen
+               _IO_file_fopen
+               _IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  libstdc++.so.6.0.33   [.] std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+            |
+            ---std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode)
+               std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               fopen
+               _IO_file_fopen
+               _IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  libstdc++.so.6.0.33   [.] std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+            |
+            ---std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode)
+               std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               fopen
+               _IO_file_fopen
+               _IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  libstdc++.so.6.0.33   [.] std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+            |
+            ---std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int)
+               fopen
+               _IO_file_fopen
+               _IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  libc.so.6             [.] fopen
+            |
+            ---fopen
+               _IO_file_fopen
+               _IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  libc.so.6             [.] _IO_file_fopen
+            |
+            ---_IO_file_fopen
+               _IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  libc.so.6             [.] _IO_file_open
+            |
+            ---_IO_file_open
+               open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  libc.so.6             [.] open64
+            |
+            ---open64
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] __x64_sys_openat
+            |
+            ---__x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] do_sys_openat2
+            |
+            ---do_sys_openat2
+               do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] do_file_open
+            |
+            ---do_file_open
+               path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] path_openat
+            |
+            ---path_openat
+               do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] do_open
+            |
+            ---do_open
+               do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] do_truncate
+            |
+            ---do_truncate
+               notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] notify_change
+            |
+            ---notify_change
+               ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] ext4_setattr
+            |
+            ---ext4_setattr
+               ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] ext4_truncate
+            |
+            ---ext4_truncate
+               ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] ext4_ext_truncate
+            |
+            ---ext4_ext_truncate
+               __es_remove_extent
+
+     6.74%     0.00%  gi_model  [kernel.kallsyms]     [.] __es_remove_extent
+            |
+            ---__es_remove_extent
+
+     6.69%     6.69%  gi_model  libc.so.6             [.] 0x000000000006128b
+            |
+            ---_start
+               __libc_start_main
+               0x7a761202a1ca
+               main
+               std::ostream& std::ostream::_M_insert<double>(double)
+               std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               0x7a761250d285
+               vsnprintf
+               0x7a761206a6c5
+               0x7a761206335c
+               0x7a7612061ef0
+
+     6.69%     0.00%  gi_model  libstdc++.so.6.0.33   [.] std::ostream& std::ostream::_M_insert<double>(double)
+            |
+            ---std::ostream& std::ostream::_M_insert<double>(double)
+               std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               0x7a761250d285
+               vsnprintf
+               0x7a761206a6c5
+               0x7a761206335c
+               0x7a7612061ef0
+
+     6.69%     0.00%  gi_model  libstdc++.so.6.0.33   [.] std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+            |
+            ---std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               0x7a761250d285
+               vsnprintf
+               0x7a761206a6c5
+               0x7a761206335c
+               0x7a7612061ef0
+
+     6.69%     0.00%  gi_model  libstdc++.so.6.0.33   [.] 0x00007a761250d285
+            |
+            ---0x7a761250d285
+               vsnprintf
+               0x7a761206a6c5
+               0x7a761206335c
+               0x7a7612061ef0
+
+     6.69%     0.00%  gi_model  libc.so.6             [.] vsnprintf
+            |
+            ---vsnprintf
+               0x7a761206a6c5
+               0x7a761206335c
+               0x7a7612061ef0
+
+     6.69%     0.00%  gi_model  libc.so.6             [.] 0x00007a761206a6c5
+            |
+            ---0x7a761206a6c5
+               0x7a761206335c
+               0x7a7612061ef0
+
+     6.69%     0.00%  gi_model  libc.so.6             [.] 0x00007a761206335c
+            |
+            ---0x7a761206335c
+               0x7a7612061ef0
+
+     6.69%     0.00%  gi_model  libc.so.6             [.] 0x00007a7612061ef0
+            |
+            ---0x7a7612061ef0
+
+     3.04%     3.04%  gi_model  [kernel.kallsyms]     [k] vma_link_file
+            |
+            ---0x7a761288a548
+               0x7a761288b75e
+               0x7a7612889f46
+               0x7a761288d41c
+               0x7a761286de67
+               _dl_catch_exception
+               0x7a761286da2d
+               0x7a7612874529
+               0x7a7612872f79
+               0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761288d41c
+            |
+            ---0x7a761288d41c
+               0x7a761286de67
+               _dl_catch_exception
+               0x7a761286da2d
+               0x7a7612874529
+               0x7a7612872f79
+               0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761286de67
+            |
+            ---0x7a761286de67
+               _dl_catch_exception
+               0x7a761286da2d
+               0x7a7612874529
+               0x7a7612872f79
+               0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] _dl_catch_exception
+            |
+            ---_dl_catch_exception
+               0x7a761286da2d
+               0x7a7612874529
+               0x7a7612872f79
+               0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a761286da2d
+            |
+            ---0x7a761286da2d
+               0x7a7612874529
+               0x7a7612872f79
+               0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a7612874529
+            |
+            ---0x7a7612874529
+               0x7a7612872f79
+               0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a7612872f79
+            |
+            ---0x7a7612872f79
+               0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  ld-linux-x86-64.so.2  [.] 0x00007a7612890d2c
+            |
+            ---0x7a7612890d2c
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  [kernel.kallsyms]     [.] __x64_sys_mmap
+            |
+            ---__x64_sys_mmap
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  [kernel.kallsyms]     [.] ksys_mmap_pgoff
+            |
+            ---ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  [kernel.kallsyms]     [.] vm_mmap_pgoff
+            |
+            ---vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  [kernel.kallsyms]     [.] do_mmap
+            |
+            ---do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  [kernel.kallsyms]     [.] mmap_region
+            |
+            ---mmap_region
+               __mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  [kernel.kallsyms]     [.] __mmap_region
+            |
+            ---__mmap_region
+               perf_event_mmap
+               __perf_addr_filters_adjust
+
+     3.04%     0.00%  gi_model  [kernel.kallsyms]     [.] __perf_addr_filters_adjust
+            |
+            ---__perf_addr_filters_adjust
+
+     0.78%     0.00%  gi_model  [unknown]             [k] 0x00007ad9dc4eef3b
+            |
+            ---0x7ad9dc4eef3b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+
+     0.78%     0.00%  gi_model  [kernel.kallsyms]     [.] __x64_sys_execve
+            |
+            ---__x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+
+     0.78%     0.00%  gi_model  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+            |
+            ---do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+
+     0.78%     0.00%  gi_model  [kernel.kallsyms]     [.] bprm_execve
+            |
+            ---bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+
+     0.78%     0.00%  gi_model  [kernel.kallsyms]     [.] bprm_execve.part.0
+            |
+            ---bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+
+     0.78%     0.00%  gi_model  [kernel.kallsyms]     [.] exec_binprm
+            |
+            ---exec_binprm
+               load_elf_binary
+
+     0.78%     0.00%  gi_model  [kernel.kallsyms]     [.] load_elf_binary
+            |
+            ---load_elf_binary
+
+     0.48%     0.00%  gi_model  [kernel.kallsyms]     [.] load_elf_interp.isra.0
+     0.42%     0.42%  gi_model  [kernel.kallsyms]     [k] srso_alias_return_thunk
+     0.42%     0.00%  gi_model  [kernel.kallsyms]     [.] asm_exc_page_fault
+     0.30%     0.30%  gi_model  [kernel.kallsyms]     [k] expand_stack_locked
+     0.30%     0.00%  gi_model  [kernel.kallsyms]     [.] setup_arg_pages
+     0.30%     0.00%  gi_model  [kernel.kallsyms]     [.] down_write
+     0.06%     0.05%  gi_model  [kernel.kallsyms]     [.] elf_load
+     0.05%     0.00%  gi_model  [kernel.kallsyms]     [.] vm_mmap
+     0.05%     0.00%  gi_model  [kernel.kallsyms]     [.] security_mmap_file
+     0.04%     0.00%  perf-exe  [unknown]             [k] 0x00007ad9dc4eef3b
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] do_syscall_64
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] x64_sys_call
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] __x64_sys_execve
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] bprm_execve
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] bprm_execve.part.0
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] exec_binprm
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] load_elf_binary
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] begin_new_exec
+     0.04%     0.04%  perf-exe  [kernel.kallsyms]     [k] perf_iterate_ctx
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] __set_task_comm
+     0.04%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_comm_event.constprop.0
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] vm_munmap
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] __vm_munmap
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] do_vmi_munmap
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] do_vmi_align_munmap
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] vms_complete_munmap_vmas
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] unmap_region
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] free_pgtables
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] unlink_file_vma_batch_final
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] __remove_shared_vm_struct
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] asm_sysvec_reschedule_ipi
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] sysvec_reschedule_ipi
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] irqentry_exit
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] raw_irqentry_exit_cond_resched
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] preempt_schedule_irq
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] __schedule
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] finish_task_switch.isra.0
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] __perf_event_task_sched_in
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] perf_event_sched_in
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] ctx_sched_in
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] visit_groups_merge.constprop.0.isra.0
+     0.01%     0.00%  gi_model  [kernel.kallsyms]     [.] merge_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_exec
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_enable_on_exec
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] ctx_resched
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] ctx_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] visit_groups_merge.constprop.0.isra.0
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] merge_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] event_sched_in
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_ibs_add
+     0.01%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_ibs_start
+     0.01%     0.01%  gi_model  [kernel.kallsyms]     [k] nmi_handle.part.0
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [k] perf_sample_event_took
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [.] perf_event_idx_default
+     0.00%     0.00%  gi_model  [kernel.kallsyms]     [k] perf_event_update_userpage
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [k] perf_event_update_userpage
+     0.00%     0.00%  gi_model  [kernel.kallsyms]     [.] event_sched_in
+     0.00%     0.00%  gi_model  [kernel.kallsyms]     [.] perf_ibs_add
+     0.00%     0.00%  gi_model  [kernel.kallsyms]     [.] perf_ibs_start
+     0.00%     0.00%  gi_model  [kernel.kallsyms]     [.] using_native_sched_clock
+     0.00%     0.00%  perf-exe  [kernel.kallsyms]     [k] calc_timer_values
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
