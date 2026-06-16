@@ -48,4 +48,4 @@ Uses Linux `perf` and [FlameGraph](https://github.com/brendangregg/FlameGraph) t
 cd tests
 bash performance_tests.sh
 ```
-The results will be saved to `tests/data/perf_data` & `tests/data/perf_plots`
+The results will be saved to `tests/data/perf_data` & `tests/data/perf_plots` & `tests/data/csv_files`

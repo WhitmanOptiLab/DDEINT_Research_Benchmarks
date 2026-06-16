@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iomanip>
 #include <ctime>
+#include <filesystem>
 
 #define ABS_TOL 1e-9
 #define REL_TOL 1e-9
@@ -42,7 +43,9 @@ int main()
     }
 
     // save the data to a csv file
-    std::ofstream file("../data/bc_model_cpp.csv");
+    std::filesystem::path data_path = std::filesystem::canonical("/proc/self/exe").parent_path().parent_path() / "data" / "csv_files" / "bc_model_cpp.csv";
+    std::filesystem::create_directories(data_path.parent_path());
+    std::ofstream file(data_path);
     file << "Time,u1,u2,u3\n";
     for (size_t i = 0; i < time_points.size(); ++i) 
     {
