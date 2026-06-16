@@ -23,7 +23,7 @@ struct CVParams {
 
 extern CVParams cv_p;
 
-void cv_dde(size_t num_eq, double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
+void cv_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
 
 double history_Pa(double t);
 

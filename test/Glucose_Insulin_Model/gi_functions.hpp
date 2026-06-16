@@ -18,6 +18,6 @@ struct GIParams
 
 extern GIParams gi_p;
 
-void gi_dde(size_t num_eq, double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
+void gi_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
 
 double history_gi(double t);

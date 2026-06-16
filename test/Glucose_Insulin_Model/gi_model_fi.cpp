@@ -20,7 +20,7 @@ struct GIParams
 
 GIParams gi_p = {10.0, 5.0, 1.0, 90.0, 10.0, 0.1, 0.05, 5.0};
 
-void gi_dde(size_t num_eq, double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history)
+void gi_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history)
 {
     double G_Tau = history.at_time(t - gi_p.tau, 0);
     double I_Tau = history.at_time(t - gi_p.tau, 1);

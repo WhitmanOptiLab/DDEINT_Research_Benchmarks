@@ -6,7 +6,7 @@
 #define ABS_TOL 1e-9
 #define REL_TOL 1e-9
 
-static void BM_DDEINT_CV(benchmark::State& state)
+static void DDEINT_BM_CV(benchmark::State& state)
 {
     // Initial conditions and time span
     std::vector<double> u0 = {93, (1 / (1 + cv_p.R / cv_p.r)) * 93, (1 / (cv_p.R * cv_p.Vstr)) * (1 / (1 + cv_p.r / cv_p.R)) * 93};
@@ -17,16 +17,17 @@ static void BM_DDEINT_CV(benchmark::State& state)
     std::vector<std::function<double(double)>> prehistory = {history_Pa, history_Pv, history_H};
     std::vector<double> max_delays = {4.0, 4.0, 4.0}; // Ensure the size matches the number of equations
 
-    DDEint_dopri_5<cv_dde> dde_solver(3, max_delays, prehistory);
 
     for (auto _ : state)
     {
-        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 20000, ABS_TOL, REL_TOL);
-        benchmark::DoNotOptimize(solution);
+        DoPri_5<cv_dde> dde_solver(3, max_delays, prehistory);
+        dde_solver.initialize(0, 0.1, 1e-5, u0, ABS_TOL, REL_TOL, false, false);
+        Results results = dde_solver.solve(t_initial, t_final, 500, 20000);
+        benchmark::DoNotOptimize(results);
     }
 }
 
-BENCHMARK(BM_DDEINT_CV)
+BENCHMARK(DDEINT_BM_CV)
     ->Unit(benchmark::kMillisecond)  // Measure time in milliseconds
     ->ReportAggregatesOnly(true)  // Only report the aggregated results
     ->UseRealTime();  // Use wall-clock time

@@ -26,7 +26,7 @@ struct CVParams {
 
 CVParams cv_p = {1.55, 519, 1.05, 0.068, 67.9, 93, 93, 93, 0.84, 7, 7, 7, 1.17, 0, 4.0};
 
-void cv_dde(size_t num_eq, double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history) 
+void cv_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history) 
 {
     double R = t <= 600 ? 1.05 : 0.21 * std::exp(600 - t) + 0.84;
     double Patau = history.at_time(t - cv_p.tau, 0);

@@ -7,7 +7,7 @@
 #define REL_TOL 1e-9
 
 // Benchmark function specifically for the run function
-static void BM_DDEint_dopri_5_run(benchmark::State& state) {
+static void DDEINT_BM_GI(benchmark::State& state) {
     // Initial conditions and time span
     std::vector<double> u0 = {gi_p.G_b, gi_p.I_b};
     double t_initial = 0.0;
@@ -17,16 +17,17 @@ static void BM_DDEint_dopri_5_run(benchmark::State& state) {
     std::vector<std::function<double(double)>> prehistory = {history_gi, history_gi};
     std::vector<double> max_delays = {gi_p.tau, gi_p.tau}; // Ensure the size matches the number of equations
 
-    DDEint_dopri_5<gi_dde> dde_solver(2, max_delays, prehistory);
 
     for (auto _ : state) {
-        std::vector<std::vector<double>> solution = dde_solver.run(t_initial, t_final, u0, 0.1, 1e-5, 10000, ABS_TOL, REL_TOL);
-        benchmark::DoNotOptimize(solution);
+        DoPri_5<gi_dde> dde_solver(2, max_delays, prehistory);
+        dde_solver.initialize(0, 0.1, 1e-5, u0, ABS_TOL, REL_TOL, false, false);
+        Results results = dde_solver.solve(t_initial, t_final, 500, 10000);
+        benchmark::DoNotOptimize(results);
     }
 }
 
 // Register the function as a benchmark
-BENCHMARK(BM_DDEint_dopri_5_run)
+BENCHMARK(DDEINT_BM_GI)
     ->Unit(benchmark::kMillisecond)  // Measure time in milliseconds
     ->ReportAggregatesOnly(true)  // Only report the aggregated results
     ->UseRealTime();  // Use wall-clock time
