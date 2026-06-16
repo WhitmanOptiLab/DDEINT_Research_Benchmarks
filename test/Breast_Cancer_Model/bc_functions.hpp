@@ -22,6 +22,6 @@ struct BCParams
 
 extern BCParams bc_p;
 
-void bc_dde(size_t num_eq, double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
+void bc_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
 
 double history_bc(double t);

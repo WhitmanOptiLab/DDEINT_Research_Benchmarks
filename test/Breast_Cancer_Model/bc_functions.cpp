@@ -3,7 +3,7 @@
 
 BCParams bc_p = {0.2, 0.3, 1.0, 5.0, 0.2, 0.3, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
 
-void bc_dde(size_t num_eq, double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history)
+void bc_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history)
 {
     double hist3 = history.at_time(t - bc_p.tau, 2);
     du[0] = (bc_p.v0 / (1 + bc_p.beta0 * std::pow(hist3, 2))) * (bc_p.p0 - bc_p.q0) * u[0] - bc_p.d0 * u[0];
