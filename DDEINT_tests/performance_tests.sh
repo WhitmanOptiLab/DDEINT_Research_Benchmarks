@@ -21,10 +21,10 @@ HE_SRC="2D_Heat_Equation/heat_equation.cpp"
 HE_OUTPUT="heat_equation"
 
 # create necessary directories
-BUILD_DIR="build"
+BUILD_DIR="perf_build"
 PERF_DIR="perf_output"
-PLOT_DIR="plots"
-DATA_DIR="data"
+PLOT_DIR="data/perf_plots"
+DATA_DIR="data/perf_data"
 mkdir -p $BUILD_DIR $PERF_DIR $PLOT_DIR $DATA_DIR
 
 # make sure this is a linux machine

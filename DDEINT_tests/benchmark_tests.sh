@@ -2,8 +2,8 @@
 
 # This script is used to run the benchmark tests 
 
-BUILD_DIR="build"
-DATA_DIR="data"
+BUILD_DIR="bench_build"
+DATA_DIR="data/bench_data"
 
 mkdir -p $BUILD_DIR $DATA_DIR
 
@@ -39,3 +39,7 @@ else
     echo "Benchmark tests failed"
     exit 1
 fi
+
+# clean up
+echo "Cleaning up"
+rm -rf $BUILD_DIR
