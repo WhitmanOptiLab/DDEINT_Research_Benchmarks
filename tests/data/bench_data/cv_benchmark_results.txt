@@ -1,6 +1,6 @@
 {
   "context": {
-    "date": "2026-06-16T13:44:34-07:00",
+    "date": "2026-06-16T14:28:49-07:00",
     "host_name": "pop-os",
     "executable": "./bench_build/benchmark_cv",
     "num_cpus": 12,
@@ -32,7 +32,7 @@
         "num_sharing": 12
       }
     ],
-    "load_avg": [0.841797,0.657715,0.587402],
+    "load_avg": [1.86377,1.08984,0.823242],
     "library_version": "v1.8.5-8-gebb5e392",
     "library_build_type": "release",
     "json_schema_version": 1
@@ -47,9 +47,9 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 215,
-      "real_time": 3.2799674046505376e+00,
-      "cpu_time": 3.2794157860465116e+00,
+      "iterations": 227,
+      "real_time": 3.0773190792948970e+00,
+      "cpu_time": 3.0772449867841409e+00,
       "time_unit": "ms"
     }
   ]
