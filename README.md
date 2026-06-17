@@ -38,7 +38,7 @@ cd tests
 bash benchmark_tests.sh
 ```
 
-The results will be saved to `tests/data/bench_data`
+The results will be saved to `DDEINT_tests/data/bench_data`
 
 ## Running Performance Tests
 
@@ -48,4 +48,4 @@ Uses Linux `perf` and [FlameGraph](https://github.com/brendangregg/FlameGraph) t
 cd tests
 bash performance_tests.sh
 ```
-The results will be saved to `tests/data/perf_data` & `tests/data/perf_plots` & `tests/data/csv_files`
+The results will be saved to `DDEINT_tests/data/perf_data` & `DDEINT_tests/data/perf_plots` & `DDEINT_tests/data/csv_files`
