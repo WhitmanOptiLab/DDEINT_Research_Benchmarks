@@ -17,7 +17,7 @@ make
 cd ..
 
 # Run the benchmark tests
-# save data to benchmark_results.txt in the data directory
+# save data to benchmark_results.txt in the data/bench_data directory
 ./$BUILD_DIR/benchmark_bc --benchmark_format=console --benchmark_out=$DATA_DIR/bc_benchmark_results.txt
 if [ $? -eq 0 ]; then
     echo "Benchmark tests passed"
@@ -33,6 +33,13 @@ else
     exit 1
 fi
 ./$BUILD_DIR/benchmark_gi --benchmark_format=console --benchmark_out=$DATA_DIR/gi_benchmark_results.txt
+if [ $? -eq 0 ]; then
+    echo "Benchmark tests passed"
+else
+    echo "Benchmark tests failed"
+    exit 1
+fi
+./$BUILD_DIR/benchmark_cw --benchmark_format=console --benchmark_out=$DATA_DIR/cw_benchmark_results.txt
 if [ $? -eq 0 ]; then
     echo "Benchmark tests passed"
 else

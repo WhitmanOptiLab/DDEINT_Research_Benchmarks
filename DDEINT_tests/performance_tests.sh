@@ -17,8 +17,15 @@ CV_OUTPUT="cv_model"
 GI_SRC="Glucose_Insulin_Model/gi_functions.cpp Glucose_Insulin_Model/gi_model.cpp"
 GI_OUTPUT="gi_model"
 
+CW_SRC="Cobweb_Model/cw_functions.cpp Cobweb_Model/cw_model.cpp"
+CW_OUTPUT="cw_model"
+
+# 2D_Heat_Equation
+
 HE_SRC="2D_Heat_Equation/heat_equation.cpp"
 HE_OUTPUT="heat_equation"
+
+
 
 # create necessary directories
 BUILD_DIR="perf_build"
@@ -82,6 +89,9 @@ compile_and_test "$CV_SRC" "$CV_OUTPUT"
 
 # # Glucose Insulin Model
 compile_and_test "$GI_SRC" "$GI_OUTPUT"
+
+# # Cobweb Model 
+compile_and_test "$CW_SRC" "$CW_OUTPUT"
 
 # 2D Heat Equation
 compile_and_test "$HE_SRC" "$HE_OUTPUT"

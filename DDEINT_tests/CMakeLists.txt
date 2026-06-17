@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_subdirectory(../utils/benchmark build_benchmark)
 
 # Include directories
-include_directories(../DDEINT ../utils/benchmark/include ../tests/Glucose_Insulin_Model ../tests/Cardiovascular_Model ../tests/Breast_Cancer_Model)
+include_directories(../DDEINT ../utils/benchmark/include ../DDEINT_tests/Glucose_Insulin_Model ../DDEINT_tests/Cardiovascular_Model ../DDEINT_tests/Breast_Cancer_Model ../DDEINT_tests/Cobweb_Model)
 
 # Glucose Insulin Model
 set(GI_SOURCES
@@ -37,6 +37,17 @@ set(BC_SOURCES
 
 add_executable(benchmark_bc ${BC_SOURCES})
 target_link_libraries(benchmark_bc benchmark::benchmark benchmark::benchmark_main pthread)
+
+
+# Cobweb model
+set(CW_SOURCES
+    Cobweb_Model/cw_benchmark.cpp
+    Cobweb_Model/cw_functions.cpp
+)
+
+add_executable(benchmark_cw ${CW_SOURCES})
+target_link_libraries(benchmark_cw benchmark::benchmark benchmark::benchmark_main pthread)
+
 
 # Set the build type to Release
 if(NOT CMAKE_BUILD_TYPE)
