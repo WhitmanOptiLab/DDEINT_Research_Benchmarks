@@ -7,9 +7,9 @@
 [submodule "utils/benchmark"]
 	path = utils/benchmark
 	url = https://github.com/google/benchmark.git
-[submodule "external_libraries/dde_solver"]
-	path = external_libraries/dde_solver
+[submodule "comparison_libraries/dde_solver"]
+	path = comparison_libraries/dde_solver
 	url = https://github.com/WarrenWeckesser/dde_solver.git
-[submodule "external_libraries/dde"]
-	path = external_libraries/dde
+[submodule "comparison_libraries/dde"]
+	path = comparison_libraries/dde
 	url = https://github.com/mrc-ide/dde.git
