@@ -6,7 +6,13 @@ This repository contains experimental cases to test the DDEINT library against o
 
 Luke Samuels, Terence Mahlatini, Uli Raudales, Sebastian Wiedenhoeft, Julio De Jesus
 
-## Set up
+## Folder Structure
+- `DDEINT_tests/` — benchmarks for our library
+- `external_tests/dde_tests/` — equivalent tests for [dde](https://github.com/mrc-ide/dde) (R-based DDE solver)
+- `external_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran)
+- `external_libraries/` — git submodules for external solvers
+
+## Set Up
 
 1. Clone Repo
 ```
@@ -29,23 +35,52 @@ git checkout <branch-name>
 cd ..
 ```
 
-## Running Benchmark Tests
+## DDEINT
+
+### Running Benchmark Tests
 
 Uses Google Benchmark to measure solver speed across different models. To run test on DDEINT:
 
 ```
-cd tests
+cd DDEINT_tests
 bash benchmark_tests.sh
 ```
 
 The results will be saved to `DDEINT_tests/data/bench_data`
 
-## Running Performance Tests
+### Running Performance Tests
 
 Uses Linux `perf` and [FlameGraph](https://github.com/brendangregg/FlameGraph) to profile solver CPU performance and generate flame graphs for each model.
 
 ```
-cd tests
+cd DDEINT_tests
 bash performance_tests.sh
 ```
 The results will be saved to `DDEINT_tests/data/perf_data` & `DDEINT_tests/data/perf_plots` & `DDEINT_tests/data/csv_files`
+
+## External Library Tests
+
+Same structure as DDEINT - will be interacting with `external_tests/dde_solver_tests` & `external_tests/dde_tests`
+
+All results will be saved inside each respective folder under `/data`.
+
+### Benchmarking
+```
+cd external_tests/dde_solver_tests
+bash benchmark_tests.sh
+```
+or 
+```
+cd external_tests/dde_tests
+bash benchmark_tests.sh
+```
+### Performance (Linux)
+```
+cd external_tests/dde_solver_tests
+bash performance_tests.sh
+```
+or 
+```
+cd external_tests/dde_tests
+bash performance_tests.sh
+```
