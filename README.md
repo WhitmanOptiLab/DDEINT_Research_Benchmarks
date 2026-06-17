@@ -58,7 +58,7 @@ bash performance_tests.sh
 ```
 The results will be saved to `DDEINT_tests/data/perf_data` & `DDEINT_tests/data/perf_plots` & `DDEINT_tests/data/csv_files`
 
-## External Library Tests
+## Comparison Libraries Tests
 
 Same structure as DDEINT - will be interacting with `comparison_tests/dde_solver_tests` & `comparison_tests/dde_tests`
 
