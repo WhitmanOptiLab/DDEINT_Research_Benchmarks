@@ -7,10 +7,10 @@ This repository contains experimental cases to test the DDEINT library against o
 Luke Samuels, Terence Mahlatini, Uli Raudales, Sebastian Wiedenhoeft, Julio De Jesus
 
 ## Folder Structure
-- `DDEINT_tests/` — benchmarks for our library
-- `external_tests/dde_tests/` — equivalent tests for [dde](https://github.com/mrc-ide/dde) (R-based DDE solver)
-- `external_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran)
-- `external_libraries/` — git submodules for external solvers
+- `DDEINT_tests/` — benchmarks and performance tests for our library (DDEINT)
+- `comparison_tests/dde_tests/` — equivalent tests for [dde](https://github.com/mrc-ide/dde) (R-based DDE solver)
+- `comparison_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran)
+- `comparison_libraries/` — git submodules for external solvers
 
 ## Set Up
 
@@ -60,27 +60,27 @@ The results will be saved to `DDEINT_tests/data/perf_data` & `DDEINT_tests/data/
 
 ## External Library Tests
 
-Same structure as DDEINT - will be interacting with `external_tests/dde_solver_tests` & `external_tests/dde_tests`
+Same structure as DDEINT - will be interacting with `comparison_tests/dde_solver_tests` & `comparison_tests/dde_tests`
 
 All results will be saved inside each respective folder under `/data`.
 
 ### Benchmarking
 ```
-cd external_tests/dde_solver_tests
+cd comparison_tests/dde_solver_tests
 bash benchmark_tests.sh
 ```
 or 
 ```
-cd external_tests/dde_tests
+cd comparison_tests/dde_tests
 bash benchmark_tests.sh
 ```
 ### Performance (Linux)
 ```
-cd external_tests/dde_solver_tests
+cd comparison_tests/dde_solver_tests
 bash performance_tests.sh
 ```
 or 
 ```
-cd external_tests/dde_tests
+cd comparison_tests/dde_tests
 bash performance_tests.sh
 ```
