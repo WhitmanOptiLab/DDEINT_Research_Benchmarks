@@ -1,10 +1,10 @@
 {
   "context": {
-    "date": "2026-06-17T20:30:57-07:00",
+    "date": "2026-06-17T22:44:51-07:00",
     "host_name": "juliodejesus",
     "executable": "./bench_build/benchmark_bc",
     "num_cpus": 12,
-    "mhz_per_cpu": 3393,
+    "mhz_per_cpu": 4242,
     "cpu_scaling_enabled": false,
     "caches": [
       {
@@ -32,7 +32,7 @@
         "num_sharing": 12
       }
     ],
-    "load_avg": [0.682129,0.49707,0.619629],
+    "load_avg": [1.23145,0.435547,0.162598],
     "library_version": "v1.8.5-8-gebb5e392",
     "library_build_type": "release",
     "json_schema_version": 1
@@ -47,9 +47,9 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 12909,
-      "real_time": 5.3587227593222486e-02,
-      "cpu_time": 5.3420939422108606e-02,
+      "iterations": 12668,
+      "real_time": 5.5708693321756139e-02,
+      "cpu_time": 5.5549862014524796e-02,
       "time_unit": "ms"
     }
   ]
