@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script is used to run the benchmark tests 
 BUILD_DIR="bench_build"
-DATA_DIR="dde_solver_tests_data/bench_data"
+DATA_DIR="data/bench_data"
 mkdir -p $BUILD_DIR $DATA_DIR
 git submodule update --init --recursive
 # compile and run benchmark test for each model

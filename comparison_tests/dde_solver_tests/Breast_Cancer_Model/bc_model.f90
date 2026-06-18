@@ -54,7 +54,7 @@ PROGRAM bc_model
     END DO
 
     PRINT *,' Normal return from DDE_SOLVER with results'
-    PRINT *," written to the file 'data/bc_model.dat'."
+    PRINT *," written to the file 'data/csv_files/bc_model_dde_solver.csv'."
 
   ELSE
     PRINT *,' Abnormal return from DDE_SOLVER with FLAG = ',&
