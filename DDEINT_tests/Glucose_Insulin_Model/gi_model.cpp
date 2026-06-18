@@ -42,7 +42,7 @@ int main()
     }
 
     // Get the executable's directory and build path from there
-    std::filesystem::path data_path = std::filesystem::canonical("/proc/self/exe").parent_path().parent_path() / "data" / "csv_files" / "gi_model_cpp.csv";
+    std::filesystem::path data_path = std::filesystem::canonical("/proc/self/exe").parent_path().parent_path() / "data" / "csv_files" / "gi_model.csv";
     std::filesystem::create_directories(data_path.parent_path());
     std::ofstream file(data_path);
     file << "Time,Glucose,Insulin\n";

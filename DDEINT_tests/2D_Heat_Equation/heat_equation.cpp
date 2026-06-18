@@ -96,9 +96,6 @@ void initialize_y(size_t nx_loc, size_t ny_loc, double dx, double dy, std::vecto
     }
 }
 
-
-
-
 double calculate_rms(const std::vector<double>& values) {
     double sum_of_squares = 0.0;
     for (double value : values) {

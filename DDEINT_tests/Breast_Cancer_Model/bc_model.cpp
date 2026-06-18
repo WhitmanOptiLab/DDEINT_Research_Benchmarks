@@ -43,7 +43,7 @@ int main()
     }
 
     // save the data to a csv file
-    std::filesystem::path data_path = std::filesystem::canonical("/proc/self/exe").parent_path().parent_path() / "data" / "csv_files" / "bc_model_cpp.csv";
+    std::filesystem::path data_path = std::filesystem::canonical("/proc/self/exe").parent_path().parent_path() / "data" / "csv_files" / "bc_model.csv";
     std::filesystem::create_directories(data_path.parent_path());
     std::ofstream file(data_path);
     file << "Time,u1,u2,u3\n";
