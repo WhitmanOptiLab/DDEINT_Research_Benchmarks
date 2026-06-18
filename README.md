@@ -7,8 +7,8 @@ This repository contains experimental cases to test the DDEINT library against o
 Luke Samuels, Terence Mahlatini, Uli Raudales, Sebastian Wiedenhoeft, Julio De Jesus
 
 ## Folder Structure
-- `DDEINT_tests/` — benchmarks and performance tests for our library (DDEINT) **REQUIRED FOLDER**
-- `comparison_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran) **REQUIRED FOLDER**
+- `DDEINT_tests/` — benchmarks and performance tests for our library (DDEINT) -- **REQUIRED FOLDER**
+- `comparison_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran) -- **REQUIRED FOLDER**
 - `comparison_tests/dde_tests/` — equivalent tests for [dde](https://github.com/mrc-ide/dde) (R-based DDE solver)
 - `comparison_libraries/` — git submodules for external solvers
 
