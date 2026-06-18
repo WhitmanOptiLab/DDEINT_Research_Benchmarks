@@ -1,0 +1,222 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 13  of event 'cpu/cycles/Pu'
+# Event count (approx.): 1698142
+#
+# Children      Self  Command   Shared Object         Symbol                         
+# ........  ........  ........  ....................  ...............................
+#
+    28.28%    28.28%  bc_model  libc.so.6             [.] 0x0000000000074851
+            |
+            ---0x7ffec9003030
+               0x7ffec9ea15f0
+               0x7f3b1fc74851
+
+    28.28%     0.00%  bc_model  [unknown]             [.] 0x00007ffec9003030
+            |
+            ---0x7ffec9003030
+               0x7ffec9ea15f0
+               0x7f3b1fc74851
+
+    28.28%     0.00%  bc_model  [unknown]             [.] 0x00007ffec9ea15f0
+            |
+            ---0x7ffec9ea15f0
+               0x7f3b1fc74851
+
+    28.28%     0.00%  bc_model  libc.so.6             [.] 0x00007f3b1fc74851
+            |
+            ---0x7f3b1fc74851
+
+    26.04%    26.04%  bc_model  ld-linux-x86-64.so.2  [.] 0x000000000000c632
+            |
+            ---0x7f3b208f2632
+
+    26.04%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b208f2632
+            |
+            ---0x7f3b208f2632
+
+    25.47%    25.47%  bc_model  bc_model              [.] __dde_solver_m_MOD_dde_step
+            |
+            ---0x5f63622f646c6975
+               0
+               0x7f3b1fc27c8e
+               main
+               bc_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  [unknown]             [.] 0x5f63622f646c6975
+            |
+            ---0x5f63622f646c6975
+               0
+               0x7f3b1fc27c8e
+               main
+               bc_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  [unknown]             [.] 0000000000000000
+            |
+            ---0
+               0x7f3b1fc27c8e
+               main
+               bc_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  libc.so.6             [.] 0x00007f3b1fc27c8e
+            |
+            ---0x7f3b1fc27c8e
+               main
+               bc_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  bc_model              [.] main
+            |
+            ---main
+               bc_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  bc_model              [.] bc_model (inlined)
+            |
+            ---bc_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  bc_model              [.] dkl_4 (inlined)
+            |
+            ---dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  bc_model              [.] dde_drv1 (inlined)
+            |
+            ---dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  bc_model              [.] dde_drv2 (inlined)
+            |
+            ---dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  bc_model              [.] dde_drv3 (inlined)
+            |
+            ---dde_drv3 (inlined)
+               dde_step (inlined)
+
+    25.47%     0.00%  bc_model  bc_model              [.] dde_step (inlined)
+            |
+            ---dde_step (inlined)
+
+    16.16%    16.16%  bc_model  ld-linux-x86-64.so.2  [.] 0x000000000000bfc9
+            |
+            ---0x7f3b208f1fc9
+
+    16.16%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b208f1fc9
+            |
+            ---0x7f3b208f1fc9
+
+     3.25%     3.25%  bc_model  [unknown]             [k] 0xffffffff9937c136
+            |
+            ---0x7f3b208f154a
+               0x7f3b2091107b
+               0xffffffff9900012f
+               0xffffffff9a5b00ae
+               0xffffffff9937c136
+
+     3.25%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b208f154a
+            |
+            ---0x7f3b208f154a
+               0x7f3b2091107b
+               0xffffffff9900012f
+               0xffffffff9a5b00ae
+               0xffffffff9937c136
+
+     3.25%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2091107b
+            |
+            ---0x7f3b2091107b
+               0xffffffff9900012f
+               0xffffffff9a5b00ae
+               0xffffffff9937c136
+
+     3.25%     0.00%  bc_model  [unknown]             [.] 0xffffffff9900012f
+            |
+            ---0xffffffff9900012f
+               0xffffffff9a5b00ae
+               0xffffffff9937c136
+
+     3.25%     0.00%  bc_model  [unknown]             [.] 0xffffffff9a5b00ae
+            |
+            ---0xffffffff9a5b00ae
+               0xffffffff9937c136
+
+     0.81%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090a888
+            |
+            ---0x7f3b2090a888
+               |          
+                --0.70%--0x7f3b2090a2a7
+                          0x7f3b208fee77
+
+     0.70%     0.70%  bc_model  ld-linux-x86-64.so.2  [.] 0x0000000000018e77
+            |
+            ---0x7f3b2090a888
+               0x7f3b2090a2a7
+               0x7f3b208fee77
+
+     0.70%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090a2a7
+            |
+            ---0x7f3b2090a2a7
+               0x7f3b208fee77
+
+     0.70%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b208fee77
+            |
+            ---0x7f3b208fee77
+
+     0.09%     0.09%  bc_model  ld-linux-x86-64.so.2  [.] 0x0000000000024284
+     0.09%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090a284
+     0.01%     0.01%  bc_model  ld-linux-x86-64.so.2  [.] 0x0000000000025a7a
+     0.01%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090ba7a
+     0.00%     0.00%  bc_model  [unknown]             [.] 0xffffffff990012a6
+     0.00%     0.00%  bc_model  [unknown]             [k] 0xffffffff9a5b6085
+     0.00%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090ba77
+     0.00%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x000000000002591c
+     0.00%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090b91c
+     0.00%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090a880
+     0.00%     0.00%  bc_model  [unknown]             [k] 0xffffffff992d0946
+     0.00%     0.00%  bc_model  [unknown]             [k] 0xffffffff9a5b609a
+     0.00%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] 0x00007f3b2090b83a
+     0.00%     0.00%  bc_model  [unknown]             [k] 0xffffffff99001280
+     0.00%     0.00%  bc_model  [unknown]             [.] 0xffffffff9a5b60c8
+
+
+#
+# (Tip: To browse sample contexts use perf report --sample 10 and select in context menu)
+#

@@ -54,7 +54,7 @@ PROGRAM bc_model
     CLOSE(UNIT=8)
 
     PRINT *,' Normal return from DDE_SOLVER with results'
-    PRINT *," written to the file 'bc_model.dat'."
+    PRINT *," written to the file 'data/bc_model.dat'."
 
   ELSE
     PRINT *,' Abnormal return from DDE_SOLVER with FLAG = ',&
