@@ -13,9 +13,9 @@ BC_OUTPUT="bc_model"
 # create necessary directories
 BUILD_DIR="perf_build"
 PERF_DIR="perf_output"
-PLOT_DIR="data/perf_plots"
-DATA_DIR="data/perf_data"
-mkdir -p $BUILD_DIR $PERF_DIR $PLOT_DIR $DATA_DIR
+PLOT_DIR="dde_solver_tests_data/perf_plots"
+DATA_DIR="dde_solver_tests_data/perf_data"
+mkdir -p $BUILD_DIR $PERF_DIR $PLOT_DIR $DATA_DIR dde_solver_tests_data/csv_files
 
 # make sure this is a linux machine
 if [ "$(uname)" != "Linux" ]; then

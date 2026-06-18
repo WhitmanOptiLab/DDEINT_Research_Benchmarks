@@ -47,11 +47,11 @@ PROGRAM bc_model
   IF (SOL%FLAG == 0) THEN
 
     ! Write the solution to a file for subsequent plotting.
-    OPEN(UNIT=8, FILE='bc_model.dat')
-    DO I = 1,SOL%NPTS
-      WRITE(UNIT=8,FMT='(4D12.4)') SOL%T(I),(SOL%Y(I,J),J=1,NEQN)
-    ENDDO
-    CLOSE(UNIT=8)
+    OPEN(UNIT=8, FILE='data/csv_files/bc_model_dde_solver.csv')
+    WRITE(UNIT=8, FMT='(A)') 'Time,u1,u2,u3'
+    DO I = 1, SOL%NPTS
+      WRITE(UNIT=8, FMT='(F12.8, 3(",", F12.8))') SOL%T(I), (SOL%Y(I,J), J=1,NEQN)
+    END DO
 
     PRINT *,' Normal return from DDE_SOLVER with results'
     PRINT *," written to the file 'data/bc_model.dat'."
