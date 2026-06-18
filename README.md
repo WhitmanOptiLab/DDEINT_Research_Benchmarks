@@ -68,7 +68,6 @@ All results will be saved inside each respective folder under `/data`.
 ```
 cd comparison_tests/dde_solver_tests
 bash benchmark_tests.sh
-
 ```
 ### Performance (Linux)
 ```
