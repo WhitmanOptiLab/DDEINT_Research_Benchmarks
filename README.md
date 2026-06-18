@@ -60,7 +60,7 @@ The results will be saved to `DDEINT_tests/data/perf_data` & `DDEINT_tests/data/
 
 ## Comparison Libraries Tests
 
-Same structure as DDEINT - will be interacting with `comparison_tests/dde_solver_tests` & `comparison_tests/dde_tests`
+Same structure as DDEINT - will be interacting with `comparison_tests/dde_solver_tests`
 
 All results will be saved inside each respective folder under `/data`.
 
@@ -68,19 +68,11 @@ All results will be saved inside each respective folder under `/data`.
 ```
 cd comparison_tests/dde_solver_tests
 bash benchmark_tests.sh
-```
-or 
-```
-cd comparison_tests/dde_tests
-bash benchmark_tests.sh
+
 ```
 ### Performance (Linux)
 ```
 cd comparison_tests/dde_solver_tests
 bash performance_tests.sh
 ```
-or 
-```
-cd comparison_tests/dde_tests
-bash performance_tests.sh
-```
+
