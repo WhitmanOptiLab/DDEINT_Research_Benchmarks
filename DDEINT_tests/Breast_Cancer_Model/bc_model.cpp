@@ -34,7 +34,7 @@ int main()
     std::vector<double> u2_values;
     std::vector<double> u3_values;
 
-    for (size_t i; i < results.times.size(); i++)
+    for (size_t i = 0 ; i < results.times.size(); i++)
     {
         time_points.push_back(results.times[i]);
         u1_values.push_back(results.solutions[i][0]);
