@@ -6,9 +6,17 @@ FFLAGS="-g"
 DDE_SOLVER_SRC="../../comparison_libraries/dde_solver/dde_solver_m.f90"
 
 # the source files
-BC_SRC="Breast_Cancer_Model/define_ddes.f90 Breast_Cancer_Model/bc_model.f90"
+BC_SRC="Breast_Cancer_Model/bc_define_ddes.f90 Breast_Cancer_Model/bc_model.f90"
 BC_OUTPUT="bc_model"
 
+CV_SRC="Cardiovascular_Model/cv_define_ddes.f90 Cardiovascular_Model/cv_model.f90"
+CV_OUTPUT="cv_model"
+
+CW_SRC="Cobweb_Model/cw_define_ddes.f90 Cobweb_Model/cw_model.f90"
+CW_OUTPUT="cw_model"
+
+GI_SRC="Glucose_Insulin_Model/gi_define_ddes.f90 Glucose_Insulin_Model/gi_model.f90"
+GI_OUTPUT="gi_model"
 
 # create necessary directories
 BUILD_DIR="perf_build"
@@ -71,7 +79,12 @@ compile_and_test() {
 
 # Breast Cancer Model
 compile_and_test "$BC_SRC" "$BC_OUTPUT"
-
+# Cardiovascular Model
+compile_and_test "$CV_SRC" "$CV_OUTPUT"
+# Cobweb Model
+compile_and_test "$CW_SRC" "$CW_OUTPUT"
+# Glucose Insulin Model
+compile_and_test "$GI_SRC" "$GI_OUTPUT"
 
 
 

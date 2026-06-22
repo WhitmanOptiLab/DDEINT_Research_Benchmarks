@@ -1,12 +1,12 @@
-PROGRAM cv_model
+PROGRAM cw_model
 
-! Cardiovascular Model solved with DDE_SOLVER.
+! Cobweb Model solved with DDE_SOLVER.
 !
 ! The DDE is defined in the module define_DDEs. The problem
 ! is solved here with DDE_SOLVER and its output written to
 ! a file.
 
-  USE cv_define_DDEs
+  USE cw_define_DDEs
   USE DDE_SOLVER_M
 
   IMPLICIT NONE
@@ -14,28 +14,28 @@ PROGRAM cv_model
   INTEGER, DIMENSION(2) :: NVAR = (/NEQN,NLAGS/)
 
   ! Constant delay and history:
-  DOUBLE PRECISION, DIMENSION(NLAGS) :: DELAYS = (/ 4.0D0 /)
-  DOUBLE PRECISION, DIMENSION(NEQN)  :: HISTORY = (/ 93.0D0, 1.0D0, 1.0D0 /)
+  DOUBLE PRECISION, DIMENSION(NLAGS) :: DELAYS  = (/ 1.5D0 /)
+  DOUBLE PRECISION, DIMENSION(NEQN)  :: HISTORY = (/ 0.4D0, 0.4D0 /)
 
   TYPE(DDE_SOL)  :: SOL
   TYPE(DDE_OPTS) :: OPTS
 
   INTEGER :: I,J
 
-  tau = 4.0D0
+  tau = 1.5D0
 
   SOL = DDE_SOLVER(NVAR,DDES,DELAYS,HISTORY,TSPAN=(/ 0.0D0, 1000.0D0 /))
 
   IF (SOL%FLAG == 0) THEN
 
-    OPEN(UNIT=8, FILE='data/csv_files/cv_model_dde_solver.csv')
-    WRITE(UNIT=8, FMT='(A)') 'Time,Pa,Pv,HR'
+    OPEN(UNIT=8, FILE='data/csv_files/cw_model_dde_solver.csv')
+    WRITE(UNIT=8, FMT='(A)') 'Time,price,expected_price'
     DO I = 1, SOL%NPTS
-      WRITE(UNIT=8, FMT='(F14.10, 3(",", F14.10))') SOL%T(I), (SOL%Y(I,J), J=1,NEQN)
+      WRITE(UNIT=8, FMT='(F14.10, 2(",", F14.10))') SOL%T(I), (SOL%Y(I,J), J=1,NEQN)
     END DO
 
     PRINT *,' Normal return from DDE_SOLVER with results'
-    PRINT *," written to the file 'data/csv_files/cv_model_dde_solver.csv'."
+    PRINT *," written to the file 'data/csv_files/cw_model_dde_solver.csv'."
 
   ELSE
     PRINT *,' Abnormal return from DDE_SOLVER with FLAG = ',&
@@ -45,4 +45,4 @@ PROGRAM cv_model
   CALL PRINT_STATS(SOL)
   CALL RELEASE_ARRAYS(SOL,OPTS)
 
-END PROGRAM cv_model
+END PROGRAM cw_model

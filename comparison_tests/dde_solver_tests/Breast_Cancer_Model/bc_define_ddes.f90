@@ -1,4 +1,4 @@
-MODULE define_DDEs
+MODULE bc_define_DDEs
 
   IMPLICIT NONE
   
@@ -49,4 +49,4 @@ CONTAINS
 
     RETURN 
   END SUBROUTINE DDES
-END MODULE define_DDEs
+END MODULE bc_define_DDEs

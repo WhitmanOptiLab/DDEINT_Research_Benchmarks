@@ -6,7 +6,7 @@ PROGRAM bc_model
 ! is solved here with DDE_SOLVER and its output written to
 ! a file.
 
-  USE define_DDEs
+  USE bc_define_DDEs
   USE DDE_SOLVER_M
 
   IMPLICIT NONE

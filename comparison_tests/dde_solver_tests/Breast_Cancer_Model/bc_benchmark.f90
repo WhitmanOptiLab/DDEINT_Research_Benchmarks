@@ -1,6 +1,6 @@
 SUBROUTINE run_bc_solver() BIND(C, NAME='run_bc_solver_')
 
-  USE define_DDEs
+  USE bc_define_DDEs
   USE DDE_SOLVER_M
   USE ISO_C_BINDING
 
