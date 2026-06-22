@@ -25,23 +25,21 @@ PROGRAM bc_model
   DOUBLE PRECISION, DIMENSION(NLAGS) :: DELAYS = (/ 1.0D0 /)
   DOUBLE PRECISION, DIMENSION(NEQN)  :: HISTORY = (/ 1.0D0, 1.0D0, 1.0D0 /)
 
+  INTEGER, PARAMETER :: NOUT = 501
+  DOUBLE PRECISION, DIMENSION(NOUT) :: TSPAN
+  INTEGER :: I, J
+
   TYPE(DDE_SOL)  :: SOL
   TYPE(DDE_OPTS) :: OPTS
 
-  !   SOL%NPTS         -- NPTS, number of output points.
-  !
-  !   SOL%T(NPTS)      -- values of independent variable, T.
-  !
-  !   SOL%Y(NPTS,NEQN) -- values of dependent variable, Y,
-  !                       corresponding to values of SOL%T.
-
-  INTEGER :: I,J
-
-  ! tau is a global variable in define_DDEs.
-  ! Assign its value here.
   tau = 1.0D0
 
-  SOL = DDE_SOLVER(NVAR,DDES,DELAYS,HISTORY,TSPAN=(/ 0.0D0, 10.0D0 /))
+  ! Build the output time array
+  DO I = 1, NOUT
+    TSPAN(I) = (I-1) * 0.02D0
+  END DO
+
+  SOL = DDE_SOLVER(NVAR,DDES,DELAYS,HISTORY,TSPAN=TSPAN)
 
   ! Was the solver successful?
   IF (SOL%FLAG == 0) THEN
