@@ -1,0 +1,3482 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 97  of event 'cycles:P'
+# Event count (approx.): 69104094
+#
+# Children      Self  Command   Shared Object         Symbol                             
+# ........  ........  ........  ....................  ...................................
+#
+    97.07%     0.00%  cw_model  cw_model              [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               |          
+               |--64.17%--0x753aa16be593
+               |          |          
+               |          |--53.02%--0x753aa16be08c
+               |          |          |          
+               |          |          |--50.57%--0x753aa16c8816
+               |          |          |          |          
+               |          |          |          |--39.48%--0x753aa16c6d27
+               |          |          |          |          __snprintf_chk
+               |          |          |          |          __vsnprintf_internal
+               |          |          |          |          |          
+               |          |          |          |          |--37.42%--__printf_buffer
+               |          |          |          |          |          |          
+               |          |          |          |          |           --30.98%--__printf_fp_l_buffer
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--8.25%--__mpn_divrem
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--2.13%--hack_digit
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |           --1.15%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--2.19%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--1.09%--__mpn_divrem
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.05%--hack_digit
+               |          |          |          |          |          
+               |          |          |          |           --0.91%--__strchrnul_avx2
+               |          |          |          |          
+               |          |          |          |--9.78%--0x753aa16c7042
+               |          |          |          |          |          
+               |          |          |          |          |--1.46%--0x753aa16c5467
+               |          |          |          |          |          
+               |          |          |          |          |--1.42%--0x753aa16c57b4
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c5812
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c54a6
+               |          |          |          |          |          
+               |          |          |          |          |--1.15%--0x753aa16c55f4
+               |          |          |          |          |          
+               |          |          |          |          |--1.11%--0x753aa16c599d
+               |          |          |          |          |          
+               |          |          |          |          |--1.02%--0x753aa16c570d
+               |          |          |          |          |          
+               |          |          |          |           --1.02%--0x753aa16c54ca
+               |          |          |          |          
+               |          |          |           --1.31%--0x753aa16c6c15
+               |          |          |          
+               |          |           --2.45%--0x753aa16c882c
+               |          |                     0x753aa16c381e
+               |          |                     |          
+               |          |                     |--1.31%--0x753aa16ba839
+               |          |                     |          0x753aa16cb54c
+               |          |                     |          
+               |          |                      --1.14%--0x753aa16ba7c7
+               |          |                                0xffffffff90600ea7
+               |          |                                0xffffffff9044fc24
+               |          |                                0xffffffff8f259da1
+               |          |                                0xffffffff8f3c609c
+               |          |                                0xffffffff8f3c0319
+               |          |                                0xffffffff8f3c010f
+               |          |                                0xffffffffc050d1c1
+               |          |          
+               |          |--5.66%--0x753aa16bd7bc
+               |          |          |          
+               |          |          |--2.16%--0x753aa16aca09
+               |          |          |          0x753aa16aa935
+               |          |          |          |          
+               |          |          |           --0.97%--0x753aa16aa978
+               |          |          |          
+               |          |          |--1.26%--0x753aa16ac99a
+               |          |          |          
+               |          |           --1.14%--0x753aa16ac9b7
+               |          |                     0x753aa16aa935
+               |          |                     0x753aa16aa8ef
+               |          |          
+               |          |--1.16%--0x753aa16be0f4
+               |          |          0x753aa16ba7c7
+               |          |          
+               |          |--1.14%--0x753aa16bd7f7
+               |          |          
+               |          |--1.09%--0x753aa16bd6f9
+               |          |          
+               |          |--1.06%--0x753aa16bd810
+               |          |          
+               |           --1.04%--0x753aa16bd77d
+               |          
+               |--21.40%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--19.41%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          |          
+               |          |          |--9.04%--__dde_solver_m_MOD_dde_intp
+               |          |          |          __dde_solver_m_MOD_dde_poly
+               |          |          |          |          
+               |          |          |           --2.03%--__dde_solver_m_MOD_dde_wset
+               |          |          |          
+               |          |          |--7.72%--__dde_solver_m_MOD_dde_drv3
+               |          |          |          __dde_solver_m_MOD_dde_step
+               |          |          |          |          
+               |          |          |           --4.17%--__dde_solver_m_MOD_dde_zset
+               |          |          |          
+               |          |           --2.66%--__dde_solver_m_MOD_sol_out
+               |          |                     |          
+               |          |                      --1.30%--0xffffffff90600ba0
+               |          |          
+               |          |--1.37%--__dde_solver_m_MOD_contract_sol
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7f69
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f6306bb
+               |          |          0xffffffff8f62f4fc
+               |          |          0xffffffff8f62f30c
+               |          |          0xffffffff8f698804
+               |          |          0xffffffff8f698491
+               |          |          0xffffffff8f65e859
+               |          |          0xffffffff8f65cff8
+               |          |          0xffffffff8f65b1c9
+               |          |          0xffffffff8f65a8bf
+               |          |          0xffffffff8f65a117
+               |          |          
+               |           --0.62%--__dde_solver_m_MOD_dde_drv2
+               |                     0xffffffff90600bc7
+               |                     0xffffffff90453c63
+               |                     0xffffffff8f2d7f69
+               |                     0xffffffff8f630ffa
+               |                     0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b7c0
+               |                     0xffffffff8f62b493
+               |                     0xffffffff8f62a8fa
+               |                     0xffffffff8f5c8f93
+               |                     0xffffffff8f5c473a
+               |                     0xffffffff8f5d6436
+               |                     0xffffffff8f5d5d4b
+               |                     0xffffffff8f5c2fb4
+               |                     0xffffffff8f698880
+               |          
+               |--4.76%--0x753aa16bfaf6
+               |          |          
+               |          |--3.67%--0x753aa16bf643
+               |          |          |          
+               |          |          |--2.50%--__GI___libc_write
+               |          |          |          0xffffffff90600130
+               |          |          |          0xffffffff9044d8ef
+               |          |          |          0xffffffff8f2059ae
+               |          |          |          0xffffffff8f6f5d39
+               |          |          |          0xffffffff8f6f5c83
+               |          |          |          0xffffffff8f6f56f1
+               |          |          |          0xffffffffc1501bbc
+               |          |          |          0xffffffff8f5c335f
+               |          |          |          0xffffffffc15026c2
+               |          |          |          |          
+               |          |          |          |--1.40%--0xffffffff8f5c866c
+               |          |          |          |          0xffffffff8f5c3d6d
+               |          |          |          |          0xffffffff8f5c3aae
+               |          |          |          |          
+               |          |          |           --1.10%--0xffffffff8f5c8757
+               |          |          |                     0xffffffff8f5d13e1
+               |          |          |                     0xffffffff8f5d132b
+               |          |          |                     0xffffffff8f5c5768
+               |          |          |                     0xffffffff8f5c5546
+               |          |          |                     0xffffffff9045c5c6
+               |          |          |                     0xffffffff9045c453
+               |          |          |                     0xffffffff9045c116
+               |          |          |                     0xffffffff8f35b83a
+               |          |          |                     0xffffffff8f37607f
+               |          |          |                     0xffffffff8f3755f9
+               |          |          |                     0xffffffff8f36d972
+               |          |          |                     0xffffffff8f388736
+               |          |          |          
+               |          |           --1.17%--0x753aa16bc3c5
+               |          |                     0x753aa16cb5fc
+               |          |                     0x753aa16c21e7
+               |          |          
+               |           --1.09%--0x753aa16bf526
+               |          
+               |--1.37%--0x753aa16bed41
+               |          
+               |--1.37%--0x753aa16bed30
+               |          0x753aa16ac924
+               |          0x753aa16ab078
+               |          0x753aa16aaa55
+               |          0x753aa16aaa10
+               |          
+               |--1.22%--0x753aa16bea6c
+               |          
+                --1.18%--0x753aa16b9c97
+
+    97.07%     0.00%  cw_model  libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               |          
+               |--64.17%--0x753aa16be593
+               |          |          
+               |          |--53.02%--0x753aa16be08c
+               |          |          |          
+               |          |          |--50.57%--0x753aa16c8816
+               |          |          |          |          
+               |          |          |          |--39.48%--0x753aa16c6d27
+               |          |          |          |          __snprintf_chk
+               |          |          |          |          __vsnprintf_internal
+               |          |          |          |          |          
+               |          |          |          |          |--37.42%--__printf_buffer
+               |          |          |          |          |          |          
+               |          |          |          |          |           --30.98%--__printf_fp_l_buffer
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--8.25%--__mpn_divrem
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--2.13%--hack_digit
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |           --1.15%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--2.19%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--1.09%--__mpn_divrem
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.05%--hack_digit
+               |          |          |          |          |          
+               |          |          |          |           --0.91%--__strchrnul_avx2
+               |          |          |          |          
+               |          |          |          |--9.78%--0x753aa16c7042
+               |          |          |          |          |          
+               |          |          |          |          |--1.46%--0x753aa16c5467
+               |          |          |          |          |          
+               |          |          |          |          |--1.42%--0x753aa16c57b4
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c5812
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c54a6
+               |          |          |          |          |          
+               |          |          |          |          |--1.15%--0x753aa16c55f4
+               |          |          |          |          |          
+               |          |          |          |          |--1.11%--0x753aa16c599d
+               |          |          |          |          |          
+               |          |          |          |          |--1.02%--0x753aa16c570d
+               |          |          |          |          |          
+               |          |          |          |           --1.02%--0x753aa16c54ca
+               |          |          |          |          
+               |          |          |           --1.31%--0x753aa16c6c15
+               |          |          |          
+               |          |           --2.45%--0x753aa16c882c
+               |          |                     0x753aa16c381e
+               |          |                     |          
+               |          |                     |--1.31%--0x753aa16ba839
+               |          |                     |          0x753aa16cb54c
+               |          |                     |          
+               |          |                      --1.14%--0x753aa16ba7c7
+               |          |                                0xffffffff90600ea7
+               |          |                                0xffffffff9044fc24
+               |          |                                0xffffffff8f259da1
+               |          |                                0xffffffff8f3c609c
+               |          |                                0xffffffff8f3c0319
+               |          |                                0xffffffff8f3c010f
+               |          |                                0xffffffffc050d1c1
+               |          |          
+               |          |--5.66%--0x753aa16bd7bc
+               |          |          |          
+               |          |          |--2.16%--0x753aa16aca09
+               |          |          |          0x753aa16aa935
+               |          |          |          |          
+               |          |          |           --0.97%--0x753aa16aa978
+               |          |          |          
+               |          |          |--1.26%--0x753aa16ac99a
+               |          |          |          
+               |          |           --1.14%--0x753aa16ac9b7
+               |          |                     0x753aa16aa935
+               |          |                     0x753aa16aa8ef
+               |          |          
+               |          |--1.16%--0x753aa16be0f4
+               |          |          0x753aa16ba7c7
+               |          |          
+               |          |--1.14%--0x753aa16bd7f7
+               |          |          
+               |          |--1.09%--0x753aa16bd6f9
+               |          |          
+               |          |--1.06%--0x753aa16bd810
+               |          |          
+               |           --1.04%--0x753aa16bd77d
+               |          
+               |--21.40%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--19.41%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          |          
+               |          |          |--9.04%--__dde_solver_m_MOD_dde_intp
+               |          |          |          __dde_solver_m_MOD_dde_poly
+               |          |          |          |          
+               |          |          |           --2.03%--__dde_solver_m_MOD_dde_wset
+               |          |          |          
+               |          |          |--7.72%--__dde_solver_m_MOD_dde_drv3
+               |          |          |          __dde_solver_m_MOD_dde_step
+               |          |          |          |          
+               |          |          |           --4.17%--__dde_solver_m_MOD_dde_zset
+               |          |          |          
+               |          |           --2.66%--__dde_solver_m_MOD_sol_out
+               |          |                     |          
+               |          |                      --1.30%--0xffffffff90600ba0
+               |          |          
+               |          |--1.37%--__dde_solver_m_MOD_contract_sol
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7f69
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f6306bb
+               |          |          0xffffffff8f62f4fc
+               |          |          0xffffffff8f62f30c
+               |          |          0xffffffff8f698804
+               |          |          0xffffffff8f698491
+               |          |          0xffffffff8f65e859
+               |          |          0xffffffff8f65cff8
+               |          |          0xffffffff8f65b1c9
+               |          |          0xffffffff8f65a8bf
+               |          |          0xffffffff8f65a117
+               |          |          
+               |           --0.62%--__dde_solver_m_MOD_dde_drv2
+               |                     0xffffffff90600bc7
+               |                     0xffffffff90453c63
+               |                     0xffffffff8f2d7f69
+               |                     0xffffffff8f630ffa
+               |                     0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b7c0
+               |                     0xffffffff8f62b493
+               |                     0xffffffff8f62a8fa
+               |                     0xffffffff8f5c8f93
+               |                     0xffffffff8f5c473a
+               |                     0xffffffff8f5d6436
+               |                     0xffffffff8f5d5d4b
+               |                     0xffffffff8f5c2fb4
+               |                     0xffffffff8f698880
+               |          
+               |--4.76%--0x753aa16bfaf6
+               |          |          
+               |          |--3.67%--0x753aa16bf643
+               |          |          |          
+               |          |          |--2.50%--__GI___libc_write
+               |          |          |          0xffffffff90600130
+               |          |          |          0xffffffff9044d8ef
+               |          |          |          0xffffffff8f2059ae
+               |          |          |          0xffffffff8f6f5d39
+               |          |          |          0xffffffff8f6f5c83
+               |          |          |          0xffffffff8f6f56f1
+               |          |          |          0xffffffffc1501bbc
+               |          |          |          0xffffffff8f5c335f
+               |          |          |          0xffffffffc15026c2
+               |          |          |          |          
+               |          |          |          |--1.40%--0xffffffff8f5c866c
+               |          |          |          |          0xffffffff8f5c3d6d
+               |          |          |          |          0xffffffff8f5c3aae
+               |          |          |          |          
+               |          |          |           --1.10%--0xffffffff8f5c8757
+               |          |          |                     0xffffffff8f5d13e1
+               |          |          |                     0xffffffff8f5d132b
+               |          |          |                     0xffffffff8f5c5768
+               |          |          |                     0xffffffff8f5c5546
+               |          |          |                     0xffffffff9045c5c6
+               |          |          |                     0xffffffff9045c453
+               |          |          |                     0xffffffff9045c116
+               |          |          |                     0xffffffff8f35b83a
+               |          |          |                     0xffffffff8f37607f
+               |          |          |                     0xffffffff8f3755f9
+               |          |          |                     0xffffffff8f36d972
+               |          |          |                     0xffffffff8f388736
+               |          |          |          
+               |          |           --1.17%--0x753aa16bc3c5
+               |          |                     0x753aa16cb5fc
+               |          |                     0x753aa16c21e7
+               |          |          
+               |           --1.09%--0x753aa16bf526
+               |          
+               |--1.37%--0x753aa16bed41
+               |          
+               |--1.37%--0x753aa16bed30
+               |          0x753aa16ac924
+               |          0x753aa16ab078
+               |          0x753aa16aaa55
+               |          0x753aa16aaa10
+               |          
+               |--1.22%--0x753aa16bea6c
+               |          
+                --1.18%--0x753aa16b9c97
+
+    97.07%     0.00%  cw_model  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               MAIN__
+               |          
+               |--64.17%--0x753aa16be593
+               |          |          
+               |          |--53.02%--0x753aa16be08c
+               |          |          |          
+               |          |          |--50.57%--0x753aa16c8816
+               |          |          |          |          
+               |          |          |          |--39.48%--0x753aa16c6d27
+               |          |          |          |          __snprintf_chk
+               |          |          |          |          __vsnprintf_internal
+               |          |          |          |          |          
+               |          |          |          |          |--37.42%--__printf_buffer
+               |          |          |          |          |          |          
+               |          |          |          |          |           --30.98%--__printf_fp_l_buffer
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--8.25%--__mpn_divrem
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--2.13%--hack_digit
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |           --1.15%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--2.19%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--1.09%--__mpn_divrem
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.05%--hack_digit
+               |          |          |          |          |          
+               |          |          |          |           --0.91%--__strchrnul_avx2
+               |          |          |          |          
+               |          |          |          |--9.78%--0x753aa16c7042
+               |          |          |          |          |          
+               |          |          |          |          |--1.46%--0x753aa16c5467
+               |          |          |          |          |          
+               |          |          |          |          |--1.42%--0x753aa16c57b4
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c5812
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c54a6
+               |          |          |          |          |          
+               |          |          |          |          |--1.15%--0x753aa16c55f4
+               |          |          |          |          |          
+               |          |          |          |          |--1.11%--0x753aa16c599d
+               |          |          |          |          |          
+               |          |          |          |          |--1.02%--0x753aa16c570d
+               |          |          |          |          |          
+               |          |          |          |           --1.02%--0x753aa16c54ca
+               |          |          |          |          
+               |          |          |           --1.31%--0x753aa16c6c15
+               |          |          |          
+               |          |           --2.45%--0x753aa16c882c
+               |          |                     0x753aa16c381e
+               |          |                     |          
+               |          |                     |--1.31%--0x753aa16ba839
+               |          |                     |          0x753aa16cb54c
+               |          |                     |          
+               |          |                      --1.14%--0x753aa16ba7c7
+               |          |                                0xffffffff90600ea7
+               |          |                                0xffffffff9044fc24
+               |          |                                0xffffffff8f259da1
+               |          |                                0xffffffff8f3c609c
+               |          |                                0xffffffff8f3c0319
+               |          |                                0xffffffff8f3c010f
+               |          |                                0xffffffffc050d1c1
+               |          |          
+               |          |--5.66%--0x753aa16bd7bc
+               |          |          |          
+               |          |          |--2.16%--0x753aa16aca09
+               |          |          |          0x753aa16aa935
+               |          |          |          |          
+               |          |          |           --0.97%--0x753aa16aa978
+               |          |          |          
+               |          |          |--1.26%--0x753aa16ac99a
+               |          |          |          
+               |          |           --1.14%--0x753aa16ac9b7
+               |          |                     0x753aa16aa935
+               |          |                     0x753aa16aa8ef
+               |          |          
+               |          |--1.16%--0x753aa16be0f4
+               |          |          0x753aa16ba7c7
+               |          |          
+               |          |--1.14%--0x753aa16bd7f7
+               |          |          
+               |          |--1.09%--0x753aa16bd6f9
+               |          |          
+               |          |--1.06%--0x753aa16bd810
+               |          |          
+               |           --1.04%--0x753aa16bd77d
+               |          
+               |--21.40%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--19.41%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          |          
+               |          |          |--9.04%--__dde_solver_m_MOD_dde_intp
+               |          |          |          __dde_solver_m_MOD_dde_poly
+               |          |          |          |          
+               |          |          |           --2.03%--__dde_solver_m_MOD_dde_wset
+               |          |          |          
+               |          |          |--7.72%--__dde_solver_m_MOD_dde_drv3
+               |          |          |          __dde_solver_m_MOD_dde_step
+               |          |          |          |          
+               |          |          |           --4.17%--__dde_solver_m_MOD_dde_zset
+               |          |          |          
+               |          |           --2.66%--__dde_solver_m_MOD_sol_out
+               |          |                     |          
+               |          |                      --1.30%--0xffffffff90600ba0
+               |          |          
+               |          |--1.37%--__dde_solver_m_MOD_contract_sol
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7f69
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f6306bb
+               |          |          0xffffffff8f62f4fc
+               |          |          0xffffffff8f62f30c
+               |          |          0xffffffff8f698804
+               |          |          0xffffffff8f698491
+               |          |          0xffffffff8f65e859
+               |          |          0xffffffff8f65cff8
+               |          |          0xffffffff8f65b1c9
+               |          |          0xffffffff8f65a8bf
+               |          |          0xffffffff8f65a117
+               |          |          
+               |           --0.62%--__dde_solver_m_MOD_dde_drv2
+               |                     0xffffffff90600bc7
+               |                     0xffffffff90453c63
+               |                     0xffffffff8f2d7f69
+               |                     0xffffffff8f630ffa
+               |                     0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b7c0
+               |                     0xffffffff8f62b493
+               |                     0xffffffff8f62a8fa
+               |                     0xffffffff8f5c8f93
+               |                     0xffffffff8f5c473a
+               |                     0xffffffff8f5d6436
+               |                     0xffffffff8f5d5d4b
+               |                     0xffffffff8f5c2fb4
+               |                     0xffffffff8f698880
+               |          
+               |--4.76%--0x753aa16bfaf6
+               |          |          
+               |          |--3.67%--0x753aa16bf643
+               |          |          |          
+               |          |          |--2.50%--__GI___libc_write
+               |          |          |          0xffffffff90600130
+               |          |          |          0xffffffff9044d8ef
+               |          |          |          0xffffffff8f2059ae
+               |          |          |          0xffffffff8f6f5d39
+               |          |          |          0xffffffff8f6f5c83
+               |          |          |          0xffffffff8f6f56f1
+               |          |          |          0xffffffffc1501bbc
+               |          |          |          0xffffffff8f5c335f
+               |          |          |          0xffffffffc15026c2
+               |          |          |          |          
+               |          |          |          |--1.40%--0xffffffff8f5c866c
+               |          |          |          |          0xffffffff8f5c3d6d
+               |          |          |          |          0xffffffff8f5c3aae
+               |          |          |          |          
+               |          |          |           --1.10%--0xffffffff8f5c8757
+               |          |          |                     0xffffffff8f5d13e1
+               |          |          |                     0xffffffff8f5d132b
+               |          |          |                     0xffffffff8f5c5768
+               |          |          |                     0xffffffff8f5c5546
+               |          |          |                     0xffffffff9045c5c6
+               |          |          |                     0xffffffff9045c453
+               |          |          |                     0xffffffff9045c116
+               |          |          |                     0xffffffff8f35b83a
+               |          |          |                     0xffffffff8f37607f
+               |          |          |                     0xffffffff8f3755f9
+               |          |          |                     0xffffffff8f36d972
+               |          |          |                     0xffffffff8f388736
+               |          |          |          
+               |          |           --1.17%--0x753aa16bc3c5
+               |          |                     0x753aa16cb5fc
+               |          |                     0x753aa16c21e7
+               |          |          
+               |           --1.09%--0x753aa16bf526
+               |          
+               |--1.37%--0x753aa16bed41
+               |          
+               |--1.37%--0x753aa16bed30
+               |          0x753aa16ac924
+               |          0x753aa16ab078
+               |          0x753aa16aaa55
+               |          0x753aa16aaa10
+               |          
+               |--1.22%--0x753aa16bea6c
+               |          
+                --1.18%--0x753aa16b9c97
+
+    97.07%     0.00%  cw_model  cw_model              [.] main
+            |
+            ---main
+               MAIN__
+               |          
+               |--64.17%--0x753aa16be593
+               |          |          
+               |          |--53.02%--0x753aa16be08c
+               |          |          |          
+               |          |          |--50.57%--0x753aa16c8816
+               |          |          |          |          
+               |          |          |          |--39.48%--0x753aa16c6d27
+               |          |          |          |          __snprintf_chk
+               |          |          |          |          __vsnprintf_internal
+               |          |          |          |          |          
+               |          |          |          |          |--37.42%--__printf_buffer
+               |          |          |          |          |          |          
+               |          |          |          |          |           --30.98%--__printf_fp_l_buffer
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--8.25%--__mpn_divrem
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |          |--2.13%--hack_digit
+               |          |          |          |          |                     |          |          
+               |          |          |          |          |                     |           --1.15%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--2.19%--__mpn_mul_1
+               |          |          |          |          |                     |          
+               |          |          |          |          |                     |--1.09%--__mpn_divrem
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --1.05%--hack_digit
+               |          |          |          |          |          
+               |          |          |          |           --0.91%--__strchrnul_avx2
+               |          |          |          |          
+               |          |          |          |--9.78%--0x753aa16c7042
+               |          |          |          |          |          
+               |          |          |          |          |--1.46%--0x753aa16c5467
+               |          |          |          |          |          
+               |          |          |          |          |--1.42%--0x753aa16c57b4
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c5812
+               |          |          |          |          |          
+               |          |          |          |          |--1.30%--0x753aa16c54a6
+               |          |          |          |          |          
+               |          |          |          |          |--1.15%--0x753aa16c55f4
+               |          |          |          |          |          
+               |          |          |          |          |--1.11%--0x753aa16c599d
+               |          |          |          |          |          
+               |          |          |          |          |--1.02%--0x753aa16c570d
+               |          |          |          |          |          
+               |          |          |          |           --1.02%--0x753aa16c54ca
+               |          |          |          |          
+               |          |          |           --1.31%--0x753aa16c6c15
+               |          |          |          
+               |          |           --2.45%--0x753aa16c882c
+               |          |                     0x753aa16c381e
+               |          |                     |          
+               |          |                     |--1.31%--0x753aa16ba839
+               |          |                     |          0x753aa16cb54c
+               |          |                     |          
+               |          |                      --1.14%--0x753aa16ba7c7
+               |          |                                0xffffffff90600ea7
+               |          |                                0xffffffff9044fc24
+               |          |                                0xffffffff8f259da1
+               |          |                                0xffffffff8f3c609c
+               |          |                                0xffffffff8f3c0319
+               |          |                                0xffffffff8f3c010f
+               |          |                                0xffffffffc050d1c1
+               |          |          
+               |          |--5.66%--0x753aa16bd7bc
+               |          |          |          
+               |          |          |--2.16%--0x753aa16aca09
+               |          |          |          0x753aa16aa935
+               |          |          |          |          
+               |          |          |           --0.97%--0x753aa16aa978
+               |          |          |          
+               |          |          |--1.26%--0x753aa16ac99a
+               |          |          |          
+               |          |           --1.14%--0x753aa16ac9b7
+               |          |                     0x753aa16aa935
+               |          |                     0x753aa16aa8ef
+               |          |          
+               |          |--1.16%--0x753aa16be0f4
+               |          |          0x753aa16ba7c7
+               |          |          
+               |          |--1.14%--0x753aa16bd7f7
+               |          |          
+               |          |--1.09%--0x753aa16bd6f9
+               |          |          
+               |          |--1.06%--0x753aa16bd810
+               |          |          
+               |           --1.04%--0x753aa16bd77d
+               |          
+               |--21.40%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--19.41%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          |          
+               |          |          |--9.04%--__dde_solver_m_MOD_dde_intp
+               |          |          |          __dde_solver_m_MOD_dde_poly
+               |          |          |          |          
+               |          |          |           --2.03%--__dde_solver_m_MOD_dde_wset
+               |          |          |          
+               |          |          |--7.72%--__dde_solver_m_MOD_dde_drv3
+               |          |          |          __dde_solver_m_MOD_dde_step
+               |          |          |          |          
+               |          |          |           --4.17%--__dde_solver_m_MOD_dde_zset
+               |          |          |          
+               |          |           --2.66%--__dde_solver_m_MOD_sol_out
+               |          |                     |          
+               |          |                      --1.30%--0xffffffff90600ba0
+               |          |          
+               |          |--1.37%--__dde_solver_m_MOD_contract_sol
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7f69
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f6306bb
+               |          |          0xffffffff8f62f4fc
+               |          |          0xffffffff8f62f30c
+               |          |          0xffffffff8f698804
+               |          |          0xffffffff8f698491
+               |          |          0xffffffff8f65e859
+               |          |          0xffffffff8f65cff8
+               |          |          0xffffffff8f65b1c9
+               |          |          0xffffffff8f65a8bf
+               |          |          0xffffffff8f65a117
+               |          |          
+               |           --0.62%--__dde_solver_m_MOD_dde_drv2
+               |                     0xffffffff90600bc7
+               |                     0xffffffff90453c63
+               |                     0xffffffff8f2d7f69
+               |                     0xffffffff8f630ffa
+               |                     0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b7c0
+               |                     0xffffffff8f62b493
+               |                     0xffffffff8f62a8fa
+               |                     0xffffffff8f5c8f93
+               |                     0xffffffff8f5c473a
+               |                     0xffffffff8f5d6436
+               |                     0xffffffff8f5d5d4b
+               |                     0xffffffff8f5c2fb4
+               |                     0xffffffff8f698880
+               |          
+               |--4.76%--0x753aa16bfaf6
+               |          |          
+               |          |--3.67%--0x753aa16bf643
+               |          |          |          
+               |          |          |--2.50%--__GI___libc_write
+               |          |          |          0xffffffff90600130
+               |          |          |          0xffffffff9044d8ef
+               |          |          |          0xffffffff8f2059ae
+               |          |          |          0xffffffff8f6f5d39
+               |          |          |          0xffffffff8f6f5c83
+               |          |          |          0xffffffff8f6f56f1
+               |          |          |          0xffffffffc1501bbc
+               |          |          |          0xffffffff8f5c335f
+               |          |          |          0xffffffffc15026c2
+               |          |          |          |          
+               |          |          |          |--1.40%--0xffffffff8f5c866c
+               |          |          |          |          0xffffffff8f5c3d6d
+               |          |          |          |          0xffffffff8f5c3aae
+               |          |          |          |          
+               |          |          |           --1.10%--0xffffffff8f5c8757
+               |          |          |                     0xffffffff8f5d13e1
+               |          |          |                     0xffffffff8f5d132b
+               |          |          |                     0xffffffff8f5c5768
+               |          |          |                     0xffffffff8f5c5546
+               |          |          |                     0xffffffff9045c5c6
+               |          |          |                     0xffffffff9045c453
+               |          |          |                     0xffffffff9045c116
+               |          |          |                     0xffffffff8f35b83a
+               |          |          |                     0xffffffff8f37607f
+               |          |          |                     0xffffffff8f3755f9
+               |          |          |                     0xffffffff8f36d972
+               |          |          |                     0xffffffff8f388736
+               |          |          |          
+               |          |           --1.17%--0x753aa16bc3c5
+               |          |                     0x753aa16cb5fc
+               |          |                     0x753aa16c21e7
+               |          |          
+               |           --1.09%--0x753aa16bf526
+               |          
+               |--1.37%--0x753aa16bed41
+               |          
+               |--1.37%--0x753aa16bed30
+               |          0x753aa16ac924
+               |          0x753aa16ab078
+               |          0x753aa16aaa55
+               |          0x753aa16aaa10
+               |          
+               |--1.22%--0x753aa16bea6c
+               |          
+                --1.18%--0x753aa16b9c97
+
+    97.07%     1.11%  cw_model  cw_model              [.] MAIN__
+            |          
+            |--95.96%--MAIN__
+            |          |          
+            |          |--64.17%--0x753aa16be593
+            |          |          |          
+            |          |          |--53.02%--0x753aa16be08c
+            |          |          |          |          
+            |          |          |          |--50.57%--0x753aa16c8816
+            |          |          |          |          |          
+            |          |          |          |          |--39.48%--0x753aa16c6d27
+            |          |          |          |          |          __snprintf_chk
+            |          |          |          |          |          __vsnprintf_internal
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--37.42%--__printf_buffer
+            |          |          |          |          |          |          |          
+            |          |          |          |          |          |           --30.98%--__printf_fp_l_buffer
+            |          |          |          |          |          |                     |          
+            |          |          |          |          |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+            |          |          |          |          |          |                     |          |          
+            |          |          |          |          |          |                     |          |--8.25%--__mpn_divrem
+            |          |          |          |          |          |                     |          |          
+            |          |          |          |          |          |                     |          |--2.13%--hack_digit
+            |          |          |          |          |          |                     |          |          
+            |          |          |          |          |          |                     |           --1.15%--__mpn_mul_1
+            |          |          |          |          |          |                     |          
+            |          |          |          |          |          |                     |--2.19%--__mpn_mul_1
+            |          |          |          |          |          |                     |          
+            |          |          |          |          |          |                     |--1.09%--__mpn_divrem
+            |          |          |          |          |          |                     |          
+            |          |          |          |          |          |                      --1.05%--hack_digit
+            |          |          |          |          |          |          
+            |          |          |          |          |           --0.91%--__strchrnul_avx2
+            |          |          |          |          |          
+            |          |          |          |          |--9.78%--0x753aa16c7042
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--1.46%--0x753aa16c5467
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--1.42%--0x753aa16c57b4
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--1.30%--0x753aa16c5812
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--1.30%--0x753aa16c54a6
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--1.15%--0x753aa16c55f4
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--1.11%--0x753aa16c599d
+            |          |          |          |          |          |          
+            |          |          |          |          |          |--1.02%--0x753aa16c570d
+            |          |          |          |          |          |          
+            |          |          |          |          |           --1.02%--0x753aa16c54ca
+            |          |          |          |          |          
+            |          |          |          |           --1.31%--0x753aa16c6c15
+            |          |          |          |          
+            |          |          |           --2.45%--0x753aa16c882c
+            |          |          |                     0x753aa16c381e
+            |          |          |                     |          
+            |          |          |                     |--1.31%--0x753aa16ba839
+            |          |          |                     |          0x753aa16cb54c
+            |          |          |                     |          
+            |          |          |                      --1.14%--0x753aa16ba7c7
+            |          |          |                                0xffffffff90600ea7
+            |          |          |                                0xffffffff9044fc24
+            |          |          |                                0xffffffff8f259da1
+            |          |          |                                0xffffffff8f3c609c
+            |          |          |                                0xffffffff8f3c0319
+            |          |          |                                0xffffffff8f3c010f
+            |          |          |                                0xffffffffc050d1c1
+            |          |          |          
+            |          |          |--5.66%--0x753aa16bd7bc
+            |          |          |          |          
+            |          |          |          |--2.16%--0x753aa16aca09
+            |          |          |          |          0x753aa16aa935
+            |          |          |          |          |          
+            |          |          |          |           --0.97%--0x753aa16aa978
+            |          |          |          |          
+            |          |          |          |--1.26%--0x753aa16ac99a
+            |          |          |          |          
+            |          |          |           --1.14%--0x753aa16ac9b7
+            |          |          |                     0x753aa16aa935
+            |          |          |                     0x753aa16aa8ef
+            |          |          |          
+            |          |          |--1.16%--0x753aa16be0f4
+            |          |          |          0x753aa16ba7c7
+            |          |          |          
+            |          |          |--1.14%--0x753aa16bd7f7
+            |          |          |          
+            |          |          |--1.09%--0x753aa16bd6f9
+            |          |          |          
+            |          |          |--1.06%--0x753aa16bd810
+            |          |          |          
+            |          |           --1.04%--0x753aa16bd77d
+            |          |          
+            |          |--21.40%--__dde_solver_m_MOD_dkl_4
+            |          |          |          
+            |          |          |--19.41%--__dde_solver_m_MOD_dde_drv1
+            |          |          |          __dde_solver_m_MOD_dde_drv2
+            |          |          |          |          
+            |          |          |          |--9.04%--__dde_solver_m_MOD_dde_intp
+            |          |          |          |          __dde_solver_m_MOD_dde_poly
+            |          |          |          |          |          
+            |          |          |          |           --2.03%--__dde_solver_m_MOD_dde_wset
+            |          |          |          |          
+            |          |          |          |--7.72%--__dde_solver_m_MOD_dde_drv3
+            |          |          |          |          __dde_solver_m_MOD_dde_step
+            |          |          |          |          |          
+            |          |          |          |           --4.17%--__dde_solver_m_MOD_dde_zset
+            |          |          |          |          
+            |          |          |           --2.66%--__dde_solver_m_MOD_sol_out
+            |          |          |                     |          
+            |          |          |                      --1.30%--0xffffffff90600ba0
+            |          |          |          
+            |          |          |--1.37%--__dde_solver_m_MOD_contract_sol
+            |          |          |          0xffffffff90600bc7
+            |          |          |          0xffffffff90453c63
+            |          |          |          0xffffffff8f2d7f69
+            |          |          |          0xffffffff8f630ffa
+            |          |          |          0xffffffff8f630d24
+            |          |          |          0xffffffff8f6306bb
+            |          |          |          0xffffffff8f62f4fc
+            |          |          |          0xffffffff8f62f30c
+            |          |          |          0xffffffff8f698804
+            |          |          |          0xffffffff8f698491
+            |          |          |          0xffffffff8f65e859
+            |          |          |          0xffffffff8f65cff8
+            |          |          |          0xffffffff8f65b1c9
+            |          |          |          0xffffffff8f65a8bf
+            |          |          |          0xffffffff8f65a117
+            |          |          |          
+            |          |           --0.62%--__dde_solver_m_MOD_dde_drv2
+            |          |                     0xffffffff90600bc7
+            |          |                     0xffffffff90453c63
+            |          |                     0xffffffff8f2d7f69
+            |          |                     0xffffffff8f630ffa
+            |          |                     0xffffffff8f630d24
+            |          |                     0xffffffff8f630604
+            |          |                     0xffffffff8f62b7c0
+            |          |                     0xffffffff8f62b493
+            |          |                     0xffffffff8f62a8fa
+            |          |                     0xffffffff8f5c8f93
+            |          |                     0xffffffff8f5c473a
+            |          |                     0xffffffff8f5d6436
+            |          |                     0xffffffff8f5d5d4b
+            |          |                     0xffffffff8f5c2fb4
+            |          |                     0xffffffff8f698880
+            |          |          
+            |          |--4.76%--0x753aa16bfaf6
+            |          |          |          
+            |          |          |--3.67%--0x753aa16bf643
+            |          |          |          |          
+            |          |          |          |--2.50%--__GI___libc_write
+            |          |          |          |          0xffffffff90600130
+            |          |          |          |          0xffffffff9044d8ef
+            |          |          |          |          0xffffffff8f2059ae
+            |          |          |          |          0xffffffff8f6f5d39
+            |          |          |          |          0xffffffff8f6f5c83
+            |          |          |          |          0xffffffff8f6f56f1
+            |          |          |          |          0xffffffffc1501bbc
+            |          |          |          |          0xffffffff8f5c335f
+            |          |          |          |          0xffffffffc15026c2
+            |          |          |          |          |          
+            |          |          |          |          |--1.40%--0xffffffff8f5c866c
+            |          |          |          |          |          0xffffffff8f5c3d6d
+            |          |          |          |          |          0xffffffff8f5c3aae
+            |          |          |          |          |          
+            |          |          |          |           --1.10%--0xffffffff8f5c8757
+            |          |          |          |                     0xffffffff8f5d13e1
+            |          |          |          |                     0xffffffff8f5d132b
+            |          |          |          |                     0xffffffff8f5c5768
+            |          |          |          |                     0xffffffff8f5c5546
+            |          |          |          |                     0xffffffff9045c5c6
+            |          |          |          |                     0xffffffff9045c453
+            |          |          |          |                     0xffffffff9045c116
+            |          |          |          |                     0xffffffff8f35b83a
+            |          |          |          |                     0xffffffff8f37607f
+            |          |          |          |                     0xffffffff8f3755f9
+            |          |          |          |                     0xffffffff8f36d972
+            |          |          |          |                     0xffffffff8f388736
+            |          |          |          |          
+            |          |          |           --1.17%--0x753aa16bc3c5
+            |          |          |                     0x753aa16cb5fc
+            |          |          |                     0x753aa16c21e7
+            |          |          |          
+            |          |           --1.09%--0x753aa16bf526
+            |          |          
+            |          |--1.37%--0x753aa16bed41
+            |          |          
+            |          |--1.37%--0x753aa16bed30
+            |          |          0x753aa16ac924
+            |          |          0x753aa16ab078
+            |          |          0x753aa16aaa55
+            |          |          0x753aa16aaa10
+            |          |          
+            |          |--1.22%--0x753aa16bea6c
+            |          |          
+            |           --1.18%--0x753aa16b9c97
+            |          
+             --1.11%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+
+    64.17%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16be593
+            |
+            ---0x753aa16be593
+               |          
+               |--53.02%--0x753aa16be08c
+               |          |          
+               |          |--50.57%--0x753aa16c8816
+               |          |          |          
+               |          |          |--39.48%--0x753aa16c6d27
+               |          |          |          __snprintf_chk
+               |          |          |          __vsnprintf_internal
+               |          |          |          |          
+               |          |          |          |--37.42%--__printf_buffer
+               |          |          |          |          |          
+               |          |          |          |           --30.98%--__printf_fp_l_buffer
+               |          |          |          |                     |          
+               |          |          |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |          |          |                     |          |          
+               |          |          |          |                     |          |--8.25%--__mpn_divrem
+               |          |          |          |                     |          |          
+               |          |          |          |                     |          |--2.13%--hack_digit
+               |          |          |          |                     |          |          
+               |          |          |          |                     |           --1.15%--__mpn_mul_1
+               |          |          |          |                     |          
+               |          |          |          |                     |--2.19%--__mpn_mul_1
+               |          |          |          |                     |          
+               |          |          |          |                     |--1.09%--__mpn_divrem
+               |          |          |          |                     |          
+               |          |          |          |                      --1.05%--hack_digit
+               |          |          |          |          
+               |          |          |           --0.91%--__strchrnul_avx2
+               |          |          |          
+               |          |          |--9.78%--0x753aa16c7042
+               |          |          |          |          
+               |          |          |          |--1.46%--0x753aa16c5467
+               |          |          |          |          
+               |          |          |          |--1.42%--0x753aa16c57b4
+               |          |          |          |          
+               |          |          |          |--1.30%--0x753aa16c5812
+               |          |          |          |          
+               |          |          |          |--1.30%--0x753aa16c54a6
+               |          |          |          |          
+               |          |          |          |--1.15%--0x753aa16c55f4
+               |          |          |          |          
+               |          |          |          |--1.11%--0x753aa16c599d
+               |          |          |          |          
+               |          |          |          |--1.02%--0x753aa16c570d
+               |          |          |          |          
+               |          |          |           --1.02%--0x753aa16c54ca
+               |          |          |          
+               |          |           --1.31%--0x753aa16c6c15
+               |          |          
+               |           --2.45%--0x753aa16c882c
+               |                     0x753aa16c381e
+               |                     |          
+               |                     |--1.31%--0x753aa16ba839
+               |                     |          0x753aa16cb54c
+               |                     |          
+               |                      --1.14%--0x753aa16ba7c7
+               |                                0xffffffff90600ea7
+               |                                0xffffffff9044fc24
+               |                                0xffffffff8f259da1
+               |                                0xffffffff8f3c609c
+               |                                0xffffffff8f3c0319
+               |                                0xffffffff8f3c010f
+               |                                0xffffffffc050d1c1
+               |          
+               |--5.66%--0x753aa16bd7bc
+               |          |          
+               |          |--2.16%--0x753aa16aca09
+               |          |          0x753aa16aa935
+               |          |          |          
+               |          |           --0.97%--0x753aa16aa978
+               |          |          
+               |          |--1.26%--0x753aa16ac99a
+               |          |          
+               |           --1.14%--0x753aa16ac9b7
+               |                     0x753aa16aa935
+               |                     0x753aa16aa8ef
+               |          
+               |--1.16%--0x753aa16be0f4
+               |          0x753aa16ba7c7
+               |          
+               |--1.14%--0x753aa16bd7f7
+               |          
+               |--1.09%--0x753aa16bd6f9
+               |          
+               |--1.06%--0x753aa16bd810
+               |          
+                --1.04%--0x753aa16bd77d
+
+    53.02%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16be08c
+            |
+            ---0x753aa16be08c
+               |          
+               |--50.57%--0x753aa16c8816
+               |          |          
+               |          |--39.48%--0x753aa16c6d27
+               |          |          __snprintf_chk
+               |          |          __vsnprintf_internal
+               |          |          |          
+               |          |          |--37.42%--__printf_buffer
+               |          |          |          |          
+               |          |          |           --30.98%--__printf_fp_l_buffer
+               |          |          |                     |          
+               |          |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |          |                     |          |          
+               |          |          |                     |          |--8.25%--__mpn_divrem
+               |          |          |                     |          |          
+               |          |          |                     |          |--2.13%--hack_digit
+               |          |          |                     |          |          
+               |          |          |                     |           --1.15%--__mpn_mul_1
+               |          |          |                     |          
+               |          |          |                     |--2.19%--__mpn_mul_1
+               |          |          |                     |          
+               |          |          |                     |--1.09%--__mpn_divrem
+               |          |          |                     |          
+               |          |          |                      --1.05%--hack_digit
+               |          |          |          
+               |          |           --0.91%--__strchrnul_avx2
+               |          |          
+               |          |--9.78%--0x753aa16c7042
+               |          |          |          
+               |          |          |--1.46%--0x753aa16c5467
+               |          |          |          
+               |          |          |--1.42%--0x753aa16c57b4
+               |          |          |          
+               |          |          |--1.30%--0x753aa16c5812
+               |          |          |          
+               |          |          |--1.30%--0x753aa16c54a6
+               |          |          |          
+               |          |          |--1.15%--0x753aa16c55f4
+               |          |          |          
+               |          |          |--1.11%--0x753aa16c599d
+               |          |          |          
+               |          |          |--1.02%--0x753aa16c570d
+               |          |          |          
+               |          |           --1.02%--0x753aa16c54ca
+               |          |          
+               |           --1.31%--0x753aa16c6c15
+               |          
+                --2.45%--0x753aa16c882c
+                          0x753aa16c381e
+                          |          
+                          |--1.31%--0x753aa16ba839
+                          |          0x753aa16cb54c
+                          |          
+                           --1.14%--0x753aa16ba7c7
+                                     0xffffffff90600ea7
+                                     0xffffffff9044fc24
+                                     0xffffffff8f259da1
+                                     0xffffffff8f3c609c
+                                     0xffffffff8f3c0319
+                                     0xffffffff8f3c010f
+                                     0xffffffffc050d1c1
+
+    50.57%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c8816
+            |
+            ---0x753aa16c8816
+               |          
+               |--39.48%--0x753aa16c6d27
+               |          __snprintf_chk
+               |          __vsnprintf_internal
+               |          |          
+               |          |--37.42%--__printf_buffer
+               |          |          |          
+               |          |           --30.98%--__printf_fp_l_buffer
+               |          |                     |          
+               |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |                     |          |          
+               |          |                     |          |--8.25%--__mpn_divrem
+               |          |                     |          |          
+               |          |                     |          |--2.13%--hack_digit
+               |          |                     |          |          
+               |          |                     |           --1.15%--__mpn_mul_1
+               |          |                     |          
+               |          |                     |--2.19%--__mpn_mul_1
+               |          |                     |          
+               |          |                     |--1.09%--__mpn_divrem
+               |          |                     |          
+               |          |                      --1.05%--hack_digit
+               |          |          
+               |           --0.91%--__strchrnul_avx2
+               |          
+               |--9.78%--0x753aa16c7042
+               |          |          
+               |          |--1.46%--0x753aa16c5467
+               |          |          
+               |          |--1.42%--0x753aa16c57b4
+               |          |          
+               |          |--1.30%--0x753aa16c5812
+               |          |          
+               |          |--1.30%--0x753aa16c54a6
+               |          |          
+               |          |--1.15%--0x753aa16c55f4
+               |          |          
+               |          |--1.11%--0x753aa16c599d
+               |          |          
+               |          |--1.02%--0x753aa16c570d
+               |          |          
+               |           --1.02%--0x753aa16c54ca
+               |          
+                --1.31%--0x753aa16c6c15
+
+    39.48%     1.16%  cw_model  libc.so.6             [.] __vsnprintf_internal
+            |          
+            |--38.33%--__vsnprintf_internal
+            |          |          
+            |          |--37.42%--__printf_buffer
+            |          |          |          
+            |          |           --30.98%--__printf_fp_l_buffer
+            |          |                     |          
+            |          |                     |--26.66%--__printf_fp_buffer_1.isra.0
+            |          |                     |          |          
+            |          |                     |          |--8.25%--__mpn_divrem
+            |          |                     |          |          
+            |          |                     |          |--2.13%--hack_digit
+            |          |                     |          |          
+            |          |                     |           --1.15%--__mpn_mul_1
+            |          |                     |          
+            |          |                     |--2.19%--__mpn_mul_1
+            |          |                     |          
+            |          |                     |--1.09%--__mpn_divrem
+            |          |                     |          
+            |          |                      --1.05%--hack_digit
+            |          |          
+            |           --0.91%--__strchrnul_avx2
+            |          
+             --1.16%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x753aa16be593
+                       0x753aa16be08c
+                       0x753aa16c8816
+                       0x753aa16c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+
+    39.48%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c6d27
+            |
+            ---0x753aa16c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               |          
+               |--37.42%--__printf_buffer
+               |          |          
+               |           --30.98%--__printf_fp_l_buffer
+               |                     |          
+               |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |                     |          |          
+               |                     |          |--8.25%--__mpn_divrem
+               |                     |          |          
+               |                     |          |--2.13%--hack_digit
+               |                     |          |          
+               |                     |           --1.15%--__mpn_mul_1
+               |                     |          
+               |                     |--2.19%--__mpn_mul_1
+               |                     |          
+               |                     |--1.09%--__mpn_divrem
+               |                     |          
+               |                      --1.05%--hack_digit
+               |          
+                --0.91%--__strchrnul_avx2
+
+    39.48%     0.00%  cw_model  libc.so.6             [.] __snprintf_chk
+            |
+            ---__snprintf_chk
+               __vsnprintf_internal
+               |          
+               |--37.42%--__printf_buffer
+               |          |          
+               |           --30.98%--__printf_fp_l_buffer
+               |                     |          
+               |                     |--26.66%--__printf_fp_buffer_1.isra.0
+               |                     |          |          
+               |                     |          |--8.25%--__mpn_divrem
+               |                     |          |          
+               |                     |          |--2.13%--hack_digit
+               |                     |          |          
+               |                     |           --1.15%--__mpn_mul_1
+               |                     |          
+               |                     |--2.19%--__mpn_mul_1
+               |                     |          
+               |                     |--1.09%--__mpn_divrem
+               |                     |          
+               |                      --1.05%--hack_digit
+               |          
+                --0.91%--__strchrnul_avx2
+
+    37.42%     6.43%  cw_model  libc.so.6             [.] __printf_buffer
+            |          
+            |--30.98%--__printf_buffer
+            |          __printf_fp_l_buffer
+            |          |          
+            |          |--26.66%--__printf_fp_buffer_1.isra.0
+            |          |          |          
+            |          |          |--8.25%--__mpn_divrem
+            |          |          |          
+            |          |          |--2.13%--hack_digit
+            |          |          |          
+            |          |           --1.15%--__mpn_mul_1
+            |          |          
+            |          |--2.19%--__mpn_mul_1
+            |          |          
+            |          |--1.09%--__mpn_divrem
+            |          |          
+            |           --1.05%--hack_digit
+            |          
+             --6.43%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x753aa16be593
+                       0x753aa16be08c
+                       0x753aa16c8816
+                       0x753aa16c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+                       __printf_buffer
+
+    30.98%     0.00%  cw_model  libc.so.6             [.] __printf_fp_l_buffer
+            |
+            ---__printf_fp_l_buffer
+               |          
+               |--26.66%--__printf_fp_buffer_1.isra.0
+               |          |          
+               |          |--8.25%--__mpn_divrem
+               |          |          
+               |          |--2.13%--hack_digit
+               |          |          
+               |           --1.15%--__mpn_mul_1
+               |          
+               |--2.19%--__mpn_mul_1
+               |          
+               |--1.09%--__mpn_divrem
+               |          
+                --1.05%--hack_digit
+
+    26.66%    15.12%  cw_model  libc.so.6             [.] __printf_fp_buffer_1.isra.0
+            |          
+            |--15.12%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          MAIN__
+            |          0x753aa16be593
+            |          0x753aa16be08c
+            |          0x753aa16c8816
+            |          0x753aa16c6d27
+            |          __snprintf_chk
+            |          __vsnprintf_internal
+            |          __printf_buffer
+            |          __printf_fp_l_buffer
+            |          __printf_fp_buffer_1.isra.0
+            |          
+             --11.54%--__printf_fp_buffer_1.isra.0
+                       |          
+                       |--8.25%--__mpn_divrem
+                       |          
+                       |--2.13%--hack_digit
+                       |          
+                        --1.15%--__mpn_mul_1
+
+    21.40%     0.00%  cw_model  cw_model              [.] __dde_solver_m_MOD_dkl_4
+            |
+            ---__dde_solver_m_MOD_dkl_4
+               |          
+               |--19.41%--__dde_solver_m_MOD_dde_drv1
+               |          __dde_solver_m_MOD_dde_drv2
+               |          |          
+               |          |--9.04%--__dde_solver_m_MOD_dde_intp
+               |          |          __dde_solver_m_MOD_dde_poly
+               |          |          |          
+               |          |           --2.03%--__dde_solver_m_MOD_dde_wset
+               |          |          
+               |          |--7.72%--__dde_solver_m_MOD_dde_drv3
+               |          |          __dde_solver_m_MOD_dde_step
+               |          |          |          
+               |          |           --4.17%--__dde_solver_m_MOD_dde_zset
+               |          |          
+               |           --2.66%--__dde_solver_m_MOD_sol_out
+               |                     |          
+               |                      --1.30%--0xffffffff90600ba0
+               |          
+               |--1.37%--__dde_solver_m_MOD_contract_sol
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7f69
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          0xffffffff8f6306bb
+               |          0xffffffff8f62f4fc
+               |          0xffffffff8f62f30c
+               |          0xffffffff8f698804
+               |          0xffffffff8f698491
+               |          0xffffffff8f65e859
+               |          0xffffffff8f65cff8
+               |          0xffffffff8f65b1c9
+               |          0xffffffff8f65a8bf
+               |          0xffffffff8f65a117
+               |          
+                --0.62%--__dde_solver_m_MOD_dde_drv2
+                          0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b7c0
+                          0xffffffff8f62b493
+                          0xffffffff8f62a8fa
+                          0xffffffff8f5c8f93
+                          0xffffffff8f5c473a
+                          0xffffffff8f5d6436
+                          0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+    20.04%     0.00%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_drv2
+            |
+            ---__dde_solver_m_MOD_dde_drv2
+               |          
+               |--9.04%--__dde_solver_m_MOD_dde_intp
+               |          __dde_solver_m_MOD_dde_poly
+               |          |          
+               |           --2.03%--__dde_solver_m_MOD_dde_wset
+               |          
+               |--7.72%--__dde_solver_m_MOD_dde_drv3
+               |          __dde_solver_m_MOD_dde_step
+               |          |          
+               |           --4.17%--__dde_solver_m_MOD_dde_zset
+               |          
+               |--2.66%--__dde_solver_m_MOD_sol_out
+               |          |          
+               |           --1.30%--0xffffffff90600ba0
+               |          
+                --0.62%--0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b7c0
+                          0xffffffff8f62b493
+                          0xffffffff8f62a8fa
+                          0xffffffff8f5c8f93
+                          0xffffffff8f5c473a
+                          0xffffffff8f5d6436
+                          0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+    19.41%     0.00%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_drv1
+            |
+            ---__dde_solver_m_MOD_dde_drv1
+               __dde_solver_m_MOD_dde_drv2
+               |          
+               |--9.04%--__dde_solver_m_MOD_dde_intp
+               |          __dde_solver_m_MOD_dde_poly
+               |          |          
+               |           --2.03%--__dde_solver_m_MOD_dde_wset
+               |          
+               |--7.72%--__dde_solver_m_MOD_dde_drv3
+               |          __dde_solver_m_MOD_dde_step
+               |          |          
+               |           --4.17%--__dde_solver_m_MOD_dde_zset
+               |          
+                --2.66%--__dde_solver_m_MOD_sol_out
+                          |          
+                           --1.30%--0xffffffff90600ba0
+
+     9.78%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c7042
+            |
+            ---0x753aa16c7042
+               |          
+               |--1.46%--0x753aa16c5467
+               |          
+               |--1.42%--0x753aa16c57b4
+               |          
+               |--1.30%--0x753aa16c5812
+               |          
+               |--1.30%--0x753aa16c54a6
+               |          
+               |--1.15%--0x753aa16c55f4
+               |          
+               |--1.11%--0x753aa16c599d
+               |          
+               |--1.02%--0x753aa16c570d
+               |          
+                --1.02%--0x753aa16c54ca
+
+     9.34%     9.34%  cw_model  libc.so.6             [.] __mpn_divrem
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               |          
+               |--8.25%--__printf_fp_buffer_1.isra.0
+               |          __mpn_divrem
+               |          
+                --1.09%--__mpn_divrem
+
+     9.04%     7.00%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_poly
+            |          
+            |--7.00%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          MAIN__
+            |          __dde_solver_m_MOD_dkl_4
+            |          __dde_solver_m_MOD_dde_drv1
+            |          __dde_solver_m_MOD_dde_drv2
+            |          __dde_solver_m_MOD_dde_intp
+            |          __dde_solver_m_MOD_dde_poly
+            |          
+             --2.03%--__dde_solver_m_MOD_dde_poly
+                       __dde_solver_m_MOD_dde_wset
+
+     9.04%     0.00%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_intp
+            |
+            ---__dde_solver_m_MOD_dde_intp
+               __dde_solver_m_MOD_dde_poly
+               |          
+                --2.03%--__dde_solver_m_MOD_dde_wset
+
+     7.72%     3.56%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_step
+            |          
+            |--4.17%--__dde_solver_m_MOD_dde_step
+            |          __dde_solver_m_MOD_dde_zset
+            |          
+             --3.56%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       __dde_solver_m_MOD_dkl_4
+                       __dde_solver_m_MOD_dde_drv1
+                       __dde_solver_m_MOD_dde_drv2
+                       __dde_solver_m_MOD_dde_drv3
+                       __dde_solver_m_MOD_dde_step
+
+     7.72%     0.00%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_drv3
+            |
+            ---__dde_solver_m_MOD_dde_drv3
+               __dde_solver_m_MOD_dde_step
+               |          
+                --4.17%--__dde_solver_m_MOD_dde_zset
+
+     5.66%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bd7bc
+            |
+            ---0x753aa16bd7bc
+               |          
+               |--2.16%--0x753aa16aca09
+               |          0x753aa16aa935
+               |          |          
+               |           --0.97%--0x753aa16aa978
+               |          
+               |--1.26%--0x753aa16ac99a
+               |          
+                --1.14%--0x753aa16ac9b7
+                          0x753aa16aa935
+                          0x753aa16aa8ef
+
+     4.76%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bfaf6
+            |
+            ---0x753aa16bfaf6
+               |          
+               |--3.67%--0x753aa16bf643
+               |          |          
+               |          |--2.50%--__GI___libc_write
+               |          |          0xffffffff90600130
+               |          |          0xffffffff9044d8ef
+               |          |          0xffffffff8f2059ae
+               |          |          0xffffffff8f6f5d39
+               |          |          0xffffffff8f6f5c83
+               |          |          0xffffffff8f6f56f1
+               |          |          0xffffffffc1501bbc
+               |          |          0xffffffff8f5c335f
+               |          |          0xffffffffc15026c2
+               |          |          |          
+               |          |          |--1.40%--0xffffffff8f5c866c
+               |          |          |          0xffffffff8f5c3d6d
+               |          |          |          0xffffffff8f5c3aae
+               |          |          |          
+               |          |           --1.10%--0xffffffff8f5c8757
+               |          |                     0xffffffff8f5d13e1
+               |          |                     0xffffffff8f5d132b
+               |          |                     0xffffffff8f5c5768
+               |          |                     0xffffffff8f5c5546
+               |          |                     0xffffffff9045c5c6
+               |          |                     0xffffffff9045c453
+               |          |                     0xffffffff9045c116
+               |          |                     0xffffffff8f35b83a
+               |          |                     0xffffffff8f37607f
+               |          |                     0xffffffff8f3755f9
+               |          |                     0xffffffff8f36d972
+               |          |                     0xffffffff8f388736
+               |          |          
+               |           --1.17%--0x753aa16bc3c5
+               |                     0x753aa16cb5fc
+               |                     0x753aa16c21e7
+               |          
+                --1.09%--0x753aa16bf526
+
+     4.17%     4.17%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_zset
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               __dde_solver_m_MOD_dde_drv1
+               __dde_solver_m_MOD_dde_drv2
+               __dde_solver_m_MOD_dde_drv3
+               __dde_solver_m_MOD_dde_step
+               __dde_solver_m_MOD_dde_zset
+
+     3.71%     0.00%  cw_model  [unknown]             [k] 0xffffffff90600130
+            |
+            ---0xffffffff90600130
+               0xffffffff9044d8ef
+               |          
+               |--2.50%--0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c335f
+               |          0xffffffffc15026c2
+               |          |          
+               |          |--1.40%--0xffffffff8f5c866c
+               |          |          0xffffffff8f5c3d6d
+               |          |          0xffffffff8f5c3aae
+               |          |          
+               |           --1.10%--0xffffffff8f5c8757
+               |                     0xffffffff8f5d13e1
+               |                     0xffffffff8f5d132b
+               |                     0xffffffff8f5c5768
+               |                     0xffffffff8f5c5546
+               |                     0xffffffff9045c5c6
+               |                     0xffffffff9045c453
+               |                     0xffffffff9045c116
+               |                     0xffffffff8f35b83a
+               |                     0xffffffff8f37607f
+               |                     0xffffffff8f3755f9
+               |                     0xffffffff8f36d972
+               |                     0xffffffff8f388736
+               |          
+                --0.54%--0xffffffff8f207697
+                          0xffffffff8f701f37
+                          0xffffffff8f701bd8
+                          0xffffffff8f6ffa26
+                          0xffffffff8f6ff932
+                          0xffffffff8f6ff639
+                          0xffffffff8f6ff0a7
+
+     3.71%     0.00%  cw_model  [unknown]             [k] 0xffffffff9044d8ef
+            |
+            ---0xffffffff9044d8ef
+               |          
+               |--2.50%--0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c335f
+               |          0xffffffffc15026c2
+               |          |          
+               |          |--1.40%--0xffffffff8f5c866c
+               |          |          0xffffffff8f5c3d6d
+               |          |          0xffffffff8f5c3aae
+               |          |          
+               |           --1.10%--0xffffffff8f5c8757
+               |                     0xffffffff8f5d13e1
+               |                     0xffffffff8f5d132b
+               |                     0xffffffff8f5c5768
+               |                     0xffffffff8f5c5546
+               |                     0xffffffff9045c5c6
+               |                     0xffffffff9045c453
+               |                     0xffffffff9045c116
+               |                     0xffffffff8f35b83a
+               |                     0xffffffff8f37607f
+               |                     0xffffffff8f3755f9
+               |                     0xffffffff8f36d972
+               |                     0xffffffff8f388736
+               |          
+                --0.54%--0xffffffff8f207697
+                          0xffffffff8f701f37
+                          0xffffffff8f701bd8
+                          0xffffffff8f6ffa26
+                          0xffffffff8f6ff932
+                          0xffffffff8f6ff639
+                          0xffffffff8f6ff0a7
+
+     3.67%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bf643
+            |
+            ---0x753aa16bf643
+               |          
+               |--2.50%--__GI___libc_write
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c335f
+               |          0xffffffffc15026c2
+               |          |          
+               |          |--1.40%--0xffffffff8f5c866c
+               |          |          0xffffffff8f5c3d6d
+               |          |          0xffffffff8f5c3aae
+               |          |          
+               |           --1.10%--0xffffffff8f5c8757
+               |                     0xffffffff8f5d13e1
+               |                     0xffffffff8f5d132b
+               |                     0xffffffff8f5c5768
+               |                     0xffffffff8f5c5546
+               |                     0xffffffff9045c5c6
+               |                     0xffffffff9045c453
+               |                     0xffffffff9045c116
+               |                     0xffffffff8f35b83a
+               |                     0xffffffff8f37607f
+               |                     0xffffffff8f3755f9
+               |                     0xffffffff8f36d972
+               |                     0xffffffff8f388736
+               |          
+                --1.17%--0x753aa16bc3c5
+                          0x753aa16cb5fc
+                          0x753aa16c21e7
+
+     3.33%     3.33%  cw_model  libc.so.6             [.] __mpn_mul_1
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               |          
+               |--2.19%--__mpn_mul_1
+               |          
+                --1.15%--__printf_fp_buffer_1.isra.0
+                          __mpn_mul_1
+
+     3.29%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16aa935
+            |
+            ---0x753aa16aa935
+               |          
+               |--1.14%--0x753aa16aa8ef
+               |          
+                --0.97%--0x753aa16aa978
+
+     3.19%     3.19%  cw_model  libc.so.6             [.] hack_digit
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               |          
+               |--2.13%--__printf_fp_buffer_1.isra.0
+               |          hack_digit
+               |          
+                --1.05%--hack_digit
+
+     2.66%     2.66%  cw_model  cw_model              [.] __dde_solver_m_MOD_sol_out
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               __dde_solver_m_MOD_dde_drv1
+               __dde_solver_m_MOD_dde_drv2
+               __dde_solver_m_MOD_sol_out
+               |          
+                --1.30%--0xffffffff90600ba0
+
+     2.50%     0.00%  cw_model  libc.so.6             [.] __GI___libc_write
+            |
+            ---__GI___libc_write
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.50%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f2059ae
+            |
+            ---0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.50%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6f5d39
+            |
+            ---0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.50%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6f5c83
+            |
+            ---0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.50%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6f56f1
+            |
+            ---0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.50%     0.00%  cw_model  [unknown]             [.] 0xffffffffc1501bbc
+            |
+            ---0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.50%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c335f
+            |
+            ---0xffffffff8f5c335f
+               0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.50%     0.00%  cw_model  [unknown]             [.] 0xffffffffc15026c2
+            |
+            ---0xffffffffc15026c2
+               |          
+               |--1.40%--0xffffffff8f5c866c
+               |          0xffffffff8f5c3d6d
+               |          0xffffffff8f5c3aae
+               |          
+                --1.10%--0xffffffff8f5c8757
+                          0xffffffff8f5d13e1
+                          0xffffffff8f5d132b
+                          0xffffffff8f5c5768
+                          0xffffffff8f5c5546
+                          0xffffffff9045c5c6
+                          0xffffffff9045c453
+                          0xffffffff9045c116
+                          0xffffffff8f35b83a
+                          0xffffffff8f37607f
+                          0xffffffff8f3755f9
+                          0xffffffff8f36d972
+                          0xffffffff8f388736
+
+     2.45%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c882c
+            |
+            ---0x753aa16c882c
+               0x753aa16c381e
+               |          
+               |--1.31%--0x753aa16ba839
+               |          0x753aa16cb54c
+               |          
+                --1.14%--0x753aa16ba7c7
+                          0xffffffff90600ea7
+                          0xffffffff9044fc24
+                          0xffffffff8f259da1
+                          0xffffffff8f3c609c
+                          0xffffffff8f3c0319
+                          0xffffffff8f3c010f
+                          0xffffffffc050d1c1
+
+     2.45%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c381e
+            |
+            ---0x753aa16c381e
+               |          
+               |--1.31%--0x753aa16ba839
+               |          0x753aa16cb54c
+               |          
+                --1.14%--0x753aa16ba7c7
+                          0xffffffff90600ea7
+                          0xffffffff9044fc24
+                          0xffffffff8f259da1
+                          0xffffffff8f3c609c
+                          0xffffffff8f3c0319
+                          0xffffffff8f3c010f
+                          0xffffffffc050d1c1
+
+     2.39%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_start_user
+            |
+            ---_dl_start_user
+               |          
+                --1.95%--_dl_start
+                          _dl_sysdep_start
+                          |          
+                           --1.74%--dl_main
+                                     |          
+                                      --0.94%--_dl_map_object_deps
+                                                _dl_catch_exception
+                                                openaux
+                                                _dl_map_object
+
+     2.35%     0.00%  cw_model  [unknown]             [k] 0xffffffff90600bc7
+            |
+            ---0xffffffff90600bc7
+               0xffffffff90453c63
+               |          
+                --1.99%--0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          |          
+                          |--1.37%--0xffffffff8f6306bb
+                          |          0xffffffff8f62f4fc
+                          |          0xffffffff8f62f30c
+                          |          0xffffffff8f698804
+                          |          0xffffffff8f698491
+                          |          0xffffffff8f65e859
+                          |          0xffffffff8f65cff8
+                          |          0xffffffff8f65b1c9
+                          |          0xffffffff8f65a8bf
+                          |          0xffffffff8f65a117
+                          |          
+                           --0.62%--0xffffffff8f630604
+                                     0xffffffff8f62b7c0
+                                     0xffffffff8f62b493
+                                     0xffffffff8f62a8fa
+                                     0xffffffff8f5c8f93
+                                     0xffffffff8f5c473a
+                                     0xffffffff8f5d6436
+                                     0xffffffff8f5d5d4b
+                                     0xffffffff8f5c2fb4
+                                     0xffffffff8f698880
+
+     2.35%     0.00%  cw_model  [unknown]             [k] 0xffffffff90453c63
+            |
+            ---0xffffffff90453c63
+               |          
+                --1.99%--0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          |          
+                          |--1.37%--0xffffffff8f6306bb
+                          |          0xffffffff8f62f4fc
+                          |          0xffffffff8f62f30c
+                          |          0xffffffff8f698804
+                          |          0xffffffff8f698491
+                          |          0xffffffff8f65e859
+                          |          0xffffffff8f65cff8
+                          |          0xffffffff8f65b1c9
+                          |          0xffffffff8f65a8bf
+                          |          0xffffffff8f65a117
+                          |          
+                           --0.62%--0xffffffff8f630604
+                                     0xffffffff8f62b7c0
+                                     0xffffffff8f62b493
+                                     0xffffffff8f62a8fa
+                                     0xffffffff8f5c8f93
+                                     0xffffffff8f5c473a
+                                     0xffffffff8f5d6436
+                                     0xffffffff8f5d5d4b
+                                     0xffffffff8f5c2fb4
+                                     0xffffffff8f698880
+
+     2.35%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f630ffa
+            |
+            ---0xffffffff8f630ffa
+               0xffffffff8f630d24
+               |          
+               |--1.37%--0xffffffff8f6306bb
+               |          0xffffffff8f62f4fc
+               |          0xffffffff8f62f30c
+               |          0xffffffff8f698804
+               |          0xffffffff8f698491
+               |          0xffffffff8f65e859
+               |          0xffffffff8f65cff8
+               |          0xffffffff8f65b1c9
+               |          0xffffffff8f65a8bf
+               |          0xffffffff8f65a117
+               |          
+                --0.98%--0xffffffff8f630604
+                          |          
+                           --0.62%--0xffffffff8f62b7c0
+                                     0xffffffff8f62b493
+                                     0xffffffff8f62a8fa
+                                     0xffffffff8f5c8f93
+                                     0xffffffff8f5c473a
+                                     0xffffffff8f5d6436
+                                     0xffffffff8f5d5d4b
+                                     0xffffffff8f5c2fb4
+                                     0xffffffff8f698880
+
+     2.35%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f630d24
+            |
+            ---0xffffffff8f630d24
+               |          
+               |--1.37%--0xffffffff8f6306bb
+               |          0xffffffff8f62f4fc
+               |          0xffffffff8f62f30c
+               |          0xffffffff8f698804
+               |          0xffffffff8f698491
+               |          0xffffffff8f65e859
+               |          0xffffffff8f65cff8
+               |          0xffffffff8f65b1c9
+               |          0xffffffff8f65a8bf
+               |          0xffffffff8f65a117
+               |          
+                --0.98%--0xffffffff8f630604
+                          |          
+                           --0.62%--0xffffffff8f62b7c0
+                                     0xffffffff8f62b493
+                                     0xffffffff8f62a8fa
+                                     0xffffffff8f5c8f93
+                                     0xffffffff8f5c473a
+                                     0xffffffff8f5d6436
+                                     0xffffffff8f5d5d4b
+                                     0xffffffff8f5c2fb4
+                                     0xffffffff8f698880
+
+     2.30%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16ba7c7
+            |
+            ---0x753aa16ba7c7
+               |          
+                --1.14%--0xffffffff90600ea7
+                          0xffffffff9044fc24
+                          0xffffffff8f259da1
+                          0xffffffff8f3c609c
+                          0xffffffff8f3c0319
+                          0xffffffff8f3c010f
+                          0xffffffffc050d1c1
+
+     2.16%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16aca09
+            |
+            ---0x753aa16aca09
+               0x753aa16aa935
+               |          
+                --0.97%--0x753aa16aa978
+
+     2.03%     2.03%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_wset
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               __dde_solver_m_MOD_dde_drv1
+               __dde_solver_m_MOD_dde_drv2
+               __dde_solver_m_MOD_dde_intp
+               __dde_solver_m_MOD_dde_poly
+               __dde_solver_m_MOD_dde_wset
+
+     1.99%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f2d7f69
+            |
+            ---0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               |          
+               |--1.37%--0xffffffff8f6306bb
+               |          0xffffffff8f62f4fc
+               |          0xffffffff8f62f30c
+               |          0xffffffff8f698804
+               |          0xffffffff8f698491
+               |          0xffffffff8f65e859
+               |          0xffffffff8f65cff8
+               |          0xffffffff8f65b1c9
+               |          0xffffffff8f65a8bf
+               |          0xffffffff8f65a117
+               |          
+                --0.62%--0xffffffff8f630604
+                          0xffffffff8f62b7c0
+                          0xffffffff8f62b493
+                          0xffffffff8f62a8fa
+                          0xffffffff8f5c8f93
+                          0xffffffff8f5c473a
+                          0xffffffff8f5d6436
+                          0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+     1.95%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---_dl_start
+               _dl_sysdep_start
+               |          
+                --1.74%--dl_main
+                          |          
+                           --0.94%--_dl_map_object_deps
+                                     _dl_catch_exception
+                                     openaux
+                                     _dl_map_object
+
+     1.95%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               |          
+                --1.74%--dl_main
+                          |          
+                           --0.94%--_dl_map_object_deps
+                                     _dl_catch_exception
+                                     openaux
+                                     _dl_map_object
+
+     1.74%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+               |          
+                --0.94%--_dl_map_object_deps
+                          _dl_catch_exception
+                          openaux
+                          _dl_map_object
+
+     1.55%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f698804
+            |
+            ---0xffffffff8f698804
+               0xffffffff8f698491
+               0xffffffff8f65e859
+               0xffffffff8f65cff8
+               |          
+                --1.37%--0xffffffff8f65b1c9
+                          0xffffffff8f65a8bf
+                          0xffffffff8f65a117
+
+     1.55%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f698491
+            |
+            ---0xffffffff8f698491
+               0xffffffff8f65e859
+               0xffffffff8f65cff8
+               |          
+                --1.37%--0xffffffff8f65b1c9
+                          0xffffffff8f65a8bf
+                          0xffffffff8f65a117
+
+     1.55%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f65e859
+            |
+            ---0xffffffff8f65e859
+               0xffffffff8f65cff8
+               |          
+                --1.37%--0xffffffff8f65b1c9
+                          0xffffffff8f65a8bf
+                          0xffffffff8f65a117
+
+     1.55%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f65cff8
+            |
+            ---0xffffffff8f65cff8
+               |          
+                --1.37%--0xffffffff8f65b1c9
+                          0xffffffff8f65a8bf
+                          0xffffffff8f65a117
+
+     1.46%     1.46%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c5464
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c5467
+
+     1.46%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c5467
+            |
+            ---0x753aa16c5467
+
+     1.42%     1.42%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c57aa
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c57b4
+
+     1.42%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c57b4
+            |
+            ---0x753aa16c57b4
+
+     1.40%     1.40%  cw_model  [unknown]             [k] 0xffffffff8f5c3aab
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16bfaf6
+               0x753aa16bf643
+               __GI___libc_write
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               0xffffffff8f5c866c
+               0xffffffff8f5c3d6d
+               0xffffffff8f5c3aae
+
+     1.40%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c866c
+            |
+            ---0xffffffff8f5c866c
+               0xffffffff8f5c3d6d
+               0xffffffff8f5c3aae
+
+     1.40%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c3d6d
+            |
+            ---0xffffffff8f5c3d6d
+               0xffffffff8f5c3aae
+
+     1.40%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c3aae
+            |
+            ---0xffffffff8f5c3aae
+
+     1.37%     1.37%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002aaa0d
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16bed30
+               0x753aa16ac924
+               0x753aa16ab078
+               0x753aa16aaa55
+               0x753aa16aaa10
+
+     1.37%     1.37%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002bed3b
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16bed41
+
+     1.37%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bed30
+            |
+            ---0x753aa16bed30
+               0x753aa16ac924
+               0x753aa16ab078
+               0x753aa16aaa55
+               0x753aa16aaa10
+
+     1.37%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16ac924
+            |
+            ---0x753aa16ac924
+               0x753aa16ab078
+               0x753aa16aaa55
+               0x753aa16aaa10
+
+     1.37%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16ab078
+            |
+            ---0x753aa16ab078
+               0x753aa16aaa55
+               0x753aa16aaa10
+
+     1.37%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16aaa55
+            |
+            ---0x753aa16aaa55
+               0x753aa16aaa10
+
+     1.37%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16aaa10
+            |
+            ---0x753aa16aaa10
+
+     1.37%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bed41
+            |
+            ---0x753aa16bed41
+
+     1.37%     1.37%  cw_model  [unknown]             [k] 0xffffffff8f65a110
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               __dde_solver_m_MOD_contract_sol
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f6306bb
+               0xffffffff8f62f4fc
+               0xffffffff8f62f30c
+               0xffffffff8f698804
+               0xffffffff8f698491
+               0xffffffff8f65e859
+               0xffffffff8f65cff8
+               0xffffffff8f65b1c9
+               0xffffffff8f65a8bf
+               0xffffffff8f65a117
+
+     1.37%     0.00%  cw_model  cw_model              [.] __dde_solver_m_MOD_contract_sol
+            |
+            ---__dde_solver_m_MOD_contract_sol
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f6306bb
+               0xffffffff8f62f4fc
+               0xffffffff8f62f30c
+               0xffffffff8f698804
+               0xffffffff8f698491
+               0xffffffff8f65e859
+               0xffffffff8f65cff8
+               0xffffffff8f65b1c9
+               0xffffffff8f65a8bf
+               0xffffffff8f65a117
+
+     1.37%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6306bb
+            |
+            ---0xffffffff8f6306bb
+               0xffffffff8f62f4fc
+               0xffffffff8f62f30c
+               0xffffffff8f698804
+               0xffffffff8f698491
+               0xffffffff8f65e859
+               0xffffffff8f65cff8
+               0xffffffff8f65b1c9
+               0xffffffff8f65a8bf
+               0xffffffff8f65a117
+
+     1.37%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62f4fc
+            |
+            ---0xffffffff8f62f4fc
+               0xffffffff8f62f30c
+               0xffffffff8f698804
+               0xffffffff8f698491
+               0xffffffff8f65e859
+               0xffffffff8f65cff8
+               0xffffffff8f65b1c9
+               0xffffffff8f65a8bf
+               0xffffffff8f65a117
+
+     1.37%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62f30c
+            |
+            ---0xffffffff8f62f30c
+               0xffffffff8f698804
+               0xffffffff8f698491
+               0xffffffff8f65e859
+               0xffffffff8f65cff8
+               0xffffffff8f65b1c9
+               0xffffffff8f65a8bf
+               0xffffffff8f65a117
+
+     1.37%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f65b1c9
+            |
+            ---0xffffffff8f65b1c9
+               0xffffffff8f65a8bf
+               0xffffffff8f65a117
+
+     1.37%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f65a8bf
+            |
+            ---0xffffffff8f65a8bf
+               0xffffffff8f65a117
+
+     1.37%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f65a117
+            |
+            ---0xffffffff8f65a117
+
+     1.31%     1.31%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c6c0e
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c6c15
+
+     1.31%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c6c15
+            |
+            ---0x753aa16c6c15
+
+     1.31%     1.31%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002cb549
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c882c
+               0x753aa16c381e
+               0x753aa16ba839
+               0x753aa16cb54c
+
+     1.31%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16ba839
+            |
+            ---0x753aa16ba839
+               0x753aa16cb54c
+
+     1.31%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16cb54c
+            |
+            ---0x753aa16cb54c
+
+     1.30%     0.00%  cw_model  [unknown]             [.] 0xffffffff90600ba0
+            |
+            ---0xffffffff90600ba0
+
+     1.30%     1.30%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c580c
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c5812
+
+     1.30%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c5812
+            |
+            ---0x753aa16c5812
+
+     1.30%     1.30%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c54a3
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c54a6
+
+     1.30%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c54a6
+            |
+            ---0x753aa16c54a6
+
+     1.26%     1.26%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002ac97a
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd7bc
+               0x753aa16ac99a
+
+     1.26%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16ac99a
+            |
+            ---0x753aa16ac99a
+
+     1.22%     1.22%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002bea69
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16bea6c
+
+     1.22%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bea6c
+            |
+            ---0x753aa16bea6c
+
+     1.18%     1.18%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002aa909
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd7bc
+               0x753aa16aca09
+               0x753aa16aa935
+
+     1.18%     1.18%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002b9c91
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16b9c97
+
+     1.18%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16b9c97
+            |
+            ---0x753aa16b9c97
+
+     1.17%     1.17%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c21e3
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16bfaf6
+               0x753aa16bf643
+               0x753aa16bc3c5
+               0x753aa16cb5fc
+               0x753aa16c21e7
+
+     1.17%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bc3c5
+            |
+            ---0x753aa16bc3c5
+               0x753aa16cb5fc
+               0x753aa16c21e7
+
+     1.17%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16cb5fc
+            |
+            ---0x753aa16cb5fc
+               0x753aa16c21e7
+
+     1.17%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c21e7
+            |
+            ---0x753aa16c21e7
+
+     1.16%     1.16%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002ba7c0
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be0f4
+               0x753aa16ba7c7
+
+     1.16%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16be0f4
+            |
+            ---0x753aa16be0f4
+               0x753aa16ba7c7
+
+     1.15%     1.15%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c55ed
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c55f4
+
+     1.15%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c55f4
+            |
+            ---0x753aa16c55f4
+
+     1.14%     1.14%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002bd7f0
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd7f7
+
+     1.14%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bd7f7
+            |
+            ---0x753aa16bd7f7
+
+     1.14%     1.14%  cw_model  [unknown]             [k] 0xffffffffc050d1ba
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c882c
+               0x753aa16c381e
+               0x753aa16ba7c7
+               0xffffffff90600ea7
+               0xffffffff9044fc24
+               0xffffffff8f259da1
+               0xffffffff8f3c609c
+               0xffffffff8f3c0319
+               0xffffffff8f3c010f
+               0xffffffffc050d1c1
+
+     1.14%     0.00%  cw_model  [unknown]             [.] 0xffffffff90600ea7
+            |
+            ---0xffffffff90600ea7
+               0xffffffff9044fc24
+               0xffffffff8f259da1
+               0xffffffff8f3c609c
+               0xffffffff8f3c0319
+               0xffffffff8f3c010f
+               0xffffffffc050d1c1
+
+     1.14%     0.00%  cw_model  [unknown]             [.] 0xffffffff9044fc24
+            |
+            ---0xffffffff9044fc24
+               0xffffffff8f259da1
+               0xffffffff8f3c609c
+               0xffffffff8f3c0319
+               0xffffffff8f3c010f
+               0xffffffffc050d1c1
+
+     1.14%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f259da1
+            |
+            ---0xffffffff8f259da1
+               0xffffffff8f3c609c
+               0xffffffff8f3c0319
+               0xffffffff8f3c010f
+               0xffffffffc050d1c1
+
+     1.14%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f3c609c
+            |
+            ---0xffffffff8f3c609c
+               0xffffffff8f3c0319
+               0xffffffff8f3c010f
+               0xffffffffc050d1c1
+
+     1.14%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f3c0319
+            |
+            ---0xffffffff8f3c0319
+               0xffffffff8f3c010f
+               0xffffffffc050d1c1
+
+     1.14%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f3c010f
+            |
+            ---0xffffffff8f3c010f
+               0xffffffffc050d1c1
+
+     1.14%     0.00%  cw_model  [unknown]             [.] 0xffffffffc050d1c1
+            |
+            ---0xffffffffc050d1c1
+
+     1.14%     1.14%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002aa8ec
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd7bc
+               0x753aa16ac9b7
+               0x753aa16aa935
+               0x753aa16aa8ef
+
+     1.14%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16ac9b7
+            |
+            ---0x753aa16ac9b7
+               0x753aa16aa935
+               0x753aa16aa8ef
+
+     1.14%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16aa8ef
+            |
+            ---0x753aa16aa8ef
+
+     1.11%     1.11%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c5998
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c599d
+
+     1.11%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c599d
+            |
+            ---0x753aa16c599d
+
+     1.11%     1.11%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002ac9a2
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd7bc
+
+     1.10%     1.10%  cw_model  [unknown]             [k] 0xffffffff8f388733
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16bfaf6
+               0x753aa16bf643
+               __GI___libc_write
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c335f
+               0xffffffffc15026c2
+               0xffffffff8f5c8757
+               0xffffffff8f5d13e1
+               0xffffffff8f5d132b
+               0xffffffff8f5c5768
+               0xffffffff8f5c5546
+               0xffffffff9045c5c6
+               0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c8757
+            |
+            ---0xffffffff8f5c8757
+               0xffffffff8f5d13e1
+               0xffffffff8f5d132b
+               0xffffffff8f5c5768
+               0xffffffff8f5c5546
+               0xffffffff9045c5c6
+               0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5d13e1
+            |
+            ---0xffffffff8f5d13e1
+               0xffffffff8f5d132b
+               0xffffffff8f5c5768
+               0xffffffff8f5c5546
+               0xffffffff9045c5c6
+               0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5d132b
+            |
+            ---0xffffffff8f5d132b
+               0xffffffff8f5c5768
+               0xffffffff8f5c5546
+               0xffffffff9045c5c6
+               0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c5768
+            |
+            ---0xffffffff8f5c5768
+               0xffffffff8f5c5546
+               0xffffffff9045c5c6
+               0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c5546
+            |
+            ---0xffffffff8f5c5546
+               0xffffffff9045c5c6
+               0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff9045c5c6
+            |
+            ---0xffffffff9045c5c6
+               0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff9045c453
+            |
+            ---0xffffffff9045c453
+               0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff9045c116
+            |
+            ---0xffffffff9045c116
+               0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f35b83a
+            |
+            ---0xffffffff8f35b83a
+               0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f37607f
+            |
+            ---0xffffffff8f37607f
+               0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f3755f9
+            |
+            ---0xffffffff8f3755f9
+               0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f36d972
+            |
+            ---0xffffffff8f36d972
+               0xffffffff8f388736
+
+     1.10%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f388736
+            |
+            ---0xffffffff8f388736
+
+     1.09%     1.09%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002bf51e
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16bfaf6
+               0x753aa16bf526
+
+     1.09%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bf526
+            |
+            ---0x753aa16bf526
+
+     1.09%     1.09%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002bd6f7
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd6f9
+
+     1.09%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bd6f9
+            |
+            ---0x753aa16bd6f9
+
+     1.06%     1.06%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002bd7d1
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd810
+
+     1.06%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bd810
+            |
+            ---0x753aa16bd810
+
+     1.04%     1.04%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002bd777
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd77d
+
+     1.04%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16bd77d
+            |
+            ---0x753aa16bd77d
+
+     1.02%     1.02%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c570a
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c570d
+
+     1.02%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c570d
+            |
+            ---0x753aa16c570d
+
+     1.02%     1.02%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002c54c6
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c7042
+               0x753aa16c54ca
+
+     1.02%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16c54ca
+            |
+            ---0x753aa16c54ca
+
+     0.98%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f630604
+            |
+            ---0xffffffff8f630604
+               |          
+                --0.62%--0xffffffff8f62b7c0
+                          0xffffffff8f62b493
+                          0xffffffff8f62a8fa
+                          0xffffffff8f5c8f93
+                          0xffffffff8f5c473a
+                          0xffffffff8f5d6436
+                          0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+     0.97%     0.97%  cw_model  libgfortran.so.5.0.0  [.] 0x00000000002aa974
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16bd7bc
+               0x753aa16aca09
+               0x753aa16aa935
+               0x753aa16aa978
+
+     0.97%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa16aa978
+            |
+            ---0x753aa16aa978
+
+     0.94%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+            |
+            ---_dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+
+     0.94%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_catch_exception
+            |
+            ---_dl_catch_exception
+               openaux
+               _dl_map_object
+
+     0.94%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] openaux
+            |
+            ---openaux
+               _dl_map_object
+
+     0.94%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_map_object
+            |
+            ---_dl_map_object
+
+     0.91%     0.91%  cw_model  libc.so.6             [.] __strchrnul_avx2
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x753aa16be593
+               0x753aa16be08c
+               0x753aa16c8816
+               0x753aa16c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __strchrnul_avx2
+
+     0.80%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f62a8fa
+            |
+            ---0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               |          
+                --0.62%--0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+     0.80%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5c8f93
+            |
+            ---0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               |          
+                --0.62%--0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+     0.80%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5c473a
+            |
+            ---0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               |          
+                --0.62%--0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+     0.80%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5d6436
+            |
+            ---0xffffffff8f5d6436
+               |          
+                --0.62%--0xffffffff8f5d5d4b
+                          0xffffffff8f5c2fb4
+                          0xffffffff8f698880
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff90600f4b
+            |
+            ---0xffffffff90600f4b
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f2ad621
+            |
+            ---0xffffffff8f2ad621
+               0xffffffff8f40e4b6
+               0xffffffff8f40d4af
+               0xffffffff8f4254a8
+               0xffffffff8f424f88
+               0xffffffff8f40c569
+               0xffffffff8f366a16
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f40e4b6
+            |
+            ---0xffffffff8f40e4b6
+               0xffffffff8f40d4af
+               0xffffffff8f4254a8
+               0xffffffff8f424f88
+               0xffffffff8f40c569
+               0xffffffff8f366a16
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f40d4af
+            |
+            ---0xffffffff8f40d4af
+               0xffffffff8f4254a8
+               0xffffffff8f424f88
+               0xffffffff8f40c569
+               0xffffffff8f366a16
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f4254a8
+            |
+            ---0xffffffff8f4254a8
+               0xffffffff8f424f88
+               0xffffffff8f40c569
+               0xffffffff8f366a16
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f424f88
+            |
+            ---0xffffffff8f424f88
+               0xffffffff8f40c569
+               0xffffffff8f366a16
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f40c569
+            |
+            ---0xffffffff8f40c569
+               0xffffffff8f366a16
+
+     0.67%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f366a16
+            |
+            ---0xffffffff8f366a16
+
+     0.62%     0.62%  cw_model  [unknown]             [k] 0xffffffff8f698970
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               __dde_solver_m_MOD_dde_drv2
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b7c0
+               0xffffffff8f62b493
+               0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d4b
+               0xffffffff8f5c2fb4
+               0xffffffff8f698880
+
+     0.62%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62b7c0
+            |
+            ---0xffffffff8f62b7c0
+               0xffffffff8f62b493
+               0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d4b
+               0xffffffff8f5c2fb4
+               0xffffffff8f698880
+
+     0.62%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62b493
+            |
+            ---0xffffffff8f62b493
+               0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d4b
+               0xffffffff8f5c2fb4
+               0xffffffff8f698880
+
+     0.62%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5d5d4b
+            |
+            ---0xffffffff8f5d5d4b
+               0xffffffff8f5c2fb4
+               0xffffffff8f698880
+
+     0.62%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c2fb4
+            |
+            ---0xffffffff8f5c2fb4
+               0xffffffff8f698880
+
+     0.62%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f698880
+            |
+            ---0xffffffff8f698880
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0x00007597330eef3b
+            |
+            ---0x7597330eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f207697
+            |
+            ---0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f701f37
+            |
+            ---0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f701bd8
+            |
+            ---0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ffa26
+            |
+            ---0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ff932
+            |
+            ---0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ff639
+            |
+            ---0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+
+     0.54%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ff0a7
+            |
+            ---0xffffffff8f6ff0a7
+
+     0.49%     0.49%  cw_model  [unknown]             [k] 0xffffffff8f374df3
+     0.49%     0.00%  cw_model  [unknown]             [.] 0xffffffff90452dcb
+     0.49%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f374dfa
+     0.44%     0.44%  cw_model  ld-linux-x86-64.so.2  [.] strcmp
+     0.44%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_init
+     0.44%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] call_init.part.0
+     0.44%     0.00%  cw_model  libgfortran.so.5.0.0  [.] 0x0000753aa14213b2
+     0.44%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_runtime_resolve_xsavec
+     0.44%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_fixup
+     0.44%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_lookup_symbol_x
+     0.44%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] do_lookup_x
+     0.41%     0.41%  cw_model  libm.so.6             [.] __acos_finite@GLIBC_2.15
+     0.39%     0.39%  cw_model  ld-linux-x86-64.so.2  [.] _dl_check_map_versions
+     0.39%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_receive_error
+     0.39%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] version_check_doit
+     0.39%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_check_all_versions
+     0.36%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f792fe0
+     0.36%     0.00%  cw_model  [unknown]             [k] 0xffffffff903d4c80
+     0.36%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f2d7ff5
+     0.35%     0.35%  cw_model  [unknown]             [k] 0xffffffff8f749a2e
+     0.35%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_map_object_from_fd
+     0.35%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] mmap64
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f2078fe
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f261943
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f63906c
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5fcfc3
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f63cd01
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f63c864
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f63c248
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5b0f8b
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5a0589
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f749f45
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f749c15
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f749abe
+     0.35%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f749a2f
+     0.32%     0.32%  cw_model  [unknown]             [k] 0xffffffff8f5d0277
+     0.32%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] open_verify.constprop.0
+     0.32%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] __GI___open64_nocancel
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f2077e1
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6f0d95
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6f07e3
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f70e4bf
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f70d805
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f708ded
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6f0473
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f8f5831
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffffc11720f7
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f2c0973
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f4700a2
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f4f8579
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f4f82b6
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f4f39ef
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffffc0264e44
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f4ef4ed
+     0.32%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5d027a
+     0.27%     0.27%  cw_model  [unknown]             [k] 0xffffffff90601960
+     0.27%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_load_cache_lookup
+     0.27%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] __GI___close_nocancel
+     0.27%     0.00%  cw_model  [unknown]             [.] 0xffffffff9060012b
+     0.21%     0.21%  cw_model  ld-linux-x86-64.so.2  [.] init_cpu_features.constprop.0
+     0.18%     0.18%  cw_model  [unknown]             [k] 0xffffffff8f5c3da9
+     0.18%     0.18%  cw_model  [unknown]             [k] 0xffffffff8f65b204
+     0.18%     0.18%  cw_model  [unknown]             [k] 0xffffffff8f367b90
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f79346d
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8fb438dc
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff90452e1d
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f62b7ef
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f62b830
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f374f2b
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f367b92
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5c3dab
+     0.18%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f65b20d
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

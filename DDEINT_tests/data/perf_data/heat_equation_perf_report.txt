@@ -1,0 +1,995 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 6K of event 'cycles:P'
+# Event count (approx.): 6692782017
+#
+# Children      Self  Command        Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+# ........  ........  .............  ....................  ................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    99.95%     0.00%  heat_equation  heat_equation         [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+                --99.90%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                          |          
+                           --99.89%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                                     DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                                     |          
+                                     |--85.82%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                                     |          |          
+                                     |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                                     |          |          |          
+                                     |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                                     |          |          |          |          
+                                     |          |          |          |--25.33%--__sin_fma
+                                     |          |          |          |          
+                                     |          |          |          |--21.76%--__cos_fma
+                                     |          |          |          |          
+                                     |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          |          
+                                     |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     |          
+                                     |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+                                     |          |          |          
+                                     |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          
+                                     |          |          |--1.40%--__sin_fma
+                                     |          |          |          
+                                     |          |          |--0.90%--__cos_fma
+                                     |          |          |          
+                                     |          |          |--0.65%--sin@plt
+                                     |          |          |          
+                                     |          |           --0.63%--cos@plt
+                                     |          |          
+                                     |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          
+                                     |--7.16%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                                     |          |          
+                                     |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+                                     |                     |          
+                                     |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                                     |                     |          |          
+                                     |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+                                     |                     |          
+                                     |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+                                     |                                |          
+                                     |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+                                     |          
+                                     |--4.19%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+                                     |          |          
+                                     |           --2.97%--__ieee754_pow_fma
+                                     |          
+                                      --2.14%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    99.95%     0.00%  heat_equation  libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+                --99.90%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                          |          
+                           --99.89%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                                     DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                                     |          
+                                     |--85.82%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                                     |          |          
+                                     |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                                     |          |          |          
+                                     |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                                     |          |          |          |          
+                                     |          |          |          |--25.33%--__sin_fma
+                                     |          |          |          |          
+                                     |          |          |          |--21.76%--__cos_fma
+                                     |          |          |          |          
+                                     |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          |          
+                                     |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     |          
+                                     |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+                                     |          |          |          
+                                     |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          
+                                     |          |          |--1.40%--__sin_fma
+                                     |          |          |          
+                                     |          |          |--0.90%--__cos_fma
+                                     |          |          |          
+                                     |          |          |--0.65%--sin@plt
+                                     |          |          |          
+                                     |          |           --0.63%--cos@plt
+                                     |          |          
+                                     |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          
+                                     |--7.16%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                                     |          |          
+                                     |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+                                     |                     |          
+                                     |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                                     |                     |          |          
+                                     |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+                                     |                     |          
+                                     |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+                                     |                                |          
+                                     |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+                                     |          
+                                     |--4.19%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+                                     |          |          
+                                     |           --2.97%--__ieee754_pow_fma
+                                     |          
+                                      --2.14%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    99.95%     0.00%  heat_equation  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               |          
+                --99.90%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                          |          
+                           --99.89%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                                     DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                                     |          
+                                     |--85.82%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                                     |          |          
+                                     |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                                     |          |          |          
+                                     |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                                     |          |          |          |          
+                                     |          |          |          |--25.33%--__sin_fma
+                                     |          |          |          |          
+                                     |          |          |          |--21.76%--__cos_fma
+                                     |          |          |          |          
+                                     |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          |          
+                                     |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     |          
+                                     |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+                                     |          |          |          
+                                     |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          
+                                     |          |          |--1.40%--__sin_fma
+                                     |          |          |          
+                                     |          |          |--0.90%--__cos_fma
+                                     |          |          |          
+                                     |          |          |--0.65%--sin@plt
+                                     |          |          |          
+                                     |          |           --0.63%--cos@plt
+                                     |          |          
+                                     |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          
+                                     |--7.16%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                                     |          |          
+                                     |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+                                     |                     |          
+                                     |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                                     |                     |          |          
+                                     |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+                                     |                     |          
+                                     |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+                                     |                                |          
+                                     |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+                                     |          
+                                     |--4.19%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+                                     |          |          
+                                     |           --2.97%--__ieee754_pow_fma
+                                     |          
+                                      --2.14%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    99.95%     0.00%  heat_equation  heat_equation         [.] main
+            |
+            ---main
+               |          
+                --99.90%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                          |          
+                           --99.89%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                                     DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                                     |          
+                                     |--85.82%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                                     |          |          
+                                     |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                                     |          |          |          
+                                     |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                                     |          |          |          |          
+                                     |          |          |          |--25.33%--__sin_fma
+                                     |          |          |          |          
+                                     |          |          |          |--21.76%--__cos_fma
+                                     |          |          |          |          
+                                     |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          |          
+                                     |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                     |          
+                                     |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                                     |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+                                     |          |          |          
+                                     |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          |          |          
+                                     |          |          |--1.40%--__sin_fma
+                                     |          |          |          
+                                     |          |          |--0.90%--__cos_fma
+                                     |          |          |          
+                                     |          |          |--0.65%--sin@plt
+                                     |          |          |          
+                                     |          |           --0.63%--cos@plt
+                                     |          |          
+                                     |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                                     |          
+                                     |--7.16%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                                     |          |          
+                                     |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+                                     |                     |          
+                                     |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                                     |                     |          |          
+                                     |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+                                     |                     |          
+                                     |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+                                     |                                |          
+                                     |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+                                     |          
+                                     |--4.19%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+                                     |          |          
+                                     |           --2.97%--__ieee754_pow_fma
+                                     |          
+                                      --2.14%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    99.90%     0.00%  heat_equation  heat_equation         [.] DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |
+            ---DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          
+                --99.89%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                          DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                          |          
+                          |--85.82%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                          |          |          
+                          |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                          |          |          |          
+                          |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                          |          |          |          |          
+                          |          |          |          |--25.33%--__sin_fma
+                          |          |          |          |          
+                          |          |          |          |--21.76%--__cos_fma
+                          |          |          |          |          
+                          |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          |          |          
+                          |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                          |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                          |          |          |                     |          
+                          |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                          |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+                          |          |          |          
+                          |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          |          |          
+                          |          |          |--1.40%--__sin_fma
+                          |          |          |          
+                          |          |          |--0.90%--__cos_fma
+                          |          |          |          
+                          |          |          |--0.65%--sin@plt
+                          |          |          |          
+                          |          |           --0.63%--cos@plt
+                          |          |          
+                          |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                          |          
+                          |--7.16%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                          |          |          
+                          |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+                          |                     |          
+                          |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                          |                     |          |          
+                          |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+                          |                     |          
+                          |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+                          |                                |          
+                          |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+                          |          
+                          |--4.19%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+                          |          |          
+                          |           --2.97%--__ieee754_pow_fma
+                          |          
+                           --2.14%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    99.89%     0.00%  heat_equation  heat_equation         [.] DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |
+            ---DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--85.82%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          
+               |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |          
+               |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          |          
+               |          |          |          |--25.33%--__sin_fma
+               |          |          |          |          
+               |          |          |          |--21.76%--__cos_fma
+               |          |          |          |          
+               |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          |          
+               |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          |          |                     |          
+               |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          |          |          
+               |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          
+               |          |          |--1.40%--__sin_fma
+               |          |          |          
+               |          |          |--0.90%--__cos_fma
+               |          |          |          
+               |          |          |--0.65%--sin@plt
+               |          |          |          
+               |          |           --0.63%--cos@plt
+               |          |          
+               |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          
+               |--7.16%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          
+               |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |                     |          
+               |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               |                     |          |          
+               |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               |                     |          
+               |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+               |                                |          
+               |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          
+               |--4.19%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+               |          |          
+               |           --2.97%--__ieee754_pow_fma
+               |          
+                --2.14%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    99.89%     0.00%  heat_equation  heat_equation         [.] DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |
+            ---DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--85.82%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          
+               |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |          
+               |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          |          
+               |          |          |          |--25.33%--__sin_fma
+               |          |          |          |          
+               |          |          |          |--21.76%--__cos_fma
+               |          |          |          |          
+               |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          |          
+               |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          |          |                     |          
+               |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+               |          |          |          
+               |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          
+               |          |          |--1.40%--__sin_fma
+               |          |          |          
+               |          |          |--0.90%--__cos_fma
+               |          |          |          
+               |          |          |--0.65%--sin@plt
+               |          |          |          
+               |          |           --0.63%--cos@plt
+               |          |          
+               |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          
+               |--7.16%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          
+               |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |                     |          
+               |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               |                     |          |          
+               |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               |                     |          
+               |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+               |                                |          
+               |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          
+               |--4.19%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+               |          |          
+               |           --2.97%--__ieee754_pow_fma
+               |          
+                --2.14%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    86.79%     9.64%  heat_equation  heat_equation         [.] DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          
+            |--77.15%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          |          
+            |          |--72.84%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |          |          |          
+            |          |          |--67.38%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          |          |          |          
+            |          |          |          |--25.33%--__sin_fma
+            |          |          |          |          
+            |          |          |          |--21.76%--__cos_fma
+            |          |          |          |          
+            |          |          |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          |          |          
+            |          |          |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |          |          |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |          |          |                     |          
+            |          |          |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |          |          |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+            |          |          |          
+            |          |          |--1.85%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          |          
+            |          |          |--1.40%--__sin_fma
+            |          |          |          
+            |          |          |--0.90%--__cos_fma
+            |          |          |          
+            |          |          |--0.65%--sin@plt
+            |          |          |          
+            |          |           --0.63%--cos@plt
+            |          |          
+            |           --4.17%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          
+             --9.64%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       |          
+                       |--8.67%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       |          
+                        --0.98%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    73.07%     0.02%  heat_equation  heat_equation         [.] DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |          
+             --73.05%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                       |          
+                       |--67.60%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                       |          |          
+                       |          |--25.47%--__sin_fma
+                       |          |          
+                       |          |--21.79%--__cos_fma
+                       |          |          
+                       |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                       |          |          
+                       |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                       |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                       |                     |          
+                       |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                       |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+                       |          
+                       |--1.87%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+                       |          
+                       |--1.40%--__sin_fma
+                       |          
+                       |--0.90%--__cos_fma
+                       |          
+                       |--0.65%--sin@plt
+                       |          
+                        --0.63%--cos@plt
+
+    68.55%    14.79%  heat_equation  heat_equation         [.] laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          
+            |--53.76%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          |          
+            |          |--25.47%--__sin_fma
+            |          |          
+            |          |--21.79%--__cos_fma
+            |          |          
+            |          |--3.23%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          
+            |           --1.93%--void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |                     void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |                     |          
+            |                      --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |                                __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+            |          
+             --14.79%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       |          
+                        --14.74%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                                  DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                                  |          
+                                   --13.79%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+
+    27.07%    26.51%  heat_equation  libm.so.6             [.] __sin_fma
+            |          
+            |--26.51%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |          DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |          DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |          |          
+            |           --26.37%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |                     DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |                     |          
+            |                     |--25.31%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |                     |          |          
+            |                     |           --25.12%--__sin_fma
+            |                     |          
+            |                      --1.06%--__sin_fma
+            |          
+             --0.56%--__sin_fma
+
+    23.35%    22.75%  heat_equation  libm.so.6             [.] __cos_fma
+            |          
+            |--22.75%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |          DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |          DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |          |          
+            |           --22.72%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |                     DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |                     |          
+            |                      --22.27%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |                                |          
+            |                                 --21.61%--__cos_fma
+            |          
+             --0.60%--__cos_fma
+
+    12.76%    11.36%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          
+            |--11.36%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |          DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |          DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |          |          
+            |          |--9.43%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          |          |          
+            |          |          |--5.17%--DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |          |          |          |          
+            |          |          |          |--3.68%--laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          |          |          |          |          
+            |          |          |          |           --3.22%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          |          |          
+            |          |          |           --1.49%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          |          
+            |          |           --4.16%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          |          
+            |           --1.16%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          
+             --1.39%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+     7.16%     0.61%  heat_equation  heat_equation         [.] History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+            |          
+            |--6.55%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+            |          |          
+            |           --5.37%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+            |                     |          
+            |                     |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+            |                     |          |          
+            |                     |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+            |                     |          
+            |                      --1.04%--RingBuffer<double>::operator[](unsigned long)
+            |                                |          
+            |                                 --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+            |          
+             --0.61%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+
+     5.48%     1.47%  heat_equation  heat_equation         [.] CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+            |          
+            |--4.01%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+            |          |          
+            |          |--1.20%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+            |          |          |          
+            |          |           --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+            |          |          
+            |           --1.04%--RingBuffer<double>::operator[](unsigned long)
+            |                     |          
+            |                      --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+            |          
+             --1.47%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                       |          
+                        --1.36%--CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+
+     4.21%     0.65%  heat_equation  heat_equation         [.] DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+            |          
+            |--3.56%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+            |          |          
+            |           --2.97%--__ieee754_pow_fma
+            |          
+             --0.65%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       |          
+                        --0.63%--DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+
+     2.97%     2.95%  heat_equation  libm.so.6             [.] __ieee754_pow_fma
+            |          
+             --2.95%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_error()
+                       __ieee754_pow_fma
+
+     1.93%     0.02%  heat_equation  heat_equation         [.] void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |          
+             --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                       __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+
+     1.93%     0.00%  heat_equation  heat_equation         [.] void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |
+            ---void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          
+                --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                          __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+
+     1.93%     0.00%  heat_equation  heat_equation         [.] void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+            |
+            ---void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+               |          
+                --1.91%--void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                          __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+
+     1.91%     1.88%  heat_equation  heat_equation         [.] __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+            |          
+             --1.88%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                       laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                       void std::fill<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                       void std::__fill_a<__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                       void std::__fill_a1<double*, std::vector<double, std::allocator<double> >, double>(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&)
+                       __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a1<double*, double>(double*, double*, double const&)
+
+     1.31%     0.40%  heat_equation  heat_equation         [.] RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+            |          
+             --0.92%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                       |          
+                        --0.79%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+
+     1.18%     0.39%  heat_equation  heat_equation         [.] RingBuffer<double>::operator[](unsigned long)
+            |          
+             --0.79%--RingBuffer<double>::operator[](unsigned long)
+                       |          
+                        --0.60%--std::vector<double, std::allocator<double> >::at(unsigned long)
+
+     1.07%     0.73%  heat_equation  heat_equation         [.] cos@plt
+            |          
+             --0.73%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+
+     1.00%     0.76%  heat_equation  heat_equation         [.] sin@plt
+            |          
+             --0.76%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+
+     0.81%     0.17%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+            |          
+             --0.63%--std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+
+     0.65%     0.17%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::at(unsigned long)
+     0.57%     0.31%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+     0.53%     0.49%  heat_equation  heat_equation         [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+     0.48%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90600f4b
+     0.46%     0.24%  heat_equation  heat_equation         [.] RingBuffer<std::array<double, 2ul> >::advance()
+     0.42%     0.00%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+     0.36%     0.36%  heat_equation  heat_equation         [.] __gnu_cxx::__enable_if<!std::__is_scalar<std::array<double, 2ul> >::__value, void>::__type std::__fill_a1<std::array<double, 2ul>*, std::array<double, 2ul> >(std::array<double, 2ul>*, std::array<double, 2ul>*, std::array<double, 2ul> const&)
+     0.36%     0.00%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_default_initialize(unsigned long)
+     0.36%     0.00%  heat_equation  heat_equation         [.] std::array<double, 2ul>* std::__uninitialized_default_n_a<std::array<double, 2ul>*, unsigned long, std::array<double, 2ul> >(std::array<double, 2ul>*, unsigned long, std::allocator<std::array<double, 2ul> >&)
+     0.36%     0.00%  heat_equation  heat_equation         [.] std::array<double, 2ul>* std::__uninitialized_default_n<std::array<double, 2ul>*, unsigned long>(std::array<double, 2ul>*, unsigned long)
+     0.36%     0.00%  heat_equation  heat_equation         [.] std::array<double, 2ul>* std::__uninitialized_default_n_1<true>::__uninit_default_n<std::array<double, 2ul>*, unsigned long>(std::array<double, 2ul>*, unsigned long)
+     0.36%     0.00%  heat_equation  heat_equation         [.] std::array<double, 2ul>* std::fill_n<std::array<double, 2ul>*, unsigned long, std::array<double, 2ul> >(std::array<double, 2ul>*, unsigned long, std::array<double, 2ul> const&)
+     0.36%     0.00%  heat_equation  heat_equation         [.] std::array<double, 2ul>* std::__fill_n_a<std::array<double, 2ul>*, unsigned long, std::array<double, 2ul> >(std::array<double, 2ul>*, unsigned long, std::array<double, 2ul> const&, std::random_access_iterator_tag)
+     0.36%     0.00%  heat_equation  heat_equation         [.] void std::__fill_a<std::array<double, 2ul>*, std::array<double, 2ul> >(std::array<double, 2ul>*, std::array<double, 2ul>*, std::array<double, 2ul> const&)
+     0.36%     0.25%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+     0.35%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90452dcb
+     0.35%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f2ad621
+     0.32%     0.30%  heat_equation  heat_equation         [.] RingBuffer<std::array<double, 2ul> >::wrap(unsigned long) const
+     0.31%     0.27%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::size() const
+     0.27%     0.27%  heat_equation  heat_equation         [.] RingBuffer<double>::wrap(unsigned long) const
+     0.27%     0.17%  heat_equation  heat_equation         [.] RingBuffer<double>::size() const
+     0.27%     0.27%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::operator[](unsigned long)
+     0.24%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40e4b6
+     0.24%     0.22%  heat_equation  libm.so.6             [.] pow@@GLIBC_2.29
+     0.17%     0.16%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::operator[](unsigned long) const
+     0.16%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40d4af
+     0.16%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f4254a8
+     0.16%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f424f88
+     0.16%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40c569
+     0.14%     0.14%  heat_equation  heat_equation         [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long)
+     0.14%     0.09%  heat_equation  libm.so.6             [.] __fmax
+     0.13%     0.13%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::size() const
+     0.11%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f366a52
+     0.11%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40e4df
+     0.11%     0.10%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::operator[](unsigned long) const
+     0.10%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a88ec
+     0.10%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f424963
+     0.08%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90452dd0
+     0.08%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3115de
+     0.08%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f311249
+     0.08%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f421c3e
+     0.08%     0.06%  heat_equation  heat_equation         [.] fmax@plt
+     0.06%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f310ef8
+     0.06%     0.06%  heat_equation  [unknown]             [k] 0xffffffff9060128c
+     0.06%     0.06%  heat_equation  [unknown]             [k] 0xffffffff8f2c7c44
+     0.06%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f2c7c46
+     0.06%     0.06%  heat_equation  heat_equation         [.] std::remove_reference<std::array<double, 2ul>&>::type&& std::move<std::array<double, 2ul>&>(std::array<double, 2ul>&)
+     0.06%     0.00%  heat_equation  heat_equation         [.] std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_Vector_base(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+     0.05%     0.00%  heat_equation  [unknown]             [k] 0xffffffff90600bc7
+     0.05%     0.00%  heat_equation  [unknown]             [k] 0xffffffff90453c63
+     0.05%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f630ffa
+     0.05%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f630d24
+     0.05%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_start_user
+     0.05%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_start
+     0.05%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+     0.05%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40b5dd
+     0.05%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40b167
+     0.05%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f366a16
+     0.05%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f374f3b
+     0.05%     0.00%  heat_equation  heat_equation         [.] std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_create_storage(unsigned long)
+     0.05%     0.02%  heat_equation  heat_equation         [.] std::__new_allocator<std::array<double, 2ul> >::allocate(unsigned long, void const*)
+     0.05%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] dl_main
+     0.05%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f2d7f69
+     0.05%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f6306bb
+     0.04%     0.02%  heat_equation  libc.so.6             [.] _int_malloc
+     0.04%     0.00%  heat_equation  libstdc++.so.6.0.33   [.] operator new(unsigned long)
+     0.04%     0.00%  heat_equation  libc.so.6             [.] malloc
+     0.03%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40b512
+     0.03%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40d4c2
+     0.03%     0.03%  heat_equation  [unknown]             [k] 0xffffffff8f5a509d
+     0.03%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a50a4
+     0.03%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90452ddb
+     0.03%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90454553
+     0.03%     0.02%  heat_equation  heat_equation         [.] std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::~_Vector_base()
+     0.03%     0.00%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::~vector()
+     0.03%     0.00%  heat_equation  libm.so.6             [.] __pow_finite@GLIBC_2.15@plt
+     0.03%     0.03%  heat_equation  heat_equation         [.] pow@plt
+     0.03%     0.01%  heat_equation  heat_equation         [.] std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+     0.03%     0.00%  heat_equation  heat_equation         [.] void std::swap<double, std::allocator<double> >(std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+     0.03%     0.00%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::swap(std::vector<double, std::allocator<double> >&)
+     0.03%     0.00%  heat_equation  heat_equation         [.] std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_allocate(unsigned long)
+     0.02%     0.00%  heat_equation  heat_equation         [.] DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::initialize(double, double, double, std::vector<double, std::allocator<double> >&, double, double, bool, bool)
+     0.02%     0.00%  heat_equation  heat_equation         [.] History<double, double>::History(unsigned long, double, double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&, std::vector<std::function<double (double)>, std::allocator<std::function<double (double)> > > const&)
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f62f4fc
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f62f30c
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f698804
+     0.02%     0.00%  heat_equation  heat_equation         [.] DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::~DoPri_5()
+     0.02%     0.00%  heat_equation  heat_equation         [.] DDEInt<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(laplacian(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::~DDEInt()
+     0.02%     0.00%  heat_equation  heat_equation         [.] History<double, double>::~History()
+     0.02%     0.00%  heat_equation  heat_equation         [.] CompoundRingBuffer<std::array<double, 2ul>, double>::~CompoundRingBuffer()
+     0.02%     0.00%  heat_equation  heat_equation         [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::~vector()
+     0.02%     0.00%  heat_equation  heat_equation         [.] void std::_Destroy<RingBuffer<std::array<double, 2ul> >*>(RingBuffer<std::array<double, 2ul> >*, RingBuffer<std::array<double, 2ul> >*)
+     0.02%     0.00%  heat_equation  heat_equation         [.] void std::_Destroy_aux<false>::__destroy<RingBuffer<std::array<double, 2ul> >*>(RingBuffer<std::array<double, 2ul> >*, RingBuffer<std::array<double, 2ul> >*)
+     0.02%     0.00%  heat_equation  heat_equation         [.] void std::_Destroy<RingBuffer<std::array<double, 2ul> > >(RingBuffer<std::array<double, 2ul> >*)
+     0.02%     0.00%  heat_equation  heat_equation         [.] RingBuffer<std::array<double, 2ul> >::~RingBuffer()
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f370736
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40b4a0
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3343f9
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3336e6
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f32f5de
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f365bf5
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3657ae
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3651b0
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f35e678
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f37073d
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f5a5091
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a5094
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f2ad42f
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f2ad431
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f388e6f
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f37bb55
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f36e83d
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f388e77
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f267d99
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f421bf3
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f267d9c
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f3e11bd
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3e11c1
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f310fab
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f310fb6
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f3a65d7
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8fd999af
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90464bce
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3a65db
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff90465471
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90465475
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f5a5049
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a504b
+     0.02%     0.00%  heat_equation  heat_equation         [.] __gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >::base() const
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8fd9d2d3
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8fd999bd
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8fd98e80
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8fd9d2d8
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f42494a
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f42494e
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff903c8c02
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40d4e2
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40caed
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff903c8c0b
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f36dc7a
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f36dc85
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff906011bf
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff906011c1
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f3887ee
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f36d972
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3887f7
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f3115d0
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3115d5
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff90465463
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff9046546a
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff90454324
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90454326
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f5a5052
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a5053
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f40d46c
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f40d5e8
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f388114
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f36df6e
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f388117
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f40d4bd
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90465450
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a51bd
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f20e2c6
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f21af25
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f2ad464
+     0.02%     0.02%  heat_equation  [unknown]             [k] 0xffffffff8f3f81f0
+     0.02%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3f81f1
+     0.02%     0.02%  heat_equation  heat_equation         [.] std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+     0.02%     0.02%  heat_equation  libc.so.6             [.] cfree@GLIBC_2.2.5
+     0.02%     0.00%  heat_equation  heat_equation         [.] std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_deallocate(std::array<double, 2ul>*, unsigned long)
+     0.02%     0.00%  heat_equation  heat_equation         [.] std::__new_allocator<std::array<double, 2ul> >::deallocate(std::array<double, 2ul>*, unsigned long)
+     0.02%     0.02%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::end()
+     0.02%     0.00%  heat_equation  [unknown]             [k] 0xffffffff90600130
+     0.02%     0.00%  heat_equation  [unknown]             [k] 0xffffffff9044d8ef
+     0.01%     0.01%  heat_equation  heat_equation         [.] std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_Vector_impl_data::_Vector_impl_data()
+     0.01%     0.01%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_S_check_init_len(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+     0.01%     0.01%  heat_equation  [unknown]             [k] 0xffffffff8f6cebe7
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f62f7f6
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f648ee4
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f6cebf0
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_catch_exception
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] openaux
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_map_object
+     0.01%     0.01%  heat_equation  [unknown]             [k] 0xffffffff8f5d8712
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] double* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*, double>(__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*, std::allocator<double>&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] double* std::uninitialized_copy<__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*>(__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*)
+     0.01%     0.00%  heat_equation  heat_equation         [.] double* std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*>(__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*)
+     0.01%     0.00%  heat_equation  heat_equation         [.] double* std::copy<__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*>(__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*)
+     0.01%     0.00%  heat_equation  heat_equation         [.] double* std::__copy_move_a<false, __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*>(__gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, __gnu_cxx::__normal_iterator<double const*, std::vector<double, std::allocator<double> > >, double*)
+     0.01%     0.00%  heat_equation  heat_equation         [.] double* std::__copy_move_a1<false, double const*, double*>(double const*, double const*, double*)
+     0.01%     0.00%  heat_equation  heat_equation         [.] double* std::__copy_move_a2<false, double const*, double*>(double const*, double const*, double*)
+     0.01%     0.00%  heat_equation  libc.so.6             [.] __memmove_avx_unaligned_erms
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f62f801
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5da7af
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5d97d1
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5d967f
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5d8715
+     0.01%     0.01%  heat_equation  [unknown]             [k] 0xffffffff8f65d03c
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<std::function<double (double)>, std::allocator<std::function<double (double)> > >::vector(unsigned long, std::function<double (double)> const&, std::allocator<std::function<double (double)> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::_Vector_base<std::function<double (double)>, std::allocator<std::function<double (double)> > >::_Vector_base(unsigned long, std::allocator<std::function<double (double)> > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::_Vector_base<std::function<double (double)>, std::allocator<std::function<double (double)> > >::_M_create_storage(unsigned long)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::_Vector_base<std::function<double (double)>, std::allocator<std::function<double (double)> > >::_M_allocate(unsigned long)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::__new_allocator<std::function<double (double)> >::allocate(unsigned long, void const*)
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f698491
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f65e859
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f65d03d
+     0.01%     0.00%  heat_equation  heat_equation         [.] CompoundRingBuffer<std::array<double, 2ul>, double>::CompoundRingBuffer(unsigned long, double, double, std::vector<double, std::allocator<double> > const&, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::at(unsigned long)
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::_M_range_check(unsigned long) const
+     0.01%     0.01%  heat_equation  libc.so.6             [.] __pthread_tunables_init
+     0.01%     0.00%  heat_equation  libc.so.6             [.] __libc_early_init
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff90600ba0
+     0.01%     0.01%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_check_len(unsigned long, char const*) const
+     0.01%     0.00%  heat_equation  heat_equation         [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::push_back(std::array<double, 2ul> const&)
+     0.01%     0.00%  heat_equation  heat_equation         [.] void std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_realloc_insert<std::array<double, 2ul> const&>(__gnu_cxx::__normal_iterator<std::array<double, 2ul>*, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > >, std::array<double, 2ul> const&)
+     0.01%     0.01%  heat_equation  ld-linux-x86-64.so.2  [.] do_lookup_x
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_relocate_object
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_lookup_symbol_x
+     0.01%     0.01%  heat_equation  [unknown]             [k] 0xffffffff8f63e47d
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] mprotect
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f206489
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f64093f
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f6406b8
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f64018d
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f63ffc6
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f63fddc
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f63f8b1
+     0.01%     0.01%  heat_equation  [unknown]             [k] 0xffffffff8f698419
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_map_object_from_fd
+     0.01%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] memmove
+     0.01%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f69841b
+     0.01%     0.01%  heat_equation  ld-linux-x86-64.so.2  [.] _dl_cache_libcmp
+     0.01%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f207697
+     0.01%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f701f37
+     0.01%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f701bd8
+     0.01%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f6ffa26
+     0.01%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f6ff932
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0x000074c9cd8eef3b
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f6ff639
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f6ff0a7
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f792fe0
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff903d4c80
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f2d7ff5
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f630604
+     0.00%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] init_cpu_features.constprop.0
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f5c8f56
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff903d51a7
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f62b830
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f62a8fa
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f5c8f5e
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff903d51aa
+     0.00%     0.00%  heat_equation  [unknown]             [k] 0xffffffff8f4a7870
+     0.00%     0.00%  heat_equation  ld-linux-x86-64.so.2  [.] _start
+     0.00%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f6ff747
+     0.00%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f3543a6
+     0.00%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a6005
+     0.00%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f5a5c37
+     0.00%     0.00%  heat_equation  [unknown]             [.] 0xffffffff8f4a7872
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

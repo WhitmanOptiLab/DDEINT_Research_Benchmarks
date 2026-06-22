@@ -88,7 +88,7 @@ compile_and_test "$GI_SRC" "$GI_OUTPUT"
 
 
 
-# clean up
+# clean up for files that are needed !!
 echo "Cleaning up"
 rm -rf $BUILD_DIR $PERF_DIR
-rm -f dde_solver_m.mod define_ddes.mod
+rm -f bc_define_ddes.mod cv_define_ddes.mod cw_define_ddes.mod gi_define_ddes.mod dde_solver_m.mod

@@ -1,0 +1,2822 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 23  of event 'cycles:P'
+# Event count (approx.): 15478014
+#
+# Children      Self  Command   Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  ........  ........  ....................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    73.84%     0.00%  cw_model  cw_model              [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+               |--57.11%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          |          
+               |          |--51.95%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          |          
+               |          |          |--40.74%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          |          
+               |          |          |           --34.68%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |                     |          
+               |          |          |                      --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |                                |          
+               |          |          |                                |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |                                |          |          
+               |          |          |                                |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |          |                                |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |          |                                |          |          
+               |          |          |                                |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |                                |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |          |                                |          
+               |          |          |                                 --11.36%--History<double, double>::expo_search(double, unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                           |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                            --5.36%--RingBuffer<double>::size() const
+               |          |          |          
+               |          |          |--5.71%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --5.50%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |                     CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |                     RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+               |          |          
+               |           --5.16%--std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               |                     std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |          
+               |--10.64%--std::ostream& std::ostream::_M_insert<double>(double)
+               |          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               |          0x78cadcd0d285
+               |          ___vsnprintf
+               |          __printf_buffer
+               |          __printf_fp_l_buffer
+               |          __printf_fp_buffer_1.isra.0
+               |          hack_digit
+               |          |          
+               |           --5.61%--__mpn_divrem
+               |          
+                --6.09%--std::filesystem::create_directories(std::filesystem::__cxx11::path const&)
+                          std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+                          __GI___fstatat64
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f207e35
+                          0xffffffff8f6fe5ec
+                          0xffffffff8f6fe574
+                          0xffffffff8f6fe4ea
+                          0xffffffff8f6fd95f
+                          0xffffffff8f6fcbca
+                          0xffffffffc1507ea3
+                          0xffffffffc1507647
+                          0xffffffffc15c578e
+                          0xffffffffc15bb20b
+                          0xffffffffc15bb06b
+                          0xffffffffc0615ade
+                          0xffffffffc063ae4a
+                          0xffffffffc063a9c8
+                          0xffffffffc0618e6f
+                          0xffffffffc063c844
+                          0xffffffffc063b4b4
+                          0xffffffffc15e0c2c
+                          0xffffffffc15dfdaf
+                          0xffffffffc15dfa1a
+
+    73.84%     0.00%  cw_model  libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+               |--57.11%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          |          
+               |          |--51.95%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          |          
+               |          |          |--40.74%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          |          
+               |          |          |           --34.68%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |                     |          
+               |          |          |                      --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |                                |          
+               |          |          |                                |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |                                |          |          
+               |          |          |                                |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |          |                                |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |          |                                |          |          
+               |          |          |                                |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |                                |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |          |                                |          
+               |          |          |                                 --11.36%--History<double, double>::expo_search(double, unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                           |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                            --5.36%--RingBuffer<double>::size() const
+               |          |          |          
+               |          |          |--5.71%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --5.50%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |                     CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |                     RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+               |          |          
+               |           --5.16%--std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               |                     std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |          
+               |--10.64%--std::ostream& std::ostream::_M_insert<double>(double)
+               |          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               |          0x78cadcd0d285
+               |          ___vsnprintf
+               |          __printf_buffer
+               |          __printf_fp_l_buffer
+               |          __printf_fp_buffer_1.isra.0
+               |          hack_digit
+               |          |          
+               |           --5.61%--__mpn_divrem
+               |          
+                --6.09%--std::filesystem::create_directories(std::filesystem::__cxx11::path const&)
+                          std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+                          __GI___fstatat64
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f207e35
+                          0xffffffff8f6fe5ec
+                          0xffffffff8f6fe574
+                          0xffffffff8f6fe4ea
+                          0xffffffff8f6fd95f
+                          0xffffffff8f6fcbca
+                          0xffffffffc1507ea3
+                          0xffffffffc1507647
+                          0xffffffffc15c578e
+                          0xffffffffc15bb20b
+                          0xffffffffc15bb06b
+                          0xffffffffc0615ade
+                          0xffffffffc063ae4a
+                          0xffffffffc063a9c8
+                          0xffffffffc0618e6f
+                          0xffffffffc063c844
+                          0xffffffffc063b4b4
+                          0xffffffffc15e0c2c
+                          0xffffffffc15dfdaf
+                          0xffffffffc15dfa1a
+
+    73.84%     0.00%  cw_model  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               |          
+               |--57.11%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          |          
+               |          |--51.95%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          |          
+               |          |          |--40.74%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          |          
+               |          |          |           --34.68%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |                     |          
+               |          |          |                      --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |                                |          
+               |          |          |                                |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |                                |          |          
+               |          |          |                                |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |          |                                |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |          |                                |          |          
+               |          |          |                                |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |                                |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |          |                                |          
+               |          |          |                                 --11.36%--History<double, double>::expo_search(double, unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                           |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                            --5.36%--RingBuffer<double>::size() const
+               |          |          |          
+               |          |          |--5.71%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --5.50%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |                     CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |                     RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+               |          |          
+               |           --5.16%--std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               |                     std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |          
+               |--10.64%--std::ostream& std::ostream::_M_insert<double>(double)
+               |          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               |          0x78cadcd0d285
+               |          ___vsnprintf
+               |          __printf_buffer
+               |          __printf_fp_l_buffer
+               |          __printf_fp_buffer_1.isra.0
+               |          hack_digit
+               |          |          
+               |           --5.61%--__mpn_divrem
+               |          
+                --6.09%--std::filesystem::create_directories(std::filesystem::__cxx11::path const&)
+                          std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+                          __GI___fstatat64
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f207e35
+                          0xffffffff8f6fe5ec
+                          0xffffffff8f6fe574
+                          0xffffffff8f6fe4ea
+                          0xffffffff8f6fd95f
+                          0xffffffff8f6fcbca
+                          0xffffffffc1507ea3
+                          0xffffffffc1507647
+                          0xffffffffc15c578e
+                          0xffffffffc15bb20b
+                          0xffffffffc15bb06b
+                          0xffffffffc0615ade
+                          0xffffffffc063ae4a
+                          0xffffffffc063a9c8
+                          0xffffffffc0618e6f
+                          0xffffffffc063c844
+                          0xffffffffc063b4b4
+                          0xffffffffc15e0c2c
+                          0xffffffffc15dfdaf
+                          0xffffffffc15dfa1a
+
+    73.84%     0.00%  cw_model  cw_model              [.] main
+            |
+            ---main
+               |          
+               |--57.11%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          |          
+               |          |--51.95%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          |          
+               |          |          |--40.74%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          |          
+               |          |          |           --34.68%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |                     |          
+               |          |          |                      --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |                                |          
+               |          |          |                                |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |                                |          |          
+               |          |          |                                |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |          |                                |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |          |                                |          |          
+               |          |          |                                |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |                                |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |          |                                |          
+               |          |          |                                 --11.36%--History<double, double>::expo_search(double, unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                           |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |          |          |                                           |          
+               |          |          |                                            --5.36%--RingBuffer<double>::size() const
+               |          |          |          
+               |          |          |--5.71%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          |          
+               |          |           --5.50%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |                     CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |          |                     RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               |          |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+               |          |          
+               |           --5.16%--std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               |                     std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               |                     void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               |                     std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+               |          
+               |--10.64%--std::ostream& std::ostream::_M_insert<double>(double)
+               |          std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               |          0x78cadcd0d285
+               |          ___vsnprintf
+               |          __printf_buffer
+               |          __printf_fp_l_buffer
+               |          __printf_fp_buffer_1.isra.0
+               |          hack_digit
+               |          |          
+               |           --5.61%--__mpn_divrem
+               |          
+                --6.09%--std::filesystem::create_directories(std::filesystem::__cxx11::path const&)
+                          std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+                          __GI___fstatat64
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f207e35
+                          0xffffffff8f6fe5ec
+                          0xffffffff8f6fe574
+                          0xffffffff8f6fe4ea
+                          0xffffffff8f6fd95f
+                          0xffffffff8f6fcbca
+                          0xffffffffc1507ea3
+                          0xffffffffc1507647
+                          0xffffffffc15c578e
+                          0xffffffffc15bb20b
+                          0xffffffffc15bb06b
+                          0xffffffffc0615ade
+                          0xffffffffc063ae4a
+                          0xffffffffc063a9c8
+                          0xffffffffc0618e6f
+                          0xffffffffc063c844
+                          0xffffffffc063b4b4
+                          0xffffffffc15e0c2c
+                          0xffffffffc15dfdaf
+                          0xffffffffc15dfa1a
+
+    57.11%     0.00%  cw_model  cw_model              [.] DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |
+            ---DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          
+               |--51.95%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--40.74%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          
+               |          |           --34.68%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     |          
+               |          |                      --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                                |          
+               |          |                                |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                                |          |          
+               |          |                                |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |                                |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |                                |          |          
+               |          |                                |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+               |          |                                |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |                                |          
+               |          |                                 --11.36%--History<double, double>::expo_search(double, unsigned long) const
+               |          |                                           |          
+               |          |                                           |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |          |                                           |          
+               |          |                                            --5.36%--RingBuffer<double>::size() const
+               |          |          
+               |          |--5.71%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          |          
+               |           --5.50%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |                     CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               |                     RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               |                     std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+               |          
+                --5.16%--std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+                          std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+                          std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+                          std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+                          std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+                          std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+                          void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+                          std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+    51.95%     0.00%  cw_model  cw_model              [.] DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |
+            ---DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--40.74%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          
+               |           --34.68%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |                     |          
+               |                      --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |                                |          
+               |                                |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |                                |          |          
+               |                                |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |                                |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |                                |          |          
+               |                                |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+               |                                |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+               |                                |          
+               |                                 --11.36%--History<double, double>::expo_search(double, unsigned long) const
+               |                                           |          
+               |                                           |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |                                           |          
+               |                                            --5.36%--RingBuffer<double>::size() const
+               |          
+               |--5.71%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          
+                --5.50%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+                          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+                          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+
+    51.95%     0.00%  cw_model  cw_model              [.] DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |
+            ---DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--40.74%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          
+               |           --34.68%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |                     |          
+               |                      --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |                                |          
+               |                                |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |                                |          |          
+               |                                |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |                                |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |                                |          |          
+               |                                |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+               |                                |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+               |                                |          
+               |                                 --11.36%--History<double, double>::expo_search(double, unsigned long) const
+               |                                           |          
+               |                                           |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |                                           |          
+               |                                            --5.36%--RingBuffer<double>::size() const
+               |          
+               |--5.71%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+               |          
+                --5.50%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+                          CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+                          RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+                          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+                          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+
+    40.74%     6.06%  cw_model  cw_model              [.] DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          
+            |--34.68%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |          DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |          |          
+            |           --29.07%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |                     |          
+            |                     |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |                     |          |          
+            |                     |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+            |                     |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+            |                     |          |          
+            |                     |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+            |                     |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+            |                     |          
+            |                      --11.36%--History<double, double>::expo_search(double, unsigned long) const
+            |                                |          
+            |                                |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+            |                                |          
+            |                                 --5.36%--RingBuffer<double>::size() const
+            |          
+             --6.06%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+
+    40.39%     5.61%  cw_model  cw_model              [.] cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |          
+            |--34.77%--cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |          History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |          |          
+            |          |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |          |          |          
+            |          |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+            |          |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+            |          |          |          
+            |          |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+            |          |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+            |          |          
+            |          |--11.36%--History<double, double>::expo_search(double, unsigned long) const
+            |          |          |          
+            |          |          |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+            |          |          |          
+            |          |           --5.36%--RingBuffer<double>::size() const
+            |          |          
+            |           --5.71%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+            |          
+             --5.61%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                       cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                       cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+
+    40.39%     0.00%  cw_model  cw_model              [.] DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |
+            ---DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          
+                --34.77%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+                          |          
+                          |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          |          |          
+                          |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+                          |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+                          |          |          
+                          |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+                          |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+                          |          
+                          |--11.36%--History<double, double>::expo_search(double, unsigned long) const
+                          |          |          
+                          |          |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+                          |          |          
+                          |           --5.36%--RingBuffer<double>::size() const
+                          |          
+                           --5.71%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+
+    40.39%     0.00%  cw_model  cw_model              [.] cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |
+            ---cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          
+                --34.77%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+                          |          
+                          |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          |          |          
+                          |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+                          |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+                          |          |          
+                          |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+                          |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+                          |          
+                          |--11.36%--History<double, double>::expo_search(double, unsigned long) const
+                          |          |          
+                          |          |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+                          |          |          
+                          |           --5.36%--RingBuffer<double>::size() const
+                          |          
+                           --5.71%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+
+    34.77%     5.91%  cw_model  cw_model              [.] History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |          
+            |--28.87%--History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |          |          
+            |          |--11.80%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |          |          |          
+            |          |          |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+            |          |          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+            |          |          |          
+            |          |           --5.84%--RingBuffer<double>::operator[](unsigned long)
+            |          |                     std::vector<double, std::allocator<double> >::at(unsigned long)
+            |          |          
+            |          |--11.36%--History<double, double>::expo_search(double, unsigned long) const
+            |          |          |          
+            |          |          |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+            |          |          |          
+            |          |           --5.36%--RingBuffer<double>::size() const
+            |          |          
+            |           --5.71%--RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+            |          
+             --5.91%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                       cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                       cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+                       History<double, double>::at_time(double, unsigned long, unsigned long*)
+
+    23.06%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_start_user
+            |
+            ---_dl_start_user
+               |          
+               |--18.34%--_dl_start
+               |          _dl_sysdep_start
+               |          |          
+               |          |--16.86%--dl_main
+               |          |          |          
+               |          |          |--11.98%--_dl_relocate_object
+               |          |          |          |          
+               |          |          |           --8.46%--_dl_lookup_symbol_x
+               |          |          |                     do_lookup_x
+               |          |          |          
+               |          |           --4.88%--_dl_map_object_deps
+               |          |                     _dl_catch_exception
+               |          |                     openaux
+               |          |                     _dl_map_object
+               |          |                     _dl_map_object_from_fd
+               |          |                     |          
+               |          |                      --2.83%--memmove
+               |          |                                0xffffffff90600bc7
+               |          |                                0xffffffff90453c63
+               |          |                                0xffffffff8f2d7f69
+               |          |                                0xffffffff8f630ffa
+               |          |                                0xffffffff8f630d24
+               |          |                                0xffffffff8f6306bb
+               |          |                                0xffffffff8f62f4fc
+               |          |                                0xffffffff8f62f42c
+               |          |          
+               |           --1.48%--_dl_new_object
+               |                     0xffffffff90600bc7
+               |                     0xffffffff90453c63
+               |                     0xffffffff8f2d7f69
+               |                     0xffffffff8f630ffa
+               |                     0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b7c0
+               |                     0xffffffff8f62b467
+               |                     0xffffffff8f5c6fbd
+               |                     0xffffffff8f5c6a92
+               |          
+                --4.72%--_dl_init
+                          call_init.part.0
+                          0x78cadccb738f
+                          malloc
+                          tcache_init.part.0
+                          _int_malloc
+
+    18.34%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---_dl_start
+               _dl_sysdep_start
+               |          
+               |--16.86%--dl_main
+               |          |          
+               |          |--11.98%--_dl_relocate_object
+               |          |          |          
+               |          |           --8.46%--_dl_lookup_symbol_x
+               |          |                     do_lookup_x
+               |          |          
+               |           --4.88%--_dl_map_object_deps
+               |                     _dl_catch_exception
+               |                     openaux
+               |                     _dl_map_object
+               |                     _dl_map_object_from_fd
+               |                     |          
+               |                      --2.83%--memmove
+               |                                0xffffffff90600bc7
+               |                                0xffffffff90453c63
+               |                                0xffffffff8f2d7f69
+               |                                0xffffffff8f630ffa
+               |                                0xffffffff8f630d24
+               |                                0xffffffff8f6306bb
+               |                                0xffffffff8f62f4fc
+               |                                0xffffffff8f62f42c
+               |          
+                --1.48%--_dl_new_object
+                          0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b7c0
+                          0xffffffff8f62b467
+                          0xffffffff8f5c6fbd
+                          0xffffffff8f5c6a92
+
+    18.34%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               |          
+               |--16.86%--dl_main
+               |          |          
+               |          |--11.98%--_dl_relocate_object
+               |          |          |          
+               |          |           --8.46%--_dl_lookup_symbol_x
+               |          |                     do_lookup_x
+               |          |          
+               |           --4.88%--_dl_map_object_deps
+               |                     _dl_catch_exception
+               |                     openaux
+               |                     _dl_map_object
+               |                     _dl_map_object_from_fd
+               |                     |          
+               |                      --2.83%--memmove
+               |                                0xffffffff90600bc7
+               |                                0xffffffff90453c63
+               |                                0xffffffff8f2d7f69
+               |                                0xffffffff8f630ffa
+               |                                0xffffffff8f630d24
+               |                                0xffffffff8f6306bb
+               |                                0xffffffff8f62f4fc
+               |                                0xffffffff8f62f42c
+               |          
+                --1.48%--_dl_new_object
+                          0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b7c0
+                          0xffffffff8f62b467
+                          0xffffffff8f5c6fbd
+                          0xffffffff8f5c6a92
+
+    16.86%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+               |          
+               |--11.98%--_dl_relocate_object
+               |          |          
+               |           --8.46%--_dl_lookup_symbol_x
+               |                     do_lookup_x
+               |          
+                --4.88%--_dl_map_object_deps
+                          _dl_catch_exception
+                          openaux
+                          _dl_map_object
+                          _dl_map_object_from_fd
+                          |          
+                           --2.83%--memmove
+                                     0xffffffff90600bc7
+                                     0xffffffff90453c63
+                                     0xffffffff8f2d7f69
+                                     0xffffffff8f630ffa
+                                     0xffffffff8f630d24
+                                     0xffffffff8f6306bb
+                                     0xffffffff8f62f4fc
+                                     0xffffffff8f62f42c
+
+    11.98%     3.52%  cw_model  ld-linux-x86-64.so.2  [.] _dl_relocate_object
+            |          
+            |--8.46%--_dl_relocate_object
+            |          _dl_lookup_symbol_x
+            |          do_lookup_x
+            |          
+             --3.52%--_dl_start_user
+                       _dl_start
+                       _dl_sysdep_start
+                       dl_main
+                       _dl_relocate_object
+
+    11.80%     0.00%  cw_model  cw_model              [.] History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |
+            ---History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          
+               |--5.96%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          
+                --5.84%--RingBuffer<double>::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::at(unsigned long)
+
+    11.36%     0.00%  cw_model  cw_model              [.] History<double, double>::expo_search(double, unsigned long) const
+            |
+            ---History<double, double>::expo_search(double, unsigned long) const
+               |          
+               |--6.00%--RingBuffer<double>::operator[](unsigned long) const
+               |          
+                --5.36%--RingBuffer<double>::size() const
+
+    10.64%    10.64%  cw_model  libc.so.6             [.] __mpn_divrem
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::ostream& std::ostream::_M_insert<double>(double)
+               std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               0x78cadcd0d285
+               ___vsnprintf
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libstdc++.so.6.0.33   [.] std::ostream& std::ostream::_M_insert<double>(double)
+            |
+            ---std::ostream& std::ostream::_M_insert<double>(double)
+               std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               0x78cadcd0d285
+               ___vsnprintf
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libstdc++.so.6.0.33   [.] std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+            |
+            ---std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, char, double) const
+               0x78cadcd0d285
+               ___vsnprintf
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libstdc++.so.6.0.33   [.] 0x000078cadcd0d285
+            |
+            ---0x78cadcd0d285
+               ___vsnprintf
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libc.so.6             [.] ___vsnprintf
+            |
+            ---___vsnprintf
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libc.so.6             [.] __printf_buffer
+            |
+            ---__printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libc.so.6             [.] __printf_fp_l_buffer
+            |
+            ---__printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libc.so.6             [.] __printf_fp_buffer_1.isra.0
+            |
+            ---__printf_fp_buffer_1.isra.0
+               hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+    10.64%     0.00%  cw_model  libc.so.6             [.] hack_digit
+            |
+            ---hack_digit
+               |          
+                --5.61%--__mpn_divrem
+
+     9.19%     0.00%  cw_model  [unknown]             [k] 0xffffffff90600130
+            |
+            ---0xffffffff90600130
+               0xffffffff9044d8ef
+               |          
+               |--6.09%--0xffffffff8f207e35
+               |          0xffffffff8f6fe5ec
+               |          0xffffffff8f6fe574
+               |          0xffffffff8f6fe4ea
+               |          0xffffffff8f6fd95f
+               |          0xffffffff8f6fcbca
+               |          0xffffffffc1507ea3
+               |          0xffffffffc1507647
+               |          0xffffffffc15c578e
+               |          0xffffffffc15bb20b
+               |          0xffffffffc15bb06b
+               |          0xffffffffc0615ade
+               |          0xffffffffc063ae4a
+               |          0xffffffffc063a9c8
+               |          0xffffffffc0618e6f
+               |          0xffffffffc063c844
+               |          0xffffffffc063b4b4
+               |          0xffffffffc15e0c2c
+               |          0xffffffffc15dfdaf
+               |          0xffffffffc15dfa1a
+               |          
+                --3.10%--0xffffffff8f207697
+                          0xffffffff8f701f37
+                          0xffffffff8f701bd8
+                          0xffffffff8f6ffa26
+                          0xffffffff8f6ff932
+                          0xffffffff8f6ff639
+                          0xffffffff8f6ff0a7
+                          |          
+                          |--1.62%--0xffffffff8f792fe0
+                          |          |          
+                          |          |--0.81%--0xffffffff903d4c80
+                          |          |          0xffffffff90600bc7
+                          |          |          0xffffffff90453c63
+                          |          |          0xffffffff8f2d7ff5
+                          |          |          0xffffffff8f630ffa
+                          |          |          0xffffffff8f630d24
+                          |          |          0xffffffff8f630604
+                          |          |          0xffffffff8f62b830
+                          |          |          0xffffffff8f62a8fa
+                          |          |          0xffffffff8f5c8f93
+                          |          |          0xffffffff8f5c473a
+                          |          |          0xffffffff8f5d6436
+                          |          |          0xffffffff8f5d5d69
+                          |          |          0xffffffff8f5c3d8d
+                          |          |          0xffffffff8f5d97d1
+                          |          |          0xffffffff8f5d967f
+                          |          |          0xffffffff8f5d872b
+                          |          |          0xffffffff8f3db551
+                          |          |          
+                          |           --0.81%--0xffffffff8f792350
+                          |                     0xffffffff8f5fd0ad
+                          |                     0xffffffff8f5fcfc3
+                          |                     0xffffffff8f63cd01
+                          |                     0xffffffff8f63c864
+                          |                     0xffffffff8f63c0fe
+                          |                     0xffffffff8f5c34d5
+                          |          
+                           --1.48%--0xffffffff8f793389
+                                     0xffffffff8f7927b0
+                                     0xffffffff8f792264
+                                     0xffffffff8f5fd0ad
+                                     0xffffffff8f5fcfc3
+                                     0xffffffff8f63cd01
+                                     0xffffffff8f63c864
+                                     0xffffffff8f63c04f
+                                     0xffffffff8f302eb2
+                                     0xffffffff904559c2
+
+     9.19%     0.00%  cw_model  [unknown]             [k] 0xffffffff9044d8ef
+            |
+            ---0xffffffff9044d8ef
+               |          
+               |--6.09%--0xffffffff8f207e35
+               |          0xffffffff8f6fe5ec
+               |          0xffffffff8f6fe574
+               |          0xffffffff8f6fe4ea
+               |          0xffffffff8f6fd95f
+               |          0xffffffff8f6fcbca
+               |          0xffffffffc1507ea3
+               |          0xffffffffc1507647
+               |          0xffffffffc15c578e
+               |          0xffffffffc15bb20b
+               |          0xffffffffc15bb06b
+               |          0xffffffffc0615ade
+               |          0xffffffffc063ae4a
+               |          0xffffffffc063a9c8
+               |          0xffffffffc0618e6f
+               |          0xffffffffc063c844
+               |          0xffffffffc063b4b4
+               |          0xffffffffc15e0c2c
+               |          0xffffffffc15dfdaf
+               |          0xffffffffc15dfa1a
+               |          
+                --3.10%--0xffffffff8f207697
+                          0xffffffff8f701f37
+                          0xffffffff8f701bd8
+                          0xffffffff8f6ffa26
+                          0xffffffff8f6ff932
+                          0xffffffff8f6ff639
+                          0xffffffff8f6ff0a7
+                          |          
+                          |--1.62%--0xffffffff8f792fe0
+                          |          |          
+                          |          |--0.81%--0xffffffff903d4c80
+                          |          |          0xffffffff90600bc7
+                          |          |          0xffffffff90453c63
+                          |          |          0xffffffff8f2d7ff5
+                          |          |          0xffffffff8f630ffa
+                          |          |          0xffffffff8f630d24
+                          |          |          0xffffffff8f630604
+                          |          |          0xffffffff8f62b830
+                          |          |          0xffffffff8f62a8fa
+                          |          |          0xffffffff8f5c8f93
+                          |          |          0xffffffff8f5c473a
+                          |          |          0xffffffff8f5d6436
+                          |          |          0xffffffff8f5d5d69
+                          |          |          0xffffffff8f5c3d8d
+                          |          |          0xffffffff8f5d97d1
+                          |          |          0xffffffff8f5d967f
+                          |          |          0xffffffff8f5d872b
+                          |          |          0xffffffff8f3db551
+                          |          |          
+                          |           --0.81%--0xffffffff8f792350
+                          |                     0xffffffff8f5fd0ad
+                          |                     0xffffffff8f5fcfc3
+                          |                     0xffffffff8f63cd01
+                          |                     0xffffffff8f63c864
+                          |                     0xffffffff8f63c0fe
+                          |                     0xffffffff8f5c34d5
+                          |          
+                           --1.48%--0xffffffff8f793389
+                                     0xffffffff8f7927b0
+                                     0xffffffff8f792264
+                                     0xffffffff8f5fd0ad
+                                     0xffffffff8f5fcfc3
+                                     0xffffffff8f63cd01
+                                     0xffffffff8f63c864
+                                     0xffffffff8f63c04f
+                                     0xffffffff8f302eb2
+                                     0xffffffff904559c2
+
+     8.46%     8.46%  cw_model  ld-linux-x86-64.so.2  [.] do_lookup_x
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_sysdep_start
+               dl_main
+               _dl_relocate_object
+               _dl_lookup_symbol_x
+               do_lookup_x
+
+     8.46%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_lookup_symbol_x
+            |
+            ---_dl_lookup_symbol_x
+               do_lookup_x
+
+     6.09%     6.09%  cw_model  [unknown]             [k] 0xffffffffc15dfa18
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::filesystem::create_directories(std::filesystem::__cxx11::path const&)
+               std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+               __GI___fstatat64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207e35
+               0xffffffff8f6fe5ec
+               0xffffffff8f6fe574
+               0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  libstdc++.so.6.0.33   [.] std::filesystem::create_directories(std::filesystem::__cxx11::path const&)
+            |
+            ---std::filesystem::create_directories(std::filesystem::__cxx11::path const&)
+               std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+               __GI___fstatat64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207e35
+               0xffffffff8f6fe5ec
+               0xffffffff8f6fe574
+               0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  libstdc++.so.6.0.33   [.] std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+            |
+            ---std::filesystem::create_directories(std::filesystem::__cxx11::path const&, std::error_code&)
+               __GI___fstatat64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207e35
+               0xffffffff8f6fe5ec
+               0xffffffff8f6fe574
+               0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  libc.so.6             [.] __GI___fstatat64
+            |
+            ---__GI___fstatat64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207e35
+               0xffffffff8f6fe5ec
+               0xffffffff8f6fe574
+               0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f207e35
+            |
+            ---0xffffffff8f207e35
+               0xffffffff8f6fe5ec
+               0xffffffff8f6fe574
+               0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6fe5ec
+            |
+            ---0xffffffff8f6fe5ec
+               0xffffffff8f6fe574
+               0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6fe574
+            |
+            ---0xffffffff8f6fe574
+               0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6fe4ea
+            |
+            ---0xffffffff8f6fe4ea
+               0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6fd95f
+            |
+            ---0xffffffff8f6fd95f
+               0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6fcbca
+            |
+            ---0xffffffff8f6fcbca
+               0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc1507ea3
+            |
+            ---0xffffffffc1507ea3
+               0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc1507647
+            |
+            ---0xffffffffc1507647
+               0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc15c578e
+            |
+            ---0xffffffffc15c578e
+               0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc15bb20b
+            |
+            ---0xffffffffc15bb20b
+               0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc15bb06b
+            |
+            ---0xffffffffc15bb06b
+               0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc0615ade
+            |
+            ---0xffffffffc0615ade
+               0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc063ae4a
+            |
+            ---0xffffffffc063ae4a
+               0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc063a9c8
+            |
+            ---0xffffffffc063a9c8
+               0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc0618e6f
+            |
+            ---0xffffffffc0618e6f
+               0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc063c844
+            |
+            ---0xffffffffc063c844
+               0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc063b4b4
+            |
+            ---0xffffffffc063b4b4
+               0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc15e0c2c
+            |
+            ---0xffffffffc15e0c2c
+               0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc15dfdaf
+            |
+            ---0xffffffffc15dfdaf
+               0xffffffffc15dfa1a
+
+     6.09%     0.00%  cw_model  [unknown]             [.] 0xffffffffc15dfa1a
+            |
+            ---0xffffffffc15dfa1a
+
+     6.00%     6.00%  cw_model  cw_model              [.] RingBuffer<double>::operator[](unsigned long) const
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::expo_search(double, unsigned long) const
+               RingBuffer<double>::operator[](unsigned long) const
+
+     5.96%     5.96%  cw_model  cw_model              [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+
+     5.96%     0.00%  cw_model  cw_model              [.] CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+            |
+            ---CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+
+     5.84%     5.84%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::at(unsigned long)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               RingBuffer<double>::operator[](unsigned long)
+               std::vector<double, std::allocator<double> >::at(unsigned long)
+
+     5.84%     0.00%  cw_model  cw_model              [.] RingBuffer<double>::operator[](unsigned long)
+            |
+            ---RingBuffer<double>::operator[](unsigned long)
+               std::vector<double, std::allocator<double> >::at(unsigned long)
+
+     5.71%     5.71%  cw_model  cw_model              [.] RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               RingBuffer<std::array<double, 2ul> >::operator[](unsigned long) const
+
+     5.50%     5.50%  cw_model  cw_model              [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+
+     5.50%     0.00%  cw_model  cw_model              [.] History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+            |
+            ---History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+
+     5.50%     0.00%  cw_model  cw_model              [.] CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+            |
+            ---CompoundRingBuffer<std::array<double, 2ul>, double>::update(double, double, std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > > const&)
+               RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+
+     5.50%     0.00%  cw_model  cw_model              [.] RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+            |
+            ---RingBuffer<std::array<double, 2ul> >::operator[](unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+
+     5.50%     0.00%  cw_model  cw_model              [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+            |
+            ---std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::at(unsigned long)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_range_check(unsigned long) const
+
+     5.36%     5.36%  cw_model  cw_model              [.] RingBuffer<double>::size() const
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::expo_search(double, unsigned long) const
+               RingBuffer<double>::size() const
+
+     5.16%     5.16%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.16%     0.00%  cw_model  cw_model              [.] std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+            |
+            ---std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::resize(unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.16%     0.00%  cw_model  cw_model              [.] std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+            |
+            ---std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_fill_insert(__gnu_cxx::__normal_iterator<std::vector<double, std::allocator<double> >*, std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > > >, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.16%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+            |
+            ---std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n_a<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&, std::allocator<std::vector<double, std::allocator<double> > >&)
+               std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.16%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+            |
+            ---std::vector<double, std::allocator<double> >* std::uninitialized_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.16%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+            |
+            ---std::vector<double, std::allocator<double> >* std::__uninitialized_fill_n<false>::__uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.16%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+            |
+            ---std::vector<double, std::allocator<double> >* std::__do_uninit_fill_n<std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > >(std::vector<double, std::allocator<double> >*, unsigned long, std::vector<double, std::allocator<double> > const&)
+               void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.16%     0.00%  cw_model  cw_model              [.] void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+            |
+            ---void std::_Construct<std::vector<double, std::allocator<double> >, std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> >*, std::vector<double, std::allocator<double> > const&)
+               std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+
+     5.12%     0.00%  cw_model  [unknown]             [k] 0xffffffff90600bc7
+            |
+            ---0xffffffff90600bc7
+               0xffffffff90453c63
+               |          
+               |--4.31%--0xffffffff8f2d7f69
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          |          
+               |          |--2.83%--0xffffffff8f6306bb
+               |          |          0xffffffff8f62f4fc
+               |          |          0xffffffff8f62f42c
+               |          |          
+               |           --1.48%--0xffffffff8f630604
+               |                     0xffffffff8f62b7c0
+               |                     0xffffffff8f62b467
+               |                     0xffffffff8f5c6fbd
+               |                     0xffffffff8f5c6a92
+               |          
+                --0.81%--0xffffffff8f2d7ff5
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b830
+                          0xffffffff8f62a8fa
+                          0xffffffff8f5c8f93
+                          0xffffffff8f5c473a
+                          0xffffffff8f5d6436
+                          0xffffffff8f5d5d69
+                          0xffffffff8f5c3d8d
+                          0xffffffff8f5d97d1
+                          0xffffffff8f5d967f
+                          0xffffffff8f5d872b
+                          0xffffffff8f3db551
+
+     5.12%     0.00%  cw_model  [unknown]             [k] 0xffffffff90453c63
+            |
+            ---0xffffffff90453c63
+               |          
+               |--4.31%--0xffffffff8f2d7f69
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          |          
+               |          |--2.83%--0xffffffff8f6306bb
+               |          |          0xffffffff8f62f4fc
+               |          |          0xffffffff8f62f42c
+               |          |          
+               |           --1.48%--0xffffffff8f630604
+               |                     0xffffffff8f62b7c0
+               |                     0xffffffff8f62b467
+               |                     0xffffffff8f5c6fbd
+               |                     0xffffffff8f5c6a92
+               |          
+                --0.81%--0xffffffff8f2d7ff5
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b830
+                          0xffffffff8f62a8fa
+                          0xffffffff8f5c8f93
+                          0xffffffff8f5c473a
+                          0xffffffff8f5d6436
+                          0xffffffff8f5d5d69
+                          0xffffffff8f5c3d8d
+                          0xffffffff8f5d97d1
+                          0xffffffff8f5d967f
+                          0xffffffff8f5d872b
+                          0xffffffff8f3db551
+
+     5.12%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f630ffa
+            |
+            ---0xffffffff8f630ffa
+               0xffffffff8f630d24
+               |          
+               |--2.83%--0xffffffff8f6306bb
+               |          0xffffffff8f62f4fc
+               |          0xffffffff8f62f42c
+               |          
+                --2.29%--0xffffffff8f630604
+                          |          
+                          |--1.48%--0xffffffff8f62b7c0
+                          |          0xffffffff8f62b467
+                          |          0xffffffff8f5c6fbd
+                          |          0xffffffff8f5c6a92
+                          |          
+                           --0.81%--0xffffffff8f62b830
+                                     0xffffffff8f62a8fa
+                                     0xffffffff8f5c8f93
+                                     0xffffffff8f5c473a
+                                     0xffffffff8f5d6436
+                                     0xffffffff8f5d5d69
+                                     0xffffffff8f5c3d8d
+                                     0xffffffff8f5d97d1
+                                     0xffffffff8f5d967f
+                                     0xffffffff8f5d872b
+                                     0xffffffff8f3db551
+
+     5.12%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f630d24
+            |
+            ---0xffffffff8f630d24
+               |          
+               |--2.83%--0xffffffff8f6306bb
+               |          0xffffffff8f62f4fc
+               |          0xffffffff8f62f42c
+               |          
+                --2.29%--0xffffffff8f630604
+                          |          
+                          |--1.48%--0xffffffff8f62b7c0
+                          |          0xffffffff8f62b467
+                          |          0xffffffff8f5c6fbd
+                          |          0xffffffff8f5c6a92
+                          |          
+                           --0.81%--0xffffffff8f62b830
+                                     0xffffffff8f62a8fa
+                                     0xffffffff8f5c8f93
+                                     0xffffffff8f5c473a
+                                     0xffffffff8f5d6436
+                                     0xffffffff8f5d5d69
+                                     0xffffffff8f5c3d8d
+                                     0xffffffff8f5d97d1
+                                     0xffffffff8f5d967f
+                                     0xffffffff8f5d872b
+                                     0xffffffff8f3db551
+
+     4.88%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+            |
+            ---_dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_map_object_from_fd
+               |          
+                --2.83%--memmove
+                          0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f6306bb
+                          0xffffffff8f62f4fc
+                          0xffffffff8f62f42c
+
+     4.88%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_catch_exception
+            |
+            ---_dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_map_object_from_fd
+               |          
+                --2.83%--memmove
+                          0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f6306bb
+                          0xffffffff8f62f4fc
+                          0xffffffff8f62f42c
+
+     4.88%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] openaux
+            |
+            ---openaux
+               _dl_map_object
+               _dl_map_object_from_fd
+               |          
+                --2.83%--memmove
+                          0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f6306bb
+                          0xffffffff8f62f4fc
+                          0xffffffff8f62f42c
+
+     4.88%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_map_object
+            |
+            ---_dl_map_object
+               _dl_map_object_from_fd
+               |          
+                --2.83%--memmove
+                          0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f6306bb
+                          0xffffffff8f62f4fc
+                          0xffffffff8f62f42c
+
+     4.88%     2.05%  cw_model  ld-linux-x86-64.so.2  [.] _dl_map_object_from_fd
+            |          
+            |--2.83%--_dl_map_object_from_fd
+            |          memmove
+            |          0xffffffff90600bc7
+            |          0xffffffff90453c63
+            |          0xffffffff8f2d7f69
+            |          0xffffffff8f630ffa
+            |          0xffffffff8f630d24
+            |          0xffffffff8f6306bb
+            |          0xffffffff8f62f4fc
+            |          0xffffffff8f62f42c
+            |          
+             --2.05%--_dl_start_user
+                       _dl_start
+                       _dl_sysdep_start
+                       dl_main
+                       _dl_map_object_deps
+                       _dl_catch_exception
+                       openaux
+                       _dl_map_object
+                       _dl_map_object_from_fd
+
+     4.72%     4.72%  cw_model  libc.so.6             [.] _int_malloc
+            |
+            ---_dl_start_user
+               _dl_init
+               call_init.part.0
+               0x78cadccb738f
+               malloc
+               tcache_init.part.0
+               _int_malloc
+
+     4.72%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_init
+            |
+            ---_dl_init
+               call_init.part.0
+               0x78cadccb738f
+               malloc
+               tcache_init.part.0
+               _int_malloc
+
+     4.72%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] call_init.part.0
+            |
+            ---call_init.part.0
+               0x78cadccb738f
+               malloc
+               tcache_init.part.0
+               _int_malloc
+
+     4.72%     0.00%  cw_model  libstdc++.so.6.0.33   [.] 0x000078cadccb738f
+            |
+            ---0x78cadccb738f
+               malloc
+               tcache_init.part.0
+               _int_malloc
+
+     4.72%     0.00%  cw_model  libc.so.6             [.] malloc
+            |
+            ---malloc
+               tcache_init.part.0
+               _int_malloc
+
+     4.72%     0.00%  cw_model  libc.so.6             [.] tcache_init.part.0
+            |
+            ---tcache_init.part.0
+               _int_malloc
+
+     4.31%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f2d7f69
+            |
+            ---0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               |          
+               |--2.83%--0xffffffff8f6306bb
+               |          0xffffffff8f62f4fc
+               |          0xffffffff8f62f42c
+               |          
+                --1.48%--0xffffffff8f630604
+                          0xffffffff8f62b7c0
+                          0xffffffff8f62b467
+                          0xffffffff8f5c6fbd
+                          0xffffffff8f5c6a92
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0x00007831f16eef3b
+            |
+            ---0x7831f16eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f207697
+            |
+            ---0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f701f37
+            |
+            ---0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f701bd8
+            |
+            ---0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ffa26
+            |
+            ---0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ff932
+            |
+            ---0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ff639
+            |
+            ---0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     3.10%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f6ff0a7
+            |
+            ---0xffffffff8f6ff0a7
+               |          
+               |--1.62%--0xffffffff8f792fe0
+               |          |          
+               |          |--0.81%--0xffffffff903d4c80
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7ff5
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b830
+               |          |          0xffffffff8f62a8fa
+               |          |          0xffffffff8f5c8f93
+               |          |          0xffffffff8f5c473a
+               |          |          0xffffffff8f5d6436
+               |          |          0xffffffff8f5d5d69
+               |          |          0xffffffff8f5c3d8d
+               |          |          0xffffffff8f5d97d1
+               |          |          0xffffffff8f5d967f
+               |          |          0xffffffff8f5d872b
+               |          |          0xffffffff8f3db551
+               |          |          
+               |           --0.81%--0xffffffff8f792350
+               |                     0xffffffff8f5fd0ad
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c0fe
+               |                     0xffffffff8f5c34d5
+               |          
+                --1.48%--0xffffffff8f793389
+                          0xffffffff8f7927b0
+                          0xffffffff8f792264
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c04f
+                          0xffffffff8f302eb2
+                          0xffffffff904559c2
+
+     2.83%     2.83%  cw_model  [unknown]             [k] 0xffffffff8f62f425
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_map_object_from_fd
+               memmove
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f6306bb
+               0xffffffff8f62f4fc
+               0xffffffff8f62f42c
+
+     2.83%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] memmove
+            |
+            ---memmove
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f6306bb
+               0xffffffff8f62f4fc
+               0xffffffff8f62f42c
+
+     2.83%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f6306bb
+            |
+            ---0xffffffff8f6306bb
+               0xffffffff8f62f4fc
+               0xffffffff8f62f42c
+
+     2.83%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62f4fc
+            |
+            ---0xffffffff8f62f4fc
+               0xffffffff8f62f42c
+
+     2.83%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62f42c
+            |
+            ---0xffffffff8f62f42c
+
+     2.29%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f630604
+            |
+            ---0xffffffff8f630604
+               |          
+               |--1.48%--0xffffffff8f62b7c0
+               |          0xffffffff8f62b467
+               |          0xffffffff8f5c6fbd
+               |          0xffffffff8f5c6a92
+               |          
+                --0.81%--0xffffffff8f62b830
+                          0xffffffff8f62a8fa
+                          0xffffffff8f5c8f93
+                          0xffffffff8f5c473a
+                          0xffffffff8f5d6436
+                          0xffffffff8f5d5d69
+                          0xffffffff8f5c3d8d
+                          0xffffffff8f5d97d1
+                          0xffffffff8f5d967f
+                          0xffffffff8f5d872b
+                          0xffffffff8f3db551
+
+     2.29%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5fd0ad
+            |
+            ---0xffffffff8f5fd0ad
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               |          
+               |--1.48%--0xffffffff8f63c04f
+               |          0xffffffff8f302eb2
+               |          0xffffffff904559c2
+               |          
+                --0.81%--0xffffffff8f63c0fe
+                          0xffffffff8f5c34d5
+
+     2.29%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5fcfc3
+            |
+            ---0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               |          
+               |--1.48%--0xffffffff8f63c04f
+               |          0xffffffff8f302eb2
+               |          0xffffffff904559c2
+               |          
+                --0.81%--0xffffffff8f63c0fe
+                          0xffffffff8f5c34d5
+
+     2.29%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f63cd01
+            |
+            ---0xffffffff8f63cd01
+               0xffffffff8f63c864
+               |          
+               |--1.48%--0xffffffff8f63c04f
+               |          0xffffffff8f302eb2
+               |          0xffffffff904559c2
+               |          
+                --0.81%--0xffffffff8f63c0fe
+                          0xffffffff8f5c34d5
+
+     2.29%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f63c864
+            |
+            ---0xffffffff8f63c864
+               |          
+               |--1.48%--0xffffffff8f63c04f
+               |          0xffffffff8f302eb2
+               |          0xffffffff904559c2
+               |          
+                --0.81%--0xffffffff8f63c0fe
+                          0xffffffff8f5c34d5
+
+     1.62%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f792fe0
+            |
+            ---0xffffffff8f792fe0
+               |          
+               |--0.81%--0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          0xffffffff8f630604
+               |          0xffffffff8f62b830
+               |          0xffffffff8f62a8fa
+               |          0xffffffff8f5c8f93
+               |          0xffffffff8f5c473a
+               |          0xffffffff8f5d6436
+               |          0xffffffff8f5d5d69
+               |          0xffffffff8f5c3d8d
+               |          0xffffffff8f5d97d1
+               |          0xffffffff8f5d967f
+               |          0xffffffff8f5d872b
+               |          0xffffffff8f3db551
+               |          
+                --0.81%--0xffffffff8f792350
+                          0xffffffff8f5fd0ad
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c0fe
+                          0xffffffff8f5c34d5
+
+     1.48%     1.48%  cw_model  [unknown]             [k] 0xffffffff904559c0
+            |
+            ---0x7831f16eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               0xffffffff8f793389
+               0xffffffff8f7927b0
+               0xffffffff8f792264
+               0xffffffff8f5fd0ad
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c04f
+               0xffffffff8f302eb2
+               0xffffffff904559c2
+
+     1.48%     1.48%  cw_model  [unknown]             [k] 0xffffffff8f5c6a8d
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_sysdep_start
+               _dl_new_object
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b7c0
+               0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6a92
+
+     1.48%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] _dl_new_object
+            |
+            ---_dl_new_object
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b7c0
+               0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6a92
+
+     1.48%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f793389
+            |
+            ---0xffffffff8f793389
+               0xffffffff8f7927b0
+               0xffffffff8f792264
+               0xffffffff8f5fd0ad
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c04f
+               0xffffffff8f302eb2
+               0xffffffff904559c2
+
+     1.48%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f7927b0
+            |
+            ---0xffffffff8f7927b0
+               0xffffffff8f792264
+               0xffffffff8f5fd0ad
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c04f
+               0xffffffff8f302eb2
+               0xffffffff904559c2
+
+     1.48%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f792264
+            |
+            ---0xffffffff8f792264
+               0xffffffff8f5fd0ad
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c04f
+               0xffffffff8f302eb2
+               0xffffffff904559c2
+
+     1.48%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62b7c0
+            |
+            ---0xffffffff8f62b7c0
+               0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6a92
+
+     1.48%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f62b467
+            |
+            ---0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6a92
+
+     1.48%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f63c04f
+            |
+            ---0xffffffff8f63c04f
+               0xffffffff8f302eb2
+               0xffffffff904559c2
+
+     1.48%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f302eb2
+            |
+            ---0xffffffff8f302eb2
+               0xffffffff904559c2
+
+     1.48%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c6fbd
+            |
+            ---0xffffffff8f5c6fbd
+               0xffffffff8f5c6a92
+
+     1.48%     0.00%  cw_model  [unknown]             [.] 0xffffffff8f5c6a92
+            |
+            ---0xffffffff8f5c6a92
+
+     1.48%     0.00%  cw_model  [unknown]             [k] 0xffffffff904559c2
+            |
+            ---0xffffffff904559c2
+
+     0.81%     0.81%  cw_model  [unknown]             [k] 0xffffffff8f3db54b
+            |
+            ---0x7831f16eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               0xffffffff8f792fe0
+               0xffffffff903d4c80
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b830
+               0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.81%  cw_model  [unknown]             [k] 0xffffffff8f5c34d0
+            |
+            ---0x7831f16eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               0xffffffff8f792fe0
+               0xffffffff8f792350
+               0xffffffff8f5fd0ad
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c0fe
+               0xffffffff8f5c34d5
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff903d4c80
+            |
+            ---0xffffffff903d4c80
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b830
+               0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f2d7ff5
+            |
+            ---0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b830
+               0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f62b830
+            |
+            ---0xffffffff8f62b830
+               0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f62a8fa
+            |
+            ---0xffffffff8f62a8fa
+               0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5c8f93
+            |
+            ---0xffffffff8f5c8f93
+               0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5c473a
+            |
+            ---0xffffffff8f5c473a
+               0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5d6436
+            |
+            ---0xffffffff8f5d6436
+               0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f792350
+            |
+            ---0xffffffff8f792350
+               0xffffffff8f5fd0ad
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c0fe
+               0xffffffff8f5c34d5
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5d5d69
+            |
+            ---0xffffffff8f5d5d69
+               0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5c3d8d
+            |
+            ---0xffffffff8f5c3d8d
+               0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5d97d1
+            |
+            ---0xffffffff8f5d97d1
+               0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5d967f
+            |
+            ---0xffffffff8f5d967f
+               0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5d872b
+            |
+            ---0xffffffff8f5d872b
+               0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f63c0fe
+            |
+            ---0xffffffff8f63c0fe
+               0xffffffff8f5c34d5
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f3db551
+            |
+            ---0xffffffff8f3db551
+
+     0.81%     0.00%  cw_model  [unknown]             [k] 0xffffffff8f5c34d5
+            |
+            ---0xffffffff8f5c34d5
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

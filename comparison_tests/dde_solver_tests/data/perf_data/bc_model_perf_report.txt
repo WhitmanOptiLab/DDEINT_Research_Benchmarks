@@ -1,0 +1,3061 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 16  of event 'cycles:P'
+# Event count (approx.): 7798458
+#
+# Children      Self  Command   Shared Object         Symbol                               
+# ........  ........  ........  ....................  .....................................
+#
+    64.79%     0.00%  bc_model  bc_model              [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               |          
+               |--19.02%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--9.64%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          __dde_solver_m_MOD_dde_drv3
+               |          |          __dde_solver_m_MOD_dde_step
+               |          |          __dde_solver_m_MOD_dde_zset
+               |          |          __dde_solver_m_MOD_dde_zset2
+               |          |          0xffffffff90600f4b
+               |          |          0xffffffff90452dd0
+               |          |          0xffffffff8f3115de
+               |          |          0xffffffff8f311249
+               |          |          0xffffffff8f310ef8
+               |          |          0xffffffff8f3e9a0e
+               |          |          0xffffffff8f3e9585
+               |          |          0xffffffff8f3e7b2c
+               |          |          0xffffffff903c294f
+               |          |          0xffffffff8f672268
+               |          |          0xffffffff8f668b5e
+               |          |          
+               |           --9.38%--malloc
+               |          
+               |--14.92%--0x70a818abe593
+               |          0x70a818abe08c
+               |          0x70a818ac8816
+               |          0x70a818ac6d27
+               |          __snprintf_chk
+               |          |          
+               |           --7.90%--__vsnprintf_internal
+               |                     __printf_buffer
+               |                     __printf_fp_l_buffer
+               |                     __printf_fp_buffer_1.isra.0
+               |          
+               |--8.79%--0x70a818abfbd9
+               |          0x70a818ac0dbd
+               |          _dl_runtime_resolve_xsavec
+               |          _dl_fixup
+               |          _dl_lookup_symbol_x
+               |          do_lookup_x
+               |          
+               |--7.90%--0x70a818abeabd
+               |          0x70a818ac07ec
+               |          pthread_mutex_trylock@@GLIBC_2.34
+               |          
+               |--7.45%--0x70a818abfaf6
+               |          0x70a818abf643
+               |          __GI___libc_write
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c33a3
+               |          0xffffffffc1502c83
+               |          0xffffffffc1517626
+               |          0xffffffffc15172f5
+               |          0xffffffffc1513cae
+               |          0xffffffff8f73fdc0
+               |          
+                --6.71%--0x70a818acb2c3
+                          0x70a818ac9c52
+
+    64.79%     0.00%  bc_model  libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               |          
+               |--19.02%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--9.64%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          __dde_solver_m_MOD_dde_drv3
+               |          |          __dde_solver_m_MOD_dde_step
+               |          |          __dde_solver_m_MOD_dde_zset
+               |          |          __dde_solver_m_MOD_dde_zset2
+               |          |          0xffffffff90600f4b
+               |          |          0xffffffff90452dd0
+               |          |          0xffffffff8f3115de
+               |          |          0xffffffff8f311249
+               |          |          0xffffffff8f310ef8
+               |          |          0xffffffff8f3e9a0e
+               |          |          0xffffffff8f3e9585
+               |          |          0xffffffff8f3e7b2c
+               |          |          0xffffffff903c294f
+               |          |          0xffffffff8f672268
+               |          |          0xffffffff8f668b5e
+               |          |          
+               |           --9.38%--malloc
+               |          
+               |--14.92%--0x70a818abe593
+               |          0x70a818abe08c
+               |          0x70a818ac8816
+               |          0x70a818ac6d27
+               |          __snprintf_chk
+               |          |          
+               |           --7.90%--__vsnprintf_internal
+               |                     __printf_buffer
+               |                     __printf_fp_l_buffer
+               |                     __printf_fp_buffer_1.isra.0
+               |          
+               |--8.79%--0x70a818abfbd9
+               |          0x70a818ac0dbd
+               |          _dl_runtime_resolve_xsavec
+               |          _dl_fixup
+               |          _dl_lookup_symbol_x
+               |          do_lookup_x
+               |          
+               |--7.90%--0x70a818abeabd
+               |          0x70a818ac07ec
+               |          pthread_mutex_trylock@@GLIBC_2.34
+               |          
+               |--7.45%--0x70a818abfaf6
+               |          0x70a818abf643
+               |          __GI___libc_write
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c33a3
+               |          0xffffffffc1502c83
+               |          0xffffffffc1517626
+               |          0xffffffffc15172f5
+               |          0xffffffffc1513cae
+               |          0xffffffff8f73fdc0
+               |          
+                --6.71%--0x70a818acb2c3
+                          0x70a818ac9c52
+
+    64.79%     0.00%  bc_model  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               MAIN__
+               |          
+               |--19.02%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--9.64%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          __dde_solver_m_MOD_dde_drv3
+               |          |          __dde_solver_m_MOD_dde_step
+               |          |          __dde_solver_m_MOD_dde_zset
+               |          |          __dde_solver_m_MOD_dde_zset2
+               |          |          0xffffffff90600f4b
+               |          |          0xffffffff90452dd0
+               |          |          0xffffffff8f3115de
+               |          |          0xffffffff8f311249
+               |          |          0xffffffff8f310ef8
+               |          |          0xffffffff8f3e9a0e
+               |          |          0xffffffff8f3e9585
+               |          |          0xffffffff8f3e7b2c
+               |          |          0xffffffff903c294f
+               |          |          0xffffffff8f672268
+               |          |          0xffffffff8f668b5e
+               |          |          
+               |           --9.38%--malloc
+               |          
+               |--14.92%--0x70a818abe593
+               |          0x70a818abe08c
+               |          0x70a818ac8816
+               |          0x70a818ac6d27
+               |          __snprintf_chk
+               |          |          
+               |           --7.90%--__vsnprintf_internal
+               |                     __printf_buffer
+               |                     __printf_fp_l_buffer
+               |                     __printf_fp_buffer_1.isra.0
+               |          
+               |--8.79%--0x70a818abfbd9
+               |          0x70a818ac0dbd
+               |          _dl_runtime_resolve_xsavec
+               |          _dl_fixup
+               |          _dl_lookup_symbol_x
+               |          do_lookup_x
+               |          
+               |--7.90%--0x70a818abeabd
+               |          0x70a818ac07ec
+               |          pthread_mutex_trylock@@GLIBC_2.34
+               |          
+               |--7.45%--0x70a818abfaf6
+               |          0x70a818abf643
+               |          __GI___libc_write
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c33a3
+               |          0xffffffffc1502c83
+               |          0xffffffffc1517626
+               |          0xffffffffc15172f5
+               |          0xffffffffc1513cae
+               |          0xffffffff8f73fdc0
+               |          
+                --6.71%--0x70a818acb2c3
+                          0x70a818ac9c52
+
+    64.79%     0.00%  bc_model  bc_model              [.] main
+            |
+            ---main
+               MAIN__
+               |          
+               |--19.02%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--9.64%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          __dde_solver_m_MOD_dde_drv3
+               |          |          __dde_solver_m_MOD_dde_step
+               |          |          __dde_solver_m_MOD_dde_zset
+               |          |          __dde_solver_m_MOD_dde_zset2
+               |          |          0xffffffff90600f4b
+               |          |          0xffffffff90452dd0
+               |          |          0xffffffff8f3115de
+               |          |          0xffffffff8f311249
+               |          |          0xffffffff8f310ef8
+               |          |          0xffffffff8f3e9a0e
+               |          |          0xffffffff8f3e9585
+               |          |          0xffffffff8f3e7b2c
+               |          |          0xffffffff903c294f
+               |          |          0xffffffff8f672268
+               |          |          0xffffffff8f668b5e
+               |          |          
+               |           --9.38%--malloc
+               |          
+               |--14.92%--0x70a818abe593
+               |          0x70a818abe08c
+               |          0x70a818ac8816
+               |          0x70a818ac6d27
+               |          __snprintf_chk
+               |          |          
+               |           --7.90%--__vsnprintf_internal
+               |                     __printf_buffer
+               |                     __printf_fp_l_buffer
+               |                     __printf_fp_buffer_1.isra.0
+               |          
+               |--8.79%--0x70a818abfbd9
+               |          0x70a818ac0dbd
+               |          _dl_runtime_resolve_xsavec
+               |          _dl_fixup
+               |          _dl_lookup_symbol_x
+               |          do_lookup_x
+               |          
+               |--7.90%--0x70a818abeabd
+               |          0x70a818ac07ec
+               |          pthread_mutex_trylock@@GLIBC_2.34
+               |          
+               |--7.45%--0x70a818abfaf6
+               |          0x70a818abf643
+               |          __GI___libc_write
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c33a3
+               |          0xffffffffc1502c83
+               |          0xffffffffc1517626
+               |          0xffffffffc15172f5
+               |          0xffffffffc1513cae
+               |          0xffffffff8f73fdc0
+               |          
+                --6.71%--0x70a818acb2c3
+                          0x70a818ac9c52
+
+    64.79%     0.00%  bc_model  bc_model              [.] MAIN__
+            |
+            ---MAIN__
+               |          
+               |--19.02%--__dde_solver_m_MOD_dkl_4
+               |          |          
+               |          |--9.64%--__dde_solver_m_MOD_dde_drv1
+               |          |          __dde_solver_m_MOD_dde_drv2
+               |          |          __dde_solver_m_MOD_dde_drv3
+               |          |          __dde_solver_m_MOD_dde_step
+               |          |          __dde_solver_m_MOD_dde_zset
+               |          |          __dde_solver_m_MOD_dde_zset2
+               |          |          0xffffffff90600f4b
+               |          |          0xffffffff90452dd0
+               |          |          0xffffffff8f3115de
+               |          |          0xffffffff8f311249
+               |          |          0xffffffff8f310ef8
+               |          |          0xffffffff8f3e9a0e
+               |          |          0xffffffff8f3e9585
+               |          |          0xffffffff8f3e7b2c
+               |          |          0xffffffff903c294f
+               |          |          0xffffffff8f672268
+               |          |          0xffffffff8f668b5e
+               |          |          
+               |           --9.38%--malloc
+               |          
+               |--14.92%--0x70a818abe593
+               |          0x70a818abe08c
+               |          0x70a818ac8816
+               |          0x70a818ac6d27
+               |          __snprintf_chk
+               |          |          
+               |           --7.90%--__vsnprintf_internal
+               |                     __printf_buffer
+               |                     __printf_fp_l_buffer
+               |                     __printf_fp_buffer_1.isra.0
+               |          
+               |--8.79%--0x70a818abfbd9
+               |          0x70a818ac0dbd
+               |          _dl_runtime_resolve_xsavec
+               |          _dl_fixup
+               |          _dl_lookup_symbol_x
+               |          do_lookup_x
+               |          
+               |--7.90%--0x70a818abeabd
+               |          0x70a818ac07ec
+               |          pthread_mutex_trylock@@GLIBC_2.34
+               |          
+               |--7.45%--0x70a818abfaf6
+               |          0x70a818abf643
+               |          __GI___libc_write
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c33a3
+               |          0xffffffffc1502c83
+               |          0xffffffffc1517626
+               |          0xffffffffc15172f5
+               |          0xffffffffc1513cae
+               |          0xffffffff8f73fdc0
+               |          
+                --6.71%--0x70a818acb2c3
+                          0x70a818ac9c52
+
+    31.37%     0.00%  bc_model  [unknown]             [k] 0xffffffff90600130
+            |
+            ---0xffffffff90600130
+               0xffffffff9044d8ef
+               |          
+               |--14.63%--0xffffffff8f2078fe
+               |          0xffffffff8f261943
+               |          |          
+               |          |--7.98%--0xffffffff8f638eea
+               |          |          0xffffffff8f5fcfc3
+               |          |          0xffffffff8f63cd01
+               |          |          0xffffffff8f63c864
+               |          |          0xffffffff8f63c248
+               |          |          0xffffffff8f5b0f8b
+               |          |          0xffffffff8f5a0667
+               |          |          0xffffffff8f5a0067
+               |          |          0xffffffff8f59f116
+               |          |          0xffffffff8f5a6f59
+               |          |          
+               |           --6.66%--0xffffffff8f63906c
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c248
+               |                     0xffffffff8f5b0f8b
+               |                     0xffffffff8f5a0589
+               |                     0xffffffff8f749f45
+               |                     0xffffffff8f749c15
+               |                     0xffffffff8f749abe
+               |                     0xffffffff8f749a3a
+               |                     0xffffffff8f5d023a
+               |          
+               |--7.45%--0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c33a3
+               |          0xffffffffc1502c83
+               |          0xffffffffc1517626
+               |          0xffffffffc15172f5
+               |          0xffffffffc1513cae
+               |          0xffffffff8f73fdc0
+               |          
+               |--4.65%--0xffffffff8f2077e1
+               |          0xffffffff8f6f0731
+               |          0xffffffffc11720f7
+               |          0xffffffff8f2c0973
+               |          0xffffffff8f4700a2
+               |          0xffffffff8f4f8579
+               |          0xffffffff8f4f84b1
+               |          0xffffffff8f5a5c9b
+               |          
+                --4.64%--0xffffffff8f207697
+                          0xffffffff8f701f37
+                          0xffffffff8f701bd8
+                          0xffffffff8f6ffa26
+                          0xffffffff8f6ff932
+                          0xffffffff8f6ff639
+                          0xffffffff8f6ff0a7
+                          |          
+                          |--3.21%--0xffffffff8f792fe0
+                          |          0xffffffff903d4c80
+                          |          0xffffffff90600bc7
+                          |          0xffffffff90453c63
+                          |          0xffffffff8f2d7ff5
+                          |          0xffffffff8f630ffa
+                          |          |          
+                          |          |--1.60%--0xffffffff8f630d68
+                          |          |          0xffffffff904653ec
+                          |          |          
+                          |           --1.60%--0xffffffff8f630d24
+                          |                     0xffffffff8f630604
+                          |                     0xffffffff8f62b8b2
+                          |                     0xffffffff8f6236b6
+                          |                     0xffffffff8f5d8674
+                          |                     0xffffffff8f6d3e16
+                          |                     0xffffffff8f6cee23
+                          |                     0xffffffff8f6c5a12
+                          |                     0xffffffff8f6c5810
+                          |          
+                           --1.43%--0xffffffff8f793443
+                                     0xffffffff8f208762
+                                     0xffffffff8f2082cb
+                                     0xffffffff8f63d545
+                                     0xffffffff8f63a7c9
+                                     0xffffffff8f63a6aa
+                                     0xffffffff8f636f1f
+                                     0xffffffff903c01ee
+                                     0xffffffff903bff56
+                                     0xffffffff903bf8ea
+                                     0xffffffff903b584b
+
+    31.37%     0.00%  bc_model  [unknown]             [k] 0xffffffff9044d8ef
+            |
+            ---0xffffffff9044d8ef
+               |          
+               |--14.63%--0xffffffff8f2078fe
+               |          0xffffffff8f261943
+               |          |          
+               |          |--7.98%--0xffffffff8f638eea
+               |          |          0xffffffff8f5fcfc3
+               |          |          0xffffffff8f63cd01
+               |          |          0xffffffff8f63c864
+               |          |          0xffffffff8f63c248
+               |          |          0xffffffff8f5b0f8b
+               |          |          0xffffffff8f5a0667
+               |          |          0xffffffff8f5a0067
+               |          |          0xffffffff8f59f116
+               |          |          0xffffffff8f5a6f59
+               |          |          
+               |           --6.66%--0xffffffff8f63906c
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c248
+               |                     0xffffffff8f5b0f8b
+               |                     0xffffffff8f5a0589
+               |                     0xffffffff8f749f45
+               |                     0xffffffff8f749c15
+               |                     0xffffffff8f749abe
+               |                     0xffffffff8f749a3a
+               |                     0xffffffff8f5d023a
+               |          
+               |--7.45%--0xffffffff8f2059ae
+               |          0xffffffff8f6f5d39
+               |          0xffffffff8f6f5c83
+               |          0xffffffff8f6f56f1
+               |          0xffffffffc1501bbc
+               |          0xffffffff8f5c33a3
+               |          0xffffffffc1502c83
+               |          0xffffffffc1517626
+               |          0xffffffffc15172f5
+               |          0xffffffffc1513cae
+               |          0xffffffff8f73fdc0
+               |          
+               |--4.65%--0xffffffff8f2077e1
+               |          0xffffffff8f6f0731
+               |          0xffffffffc11720f7
+               |          0xffffffff8f2c0973
+               |          0xffffffff8f4700a2
+               |          0xffffffff8f4f8579
+               |          0xffffffff8f4f84b1
+               |          0xffffffff8f5a5c9b
+               |          
+                --4.64%--0xffffffff8f207697
+                          0xffffffff8f701f37
+                          0xffffffff8f701bd8
+                          0xffffffff8f6ffa26
+                          0xffffffff8f6ff932
+                          0xffffffff8f6ff639
+                          0xffffffff8f6ff0a7
+                          |          
+                          |--3.21%--0xffffffff8f792fe0
+                          |          0xffffffff903d4c80
+                          |          0xffffffff90600bc7
+                          |          0xffffffff90453c63
+                          |          0xffffffff8f2d7ff5
+                          |          0xffffffff8f630ffa
+                          |          |          
+                          |          |--1.60%--0xffffffff8f630d68
+                          |          |          0xffffffff904653ec
+                          |          |          
+                          |           --1.60%--0xffffffff8f630d24
+                          |                     0xffffffff8f630604
+                          |                     0xffffffff8f62b8b2
+                          |                     0xffffffff8f6236b6
+                          |                     0xffffffff8f5d8674
+                          |                     0xffffffff8f6d3e16
+                          |                     0xffffffff8f6cee23
+                          |                     0xffffffff8f6c5a12
+                          |                     0xffffffff8f6c5810
+                          |          
+                           --1.43%--0xffffffff8f793443
+                                     0xffffffff8f208762
+                                     0xffffffff8f2082cb
+                                     0xffffffff8f63d545
+                                     0xffffffff8f63a7c9
+                                     0xffffffff8f63a6aa
+                                     0xffffffff8f636f1f
+                                     0xffffffff903c01ee
+                                     0xffffffff903bff56
+                                     0xffffffff903bf8ea
+                                     0xffffffff903b584b
+
+    30.57%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_start_user
+            |
+            ---_dl_start_user
+               _dl_start
+               |          
+               |--28.07%--_dl_sysdep_start
+               |          dl_main
+               |          |          
+               |          |--11.31%--_dl_map_object_deps
+               |          |          _dl_catch_exception
+               |          |          openaux
+               |          |          _dl_map_object
+               |          |          |          
+               |          |          |--6.66%--_dl_map_object_from_fd
+               |          |          |          mmap64
+               |          |          |          0xffffffff90600130
+               |          |          |          0xffffffff9044d8ef
+               |          |          |          0xffffffff8f2078fe
+               |          |          |          0xffffffff8f261943
+               |          |          |          0xffffffff8f63906c
+               |          |          |          0xffffffff8f5fcfc3
+               |          |          |          0xffffffff8f63cd01
+               |          |          |          0xffffffff8f63c864
+               |          |          |          0xffffffff8f63c248
+               |          |          |          0xffffffff8f5b0f8b
+               |          |          |          0xffffffff8f5a0589
+               |          |          |          0xffffffff8f749f45
+               |          |          |          0xffffffff8f749c15
+               |          |          |          0xffffffff8f749abe
+               |          |          |          0xffffffff8f749a3a
+               |          |          |          0xffffffff8f5d023a
+               |          |          |          
+               |          |           --4.65%--_dl_load_cache_lookup
+               |          |                     _dl_sysdep_read_whole_file
+               |          |                     __GI___open64_nocancel
+               |          |                     0xffffffff90600130
+               |          |                     0xffffffff9044d8ef
+               |          |                     0xffffffff8f2077e1
+               |          |                     0xffffffff8f6f0731
+               |          |                     0xffffffffc11720f7
+               |          |                     0xffffffff8f2c0973
+               |          |                     0xffffffff8f4700a2
+               |          |                     0xffffffff8f4f8579
+               |          |                     0xffffffff8f4f84b1
+               |          |                     0xffffffff8f5a5c9b
+               |          |          
+               |          |--8.79%--__pthread_tunables_init
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7f69
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b7c0
+               |          |          0xffffffff8f62b467
+               |          |          0xffffffff8f5c6fbd
+               |          |          0xffffffff8f5c6bee
+               |          |          
+               |           --7.98%--_dl_receive_error
+               |                     version_check_doit
+               |                     _dl_check_all_versions
+               |                     _dl_check_map_versions
+               |                     __minimal_malloc
+               |                     mmap64
+               |                     0xffffffff90600130
+               |                     0xffffffff9044d8ef
+               |                     0xffffffff8f2078fe
+               |                     0xffffffff8f261943
+               |                     0xffffffff8f638eea
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c248
+               |                     0xffffffff8f5b0f8b
+               |                     0xffffffff8f5a0667
+               |                     0xffffffff8f5a0067
+               |                     0xffffffff8f59f116
+               |                     0xffffffff8f5a6f59
+               |          
+                --2.49%--0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff903d51aa
+
+    30.57%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---_dl_start
+               |          
+               |--28.07%--_dl_sysdep_start
+               |          dl_main
+               |          |          
+               |          |--11.31%--_dl_map_object_deps
+               |          |          _dl_catch_exception
+               |          |          openaux
+               |          |          _dl_map_object
+               |          |          |          
+               |          |          |--6.66%--_dl_map_object_from_fd
+               |          |          |          mmap64
+               |          |          |          0xffffffff90600130
+               |          |          |          0xffffffff9044d8ef
+               |          |          |          0xffffffff8f2078fe
+               |          |          |          0xffffffff8f261943
+               |          |          |          0xffffffff8f63906c
+               |          |          |          0xffffffff8f5fcfc3
+               |          |          |          0xffffffff8f63cd01
+               |          |          |          0xffffffff8f63c864
+               |          |          |          0xffffffff8f63c248
+               |          |          |          0xffffffff8f5b0f8b
+               |          |          |          0xffffffff8f5a0589
+               |          |          |          0xffffffff8f749f45
+               |          |          |          0xffffffff8f749c15
+               |          |          |          0xffffffff8f749abe
+               |          |          |          0xffffffff8f749a3a
+               |          |          |          0xffffffff8f5d023a
+               |          |          |          
+               |          |           --4.65%--_dl_load_cache_lookup
+               |          |                     _dl_sysdep_read_whole_file
+               |          |                     __GI___open64_nocancel
+               |          |                     0xffffffff90600130
+               |          |                     0xffffffff9044d8ef
+               |          |                     0xffffffff8f2077e1
+               |          |                     0xffffffff8f6f0731
+               |          |                     0xffffffffc11720f7
+               |          |                     0xffffffff8f2c0973
+               |          |                     0xffffffff8f4700a2
+               |          |                     0xffffffff8f4f8579
+               |          |                     0xffffffff8f4f84b1
+               |          |                     0xffffffff8f5a5c9b
+               |          |          
+               |          |--8.79%--__pthread_tunables_init
+               |          |          0xffffffff90600bc7
+               |          |          0xffffffff90453c63
+               |          |          0xffffffff8f2d7f69
+               |          |          0xffffffff8f630ffa
+               |          |          0xffffffff8f630d24
+               |          |          0xffffffff8f630604
+               |          |          0xffffffff8f62b7c0
+               |          |          0xffffffff8f62b467
+               |          |          0xffffffff8f5c6fbd
+               |          |          0xffffffff8f5c6bee
+               |          |          
+               |           --7.98%--_dl_receive_error
+               |                     version_check_doit
+               |                     _dl_check_all_versions
+               |                     _dl_check_map_versions
+               |                     __minimal_malloc
+               |                     mmap64
+               |                     0xffffffff90600130
+               |                     0xffffffff9044d8ef
+               |                     0xffffffff8f2078fe
+               |                     0xffffffff8f261943
+               |                     0xffffffff8f638eea
+               |                     0xffffffff8f5fcfc3
+               |                     0xffffffff8f63cd01
+               |                     0xffffffff8f63c864
+               |                     0xffffffff8f63c248
+               |                     0xffffffff8f5b0f8b
+               |                     0xffffffff8f5a0667
+               |                     0xffffffff8f5a0067
+               |                     0xffffffff8f59f116
+               |                     0xffffffff8f5a6f59
+               |          
+                --2.49%--0xffffffff90600bc7
+                          0xffffffff90453c63
+                          0xffffffff8f2d7f69
+                          0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff903d51aa
+
+    28.07%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               dl_main
+               |          
+               |--11.31%--_dl_map_object_deps
+               |          _dl_catch_exception
+               |          openaux
+               |          _dl_map_object
+               |          |          
+               |          |--6.66%--_dl_map_object_from_fd
+               |          |          mmap64
+               |          |          0xffffffff90600130
+               |          |          0xffffffff9044d8ef
+               |          |          0xffffffff8f2078fe
+               |          |          0xffffffff8f261943
+               |          |          0xffffffff8f63906c
+               |          |          0xffffffff8f5fcfc3
+               |          |          0xffffffff8f63cd01
+               |          |          0xffffffff8f63c864
+               |          |          0xffffffff8f63c248
+               |          |          0xffffffff8f5b0f8b
+               |          |          0xffffffff8f5a0589
+               |          |          0xffffffff8f749f45
+               |          |          0xffffffff8f749c15
+               |          |          0xffffffff8f749abe
+               |          |          0xffffffff8f749a3a
+               |          |          0xffffffff8f5d023a
+               |          |          
+               |           --4.65%--_dl_load_cache_lookup
+               |                     _dl_sysdep_read_whole_file
+               |                     __GI___open64_nocancel
+               |                     0xffffffff90600130
+               |                     0xffffffff9044d8ef
+               |                     0xffffffff8f2077e1
+               |                     0xffffffff8f6f0731
+               |                     0xffffffffc11720f7
+               |                     0xffffffff8f2c0973
+               |                     0xffffffff8f4700a2
+               |                     0xffffffff8f4f8579
+               |                     0xffffffff8f4f84b1
+               |                     0xffffffff8f5a5c9b
+               |          
+               |--8.79%--__pthread_tunables_init
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7f69
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          0xffffffff8f630604
+               |          0xffffffff8f62b7c0
+               |          0xffffffff8f62b467
+               |          0xffffffff8f5c6fbd
+               |          0xffffffff8f5c6bee
+               |          
+                --7.98%--_dl_receive_error
+                          version_check_doit
+                          _dl_check_all_versions
+                          _dl_check_map_versions
+                          __minimal_malloc
+                          mmap64
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f2078fe
+                          0xffffffff8f261943
+                          0xffffffff8f638eea
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c248
+                          0xffffffff8f5b0f8b
+                          0xffffffff8f5a0667
+                          0xffffffff8f5a0067
+                          0xffffffff8f59f116
+                          0xffffffff8f5a6f59
+
+    28.07%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+               |          
+               |--11.31%--_dl_map_object_deps
+               |          _dl_catch_exception
+               |          openaux
+               |          _dl_map_object
+               |          |          
+               |          |--6.66%--_dl_map_object_from_fd
+               |          |          mmap64
+               |          |          0xffffffff90600130
+               |          |          0xffffffff9044d8ef
+               |          |          0xffffffff8f2078fe
+               |          |          0xffffffff8f261943
+               |          |          0xffffffff8f63906c
+               |          |          0xffffffff8f5fcfc3
+               |          |          0xffffffff8f63cd01
+               |          |          0xffffffff8f63c864
+               |          |          0xffffffff8f63c248
+               |          |          0xffffffff8f5b0f8b
+               |          |          0xffffffff8f5a0589
+               |          |          0xffffffff8f749f45
+               |          |          0xffffffff8f749c15
+               |          |          0xffffffff8f749abe
+               |          |          0xffffffff8f749a3a
+               |          |          0xffffffff8f5d023a
+               |          |          
+               |           --4.65%--_dl_load_cache_lookup
+               |                     _dl_sysdep_read_whole_file
+               |                     __GI___open64_nocancel
+               |                     0xffffffff90600130
+               |                     0xffffffff9044d8ef
+               |                     0xffffffff8f2077e1
+               |                     0xffffffff8f6f0731
+               |                     0xffffffffc11720f7
+               |                     0xffffffff8f2c0973
+               |                     0xffffffff8f4700a2
+               |                     0xffffffff8f4f8579
+               |                     0xffffffff8f4f84b1
+               |                     0xffffffff8f5a5c9b
+               |          
+               |--8.79%--__pthread_tunables_init
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7f69
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          0xffffffff8f630604
+               |          0xffffffff8f62b7c0
+               |          0xffffffff8f62b467
+               |          0xffffffff8f5c6fbd
+               |          0xffffffff8f5c6bee
+               |          
+                --7.98%--_dl_receive_error
+                          version_check_doit
+                          _dl_check_all_versions
+                          _dl_check_map_versions
+                          __minimal_malloc
+                          mmap64
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f2078fe
+                          0xffffffff8f261943
+                          0xffffffff8f638eea
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c248
+                          0xffffffff8f5b0f8b
+                          0xffffffff8f5a0667
+                          0xffffffff8f5a0067
+                          0xffffffff8f59f116
+                          0xffffffff8f5a6f59
+
+    19.02%     0.00%  bc_model  bc_model              [.] __dde_solver_m_MOD_dkl_4
+            |
+            ---__dde_solver_m_MOD_dkl_4
+               |          
+               |--9.64%--__dde_solver_m_MOD_dde_drv1
+               |          __dde_solver_m_MOD_dde_drv2
+               |          __dde_solver_m_MOD_dde_drv3
+               |          __dde_solver_m_MOD_dde_step
+               |          __dde_solver_m_MOD_dde_zset
+               |          __dde_solver_m_MOD_dde_zset2
+               |          0xffffffff90600f4b
+               |          0xffffffff90452dd0
+               |          0xffffffff8f3115de
+               |          0xffffffff8f311249
+               |          0xffffffff8f310ef8
+               |          0xffffffff8f3e9a0e
+               |          0xffffffff8f3e9585
+               |          0xffffffff8f3e7b2c
+               |          0xffffffff903c294f
+               |          0xffffffff8f672268
+               |          0xffffffff8f668b5e
+               |          
+                --9.38%--malloc
+
+    14.92%     7.02%  bc_model  libc.so.6             [.] __snprintf_chk
+            |          
+            |--7.90%--__snprintf_chk
+            |          __vsnprintf_internal
+            |          __printf_buffer
+            |          __printf_fp_l_buffer
+            |          __printf_fp_buffer_1.isra.0
+            |          
+             --7.02%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x70a818abe593
+                       0x70a818abe08c
+                       0x70a818ac8816
+                       0x70a818ac6d27
+                       __snprintf_chk
+
+    14.92%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818abe593
+            |
+            ---0x70a818abe593
+               0x70a818abe08c
+               0x70a818ac8816
+               0x70a818ac6d27
+               __snprintf_chk
+               |          
+                --7.90%--__vsnprintf_internal
+                          __printf_buffer
+                          __printf_fp_l_buffer
+                          __printf_fp_buffer_1.isra.0
+
+    14.92%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818abe08c
+            |
+            ---0x70a818abe08c
+               0x70a818ac8816
+               0x70a818ac6d27
+               __snprintf_chk
+               |          
+                --7.90%--__vsnprintf_internal
+                          __printf_buffer
+                          __printf_fp_l_buffer
+                          __printf_fp_buffer_1.isra.0
+
+    14.92%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818ac8816
+            |
+            ---0x70a818ac8816
+               0x70a818ac6d27
+               __snprintf_chk
+               |          
+                --7.90%--__vsnprintf_internal
+                          __printf_buffer
+                          __printf_fp_l_buffer
+                          __printf_fp_buffer_1.isra.0
+
+    14.92%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818ac6d27
+            |
+            ---0x70a818ac6d27
+               __snprintf_chk
+               |          
+                --7.90%--__vsnprintf_internal
+                          __printf_buffer
+                          __printf_fp_l_buffer
+                          __printf_fp_buffer_1.isra.0
+
+    14.63%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] mmap64
+            |
+            ---mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               |          
+               |--7.98%--0xffffffff8f638eea
+               |          0xffffffff8f5fcfc3
+               |          0xffffffff8f63cd01
+               |          0xffffffff8f63c864
+               |          0xffffffff8f63c248
+               |          0xffffffff8f5b0f8b
+               |          0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f63906c
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c248
+                          0xffffffff8f5b0f8b
+                          0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.63%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f2078fe
+            |
+            ---0xffffffff8f2078fe
+               0xffffffff8f261943
+               |          
+               |--7.98%--0xffffffff8f638eea
+               |          0xffffffff8f5fcfc3
+               |          0xffffffff8f63cd01
+               |          0xffffffff8f63c864
+               |          0xffffffff8f63c248
+               |          0xffffffff8f5b0f8b
+               |          0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f63906c
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c248
+                          0xffffffff8f5b0f8b
+                          0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.63%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f261943
+            |
+            ---0xffffffff8f261943
+               |          
+               |--7.98%--0xffffffff8f638eea
+               |          0xffffffff8f5fcfc3
+               |          0xffffffff8f63cd01
+               |          0xffffffff8f63c864
+               |          0xffffffff8f63c248
+               |          0xffffffff8f5b0f8b
+               |          0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f63906c
+                          0xffffffff8f5fcfc3
+                          0xffffffff8f63cd01
+                          0xffffffff8f63c864
+                          0xffffffff8f63c248
+                          0xffffffff8f5b0f8b
+                          0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.63%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5fcfc3
+            |
+            ---0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               |          
+               |--7.98%--0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.63%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f63cd01
+            |
+            ---0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               |          
+               |--7.98%--0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.63%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f63c864
+            |
+            ---0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               |          
+               |--7.98%--0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.63%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f63c248
+            |
+            ---0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               |          
+               |--7.98%--0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.63%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5b0f8b
+            |
+            ---0xffffffff8f5b0f8b
+               |          
+               |--7.98%--0xffffffff8f5a0667
+               |          0xffffffff8f5a0067
+               |          0xffffffff8f59f116
+               |          0xffffffff8f5a6f59
+               |          
+                --6.66%--0xffffffff8f5a0589
+                          0xffffffff8f749f45
+                          0xffffffff8f749c15
+                          0xffffffff8f749abe
+                          0xffffffff8f749a3a
+                          0xffffffff8f5d023a
+
+    14.49%     0.00%  bc_model  [unknown]             [k] 0xffffffff90600bc7
+            |
+            ---0xffffffff90600bc7
+               0xffffffff90453c63
+               |          
+               |--11.29%--0xffffffff8f2d7f69
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          0xffffffff8f630604
+               |          |          
+               |          |--8.79%--0xffffffff8f62b7c0
+               |          |          0xffffffff8f62b467
+               |          |          0xffffffff8f5c6fbd
+               |          |          0xffffffff8f5c6bee
+               |          |          
+               |           --2.49%--0xffffffff903d51aa
+               |          
+                --3.21%--0xffffffff8f2d7ff5
+                          0xffffffff8f630ffa
+                          |          
+                          |--1.60%--0xffffffff8f630d68
+                          |          0xffffffff904653ec
+                          |          
+                           --1.60%--0xffffffff8f630d24
+                                     0xffffffff8f630604
+                                     0xffffffff8f62b8b2
+                                     0xffffffff8f6236b6
+                                     0xffffffff8f5d8674
+                                     0xffffffff8f6d3e16
+                                     0xffffffff8f6cee23
+                                     0xffffffff8f6c5a12
+                                     0xffffffff8f6c5810
+
+    14.49%     0.00%  bc_model  [unknown]             [k] 0xffffffff90453c63
+            |
+            ---0xffffffff90453c63
+               |          
+               |--11.29%--0xffffffff8f2d7f69
+               |          0xffffffff8f630ffa
+               |          0xffffffff8f630d24
+               |          0xffffffff8f630604
+               |          |          
+               |          |--8.79%--0xffffffff8f62b7c0
+               |          |          0xffffffff8f62b467
+               |          |          0xffffffff8f5c6fbd
+               |          |          0xffffffff8f5c6bee
+               |          |          
+               |           --2.49%--0xffffffff903d51aa
+               |          
+                --3.21%--0xffffffff8f2d7ff5
+                          0xffffffff8f630ffa
+                          |          
+                          |--1.60%--0xffffffff8f630d68
+                          |          0xffffffff904653ec
+                          |          
+                           --1.60%--0xffffffff8f630d24
+                                     0xffffffff8f630604
+                                     0xffffffff8f62b8b2
+                                     0xffffffff8f6236b6
+                                     0xffffffff8f5d8674
+                                     0xffffffff8f6d3e16
+                                     0xffffffff8f6cee23
+                                     0xffffffff8f6c5a12
+                                     0xffffffff8f6c5810
+
+    14.49%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f630ffa
+            |
+            ---0xffffffff8f630ffa
+               |          
+               |--12.89%--0xffffffff8f630d24
+               |          0xffffffff8f630604
+               |          |          
+               |          |--8.79%--0xffffffff8f62b7c0
+               |          |          0xffffffff8f62b467
+               |          |          0xffffffff8f5c6fbd
+               |          |          0xffffffff8f5c6bee
+               |          |          
+               |          |--2.49%--0xffffffff903d51aa
+               |          |          
+               |           --1.60%--0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.60%--0xffffffff8f630d68
+                          0xffffffff904653ec
+
+    12.89%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f630d24
+            |
+            ---0xffffffff8f630d24
+               0xffffffff8f630604
+               |          
+               |--8.79%--0xffffffff8f62b7c0
+               |          0xffffffff8f62b467
+               |          0xffffffff8f5c6fbd
+               |          0xffffffff8f5c6bee
+               |          
+               |--2.49%--0xffffffff903d51aa
+               |          
+                --1.60%--0xffffffff8f62b8b2
+                          0xffffffff8f6236b6
+                          0xffffffff8f5d8674
+                          0xffffffff8f6d3e16
+                          0xffffffff8f6cee23
+                          0xffffffff8f6c5a12
+                          0xffffffff8f6c5810
+
+    12.89%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f630604
+            |
+            ---0xffffffff8f630604
+               |          
+               |--8.79%--0xffffffff8f62b7c0
+               |          0xffffffff8f62b467
+               |          0xffffffff8f5c6fbd
+               |          0xffffffff8f5c6bee
+               |          
+               |--2.49%--0xffffffff903d51aa
+               |          
+                --1.60%--0xffffffff8f62b8b2
+                          0xffffffff8f6236b6
+                          0xffffffff8f5d8674
+                          0xffffffff8f6d3e16
+                          0xffffffff8f6cee23
+                          0xffffffff8f6c5a12
+                          0xffffffff8f6c5810
+
+    11.31%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+            |
+            ---_dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               |          
+               |--6.66%--_dl_map_object_from_fd
+               |          mmap64
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2078fe
+               |          0xffffffff8f261943
+               |          0xffffffff8f63906c
+               |          0xffffffff8f5fcfc3
+               |          0xffffffff8f63cd01
+               |          0xffffffff8f63c864
+               |          0xffffffff8f63c248
+               |          0xffffffff8f5b0f8b
+               |          0xffffffff8f5a0589
+               |          0xffffffff8f749f45
+               |          0xffffffff8f749c15
+               |          0xffffffff8f749abe
+               |          0xffffffff8f749a3a
+               |          0xffffffff8f5d023a
+               |          
+                --4.65%--_dl_load_cache_lookup
+                          _dl_sysdep_read_whole_file
+                          __GI___open64_nocancel
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f2077e1
+                          0xffffffff8f6f0731
+                          0xffffffffc11720f7
+                          0xffffffff8f2c0973
+                          0xffffffff8f4700a2
+                          0xffffffff8f4f8579
+                          0xffffffff8f4f84b1
+                          0xffffffff8f5a5c9b
+
+    11.31%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_catch_exception
+            |
+            ---_dl_catch_exception
+               openaux
+               _dl_map_object
+               |          
+               |--6.66%--_dl_map_object_from_fd
+               |          mmap64
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2078fe
+               |          0xffffffff8f261943
+               |          0xffffffff8f63906c
+               |          0xffffffff8f5fcfc3
+               |          0xffffffff8f63cd01
+               |          0xffffffff8f63c864
+               |          0xffffffff8f63c248
+               |          0xffffffff8f5b0f8b
+               |          0xffffffff8f5a0589
+               |          0xffffffff8f749f45
+               |          0xffffffff8f749c15
+               |          0xffffffff8f749abe
+               |          0xffffffff8f749a3a
+               |          0xffffffff8f5d023a
+               |          
+                --4.65%--_dl_load_cache_lookup
+                          _dl_sysdep_read_whole_file
+                          __GI___open64_nocancel
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f2077e1
+                          0xffffffff8f6f0731
+                          0xffffffffc11720f7
+                          0xffffffff8f2c0973
+                          0xffffffff8f4700a2
+                          0xffffffff8f4f8579
+                          0xffffffff8f4f84b1
+                          0xffffffff8f5a5c9b
+
+    11.31%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] openaux
+            |
+            ---openaux
+               _dl_map_object
+               |          
+               |--6.66%--_dl_map_object_from_fd
+               |          mmap64
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2078fe
+               |          0xffffffff8f261943
+               |          0xffffffff8f63906c
+               |          0xffffffff8f5fcfc3
+               |          0xffffffff8f63cd01
+               |          0xffffffff8f63c864
+               |          0xffffffff8f63c248
+               |          0xffffffff8f5b0f8b
+               |          0xffffffff8f5a0589
+               |          0xffffffff8f749f45
+               |          0xffffffff8f749c15
+               |          0xffffffff8f749abe
+               |          0xffffffff8f749a3a
+               |          0xffffffff8f5d023a
+               |          
+                --4.65%--_dl_load_cache_lookup
+                          _dl_sysdep_read_whole_file
+                          __GI___open64_nocancel
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f2077e1
+                          0xffffffff8f6f0731
+                          0xffffffffc11720f7
+                          0xffffffff8f2c0973
+                          0xffffffff8f4700a2
+                          0xffffffff8f4f8579
+                          0xffffffff8f4f84b1
+                          0xffffffff8f5a5c9b
+
+    11.31%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_map_object
+            |
+            ---_dl_map_object
+               |          
+               |--6.66%--_dl_map_object_from_fd
+               |          mmap64
+               |          0xffffffff90600130
+               |          0xffffffff9044d8ef
+               |          0xffffffff8f2078fe
+               |          0xffffffff8f261943
+               |          0xffffffff8f63906c
+               |          0xffffffff8f5fcfc3
+               |          0xffffffff8f63cd01
+               |          0xffffffff8f63c864
+               |          0xffffffff8f63c248
+               |          0xffffffff8f5b0f8b
+               |          0xffffffff8f5a0589
+               |          0xffffffff8f749f45
+               |          0xffffffff8f749c15
+               |          0xffffffff8f749abe
+               |          0xffffffff8f749a3a
+               |          0xffffffff8f5d023a
+               |          
+                --4.65%--_dl_load_cache_lookup
+                          _dl_sysdep_read_whole_file
+                          __GI___open64_nocancel
+                          0xffffffff90600130
+                          0xffffffff9044d8ef
+                          0xffffffff8f2077e1
+                          0xffffffff8f6f0731
+                          0xffffffffc11720f7
+                          0xffffffff8f2c0973
+                          0xffffffff8f4700a2
+                          0xffffffff8f4f8579
+                          0xffffffff8f4f84b1
+                          0xffffffff8f5a5c9b
+
+    11.29%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f2d7f69
+            |
+            ---0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               |          
+               |--8.79%--0xffffffff8f62b7c0
+               |          0xffffffff8f62b467
+               |          0xffffffff8f5c6fbd
+               |          0xffffffff8f5c6bee
+               |          
+                --2.49%--0xffffffff903d51aa
+
+     9.64%     9.64%  bc_model  [unknown]             [k] 0xffffffff8f668b5c
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               __dde_solver_m_MOD_dde_drv1
+               __dde_solver_m_MOD_dde_drv2
+               __dde_solver_m_MOD_dde_drv3
+               __dde_solver_m_MOD_dde_step
+               __dde_solver_m_MOD_dde_zset
+               __dde_solver_m_MOD_dde_zset2
+               0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  bc_model              [.] __dde_solver_m_MOD_dde_drv1
+            |
+            ---__dde_solver_m_MOD_dde_drv1
+               __dde_solver_m_MOD_dde_drv2
+               __dde_solver_m_MOD_dde_drv3
+               __dde_solver_m_MOD_dde_step
+               __dde_solver_m_MOD_dde_zset
+               __dde_solver_m_MOD_dde_zset2
+               0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  bc_model              [.] __dde_solver_m_MOD_dde_drv2
+            |
+            ---__dde_solver_m_MOD_dde_drv2
+               __dde_solver_m_MOD_dde_drv3
+               __dde_solver_m_MOD_dde_step
+               __dde_solver_m_MOD_dde_zset
+               __dde_solver_m_MOD_dde_zset2
+               0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  bc_model              [.] __dde_solver_m_MOD_dde_drv3
+            |
+            ---__dde_solver_m_MOD_dde_drv3
+               __dde_solver_m_MOD_dde_step
+               __dde_solver_m_MOD_dde_zset
+               __dde_solver_m_MOD_dde_zset2
+               0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  bc_model              [.] __dde_solver_m_MOD_dde_step
+            |
+            ---__dde_solver_m_MOD_dde_step
+               __dde_solver_m_MOD_dde_zset
+               __dde_solver_m_MOD_dde_zset2
+               0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  bc_model              [.] __dde_solver_m_MOD_dde_zset
+            |
+            ---__dde_solver_m_MOD_dde_zset
+               __dde_solver_m_MOD_dde_zset2
+               0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  bc_model              [.] __dde_solver_m_MOD_dde_zset2
+            |
+            ---__dde_solver_m_MOD_dde_zset2
+               0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff90600f4b
+            |
+            ---0xffffffff90600f4b
+               0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff90452dd0
+            |
+            ---0xffffffff90452dd0
+               0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f3115de
+            |
+            ---0xffffffff8f3115de
+               0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f311249
+            |
+            ---0xffffffff8f311249
+               0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f310ef8
+            |
+            ---0xffffffff8f310ef8
+               0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f3e9a0e
+            |
+            ---0xffffffff8f3e9a0e
+               0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f3e9585
+            |
+            ---0xffffffff8f3e9585
+               0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f3e7b2c
+            |
+            ---0xffffffff8f3e7b2c
+               0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff903c294f
+            |
+            ---0xffffffff903c294f
+               0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f672268
+            |
+            ---0xffffffff8f672268
+               0xffffffff8f668b5e
+
+     9.64%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f668b5e
+            |
+            ---0xffffffff8f668b5e
+
+     9.38%     9.38%  bc_model  libc.so.6             [.] malloc
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               malloc
+
+     8.79%     8.79%  bc_model  [unknown]             [k] 0xffffffff8f5c6be8
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_sysdep_start
+               dl_main
+               __pthread_tunables_init
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b7c0
+               0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6bee
+
+     8.79%     0.00%  bc_model  libc.so.6             [.] __pthread_tunables_init
+            |
+            ---__pthread_tunables_init
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b7c0
+               0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6bee
+
+     8.79%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f62b7c0
+            |
+            ---0xffffffff8f62b7c0
+               0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6bee
+
+     8.79%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f62b467
+            |
+            ---0xffffffff8f62b467
+               0xffffffff8f5c6fbd
+               0xffffffff8f5c6bee
+
+     8.79%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5c6fbd
+            |
+            ---0xffffffff8f5c6fbd
+               0xffffffff8f5c6bee
+
+     8.79%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5c6bee
+            |
+            ---0xffffffff8f5c6bee
+
+     8.79%     8.79%  bc_model  ld-linux-x86-64.so.2  [.] do_lookup_x
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x70a818abfbd9
+               0x70a818ac0dbd
+               _dl_runtime_resolve_xsavec
+               _dl_fixup
+               _dl_lookup_symbol_x
+               do_lookup_x
+
+     8.79%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818abfbd9
+            |
+            ---0x70a818abfbd9
+               0x70a818ac0dbd
+               _dl_runtime_resolve_xsavec
+               _dl_fixup
+               _dl_lookup_symbol_x
+               do_lookup_x
+
+     8.79%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818ac0dbd
+            |
+            ---0x70a818ac0dbd
+               _dl_runtime_resolve_xsavec
+               _dl_fixup
+               _dl_lookup_symbol_x
+               do_lookup_x
+
+     8.79%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_runtime_resolve_xsavec
+            |
+            ---_dl_runtime_resolve_xsavec
+               _dl_fixup
+               _dl_lookup_symbol_x
+               do_lookup_x
+
+     8.79%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_fixup
+            |
+            ---_dl_fixup
+               _dl_lookup_symbol_x
+               do_lookup_x
+
+     8.79%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_lookup_symbol_x
+            |
+            ---_dl_lookup_symbol_x
+               do_lookup_x
+
+     7.98%     7.98%  bc_model  [unknown]             [k] 0xffffffff8f5a6f56
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_sysdep_start
+               dl_main
+               _dl_receive_error
+               version_check_doit
+               _dl_check_all_versions
+               _dl_check_map_versions
+               __minimal_malloc
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f638eea
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_receive_error
+            |
+            ---_dl_receive_error
+               version_check_doit
+               _dl_check_all_versions
+               _dl_check_map_versions
+               __minimal_malloc
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f638eea
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] version_check_doit
+            |
+            ---version_check_doit
+               _dl_check_all_versions
+               _dl_check_map_versions
+               __minimal_malloc
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f638eea
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_check_all_versions
+            |
+            ---_dl_check_all_versions
+               _dl_check_map_versions
+               __minimal_malloc
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f638eea
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_check_map_versions
+            |
+            ---_dl_check_map_versions
+               __minimal_malloc
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f638eea
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] __minimal_malloc
+            |
+            ---__minimal_malloc
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f638eea
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f638eea
+            |
+            ---0xffffffff8f638eea
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5a0667
+            |
+            ---0xffffffff8f5a0667
+               0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5a0067
+            |
+            ---0xffffffff8f5a0067
+               0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f59f116
+            |
+            ---0xffffffff8f59f116
+               0xffffffff8f5a6f59
+
+     7.98%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5a6f59
+            |
+            ---0xffffffff8f5a6f59
+
+     7.90%     7.90%  bc_model  libc.so.6             [.] __printf_fp_buffer_1.isra.0
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x70a818abe593
+               0x70a818abe08c
+               0x70a818ac8816
+               0x70a818ac6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+
+     7.90%     7.90%  bc_model  libc.so.6             [.] pthread_mutex_trylock@@GLIBC_2.34
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x70a818abeabd
+               0x70a818ac07ec
+               pthread_mutex_trylock@@GLIBC_2.34
+
+     7.90%     0.00%  bc_model  libc.so.6             [.] __vsnprintf_internal
+            |
+            ---__vsnprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+
+     7.90%     0.00%  bc_model  libc.so.6             [.] __printf_buffer
+            |
+            ---__printf_buffer
+               __printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+
+     7.90%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818abeabd
+            |
+            ---0x70a818abeabd
+               0x70a818ac07ec
+               pthread_mutex_trylock@@GLIBC_2.34
+
+     7.90%     0.00%  bc_model  libc.so.6             [.] __printf_fp_l_buffer
+            |
+            ---__printf_fp_l_buffer
+               __printf_fp_buffer_1.isra.0
+
+     7.90%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818ac07ec
+            |
+            ---0x70a818ac07ec
+               pthread_mutex_trylock@@GLIBC_2.34
+
+     7.45%     7.45%  bc_model  [unknown]             [k] 0xffffffff8f5d4ce3
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x70a818abfaf6
+               0x70a818abf643
+               __GI___libc_write
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818abfaf6
+            |
+            ---0x70a818abfaf6
+               0x70a818abf643
+               __GI___libc_write
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818abf643
+            |
+            ---0x70a818abf643
+               __GI___libc_write
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  libc.so.6             [.] __GI___libc_write
+            |
+            ---__GI___libc_write
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f2059ae
+            |
+            ---0xffffffff8f2059ae
+               0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f6f5d39
+            |
+            ---0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f6f5c83
+            |
+            ---0xffffffff8f6f5c83
+               0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f6f56f1
+            |
+            ---0xffffffff8f6f56f1
+               0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffffc1501bbc
+            |
+            ---0xffffffffc1501bbc
+               0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5c33a3
+            |
+            ---0xffffffff8f5c33a3
+               0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffffc1502c83
+            |
+            ---0xffffffffc1502c83
+               0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffffc1517626
+            |
+            ---0xffffffffc1517626
+               0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffffc15172f5
+            |
+            ---0xffffffffc15172f5
+               0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffffc1513cae
+            |
+            ---0xffffffffc1513cae
+               0xffffffff8f73fdc0
+
+     7.45%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f73fdc0
+            |
+            ---0xffffffff8f73fdc0
+
+     6.71%     6.71%  bc_model  libgfortran.so.5.0.0  [.] 0x00000000002c9c50
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x70a818acb2c3
+               0x70a818ac9c52
+
+     6.71%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818acb2c3
+            |
+            ---0x70a818acb2c3
+               0x70a818ac9c52
+
+     6.71%     0.00%  bc_model  libgfortran.so.5.0.0  [.] 0x000070a818ac9c52
+            |
+            ---0x70a818ac9c52
+
+     6.66%     6.66%  bc_model  [unknown]             [k] 0xffffffff8f5d0233
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_map_object_from_fd
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f63906c
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0589
+               0xffffffff8f749f45
+               0xffffffff8f749c15
+               0xffffffff8f749abe
+               0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_map_object_from_fd
+            |
+            ---_dl_map_object_from_fd
+               mmap64
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2078fe
+               0xffffffff8f261943
+               0xffffffff8f63906c
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0589
+               0xffffffff8f749f45
+               0xffffffff8f749c15
+               0xffffffff8f749abe
+               0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f63906c
+            |
+            ---0xffffffff8f63906c
+               0xffffffff8f5fcfc3
+               0xffffffff8f63cd01
+               0xffffffff8f63c864
+               0xffffffff8f63c248
+               0xffffffff8f5b0f8b
+               0xffffffff8f5a0589
+               0xffffffff8f749f45
+               0xffffffff8f749c15
+               0xffffffff8f749abe
+               0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5a0589
+            |
+            ---0xffffffff8f5a0589
+               0xffffffff8f749f45
+               0xffffffff8f749c15
+               0xffffffff8f749abe
+               0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f749f45
+            |
+            ---0xffffffff8f749f45
+               0xffffffff8f749c15
+               0xffffffff8f749abe
+               0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f749c15
+            |
+            ---0xffffffff8f749c15
+               0xffffffff8f749abe
+               0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f749abe
+            |
+            ---0xffffffff8f749abe
+               0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f749a3a
+            |
+            ---0xffffffff8f749a3a
+               0xffffffff8f5d023a
+
+     6.66%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5d023a
+            |
+            ---0xffffffff8f5d023a
+
+     4.65%     4.65%  bc_model  [unknown]             [k] 0xffffffff8f5a5c94
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_sysdep_start
+               dl_main
+               _dl_map_object_deps
+               _dl_catch_exception
+               openaux
+               _dl_map_object
+               _dl_load_cache_lookup
+               _dl_sysdep_read_whole_file
+               __GI___open64_nocancel
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2077e1
+               0xffffffff8f6f0731
+               0xffffffffc11720f7
+               0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_load_cache_lookup
+            |
+            ---_dl_load_cache_lookup
+               _dl_sysdep_read_whole_file
+               __GI___open64_nocancel
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2077e1
+               0xffffffff8f6f0731
+               0xffffffffc11720f7
+               0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] _dl_sysdep_read_whole_file
+            |
+            ---_dl_sysdep_read_whole_file
+               __GI___open64_nocancel
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2077e1
+               0xffffffff8f6f0731
+               0xffffffffc11720f7
+               0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  ld-linux-x86-64.so.2  [.] __GI___open64_nocancel
+            |
+            ---__GI___open64_nocancel
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f2077e1
+               0xffffffff8f6f0731
+               0xffffffffc11720f7
+               0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f2077e1
+            |
+            ---0xffffffff8f2077e1
+               0xffffffff8f6f0731
+               0xffffffffc11720f7
+               0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f6f0731
+            |
+            ---0xffffffff8f6f0731
+               0xffffffffc11720f7
+               0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffffc11720f7
+            |
+            ---0xffffffffc11720f7
+               0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f2c0973
+            |
+            ---0xffffffff8f2c0973
+               0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f4700a2
+            |
+            ---0xffffffff8f4700a2
+               0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f4f8579
+            |
+            ---0xffffffff8f4f8579
+               0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f4f84b1
+            |
+            ---0xffffffff8f4f84b1
+               0xffffffff8f5a5c9b
+
+     4.65%     0.00%  bc_model  [unknown]             [.] 0xffffffff8f5a5c9b
+            |
+            ---0xffffffff8f5a5c9b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0x000071bacd8eef3b
+            |
+            ---0x71bacd8eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f207697
+            |
+            ---0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f701f37
+            |
+            ---0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f701bd8
+            |
+            ---0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6ffa26
+            |
+            ---0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6ff932
+            |
+            ---0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6ff639
+            |
+            ---0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     4.64%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6ff0a7
+            |
+            ---0xffffffff8f6ff0a7
+               |          
+               |--3.21%--0xffffffff8f792fe0
+               |          0xffffffff903d4c80
+               |          0xffffffff90600bc7
+               |          0xffffffff90453c63
+               |          0xffffffff8f2d7ff5
+               |          0xffffffff8f630ffa
+               |          |          
+               |          |--1.60%--0xffffffff8f630d68
+               |          |          0xffffffff904653ec
+               |          |          
+               |           --1.60%--0xffffffff8f630d24
+               |                     0xffffffff8f630604
+               |                     0xffffffff8f62b8b2
+               |                     0xffffffff8f6236b6
+               |                     0xffffffff8f5d8674
+               |                     0xffffffff8f6d3e16
+               |                     0xffffffff8f6cee23
+               |                     0xffffffff8f6c5a12
+               |                     0xffffffff8f6c5810
+               |          
+                --1.43%--0xffffffff8f793443
+                          0xffffffff8f208762
+                          0xffffffff8f2082cb
+                          0xffffffff8f63d545
+                          0xffffffff8f63a7c9
+                          0xffffffff8f63a6aa
+                          0xffffffff8f636f1f
+                          0xffffffff903c01ee
+                          0xffffffff903bff56
+                          0xffffffff903bf8ea
+                          0xffffffff903b584b
+
+     3.21%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f792fe0
+            |
+            ---0xffffffff8f792fe0
+               0xffffffff903d4c80
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               |          
+               |--1.60%--0xffffffff8f630d68
+               |          0xffffffff904653ec
+               |          
+                --1.60%--0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b8b2
+                          0xffffffff8f6236b6
+                          0xffffffff8f5d8674
+                          0xffffffff8f6d3e16
+                          0xffffffff8f6cee23
+                          0xffffffff8f6c5a12
+                          0xffffffff8f6c5810
+
+     3.21%     0.00%  bc_model  [unknown]             [k] 0xffffffff903d4c80
+            |
+            ---0xffffffff903d4c80
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               |          
+               |--1.60%--0xffffffff8f630d68
+               |          0xffffffff904653ec
+               |          
+                --1.60%--0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b8b2
+                          0xffffffff8f6236b6
+                          0xffffffff8f5d8674
+                          0xffffffff8f6d3e16
+                          0xffffffff8f6cee23
+                          0xffffffff8f6c5a12
+                          0xffffffff8f6c5810
+
+     3.21%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f2d7ff5
+            |
+            ---0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               |          
+               |--1.60%--0xffffffff8f630d68
+               |          0xffffffff904653ec
+               |          
+                --1.60%--0xffffffff8f630d24
+                          0xffffffff8f630604
+                          0xffffffff8f62b8b2
+                          0xffffffff8f6236b6
+                          0xffffffff8f5d8674
+                          0xffffffff8f6d3e16
+                          0xffffffff8f6cee23
+                          0xffffffff8f6c5a12
+                          0xffffffff8f6c5810
+
+     2.49%     2.49%  bc_model  [unknown]             [k] 0xffffffff903d51a7
+            |
+            ---_dl_start_user
+               _dl_start
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7f69
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff903d51aa
+
+     2.49%     0.00%  bc_model  [unknown]             [.] 0xffffffff903d51aa
+            |
+            ---0xffffffff903d51aa
+
+     1.60%     1.60%  bc_model  [unknown]             [k] 0xffffffff8f6c580b
+            |
+            ---0x71bacd8eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               0xffffffff8f792fe0
+               0xffffffff903d4c80
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               0xffffffff8f630d24
+               0xffffffff8f630604
+               0xffffffff8f62b8b2
+               0xffffffff8f6236b6
+               0xffffffff8f5d8674
+               0xffffffff8f6d3e16
+               0xffffffff8f6cee23
+               0xffffffff8f6c5a12
+               0xffffffff8f6c5810
+
+     1.60%     1.60%  bc_model  [unknown]             [k] 0xffffffff904653e5
+            |
+            ---0x71bacd8eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               0xffffffff8f792fe0
+               0xffffffff903d4c80
+               0xffffffff90600bc7
+               0xffffffff90453c63
+               0xffffffff8f2d7ff5
+               0xffffffff8f630ffa
+               0xffffffff8f630d68
+               0xffffffff904653ec
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f62b8b2
+            |
+            ---0xffffffff8f62b8b2
+               0xffffffff8f6236b6
+               0xffffffff8f5d8674
+               0xffffffff8f6d3e16
+               0xffffffff8f6cee23
+               0xffffffff8f6c5a12
+               0xffffffff8f6c5810
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6236b6
+            |
+            ---0xffffffff8f6236b6
+               0xffffffff8f5d8674
+               0xffffffff8f6d3e16
+               0xffffffff8f6cee23
+               0xffffffff8f6c5a12
+               0xffffffff8f6c5810
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f5d8674
+            |
+            ---0xffffffff8f5d8674
+               0xffffffff8f6d3e16
+               0xffffffff8f6cee23
+               0xffffffff8f6c5a12
+               0xffffffff8f6c5810
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6d3e16
+            |
+            ---0xffffffff8f6d3e16
+               0xffffffff8f6cee23
+               0xffffffff8f6c5a12
+               0xffffffff8f6c5810
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6cee23
+            |
+            ---0xffffffff8f6cee23
+               0xffffffff8f6c5a12
+               0xffffffff8f6c5810
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f630d68
+            |
+            ---0xffffffff8f630d68
+               0xffffffff904653ec
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6c5a12
+            |
+            ---0xffffffff8f6c5a12
+               0xffffffff8f6c5810
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f6c5810
+            |
+            ---0xffffffff8f6c5810
+
+     1.60%     0.00%  bc_model  [unknown]             [k] 0xffffffff904653ec
+            |
+            ---0xffffffff904653ec
+
+     1.43%     1.43%  bc_model  [unknown]             [k] 0xffffffff903b5847
+            |
+            ---0x71bacd8eef3b
+               0xffffffff90600130
+               0xffffffff9044d8ef
+               0xffffffff8f207697
+               0xffffffff8f701f37
+               0xffffffff8f701bd8
+               0xffffffff8f6ffa26
+               0xffffffff8f6ff932
+               0xffffffff8f6ff639
+               0xffffffff8f6ff0a7
+               0xffffffff8f793443
+               0xffffffff8f208762
+               0xffffffff8f2082cb
+               0xffffffff8f63d545
+               0xffffffff8f63a7c9
+               0xffffffff8f63a6aa
+               0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f793443
+            |
+            ---0xffffffff8f793443
+               0xffffffff8f208762
+               0xffffffff8f2082cb
+               0xffffffff8f63d545
+               0xffffffff8f63a7c9
+               0xffffffff8f63a6aa
+               0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f208762
+            |
+            ---0xffffffff8f208762
+               0xffffffff8f2082cb
+               0xffffffff8f63d545
+               0xffffffff8f63a7c9
+               0xffffffff8f63a6aa
+               0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f2082cb
+            |
+            ---0xffffffff8f2082cb
+               0xffffffff8f63d545
+               0xffffffff8f63a7c9
+               0xffffffff8f63a6aa
+               0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f63d545
+            |
+            ---0xffffffff8f63d545
+               0xffffffff8f63a7c9
+               0xffffffff8f63a6aa
+               0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f63a7c9
+            |
+            ---0xffffffff8f63a7c9
+               0xffffffff8f63a6aa
+               0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f63a6aa
+            |
+            ---0xffffffff8f63a6aa
+               0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff8f636f1f
+            |
+            ---0xffffffff8f636f1f
+               0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff903c01ee
+            |
+            ---0xffffffff903c01ee
+               0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff903bff56
+            |
+            ---0xffffffff903bff56
+               0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff903bf8ea
+            |
+            ---0xffffffff903bf8ea
+               0xffffffff903b584b
+
+     1.43%     0.00%  bc_model  [unknown]             [k] 0xffffffff903b584b
+            |
+            ---0xffffffff903b584b
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

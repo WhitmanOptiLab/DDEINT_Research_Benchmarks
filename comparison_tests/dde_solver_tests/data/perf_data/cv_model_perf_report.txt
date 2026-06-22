@@ -1,0 +1,2232 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 552  of event 'cycles:P'
+# Event count (approx.): 458678905
+#
+# Children      Self  Command   Shared Object         Symbol                               
+# ........  ........  ........  ....................  .....................................
+#
+    99.55%     0.00%  cv_model  cv_model              [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --99.38%--main
+                          |          
+                           --99.00%--MAIN__
+                                     |          
+                                     |--73.92%--0x79841e8be593
+                                     |          |          
+                                     |          |--65.51%--0x79841e8be08c
+                                     |          |          |          
+                                     |          |          |--63.24%--0x79841e8c8816
+                                     |          |          |          |          
+                                     |          |          |          |--56.30%--0x79841e8c6d27
+                                     |          |          |          |          |          
+                                     |          |          |          |           --56.13%--__snprintf_chk
+                                     |          |          |          |                     |          
+                                     |          |          |          |                      --55.37%--__vsnprintf_internal
+                                     |          |          |          |                                |          
+                                     |          |          |          |                                |--53.03%--__printf_buffer
+                                     |          |          |          |                                |          |          
+                                     |          |          |          |                                |          |--47.81%--__printf_fp_l_buffer
+                                     |          |          |          |                                |          |          |          
+                                     |          |          |          |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--12.45%--__mpn_divrem
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--11.29%--hack_digit
+                                     |          |          |          |                                |          |          |          |          |          
+                                     |          |          |          |                                |          |          |          |           --8.08%--__mpn_divrem
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--0.84%--__printf_buffer_write
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |           --0.64%--__mpn_mul_1
+                                     |          |          |          |                                |          |          |          
+                                     |          |          |          |                                |          |           --1.43%--__mpn_mul_1
+                                     |          |          |          |                                |          |          
+                                     |          |          |          |                                |           --0.58%--__strlen_avx2
+                                     |          |          |          |                                |          
+                                     |          |          |          |                                 --1.26%--__strchrnul_avx2
+                                     |          |          |          |          
+                                     |          |          |          |--5.09%--0x79841e8c7042
+                                     |          |          |          |          |          
+                                     |          |          |          |           --0.92%--__memmove_avx_unaligned_erms
+                                     |          |          |          |          
+                                     |          |          |           --0.70%--0x79841e8c6c7f
+                                     |          |          |          
+                                     |          |           --1.63%--0x79841e8c882c
+                                     |          |                     |          
+                                     |          |                      --1.48%--0x79841e8c381e
+                                     |          |                                |          
+                                     |          |                                 --0.53%--0x79841e8ba839
+                                     |          |          
+                                     |          |--3.80%--0x79841e8bd7bc
+                                     |          |          |          
+                                     |          |           --2.98%--0x79841e8ac9b7
+                                     |          |                     |          
+                                     |          |                      --2.43%--0x79841e8aa935
+                                     |          |                                |          
+                                     |          |                                |--0.72%--0x79841e8aa946
+                                     |          |                                |          
+                                     |          |                                 --0.71%--0x79841e8aa935
+                                     |          |          
+                                     |           --0.89%--0x79841e8be0f4
+                                     |          
+                                     |--13.99%--__dde_solver_m_MOD_dkl_4
+                                     |          |          
+                                     |          |--12.91%--__dde_solver_m_MOD_dde_drv1
+                                     |          |          |          
+                                     |          |           --11.85%--__dde_solver_m_MOD_dde_drv2
+                                     |          |                     |          
+                                     |          |                     |--6.07%--__dde_solver_m_MOD_dde_intp
+                                     |          |                     |          |          
+                                     |          |                     |           --5.14%--__dde_solver_m_MOD_dde_poly
+                                     |          |                     |                     |          
+                                     |          |                     |                      --2.29%--__dde_solver_m_MOD_dde_wset
+                                     |          |                     |          
+                                     |          |                     |--3.95%--__dde_solver_m_MOD_dde_drv3
+                                     |          |                     |          __dde_solver_m_MOD_dde_step
+                                     |          |                     |          |          
+                                     |          |                     |          |--1.90%--__dde_solver_m_MOD_dde_zset
+                                     |          |                     |          |          __dde_solver_m_MOD_dde_zset2
+                                     |          |                     |          |          |          
+                                     |          |                     |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+                                     |          |                     |          |          
+                                     |          |                     |           --1.05%--__dde_solver_m_MOD_dde_derv
+                                     |          |                     |                     |          
+                                     |          |                     |                      --0.86%--__cv_define_ddes_MOD_ddes
+                                     |          |                     |          
+                                     |          |                      --1.44%--__dde_solver_m_MOD_sol_out
+                                     |          |          
+                                     |           --1.08%--__dde_solver_m_MOD_contract_sol
+                                     |                     |          
+                                     |                      --0.65%--0xffffffff90600bc7
+                                     |                                0xffffffff90453c63
+                                     |          
+                                     |--4.58%--0x79841e8bfaf6
+                                     |          |          
+                                     |           --4.22%--0x79841e8bf643
+                                     |                     |          
+                                     |                      --3.22%--__GI___libc_write
+                                     |                                0xffffffff90600130
+                                     |                                |          
+                                     |                                 --3.05%--0xffffffff9044d8ef
+                                     |                                           0xffffffff8f2059ae
+                                     |                                           |          
+                                     |                                            --2.83%--0xffffffff8f6f5d39
+                                     |                                                      0xffffffff8f6f5c83
+                                     |                                                      |          
+                                     |                                                       --2.52%--0xffffffff8f6f56f1
+                                     |                                                                 |          
+                                     |                                                                  --2.30%--0xffffffffc1501bbc
+                                     |                                                                            |          
+                                     |                                                                            |--1.39%--0xffffffff8f5c33a3
+                                     |                                                                            |          |          
+                                     |                                                                            |           --1.29%--0xffffffffc1502c83
+                                     |                                                                            |                     |          
+                                     |                                                                            |                      --0.87%--0xffffffffc1517626
+                                     |                                                                            |          
+                                     |                                                                             --0.55%--0xffffffff8f5c335f
+                                     |                                                                                       0xffffffffc15026c2
+                                     |                                                                                       0xffffffff8f5c8757
+                                     |          
+                                     |--0.96%--0x79841e8bf0f3
+                                     |          
+                                     |--0.86%--0x79841e8bed30
+                                     |          
+                                      --0.57%--0x79841e8beabd
+
+    99.55%     0.00%  cv_model  libc.so.6             [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               |          
+                --99.38%--main
+                          |          
+                           --99.00%--MAIN__
+                                     |          
+                                     |--73.92%--0x79841e8be593
+                                     |          |          
+                                     |          |--65.51%--0x79841e8be08c
+                                     |          |          |          
+                                     |          |          |--63.24%--0x79841e8c8816
+                                     |          |          |          |          
+                                     |          |          |          |--56.30%--0x79841e8c6d27
+                                     |          |          |          |          |          
+                                     |          |          |          |           --56.13%--__snprintf_chk
+                                     |          |          |          |                     |          
+                                     |          |          |          |                      --55.37%--__vsnprintf_internal
+                                     |          |          |          |                                |          
+                                     |          |          |          |                                |--53.03%--__printf_buffer
+                                     |          |          |          |                                |          |          
+                                     |          |          |          |                                |          |--47.81%--__printf_fp_l_buffer
+                                     |          |          |          |                                |          |          |          
+                                     |          |          |          |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--12.45%--__mpn_divrem
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--11.29%--hack_digit
+                                     |          |          |          |                                |          |          |          |          |          
+                                     |          |          |          |                                |          |          |          |           --8.08%--__mpn_divrem
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--0.84%--__printf_buffer_write
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |           --0.64%--__mpn_mul_1
+                                     |          |          |          |                                |          |          |          
+                                     |          |          |          |                                |          |           --1.43%--__mpn_mul_1
+                                     |          |          |          |                                |          |          
+                                     |          |          |          |                                |           --0.58%--__strlen_avx2
+                                     |          |          |          |                                |          
+                                     |          |          |          |                                 --1.26%--__strchrnul_avx2
+                                     |          |          |          |          
+                                     |          |          |          |--5.09%--0x79841e8c7042
+                                     |          |          |          |          |          
+                                     |          |          |          |           --0.92%--__memmove_avx_unaligned_erms
+                                     |          |          |          |          
+                                     |          |          |           --0.70%--0x79841e8c6c7f
+                                     |          |          |          
+                                     |          |           --1.63%--0x79841e8c882c
+                                     |          |                     |          
+                                     |          |                      --1.48%--0x79841e8c381e
+                                     |          |                                |          
+                                     |          |                                 --0.53%--0x79841e8ba839
+                                     |          |          
+                                     |          |--3.80%--0x79841e8bd7bc
+                                     |          |          |          
+                                     |          |           --2.98%--0x79841e8ac9b7
+                                     |          |                     |          
+                                     |          |                      --2.43%--0x79841e8aa935
+                                     |          |                                |          
+                                     |          |                                |--0.72%--0x79841e8aa946
+                                     |          |                                |          
+                                     |          |                                 --0.71%--0x79841e8aa935
+                                     |          |          
+                                     |           --0.89%--0x79841e8be0f4
+                                     |          
+                                     |--13.99%--__dde_solver_m_MOD_dkl_4
+                                     |          |          
+                                     |          |--12.91%--__dde_solver_m_MOD_dde_drv1
+                                     |          |          |          
+                                     |          |           --11.85%--__dde_solver_m_MOD_dde_drv2
+                                     |          |                     |          
+                                     |          |                     |--6.07%--__dde_solver_m_MOD_dde_intp
+                                     |          |                     |          |          
+                                     |          |                     |           --5.14%--__dde_solver_m_MOD_dde_poly
+                                     |          |                     |                     |          
+                                     |          |                     |                      --2.29%--__dde_solver_m_MOD_dde_wset
+                                     |          |                     |          
+                                     |          |                     |--3.95%--__dde_solver_m_MOD_dde_drv3
+                                     |          |                     |          __dde_solver_m_MOD_dde_step
+                                     |          |                     |          |          
+                                     |          |                     |          |--1.90%--__dde_solver_m_MOD_dde_zset
+                                     |          |                     |          |          __dde_solver_m_MOD_dde_zset2
+                                     |          |                     |          |          |          
+                                     |          |                     |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+                                     |          |                     |          |          
+                                     |          |                     |           --1.05%--__dde_solver_m_MOD_dde_derv
+                                     |          |                     |                     |          
+                                     |          |                     |                      --0.86%--__cv_define_ddes_MOD_ddes
+                                     |          |                     |          
+                                     |          |                      --1.44%--__dde_solver_m_MOD_sol_out
+                                     |          |          
+                                     |           --1.08%--__dde_solver_m_MOD_contract_sol
+                                     |                     |          
+                                     |                      --0.65%--0xffffffff90600bc7
+                                     |                                0xffffffff90453c63
+                                     |          
+                                     |--4.58%--0x79841e8bfaf6
+                                     |          |          
+                                     |           --4.22%--0x79841e8bf643
+                                     |                     |          
+                                     |                      --3.22%--__GI___libc_write
+                                     |                                0xffffffff90600130
+                                     |                                |          
+                                     |                                 --3.05%--0xffffffff9044d8ef
+                                     |                                           0xffffffff8f2059ae
+                                     |                                           |          
+                                     |                                            --2.83%--0xffffffff8f6f5d39
+                                     |                                                      0xffffffff8f6f5c83
+                                     |                                                      |          
+                                     |                                                       --2.52%--0xffffffff8f6f56f1
+                                     |                                                                 |          
+                                     |                                                                  --2.30%--0xffffffffc1501bbc
+                                     |                                                                            |          
+                                     |                                                                            |--1.39%--0xffffffff8f5c33a3
+                                     |                                                                            |          |          
+                                     |                                                                            |           --1.29%--0xffffffffc1502c83
+                                     |                                                                            |                     |          
+                                     |                                                                            |                      --0.87%--0xffffffffc1517626
+                                     |                                                                            |          
+                                     |                                                                             --0.55%--0xffffffff8f5c335f
+                                     |                                                                                       0xffffffffc15026c2
+                                     |                                                                                       0xffffffff8f5c8757
+                                     |          
+                                     |--0.96%--0x79841e8bf0f3
+                                     |          
+                                     |--0.86%--0x79841e8bed30
+                                     |          
+                                      --0.57%--0x79841e8beabd
+
+    99.55%     0.00%  cv_model  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+                --99.38%--main
+                          |          
+                           --99.00%--MAIN__
+                                     |          
+                                     |--73.92%--0x79841e8be593
+                                     |          |          
+                                     |          |--65.51%--0x79841e8be08c
+                                     |          |          |          
+                                     |          |          |--63.24%--0x79841e8c8816
+                                     |          |          |          |          
+                                     |          |          |          |--56.30%--0x79841e8c6d27
+                                     |          |          |          |          |          
+                                     |          |          |          |           --56.13%--__snprintf_chk
+                                     |          |          |          |                     |          
+                                     |          |          |          |                      --55.37%--__vsnprintf_internal
+                                     |          |          |          |                                |          
+                                     |          |          |          |                                |--53.03%--__printf_buffer
+                                     |          |          |          |                                |          |          
+                                     |          |          |          |                                |          |--47.81%--__printf_fp_l_buffer
+                                     |          |          |          |                                |          |          |          
+                                     |          |          |          |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--12.45%--__mpn_divrem
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--11.29%--hack_digit
+                                     |          |          |          |                                |          |          |          |          |          
+                                     |          |          |          |                                |          |          |          |           --8.08%--__mpn_divrem
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |          |--0.84%--__printf_buffer_write
+                                     |          |          |          |                                |          |          |          |          
+                                     |          |          |          |                                |          |          |           --0.64%--__mpn_mul_1
+                                     |          |          |          |                                |          |          |          
+                                     |          |          |          |                                |          |           --1.43%--__mpn_mul_1
+                                     |          |          |          |                                |          |          
+                                     |          |          |          |                                |           --0.58%--__strlen_avx2
+                                     |          |          |          |                                |          
+                                     |          |          |          |                                 --1.26%--__strchrnul_avx2
+                                     |          |          |          |          
+                                     |          |          |          |--5.09%--0x79841e8c7042
+                                     |          |          |          |          |          
+                                     |          |          |          |           --0.92%--__memmove_avx_unaligned_erms
+                                     |          |          |          |          
+                                     |          |          |           --0.70%--0x79841e8c6c7f
+                                     |          |          |          
+                                     |          |           --1.63%--0x79841e8c882c
+                                     |          |                     |          
+                                     |          |                      --1.48%--0x79841e8c381e
+                                     |          |                                |          
+                                     |          |                                 --0.53%--0x79841e8ba839
+                                     |          |          
+                                     |          |--3.80%--0x79841e8bd7bc
+                                     |          |          |          
+                                     |          |           --2.98%--0x79841e8ac9b7
+                                     |          |                     |          
+                                     |          |                      --2.43%--0x79841e8aa935
+                                     |          |                                |          
+                                     |          |                                |--0.72%--0x79841e8aa946
+                                     |          |                                |          
+                                     |          |                                 --0.71%--0x79841e8aa935
+                                     |          |          
+                                     |           --0.89%--0x79841e8be0f4
+                                     |          
+                                     |--13.99%--__dde_solver_m_MOD_dkl_4
+                                     |          |          
+                                     |          |--12.91%--__dde_solver_m_MOD_dde_drv1
+                                     |          |          |          
+                                     |          |           --11.85%--__dde_solver_m_MOD_dde_drv2
+                                     |          |                     |          
+                                     |          |                     |--6.07%--__dde_solver_m_MOD_dde_intp
+                                     |          |                     |          |          
+                                     |          |                     |           --5.14%--__dde_solver_m_MOD_dde_poly
+                                     |          |                     |                     |          
+                                     |          |                     |                      --2.29%--__dde_solver_m_MOD_dde_wset
+                                     |          |                     |          
+                                     |          |                     |--3.95%--__dde_solver_m_MOD_dde_drv3
+                                     |          |                     |          __dde_solver_m_MOD_dde_step
+                                     |          |                     |          |          
+                                     |          |                     |          |--1.90%--__dde_solver_m_MOD_dde_zset
+                                     |          |                     |          |          __dde_solver_m_MOD_dde_zset2
+                                     |          |                     |          |          |          
+                                     |          |                     |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+                                     |          |                     |          |          
+                                     |          |                     |           --1.05%--__dde_solver_m_MOD_dde_derv
+                                     |          |                     |                     |          
+                                     |          |                     |                      --0.86%--__cv_define_ddes_MOD_ddes
+                                     |          |                     |          
+                                     |          |                      --1.44%--__dde_solver_m_MOD_sol_out
+                                     |          |          
+                                     |           --1.08%--__dde_solver_m_MOD_contract_sol
+                                     |                     |          
+                                     |                      --0.65%--0xffffffff90600bc7
+                                     |                                0xffffffff90453c63
+                                     |          
+                                     |--4.58%--0x79841e8bfaf6
+                                     |          |          
+                                     |           --4.22%--0x79841e8bf643
+                                     |                     |          
+                                     |                      --3.22%--__GI___libc_write
+                                     |                                0xffffffff90600130
+                                     |                                |          
+                                     |                                 --3.05%--0xffffffff9044d8ef
+                                     |                                           0xffffffff8f2059ae
+                                     |                                           |          
+                                     |                                            --2.83%--0xffffffff8f6f5d39
+                                     |                                                      0xffffffff8f6f5c83
+                                     |                                                      |          
+                                     |                                                       --2.52%--0xffffffff8f6f56f1
+                                     |                                                                 |          
+                                     |                                                                  --2.30%--0xffffffffc1501bbc
+                                     |                                                                            |          
+                                     |                                                                            |--1.39%--0xffffffff8f5c33a3
+                                     |                                                                            |          |          
+                                     |                                                                            |           --1.29%--0xffffffffc1502c83
+                                     |                                                                            |                     |          
+                                     |                                                                            |                      --0.87%--0xffffffffc1517626
+                                     |                                                                            |          
+                                     |                                                                             --0.55%--0xffffffff8f5c335f
+                                     |                                                                                       0xffffffffc15026c2
+                                     |                                                                                       0xffffffff8f5c8757
+                                     |          
+                                     |--0.96%--0x79841e8bf0f3
+                                     |          
+                                     |--0.86%--0x79841e8bed30
+                                     |          
+                                      --0.57%--0x79841e8beabd
+
+    99.38%     0.00%  cv_model  cv_model              [.] main
+            |
+            ---main
+               |          
+                --99.00%--MAIN__
+                          |          
+                          |--73.92%--0x79841e8be593
+                          |          |          
+                          |          |--65.51%--0x79841e8be08c
+                          |          |          |          
+                          |          |          |--63.24%--0x79841e8c8816
+                          |          |          |          |          
+                          |          |          |          |--56.30%--0x79841e8c6d27
+                          |          |          |          |          |          
+                          |          |          |          |           --56.13%--__snprintf_chk
+                          |          |          |          |                     |          
+                          |          |          |          |                      --55.37%--__vsnprintf_internal
+                          |          |          |          |                                |          
+                          |          |          |          |                                |--53.03%--__printf_buffer
+                          |          |          |          |                                |          |          
+                          |          |          |          |                                |          |--47.81%--__printf_fp_l_buffer
+                          |          |          |          |                                |          |          |          
+                          |          |          |          |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+                          |          |          |          |                                |          |          |          |          
+                          |          |          |          |                                |          |          |          |--12.45%--__mpn_divrem
+                          |          |          |          |                                |          |          |          |          
+                          |          |          |          |                                |          |          |          |--11.29%--hack_digit
+                          |          |          |          |                                |          |          |          |          |          
+                          |          |          |          |                                |          |          |          |           --8.08%--__mpn_divrem
+                          |          |          |          |                                |          |          |          |          
+                          |          |          |          |                                |          |          |          |--0.84%--__printf_buffer_write
+                          |          |          |          |                                |          |          |          |          
+                          |          |          |          |                                |          |          |           --0.64%--__mpn_mul_1
+                          |          |          |          |                                |          |          |          
+                          |          |          |          |                                |          |           --1.43%--__mpn_mul_1
+                          |          |          |          |                                |          |          
+                          |          |          |          |                                |           --0.58%--__strlen_avx2
+                          |          |          |          |                                |          
+                          |          |          |          |                                 --1.26%--__strchrnul_avx2
+                          |          |          |          |          
+                          |          |          |          |--5.09%--0x79841e8c7042
+                          |          |          |          |          |          
+                          |          |          |          |           --0.92%--__memmove_avx_unaligned_erms
+                          |          |          |          |          
+                          |          |          |           --0.70%--0x79841e8c6c7f
+                          |          |          |          
+                          |          |           --1.63%--0x79841e8c882c
+                          |          |                     |          
+                          |          |                      --1.48%--0x79841e8c381e
+                          |          |                                |          
+                          |          |                                 --0.53%--0x79841e8ba839
+                          |          |          
+                          |          |--3.80%--0x79841e8bd7bc
+                          |          |          |          
+                          |          |           --2.98%--0x79841e8ac9b7
+                          |          |                     |          
+                          |          |                      --2.43%--0x79841e8aa935
+                          |          |                                |          
+                          |          |                                |--0.72%--0x79841e8aa946
+                          |          |                                |          
+                          |          |                                 --0.71%--0x79841e8aa935
+                          |          |          
+                          |           --0.89%--0x79841e8be0f4
+                          |          
+                          |--13.99%--__dde_solver_m_MOD_dkl_4
+                          |          |          
+                          |          |--12.91%--__dde_solver_m_MOD_dde_drv1
+                          |          |          |          
+                          |          |           --11.85%--__dde_solver_m_MOD_dde_drv2
+                          |          |                     |          
+                          |          |                     |--6.07%--__dde_solver_m_MOD_dde_intp
+                          |          |                     |          |          
+                          |          |                     |           --5.14%--__dde_solver_m_MOD_dde_poly
+                          |          |                     |                     |          
+                          |          |                     |                      --2.29%--__dde_solver_m_MOD_dde_wset
+                          |          |                     |          
+                          |          |                     |--3.95%--__dde_solver_m_MOD_dde_drv3
+                          |          |                     |          __dde_solver_m_MOD_dde_step
+                          |          |                     |          |          
+                          |          |                     |          |--1.90%--__dde_solver_m_MOD_dde_zset
+                          |          |                     |          |          __dde_solver_m_MOD_dde_zset2
+                          |          |                     |          |          |          
+                          |          |                     |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+                          |          |                     |          |          
+                          |          |                     |           --1.05%--__dde_solver_m_MOD_dde_derv
+                          |          |                     |                     |          
+                          |          |                     |                      --0.86%--__cv_define_ddes_MOD_ddes
+                          |          |                     |          
+                          |          |                      --1.44%--__dde_solver_m_MOD_sol_out
+                          |          |          
+                          |           --1.08%--__dde_solver_m_MOD_contract_sol
+                          |                     |          
+                          |                      --0.65%--0xffffffff90600bc7
+                          |                                0xffffffff90453c63
+                          |          
+                          |--4.58%--0x79841e8bfaf6
+                          |          |          
+                          |           --4.22%--0x79841e8bf643
+                          |                     |          
+                          |                      --3.22%--__GI___libc_write
+                          |                                0xffffffff90600130
+                          |                                |          
+                          |                                 --3.05%--0xffffffff9044d8ef
+                          |                                           0xffffffff8f2059ae
+                          |                                           |          
+                          |                                            --2.83%--0xffffffff8f6f5d39
+                          |                                                      0xffffffff8f6f5c83
+                          |                                                      |          
+                          |                                                       --2.52%--0xffffffff8f6f56f1
+                          |                                                                 |          
+                          |                                                                  --2.30%--0xffffffffc1501bbc
+                          |                                                                            |          
+                          |                                                                            |--1.39%--0xffffffff8f5c33a3
+                          |                                                                            |          |          
+                          |                                                                            |           --1.29%--0xffffffffc1502c83
+                          |                                                                            |                     |          
+                          |                                                                            |                      --0.87%--0xffffffffc1517626
+                          |                                                                            |          
+                          |                                                                             --0.55%--0xffffffff8f5c335f
+                          |                                                                                       0xffffffffc15026c2
+                          |                                                                                       0xffffffff8f5c8757
+                          |          
+                          |--0.96%--0x79841e8bf0f3
+                          |          
+                          |--0.86%--0x79841e8bed30
+                          |          
+                           --0.57%--0x79841e8beabd
+
+    99.00%     1.51%  cv_model  cv_model              [.] MAIN__
+            |          
+            |--97.49%--MAIN__
+            |          |          
+            |          |--73.92%--0x79841e8be593
+            |          |          |          
+            |          |          |--65.51%--0x79841e8be08c
+            |          |          |          |          
+            |          |          |          |--63.24%--0x79841e8c8816
+            |          |          |          |          |          
+            |          |          |          |          |--56.30%--0x79841e8c6d27
+            |          |          |          |          |          |          
+            |          |          |          |          |           --56.13%--__snprintf_chk
+            |          |          |          |          |                     |          
+            |          |          |          |          |                      --55.37%--__vsnprintf_internal
+            |          |          |          |          |                                |          
+            |          |          |          |          |                                |--53.03%--__printf_buffer
+            |          |          |          |          |                                |          |          
+            |          |          |          |          |                                |          |--47.81%--__printf_fp_l_buffer
+            |          |          |          |          |                                |          |          |          
+            |          |          |          |          |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+            |          |          |          |          |                                |          |          |          |          
+            |          |          |          |          |                                |          |          |          |--12.45%--__mpn_divrem
+            |          |          |          |          |                                |          |          |          |          
+            |          |          |          |          |                                |          |          |          |--11.29%--hack_digit
+            |          |          |          |          |                                |          |          |          |          |          
+            |          |          |          |          |                                |          |          |          |           --8.08%--__mpn_divrem
+            |          |          |          |          |                                |          |          |          |          
+            |          |          |          |          |                                |          |          |          |--0.84%--__printf_buffer_write
+            |          |          |          |          |                                |          |          |          |          
+            |          |          |          |          |                                |          |          |           --0.64%--__mpn_mul_1
+            |          |          |          |          |                                |          |          |          
+            |          |          |          |          |                                |          |           --1.43%--__mpn_mul_1
+            |          |          |          |          |                                |          |          
+            |          |          |          |          |                                |           --0.58%--__strlen_avx2
+            |          |          |          |          |                                |          
+            |          |          |          |          |                                 --1.26%--__strchrnul_avx2
+            |          |          |          |          |          
+            |          |          |          |          |--5.09%--0x79841e8c7042
+            |          |          |          |          |          |          
+            |          |          |          |          |           --0.92%--__memmove_avx_unaligned_erms
+            |          |          |          |          |          
+            |          |          |          |           --0.70%--0x79841e8c6c7f
+            |          |          |          |          
+            |          |          |           --1.63%--0x79841e8c882c
+            |          |          |                     |          
+            |          |          |                      --1.48%--0x79841e8c381e
+            |          |          |                                |          
+            |          |          |                                 --0.53%--0x79841e8ba839
+            |          |          |          
+            |          |          |--3.80%--0x79841e8bd7bc
+            |          |          |          |          
+            |          |          |           --2.98%--0x79841e8ac9b7
+            |          |          |                     |          
+            |          |          |                      --2.43%--0x79841e8aa935
+            |          |          |                                |          
+            |          |          |                                |--0.72%--0x79841e8aa946
+            |          |          |                                |          
+            |          |          |                                 --0.71%--0x79841e8aa935
+            |          |          |          
+            |          |           --0.89%--0x79841e8be0f4
+            |          |          
+            |          |--13.99%--__dde_solver_m_MOD_dkl_4
+            |          |          |          
+            |          |          |--12.91%--__dde_solver_m_MOD_dde_drv1
+            |          |          |          |          
+            |          |          |           --11.85%--__dde_solver_m_MOD_dde_drv2
+            |          |          |                     |          
+            |          |          |                     |--6.07%--__dde_solver_m_MOD_dde_intp
+            |          |          |                     |          |          
+            |          |          |                     |           --5.14%--__dde_solver_m_MOD_dde_poly
+            |          |          |                     |                     |          
+            |          |          |                     |                      --2.29%--__dde_solver_m_MOD_dde_wset
+            |          |          |                     |          
+            |          |          |                     |--3.95%--__dde_solver_m_MOD_dde_drv3
+            |          |          |                     |          __dde_solver_m_MOD_dde_step
+            |          |          |                     |          |          
+            |          |          |                     |          |--1.90%--__dde_solver_m_MOD_dde_zset
+            |          |          |                     |          |          __dde_solver_m_MOD_dde_zset2
+            |          |          |                     |          |          |          
+            |          |          |                     |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+            |          |          |                     |          |          
+            |          |          |                     |           --1.05%--__dde_solver_m_MOD_dde_derv
+            |          |          |                     |                     |          
+            |          |          |                     |                      --0.86%--__cv_define_ddes_MOD_ddes
+            |          |          |                     |          
+            |          |          |                      --1.44%--__dde_solver_m_MOD_sol_out
+            |          |          |          
+            |          |           --1.08%--__dde_solver_m_MOD_contract_sol
+            |          |                     |          
+            |          |                      --0.65%--0xffffffff90600bc7
+            |          |                                0xffffffff90453c63
+            |          |          
+            |          |--4.58%--0x79841e8bfaf6
+            |          |          |          
+            |          |           --4.22%--0x79841e8bf643
+            |          |                     |          
+            |          |                      --3.22%--__GI___libc_write
+            |          |                                0xffffffff90600130
+            |          |                                |          
+            |          |                                 --3.05%--0xffffffff9044d8ef
+            |          |                                           0xffffffff8f2059ae
+            |          |                                           |          
+            |          |                                            --2.83%--0xffffffff8f6f5d39
+            |          |                                                      0xffffffff8f6f5c83
+            |          |                                                      |          
+            |          |                                                       --2.52%--0xffffffff8f6f56f1
+            |          |                                                                 |          
+            |          |                                                                  --2.30%--0xffffffffc1501bbc
+            |          |                                                                            |          
+            |          |                                                                            |--1.39%--0xffffffff8f5c33a3
+            |          |                                                                            |          |          
+            |          |                                                                            |           --1.29%--0xffffffffc1502c83
+            |          |                                                                            |                     |          
+            |          |                                                                            |                      --0.87%--0xffffffffc1517626
+            |          |                                                                            |          
+            |          |                                                                             --0.55%--0xffffffff8f5c335f
+            |          |                                                                                       0xffffffffc15026c2
+            |          |                                                                                       0xffffffff8f5c8757
+            |          |          
+            |          |--0.96%--0x79841e8bf0f3
+            |          |          
+            |          |--0.86%--0x79841e8bed30
+            |          |          
+            |           --0.57%--0x79841e8beabd
+            |          
+             --1.51%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+
+    73.92%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be593
+            |
+            ---0x79841e8be593
+               |          
+               |--65.51%--0x79841e8be08c
+               |          |          
+               |          |--63.24%--0x79841e8c8816
+               |          |          |          
+               |          |          |--56.30%--0x79841e8c6d27
+               |          |          |          |          
+               |          |          |           --56.13%--__snprintf_chk
+               |          |          |                     |          
+               |          |          |                      --55.37%--__vsnprintf_internal
+               |          |          |                                |          
+               |          |          |                                |--53.03%--__printf_buffer
+               |          |          |                                |          |          
+               |          |          |                                |          |--47.81%--__printf_fp_l_buffer
+               |          |          |                                |          |          |          
+               |          |          |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+               |          |          |                                |          |          |          |          
+               |          |          |                                |          |          |          |--12.45%--__mpn_divrem
+               |          |          |                                |          |          |          |          
+               |          |          |                                |          |          |          |--11.29%--hack_digit
+               |          |          |                                |          |          |          |          |          
+               |          |          |                                |          |          |          |           --8.08%--__mpn_divrem
+               |          |          |                                |          |          |          |          
+               |          |          |                                |          |          |          |--0.84%--__printf_buffer_write
+               |          |          |                                |          |          |          |          
+               |          |          |                                |          |          |           --0.64%--__mpn_mul_1
+               |          |          |                                |          |          |          
+               |          |          |                                |          |           --1.43%--__mpn_mul_1
+               |          |          |                                |          |          
+               |          |          |                                |           --0.58%--__strlen_avx2
+               |          |          |                                |          
+               |          |          |                                 --1.26%--__strchrnul_avx2
+               |          |          |          
+               |          |          |--5.09%--0x79841e8c7042
+               |          |          |          |          
+               |          |          |           --0.92%--__memmove_avx_unaligned_erms
+               |          |          |          
+               |          |           --0.70%--0x79841e8c6c7f
+               |          |          
+               |           --1.63%--0x79841e8c882c
+               |                     |          
+               |                      --1.48%--0x79841e8c381e
+               |                                |          
+               |                                 --0.53%--0x79841e8ba839
+               |          
+               |--3.80%--0x79841e8bd7bc
+               |          |          
+               |           --2.98%--0x79841e8ac9b7
+               |                     |          
+               |                      --2.43%--0x79841e8aa935
+               |                                |          
+               |                                |--0.72%--0x79841e8aa946
+               |                                |          
+               |                                 --0.71%--0x79841e8aa935
+               |          
+                --0.89%--0x79841e8be0f4
+
+    65.51%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be08c
+            |
+            ---0x79841e8be08c
+               |          
+               |--63.24%--0x79841e8c8816
+               |          |          
+               |          |--56.30%--0x79841e8c6d27
+               |          |          |          
+               |          |           --56.13%--__snprintf_chk
+               |          |                     |          
+               |          |                      --55.37%--__vsnprintf_internal
+               |          |                                |          
+               |          |                                |--53.03%--__printf_buffer
+               |          |                                |          |          
+               |          |                                |          |--47.81%--__printf_fp_l_buffer
+               |          |                                |          |          |          
+               |          |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+               |          |                                |          |          |          |          
+               |          |                                |          |          |          |--12.45%--__mpn_divrem
+               |          |                                |          |          |          |          
+               |          |                                |          |          |          |--11.29%--hack_digit
+               |          |                                |          |          |          |          |          
+               |          |                                |          |          |          |           --8.08%--__mpn_divrem
+               |          |                                |          |          |          |          
+               |          |                                |          |          |          |--0.84%--__printf_buffer_write
+               |          |                                |          |          |          |          
+               |          |                                |          |          |           --0.64%--__mpn_mul_1
+               |          |                                |          |          |          
+               |          |                                |          |           --1.43%--__mpn_mul_1
+               |          |                                |          |          
+               |          |                                |           --0.58%--__strlen_avx2
+               |          |                                |          
+               |          |                                 --1.26%--__strchrnul_avx2
+               |          |          
+               |          |--5.09%--0x79841e8c7042
+               |          |          |          
+               |          |           --0.92%--__memmove_avx_unaligned_erms
+               |          |          
+               |           --0.70%--0x79841e8c6c7f
+               |          
+                --1.63%--0x79841e8c882c
+                          |          
+                           --1.48%--0x79841e8c381e
+                                     |          
+                                      --0.53%--0x79841e8ba839
+
+    63.24%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c8816
+            |
+            ---0x79841e8c8816
+               |          
+               |--56.30%--0x79841e8c6d27
+               |          |          
+               |           --56.13%--__snprintf_chk
+               |                     |          
+               |                      --55.37%--__vsnprintf_internal
+               |                                |          
+               |                                |--53.03%--__printf_buffer
+               |                                |          |          
+               |                                |          |--47.81%--__printf_fp_l_buffer
+               |                                |          |          |          
+               |                                |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+               |                                |          |          |          |          
+               |                                |          |          |          |--12.45%--__mpn_divrem
+               |                                |          |          |          |          
+               |                                |          |          |          |--11.29%--hack_digit
+               |                                |          |          |          |          |          
+               |                                |          |          |          |           --8.08%--__mpn_divrem
+               |                                |          |          |          |          
+               |                                |          |          |          |--0.84%--__printf_buffer_write
+               |                                |          |          |          |          
+               |                                |          |          |           --0.64%--__mpn_mul_1
+               |                                |          |          |          
+               |                                |          |           --1.43%--__mpn_mul_1
+               |                                |          |          
+               |                                |           --0.58%--__strlen_avx2
+               |                                |          
+               |                                 --1.26%--__strchrnul_avx2
+               |          
+               |--5.09%--0x79841e8c7042
+               |          |          
+               |           --0.92%--__memmove_avx_unaligned_erms
+               |          
+                --0.70%--0x79841e8c6c7f
+
+    56.30%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c6d27
+            |
+            ---0x79841e8c6d27
+               |          
+                --56.13%--__snprintf_chk
+                          |          
+                           --55.37%--__vsnprintf_internal
+                                     |          
+                                     |--53.03%--__printf_buffer
+                                     |          |          
+                                     |          |--47.81%--__printf_fp_l_buffer
+                                     |          |          |          
+                                     |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+                                     |          |          |          |          
+                                     |          |          |          |--12.45%--__mpn_divrem
+                                     |          |          |          |          
+                                     |          |          |          |--11.29%--hack_digit
+                                     |          |          |          |          |          
+                                     |          |          |          |           --8.08%--__mpn_divrem
+                                     |          |          |          |          
+                                     |          |          |          |--0.84%--__printf_buffer_write
+                                     |          |          |          |          
+                                     |          |          |           --0.64%--__mpn_mul_1
+                                     |          |          |          
+                                     |          |           --1.43%--__mpn_mul_1
+                                     |          |          
+                                     |           --0.58%--__strlen_avx2
+                                     |          
+                                      --1.26%--__strchrnul_avx2
+
+    56.13%     0.41%  cv_model  libc.so.6             [.] __snprintf_chk
+            |          
+             --55.72%--__snprintf_chk
+                       |          
+                        --55.37%--__vsnprintf_internal
+                                  |          
+                                  |--53.03%--__printf_buffer
+                                  |          |          
+                                  |          |--47.81%--__printf_fp_l_buffer
+                                  |          |          |          
+                                  |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+                                  |          |          |          |          
+                                  |          |          |          |--12.45%--__mpn_divrem
+                                  |          |          |          |          
+                                  |          |          |          |--11.29%--hack_digit
+                                  |          |          |          |          |          
+                                  |          |          |          |           --8.08%--__mpn_divrem
+                                  |          |          |          |          
+                                  |          |          |          |--0.84%--__printf_buffer_write
+                                  |          |          |          |          
+                                  |          |          |           --0.64%--__mpn_mul_1
+                                  |          |          |          
+                                  |          |           --1.43%--__mpn_mul_1
+                                  |          |          
+                                  |           --0.58%--__strlen_avx2
+                                  |          
+                                   --1.26%--__strchrnul_avx2
+
+    55.54%     0.77%  cv_model  libc.so.6             [.] __vsnprintf_internal
+            |          
+            |--54.77%--__vsnprintf_internal
+            |          |          
+            |          |--53.03%--__printf_buffer
+            |          |          |          
+            |          |          |--47.81%--__printf_fp_l_buffer
+            |          |          |          |          
+            |          |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+            |          |          |          |          |          
+            |          |          |          |          |--12.45%--__mpn_divrem
+            |          |          |          |          |          
+            |          |          |          |          |--11.29%--hack_digit
+            |          |          |          |          |          |          
+            |          |          |          |          |           --8.08%--__mpn_divrem
+            |          |          |          |          |          
+            |          |          |          |          |--0.84%--__printf_buffer_write
+            |          |          |          |          |          
+            |          |          |          |           --0.64%--__mpn_mul_1
+            |          |          |          |          
+            |          |          |           --1.43%--__mpn_mul_1
+            |          |          |          
+            |          |           --0.58%--__strlen_avx2
+            |          |          
+            |           --1.26%--__strchrnul_avx2
+            |          
+             --0.77%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x79841e8be593
+                       0x79841e8be08c
+                       0x79841e8c8816
+                       0x79841e8c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+
+    53.19%     4.40%  cv_model  libc.so.6             [.] __printf_buffer
+            |          
+            |--48.79%--__printf_buffer
+            |          |          
+            |          |--47.81%--__printf_fp_l_buffer
+            |          |          |          
+            |          |          |--43.91%--__printf_fp_buffer_1.isra.0
+            |          |          |          |          
+            |          |          |          |--12.45%--__mpn_divrem
+            |          |          |          |          
+            |          |          |          |--11.29%--hack_digit
+            |          |          |          |          |          
+            |          |          |          |           --8.08%--__mpn_divrem
+            |          |          |          |          
+            |          |          |          |--0.84%--__printf_buffer_write
+            |          |          |          |          
+            |          |          |           --0.64%--__mpn_mul_1
+            |          |          |          
+            |          |           --1.43%--__mpn_mul_1
+            |          |          
+            |           --0.58%--__strlen_avx2
+            |          
+             --4.40%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x79841e8be593
+                       0x79841e8be08c
+                       0x79841e8c8816
+                       0x79841e8c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+                       |          
+                        --4.24%--__printf_buffer
+
+    48.06%     1.37%  cv_model  libc.so.6             [.] __printf_fp_l_buffer
+            |          
+            |--46.69%--__printf_fp_l_buffer
+            |          |          
+            |          |--43.91%--__printf_fp_buffer_1.isra.0
+            |          |          |          
+            |          |          |--12.45%--__mpn_divrem
+            |          |          |          
+            |          |          |--11.29%--hack_digit
+            |          |          |          |          
+            |          |          |           --8.08%--__mpn_divrem
+            |          |          |          
+            |          |          |--0.84%--__printf_buffer_write
+            |          |          |          
+            |          |           --0.64%--__mpn_mul_1
+            |          |          
+            |           --1.43%--__mpn_mul_1
+            |          
+             --1.37%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x79841e8be593
+                       0x79841e8be08c
+                       0x79841e8c8816
+                       0x79841e8c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+                       __printf_buffer
+                       |          
+                        --1.12%--__printf_fp_l_buffer
+
+    44.32%    17.48%  cv_model  libc.so.6             [.] __printf_fp_buffer_1.isra.0
+            |          
+            |--26.83%--__printf_fp_buffer_1.isra.0
+            |          |          
+            |          |--12.45%--__mpn_divrem
+            |          |          
+            |          |--11.29%--hack_digit
+            |          |          |          
+            |          |           --8.08%--__mpn_divrem
+            |          |          
+            |          |--0.84%--__printf_buffer_write
+            |          |          
+            |           --0.64%--__mpn_mul_1
+            |          
+             --17.48%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x79841e8be593
+                       0x79841e8be08c
+                       0x79841e8c8816
+                       0x79841e8c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+                       __printf_buffer
+                       __printf_fp_l_buffer
+                       |          
+                        --17.33%--__printf_fp_buffer_1.isra.0
+
+    20.89%    20.38%  cv_model  libc.so.6             [.] __mpn_divrem
+            |          
+            |--20.38%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          MAIN__
+            |          0x79841e8be593
+            |          0x79841e8be08c
+            |          0x79841e8c8816
+            |          0x79841e8c6d27
+            |          __snprintf_chk
+            |          __vsnprintf_internal
+            |          __printf_buffer
+            |          __printf_fp_l_buffer
+            |          |          
+            |           --20.18%--__printf_fp_buffer_1.isra.0
+            |                     |          
+            |                     |--12.45%--__mpn_divrem
+            |                     |          
+            |                      --7.73%--hack_digit
+            |                                __mpn_divrem
+            |          
+             --0.51%--__mpn_divrem
+
+    13.99%     0.00%  cv_model  cv_model              [.] __dde_solver_m_MOD_dkl_4
+            |
+            ---__dde_solver_m_MOD_dkl_4
+               |          
+               |--12.91%--__dde_solver_m_MOD_dde_drv1
+               |          |          
+               |           --11.85%--__dde_solver_m_MOD_dde_drv2
+               |                     |          
+               |                     |--6.07%--__dde_solver_m_MOD_dde_intp
+               |                     |          |          
+               |                     |           --5.14%--__dde_solver_m_MOD_dde_poly
+               |                     |                     |          
+               |                     |                      --2.29%--__dde_solver_m_MOD_dde_wset
+               |                     |          
+               |                     |--3.95%--__dde_solver_m_MOD_dde_drv3
+               |                     |          __dde_solver_m_MOD_dde_step
+               |                     |          |          
+               |                     |          |--1.90%--__dde_solver_m_MOD_dde_zset
+               |                     |          |          __dde_solver_m_MOD_dde_zset2
+               |                     |          |          |          
+               |                     |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+               |                     |          |          
+               |                     |           --1.05%--__dde_solver_m_MOD_dde_derv
+               |                     |                     |          
+               |                     |                      --0.86%--__cv_define_ddes_MOD_ddes
+               |                     |          
+               |                      --1.44%--__dde_solver_m_MOD_sol_out
+               |          
+                --1.08%--__dde_solver_m_MOD_contract_sol
+                          |          
+                           --0.65%--0xffffffff90600bc7
+                                     0xffffffff90453c63
+
+    12.91%     0.63%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_drv1
+            |          
+            |--12.28%--__dde_solver_m_MOD_dde_drv1
+            |          |          
+            |           --11.85%--__dde_solver_m_MOD_dde_drv2
+            |                     |          
+            |                     |--6.07%--__dde_solver_m_MOD_dde_intp
+            |                     |          |          
+            |                     |           --5.14%--__dde_solver_m_MOD_dde_poly
+            |                     |                     |          
+            |                     |                      --2.29%--__dde_solver_m_MOD_dde_wset
+            |                     |          
+            |                     |--3.95%--__dde_solver_m_MOD_dde_drv3
+            |                     |          __dde_solver_m_MOD_dde_step
+            |                     |          |          
+            |                     |          |--1.90%--__dde_solver_m_MOD_dde_zset
+            |                     |          |          __dde_solver_m_MOD_dde_zset2
+            |                     |          |          |          
+            |                     |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+            |                     |          |          
+            |                     |           --1.05%--__dde_solver_m_MOD_dde_derv
+            |                     |                     |          
+            |                     |                      --0.86%--__cv_define_ddes_MOD_ddes
+            |                     |          
+            |                      --1.44%--__dde_solver_m_MOD_sol_out
+            |          
+             --0.63%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       __dde_solver_m_MOD_dkl_4
+                       __dde_solver_m_MOD_dde_drv1
+
+    11.85%     0.39%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_drv2
+            |          
+             --11.47%--__dde_solver_m_MOD_dde_drv2
+                       |          
+                       |--6.07%--__dde_solver_m_MOD_dde_intp
+                       |          |          
+                       |           --5.14%--__dde_solver_m_MOD_dde_poly
+                       |                     |          
+                       |                      --2.29%--__dde_solver_m_MOD_dde_wset
+                       |          
+                       |--3.95%--__dde_solver_m_MOD_dde_drv3
+                       |          __dde_solver_m_MOD_dde_step
+                       |          |          
+                       |          |--1.90%--__dde_solver_m_MOD_dde_zset
+                       |          |          __dde_solver_m_MOD_dde_zset2
+                       |          |          |          
+                       |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+                       |          |          
+                       |           --1.05%--__dde_solver_m_MOD_dde_derv
+                       |                     |          
+                       |                      --0.86%--__cv_define_ddes_MOD_ddes
+                       |          
+                        --1.44%--__dde_solver_m_MOD_sol_out
+
+    11.29%     3.04%  cv_model  libc.so.6             [.] hack_digit
+            |          
+            |--8.25%--hack_digit
+            |          |          
+            |           --8.08%--__mpn_divrem
+            |          
+             --3.04%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x79841e8be593
+                       0x79841e8be08c
+                       0x79841e8c8816
+                       0x79841e8c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+                       __printf_buffer
+                       __printf_fp_l_buffer
+                       __printf_fp_buffer_1.isra.0
+                       hack_digit
+
+     6.45%     3.79%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_poly
+            |          
+            |--3.79%--_start
+            |          __libc_start_main@@GLIBC_2.34
+            |          __libc_start_call_main
+            |          main
+            |          MAIN__
+            |          __dde_solver_m_MOD_dkl_4
+            |          __dde_solver_m_MOD_dde_drv1
+            |          __dde_solver_m_MOD_dde_drv2
+            |          |          
+            |          |--2.85%--__dde_solver_m_MOD_dde_intp
+            |          |          __dde_solver_m_MOD_dde_poly
+            |          |          
+            |           --0.94%--__dde_solver_m_MOD_dde_drv3
+            |                     __dde_solver_m_MOD_dde_step
+            |                     |          
+            |                      --0.73%--__dde_solver_m_MOD_dde_zset
+            |                                __dde_solver_m_MOD_dde_zset2
+            |                                __dde_solver_m_MOD_dde_poly
+            |          
+             --2.66%--__dde_solver_m_MOD_dde_poly
+                       __dde_solver_m_MOD_dde_wset
+
+     6.07%     0.93%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_intp
+            |          
+            |--5.14%--__dde_solver_m_MOD_dde_intp
+            |          __dde_solver_m_MOD_dde_poly
+            |          |          
+            |           --2.29%--__dde_solver_m_MOD_dde_wset
+            |          
+             --0.93%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       __dde_solver_m_MOD_dkl_4
+                       __dde_solver_m_MOD_dde_drv1
+                       __dde_solver_m_MOD_dde_drv2
+                       __dde_solver_m_MOD_dde_intp
+
+     5.09%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c7042
+            |
+            ---0x79841e8c7042
+               |          
+                --0.92%--__memmove_avx_unaligned_erms
+
+     4.58%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bfaf6
+            |
+            ---0x79841e8bfaf6
+               |          
+                --4.22%--0x79841e8bf643
+                          |          
+                           --3.22%--__GI___libc_write
+                                     0xffffffff90600130
+                                     |          
+                                      --3.05%--0xffffffff9044d8ef
+                                                0xffffffff8f2059ae
+                                                |          
+                                                 --2.83%--0xffffffff8f6f5d39
+                                                           0xffffffff8f6f5c83
+                                                           |          
+                                                            --2.52%--0xffffffff8f6f56f1
+                                                                      |          
+                                                                       --2.30%--0xffffffffc1501bbc
+                                                                                 |          
+                                                                                 |--1.39%--0xffffffff8f5c33a3
+                                                                                 |          |          
+                                                                                 |           --1.29%--0xffffffffc1502c83
+                                                                                 |                     |          
+                                                                                 |                      --0.87%--0xffffffffc1517626
+                                                                                 |          
+                                                                                  --0.55%--0xffffffff8f5c335f
+                                                                                            0xffffffffc15026c2
+                                                                                            0xffffffff8f5c8757
+
+     4.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bf643
+            |
+            ---0x79841e8bf643
+               |          
+                --3.22%--__GI___libc_write
+                          0xffffffff90600130
+                          |          
+                           --3.05%--0xffffffff9044d8ef
+                                     0xffffffff8f2059ae
+                                     |          
+                                      --2.83%--0xffffffff8f6f5d39
+                                                0xffffffff8f6f5c83
+                                                |          
+                                                 --2.52%--0xffffffff8f6f56f1
+                                                           |          
+                                                            --2.30%--0xffffffffc1501bbc
+                                                                      |          
+                                                                      |--1.39%--0xffffffff8f5c33a3
+                                                                      |          |          
+                                                                      |           --1.29%--0xffffffffc1502c83
+                                                                      |                     |          
+                                                                      |                      --0.87%--0xffffffffc1517626
+                                                                      |          
+                                                                       --0.55%--0xffffffff8f5c335f
+                                                                                 0xffffffffc15026c2
+                                                                                 0xffffffff8f5c8757
+
+     4.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd7bc
+            |
+            ---0x79841e8bd7bc
+               |          
+                --3.35%--0x79841e8ac9b7
+                          |          
+                           --2.43%--0x79841e8aa935
+                                     |          
+                                     |--0.72%--0x79841e8aa946
+                                     |          
+                                      --0.71%--0x79841e8aa935
+
+     4.02%     0.00%  cv_model  [unknown]             [k] 0xffffffff90600130
+            |
+            ---0xffffffff90600130
+               |          
+                --3.84%--0xffffffff9044d8ef
+                          |          
+                           --3.26%--0xffffffff8f2059ae
+                                     |          
+                                      --3.04%--0xffffffff8f6f5d39
+                                                0xffffffff8f6f5c83
+                                                |          
+                                                 --2.73%--0xffffffff8f6f56f1
+                                                           |          
+                                                            --2.30%--0xffffffffc1501bbc
+                                                                      |          
+                                                                      |--1.39%--0xffffffff8f5c33a3
+                                                                      |          |          
+                                                                      |           --1.29%--0xffffffffc1502c83
+                                                                      |                     |          
+                                                                      |                      --0.87%--0xffffffffc1517626
+                                                                      |          
+                                                                       --0.55%--0xffffffff8f5c335f
+                                                                                 0xffffffffc15026c2
+                                                                                 0xffffffff8f5c8757
+
+     3.95%     0.79%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_step
+            |          
+            |--3.16%--__dde_solver_m_MOD_dde_step
+            |          |          
+            |          |--1.90%--__dde_solver_m_MOD_dde_zset
+            |          |          __dde_solver_m_MOD_dde_zset2
+            |          |          |          
+            |          |           --1.10%--__dde_solver_m_MOD_dde_poly
+            |          |          
+            |           --1.05%--__dde_solver_m_MOD_dde_derv
+            |                     |          
+            |                      --0.86%--__cv_define_ddes_MOD_ddes
+            |          
+             --0.79%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       __dde_solver_m_MOD_dkl_4
+                       __dde_solver_m_MOD_dde_drv1
+                       __dde_solver_m_MOD_dde_drv2
+                       __dde_solver_m_MOD_dde_drv3
+                       __dde_solver_m_MOD_dde_step
+
+     3.95%     0.00%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_drv3
+            |
+            ---__dde_solver_m_MOD_dde_drv3
+               __dde_solver_m_MOD_dde_step
+               |          
+               |--1.90%--__dde_solver_m_MOD_dde_zset
+               |          __dde_solver_m_MOD_dde_zset2
+               |          |          
+               |           --1.10%--__dde_solver_m_MOD_dde_poly
+               |          
+                --1.05%--__dde_solver_m_MOD_dde_derv
+                          |          
+                           --0.86%--__cv_define_ddes_MOD_ddes
+
+     3.84%     0.00%  cv_model  [unknown]             [k] 0xffffffff9044d8ef
+            |
+            ---0xffffffff9044d8ef
+               |          
+                --3.26%--0xffffffff8f2059ae
+                          |          
+                           --3.04%--0xffffffff8f6f5d39
+                                     0xffffffff8f6f5c83
+                                     |          
+                                      --2.73%--0xffffffff8f6f56f1
+                                                |          
+                                                 --2.30%--0xffffffffc1501bbc
+                                                           |          
+                                                           |--1.39%--0xffffffff8f5c33a3
+                                                           |          |          
+                                                           |           --1.29%--0xffffffffc1502c83
+                                                           |                     |          
+                                                           |                      --0.87%--0xffffffffc1517626
+                                                           |          
+                                                            --0.55%--0xffffffff8f5c335f
+                                                                      0xffffffffc15026c2
+                                                                      0xffffffff8f5c8757
+
+     3.44%     0.00%  cv_model  libc.so.6             [.] __GI___libc_write
+            |
+            ---__GI___libc_write
+               0xffffffff90600130
+               |          
+                --3.26%--0xffffffff9044d8ef
+                          0xffffffff8f2059ae
+                          |          
+                           --3.04%--0xffffffff8f6f5d39
+                                     0xffffffff8f6f5c83
+                                     |          
+                                      --2.73%--0xffffffff8f6f56f1
+                                                |          
+                                                 --2.30%--0xffffffffc1501bbc
+                                                           |          
+                                                           |--1.39%--0xffffffff8f5c33a3
+                                                           |          |          
+                                                           |           --1.29%--0xffffffffc1502c83
+                                                           |                     |          
+                                                           |                      --0.87%--0xffffffffc1517626
+                                                           |          
+                                                            --0.55%--0xffffffff8f5c335f
+                                                                      0xffffffffc15026c2
+                                                                      0xffffffff8f5c8757
+
+     3.35%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac9b7
+            |
+            ---0x79841e8ac9b7
+               |          
+                --2.43%--0x79841e8aa935
+                          |          
+                          |--0.72%--0x79841e8aa946
+                          |          
+                           --0.71%--0x79841e8aa935
+
+     3.26%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f2059ae
+            |
+            ---0xffffffff8f2059ae
+               |          
+                --3.04%--0xffffffff8f6f5d39
+                          0xffffffff8f6f5c83
+                          |          
+                           --2.73%--0xffffffff8f6f56f1
+                                     |          
+                                      --2.30%--0xffffffffc1501bbc
+                                                |          
+                                                |--1.39%--0xffffffff8f5c33a3
+                                                |          |          
+                                                |           --1.29%--0xffffffffc1502c83
+                                                |                     |          
+                                                |                      --0.87%--0xffffffffc1517626
+                                                |          
+                                                 --0.55%--0xffffffff8f5c335f
+                                                           0xffffffffc15026c2
+                                                           0xffffffff8f5c8757
+
+     3.04%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6f5d39
+            |
+            ---0xffffffff8f6f5d39
+               0xffffffff8f6f5c83
+               |          
+                --2.73%--0xffffffff8f6f56f1
+                          |          
+                           --2.30%--0xffffffffc1501bbc
+                                     |          
+                                     |--1.39%--0xffffffff8f5c33a3
+                                     |          |          
+                                     |           --1.29%--0xffffffffc1502c83
+                                     |                     |          
+                                     |                      --0.87%--0xffffffffc1517626
+                                     |          
+                                      --0.55%--0xffffffff8f5c335f
+                                                0xffffffffc15026c2
+                                                0xffffffff8f5c8757
+
+     3.04%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6f5c83
+            |
+            ---0xffffffff8f6f5c83
+               |          
+                --2.73%--0xffffffff8f6f56f1
+                          |          
+                           --2.30%--0xffffffffc1501bbc
+                                     |          
+                                     |--1.39%--0xffffffff8f5c33a3
+                                     |          |          
+                                     |           --1.29%--0xffffffffc1502c83
+                                     |                     |          
+                                     |                      --0.87%--0xffffffffc1517626
+                                     |          
+                                      --0.55%--0xffffffff8f5c335f
+                                                0xffffffffc15026c2
+                                                0xffffffff8f5c8757
+
+     2.73%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6f56f1
+            |
+            ---0xffffffff8f6f56f1
+               |          
+                --2.30%--0xffffffffc1501bbc
+                          |          
+                          |--1.39%--0xffffffff8f5c33a3
+                          |          |          
+                          |           --1.29%--0xffffffffc1502c83
+                          |                     |          
+                          |                      --0.87%--0xffffffffc1517626
+                          |          
+                           --0.55%--0xffffffff8f5c335f
+                                     0xffffffffc15026c2
+                                     0xffffffff8f5c8757
+
+     2.66%     2.66%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_wset
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               __dde_solver_m_MOD_dkl_4
+               __dde_solver_m_MOD_dde_drv1
+               __dde_solver_m_MOD_dde_drv2
+               |          
+                --2.29%--__dde_solver_m_MOD_dde_intp
+                          __dde_solver_m_MOD_dde_poly
+                          __dde_solver_m_MOD_dde_wset
+
+     2.46%     2.46%  cv_model  [unknown]             [.] 0000000000000000
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x79841e8be593
+               |          
+                --2.07%--0x79841e8be08c
+                          |          
+                           --1.70%--0x79841e8c8816
+                                     |          
+                                      --1.50%--0x79841e8c6d27
+                                                |          
+                                                 --1.33%--__snprintf_chk
+                                                           __vsnprintf_internal
+                                                           __printf_buffer
+                                                           |          
+                                                            --1.18%--__printf_fp_l_buffer
+                                                                      |          
+                                                                       --1.03%--__printf_fp_buffer_1.isra.0
+                                                                                 |          
+                                                                                  --0.52%--hack_digit
+
+     2.43%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa935
+            |
+            ---0x79841e8aa935
+               |          
+               |--0.72%--0x79841e8aa946
+               |          
+                --0.71%--0x79841e8aa935
+
+     2.30%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1501bbc
+            |
+            ---0xffffffffc1501bbc
+               |          
+               |--1.39%--0xffffffff8f5c33a3
+               |          |          
+               |           --1.29%--0xffffffffc1502c83
+               |                     |          
+               |                      --0.87%--0xffffffffc1517626
+               |          
+                --0.55%--0xffffffff8f5c335f
+                          0xffffffffc15026c2
+                          0xffffffff8f5c8757
+
+     2.25%     2.25%  cv_model  libc.so.6             [.] __mpn_mul_1
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x79841e8be593
+               0x79841e8be08c
+               0x79841e8c8816
+               0x79841e8c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __printf_buffer
+               __printf_fp_l_buffer
+               |          
+               |--1.43%--__mpn_mul_1
+               |          
+                --0.81%--__printf_fp_buffer_1.isra.0
+                          |          
+                           --0.64%--__mpn_mul_1
+
+     1.90%     0.42%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_zset2
+            |          
+             --1.48%--__dde_solver_m_MOD_dde_zset2
+                       |          
+                        --1.10%--__dde_solver_m_MOD_dde_poly
+
+     1.90%     0.00%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_zset
+            |
+            ---__dde_solver_m_MOD_dde_zset
+               __dde_solver_m_MOD_dde_zset2
+               |          
+                --1.10%--__dde_solver_m_MOD_dde_poly
+
+     1.81%     0.00%  cv_model  [unknown]             [k] 0xffffffff90600bc7
+            |
+            ---0xffffffff90600bc7
+               0xffffffff90453c63
+               |          
+                --1.37%--0xffffffff8f2d7f69
+                          |          
+                           --1.15%--0xffffffff8f630ffa
+                                     0xffffffff8f630d24
+                                     |          
+                                      --0.86%--0xffffffff8f6306bb
+
+     1.81%     0.00%  cv_model  [unknown]             [k] 0xffffffff90453c63
+            |
+            ---0xffffffff90453c63
+               |          
+                --1.37%--0xffffffff8f2d7f69
+                          |          
+                           --1.15%--0xffffffff8f630ffa
+                                     0xffffffff8f630d24
+                                     |          
+                                      --0.86%--0xffffffff8f6306bb
+
+     1.63%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c882c
+            |
+            ---0x79841e8c882c
+               |          
+                --1.48%--0x79841e8c381e
+                          |          
+                           --0.53%--0x79841e8ba839
+
+     1.48%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c381e
+            |
+            ---0x79841e8c381e
+               |          
+                --0.53%--0x79841e8ba839
+
+     1.44%     1.03%  cv_model  cv_model              [.] __dde_solver_m_MOD_sol_out
+            |          
+             --1.03%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       __dde_solver_m_MOD_dkl_4
+                       __dde_solver_m_MOD_dde_drv1
+                       __dde_solver_m_MOD_dde_drv2
+                       __dde_solver_m_MOD_sol_out
+
+     1.39%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c33a3
+            |
+            ---0xffffffff8f5c33a3
+               |          
+                --1.29%--0xffffffffc1502c83
+                          |          
+                           --0.87%--0xffffffffc1517626
+
+     1.37%     1.21%  cv_model  libc.so.6             [.] __printf_buffer_write
+            |          
+             --1.21%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       0x79841e8be593
+                       0x79841e8be08c
+                       0x79841e8c8816
+                       0x79841e8c6d27
+                       __snprintf_chk
+                       __vsnprintf_internal
+                       |          
+                        --1.06%--__printf_buffer
+                                  __printf_fp_l_buffer
+                                  __printf_fp_buffer_1.isra.0
+                                  |          
+                                   --0.84%--__printf_buffer_write
+
+     1.37%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f2d7f69
+            |
+            ---0xffffffff8f2d7f69
+               |          
+                --1.15%--0xffffffff8f630ffa
+                          0xffffffff8f630d24
+                          |          
+                           --0.86%--0xffffffff8f6306bb
+
+     1.29%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1502c83
+            |
+            ---0xffffffffc1502c83
+               |          
+                --0.87%--0xffffffffc1517626
+
+     1.26%     1.26%  cv_model  libc.so.6             [.] __strchrnul_avx2
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x79841e8be593
+               0x79841e8be08c
+               0x79841e8c8816
+               0x79841e8c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __strchrnul_avx2
+
+     1.25%     1.05%  cv_model  libc.so.6             [.] __memmove_avx_unaligned_erms
+            |          
+             --1.05%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       |          
+                        --0.88%--0x79841e8be593
+                                  0x79841e8be08c
+                                  0x79841e8c8816
+                                  |          
+                                   --0.73%--0x79841e8c7042
+                                             __memmove_avx_unaligned_erms
+
+     1.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f630ffa
+            |
+            ---0xffffffff8f630ffa
+               0xffffffff8f630d24
+               |          
+                --0.86%--0xffffffff8f6306bb
+
+     1.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f630d24
+            |
+            ---0xffffffff8f630d24
+               |          
+                --0.86%--0xffffffff8f6306bb
+
+     1.08%     0.00%  cv_model  cv_model              [.] __dde_solver_m_MOD_contract_sol
+            |
+            ---__dde_solver_m_MOD_contract_sol
+               |          
+                --0.65%--0xffffffff90600bc7
+                          0xffffffff90453c63
+
+     1.05%     0.19%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_derv
+            |          
+             --0.86%--__dde_solver_m_MOD_dde_derv
+                       __cv_define_ddes_MOD_ddes
+
+     0.96%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bf0f3
+            |
+            ---0x79841e8bf0f3
+
+     0.89%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be0f4
+            |
+            ---0x79841e8be0f4
+
+     0.87%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1517626
+            |
+            ---0xffffffffc1517626
+
+     0.87%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ba839
+            |
+            ---0x79841e8ba839
+
+     0.86%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6306bb
+            |
+            ---0xffffffff8f6306bb
+
+     0.86%     0.65%  cv_model  cv_model              [.] __cv_define_ddes_MOD_ddes
+            |          
+             --0.65%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       MAIN__
+                       __dde_solver_m_MOD_dkl_4
+                       __dde_solver_m_MOD_dde_drv1
+                       __dde_solver_m_MOD_dde_drv2
+                       __dde_solver_m_MOD_dde_drv3
+                       __dde_solver_m_MOD_dde_step
+                       __dde_solver_m_MOD_dde_derv
+                       __cv_define_ddes_MOD_ddes
+
+     0.86%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bed30
+            |
+            ---0x79841e8bed30
+
+     0.72%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa946
+            |
+            ---0x79841e8aa946
+
+     0.70%     0.70%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c6c7b
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x79841e8be593
+               0x79841e8be08c
+               0x79841e8c8816
+               0x79841e8c6c7f
+
+     0.70%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c6c7f
+            |
+            ---0x79841e8c6c7f
+
+     0.58%     0.58%  cv_model  libc.so.6             [.] __strlen_avx2
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x79841e8be593
+               0x79841e8be08c
+               0x79841e8c8816
+               0x79841e8c6d27
+               __snprintf_chk
+               __vsnprintf_internal
+               __printf_buffer
+               __strlen_avx2
+
+     0.57%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8beabd
+            |
+            ---0x79841e8beabd
+
+     0.55%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d132b
+            |
+            ---0xffffffff8f5d132b
+               0xffffffff8f5c5768
+               0xffffffff8f5c5546
+
+     0.55%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c5768
+            |
+            ---0xffffffff8f5c5768
+               0xffffffff8f5c5546
+
+     0.55%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c5546
+            |
+            ---0xffffffff8f5c5546
+
+     0.55%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c335f
+            |
+            ---0xffffffff8f5c335f
+               0xffffffffc15026c2
+               0xffffffff8f5c8757
+
+     0.55%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15026c2
+            |
+            ---0xffffffffc15026c2
+               0xffffffff8f5c8757
+
+     0.55%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c8757
+            |
+            ---0xffffffff8f5c8757
+
+     0.52%     0.52%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa93e
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               MAIN__
+               0x79841e8be593
+               0x79841e8bd7bc
+               0x79841e8ac9b7
+
+     0.52%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa942
+            |
+            ---0x79841e8aa942
+
+     0.49%     0.49%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa942
+     0.49%     0.31%  cv_model  libc.so.6             [.] __mpn_mul
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62f801
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5da7af
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d97d1
+     0.43%     0.43%  cv_model  [unknown]             [k] 0xffffffff903d4c27
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62f4fc
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62f30c
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f698804
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f698491
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f65e859
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f65d012
+     0.43%     0.00%  cv_model  [unknown]             [.] 0xffffffff903d4c29
+     0.42%     0.42%  cv_model  [unknown]             [k] 0xffffffffc151750c
+     0.42%     0.00%  cv_model  [unknown]             [.] 0xffffffffc151750f
+     0.42%     0.42%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac9a1
+     0.42%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac9a2
+     0.41%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bc3c5
+     0.40%     0.40%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd819
+     0.40%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd7d3
+     0.39%     0.39%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c550a
+     0.39%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c5e30
+     0.39%     0.39%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c5823
+     0.39%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c5825
+     0.39%     0.39%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa91a
+     0.39%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa91e
+     0.39%     0.39%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa959
+     0.39%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa960
+     0.38%     0.38%  cv_model  libc.so.6             [.] __memset_avx2_unaligned_erms
+     0.38%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d13e1
+     0.38%     0.00%  cv_model  [unknown]             [.] 0xffffffff9045c5c6
+     0.38%     0.00%  cv_model  [unknown]             [.] 0xffffffff9045c453
+     0.38%     0.17%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_src2
+     0.38%     0.38%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c556e
+     0.38%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c6b7d
+     0.38%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa8e0
+     0.37%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_start_user
+     0.37%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_start
+     0.37%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+     0.36%     0.36%  cv_model  libc.so.6             [.] __printf_buffer_done
+     0.36%     0.21%  cv_model  libc.so.6             [.] __mpn_lshift
+     0.35%     0.35%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002cb548
+     0.35%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb549
+     0.35%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15172fd
+     0.34%     0.34%  cv_model  libc.so.6             [.] __strncmp_avx2
+     0.34%     0.34%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ba767
+     0.34%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ba76e
+     0.34%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15173a1
+     0.33%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] dl_main
+     0.32%     0.32%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac955
+     0.32%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac958
+     0.32%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f630604
+     0.32%     0.32%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ba842
+     0.32%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ba849
+     0.31%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb5fc
+     0.31%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6f5771
+     0.31%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f75c915
+     0.31%     0.31%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd807
+     0.31%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be060
+     0.29%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62b7c0
+     0.25%     0.25%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be10a
+     0.25%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be10f
+     0.25%     0.25%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa909
+     0.25%     0.25%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be12e
+     0.25%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be131
+     0.24%     0.24%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c6d40
+     0.24%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c6d41
+     0.24%     0.24%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c07ee
+     0.24%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c0764
+     0.23%     0.23%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c581b
+     0.23%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c581f
+     0.23%     0.23%  cv_model  cv_model              [.] _gfortran_transfer_real_write@plt
+     0.23%     0.00%  cv_model  libgfortran.so.5.0.0  [.] _gfortran_transfer_real_write
+     0.23%     0.23%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd6f7
+     0.23%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd6f9
+     0.22%     0.00%  cv_model  libc.so.6             [.] memcpy@@GLIBC_2.14@plt
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f36cdc8
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff9045c116
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f35b83a
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f37607f
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f3755eb
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f36d05b
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f36cdcc
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c4b88
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c4b61
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c5879
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c587d
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c8792
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c4b30
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c7050
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c7054
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bc429
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bc42b
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bf05d
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bf067
+     0.22%     0.22%  cv_model  libc.so.6             [.] __mpn_extract_double
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f6f5cc2
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6f5cc4
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be063
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be448
+     0.22%     0.22%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_src1
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f5d9682
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d9686
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f5d870c
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d967f
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d8712
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff903bc5a0
+     0.22%     0.00%  cv_model  libc.so.6             [.] malloc
+     0.22%     0.00%  cv_model  libc.so.6             [.] _int_malloc
+     0.22%     0.00%  cv_model  libc.so.6             [.] __default_morecore@GLIBC_2.2.5
+     0.22%     0.00%  cv_model  libc.so.6             [.] __brk
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f20747b
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f63b7f2
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f63b695
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff903bc5a1
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff90600ba0
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f3a5c5f
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1501bc7
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffffc150b0a5
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f3a5c64
+     0.22%     0.22%  cv_model  libm.so.6             [.] __ieee754_pow_fma
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff906015c2
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff906015c4
+     0.22%     0.22%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c546e
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c5471
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f631043
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f631045
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f657724
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bfbd9
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c0dbd
+     0.22%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c1f9c
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1501aef
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffffc150813f
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1504513
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5dbac7
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5db971
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5daa30
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d9273
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f65c2c5
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f658082
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f65797c
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f657727
+     0.22%     0.22%  cv_model  [unknown]             [k] 0xffffffff8f6c6266
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f630f06
+     0.22%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6c6269
+     0.21%     0.21%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c546c
+     0.21%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c546e
+     0.21%     0.21%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bc337
+     0.21%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bc3c0
+     0.21%     0.21%  cv_model  [unknown]             [k] 0xffffffff903d52fa
+     0.21%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c3383
+     0.21%     0.00%  cv_model  [unknown]             [.] 0xffffffff903d52fc
+     0.21%     0.21%  cv_model  libgfortran.so.5.0.0  [.] _gfortran_transfer_real
+     0.21%     0.21%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c5884
+     0.21%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c5887
+     0.21%     0.21%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c54a3
+     0.21%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c54a6
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac090
+     0.20%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac093
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd9ba
+     0.20%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd9bd
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa930
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002b9c44
+     0.20%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8b9c48
+     0.20%     0.20%  cv_model  [unknown]             [k] 0xffffffffc15048d3
+     0.20%     0.00%  cv_model  [unknown]             [.] 0xffffffffc150f88d
+     0.20%     0.00%  cv_model  [unknown]             [.] 0xffffffffc150499a
+     0.20%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15048d7
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002cb7a0
+     0.20%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb7a4
+     0.20%     0.20%  cv_model  [unknown]             [k] 0xffffffff8f62c070
+     0.20%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f2d7f38
+     0.20%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62c074
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ba7c7
+     0.20%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ba7d0
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c5784
+     0.20%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c5788
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c878f
+     0.20%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c8792
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac9a2
+     0.20%     0.20%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c7071
+     0.20%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+     0.20%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_catch_exception
+     0.20%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] openaux
+     0.20%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_map_object
+     0.19%     0.19%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bed48
+     0.19%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8beba0
+     0.19%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb54c
+     0.19%     0.19%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd7dd
+     0.19%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd7e6
+     0.19%     0.19%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c554a
+     0.19%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c554e
+     0.19%     0.19%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac954
+     0.19%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac955
+     0.19%     0.19%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be53a
+     0.19%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be53e
+     0.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f62a8fa
+     0.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f5c8f93
+     0.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f5c473a
+     0.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f5d6436
+     0.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f5d5d69
+     0.18%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f5c3d6d
+     0.18%     0.18%  cv_model  [unknown]             [k] 0xffffffff8f5d4caa
+     0.18%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15172f5
+     0.18%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1513cae
+     0.18%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5d4cb0
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bebac
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bebb0
+     0.18%     0.18%  cv_model  [unknown]             [k] 0xffffffffc150fbb9
+     0.18%     0.00%  cv_model  [unknown]             [.] 0xffffffffc150fbba
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ba74f
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c5b44
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c5b47
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be078
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be07e
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa8e4
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa8e5
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c54b0
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c54b4
+     0.18%     0.18%  cv_model  [unknown]             [k] 0xffffffff8f3f870c
+     0.18%     0.00%  cv_model  [unknown]             [.] 0xffffffff9044d8fc
+     0.18%     0.00%  cv_model  [unknown]             [.] 0xffffffff90454081
+     0.18%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f3f8724
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac9b2
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c6c3e
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c6c42
+     0.18%     0.18%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c8859
+     0.18%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c885a
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bea69
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bea6c
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd7da
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd7dd
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa8f7
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa8fa
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac790
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac799
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ba7c0
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ba7c7
+     0.17%     0.17%  cv_model  [unknown]             [k] 0xffffffff9045c5b5
+     0.17%     0.00%  cv_model  libc.so.6             [.] 0x000079841e247bbe
+     0.17%     0.00%  cv_model  libc.so.6             [.] __run_exit_handlers
+     0.17%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_fini
+     0.17%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_call_fini
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c138a
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c1194
+     0.17%     0.00%  cv_model  libc.so.6             [.] __close
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f20791c
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6ed9c4
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6ecf75
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15e79ae
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15169e7
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c7f94
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c4e93
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff9045c5c1
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c56e4
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c56e8
+     0.17%     0.17%  cv_model  libc.so.6             [.] pthread_rwlock_rdlock@GLIBC_2.2.5
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c064d
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002beab5
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8beab8
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be468
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be46a
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa910
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa915
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd7cf
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd7d1
+     0.17%     0.17%  cv_model  [unknown]             [k] 0xffffffffc150fbcb
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffffc150fbd0
+     0.17%     0.17%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd9a0
+     0.17%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd9a9
+     0.17%     0.17%  cv_model  [unknown]             [k] 0xffffffff8f3d810f
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f75c06c
+     0.17%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f3d8112
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002cb52e
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb532
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c9850
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c9854
+     0.16%     0.16%  cv_model  libc.so.6             [.] pthread_mutex_trylock@@GLIBC_2.34
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c07ec
+     0.16%     0.16%  cv_model  [unknown]             [k] 0xffffffff8f5d13bd
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5fc920
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002cb7b2
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb7b6
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd76f
+     0.16%     0.16%  cv_model  [unknown]             [k] 0xffffffff8f5c3330
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c3334
+     0.16%     0.16%  cv_model  [unknown]             [k] 0xffffffff8f38f8d3
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff9045c0b9
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f3a2f44
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f38f8d4
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c54d4
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c54db
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa8f2
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa8f4
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bfaed
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bfaee
+     0.16%     0.16%  cv_model  [unknown]             [k] 0xffffffff8f6ceb41
+     0.16%     0.00%  cv_model  cv_model              [.] __dde_solver_m_MOD_dde_set
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62b493
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5c3afa
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6cebfb
+     0.16%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6ceb43
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd804
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd807
+     0.16%     0.16%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c6e74
+     0.16%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c6e75
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002cb544
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb548
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ba735
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ba738
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bc41d
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bc420
+     0.15%     0.15%  cv_model  libc.so.6             [.] pthread_mutex_unlock@@GLIBC_2.2.5
+     0.15%     0.15%  cv_model  libc.so.6             [.] __mpn_rshift
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c3837
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c383b
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa8fd
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa900
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c703d
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c5460
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c22d3
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c22d6
+     0.15%     0.15%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be100
+     0.15%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be106
+     0.15%     0.15%  cv_model  [unknown]             [k] 0xffffffff8f75fd20
+     0.15%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f75c1c2
+     0.15%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f75be4d
+     0.15%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f75fd25
+     0.14%     0.14%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ba834
+     0.14%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb510
+     0.14%     0.14%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac2f9
+     0.14%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac82d
+     0.14%     0.14%  cv_model  libc.so.6             [.] __libc_alloca_cutoff
+     0.14%     0.14%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bd6f0
+     0.14%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bd6f1
+     0.14%     0.14%  cv_model  [unknown]             [k] 0xffffffff8fa7b4f5
+     0.14%     0.00%  cv_model  [unknown]             [.] 0xffffffffc150f8ef
+     0.14%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15040dc
+     0.14%     0.00%  cv_model  [unknown]             [.] 0xffffffff8fa7b4f9
+     0.14%     0.14%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002be536
+     0.14%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8be537
+     0.13%     0.13%  cv_model  [unknown]             [k] 0xffffffff8f5c6f7c
+     0.13%     0.00%  cv_model  libm.so.6             [.] __cosf_ifunc
+     0.13%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62b467
+     0.13%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f62ad50
+     0.13%     0.13%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c576b
+     0.13%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c576f
+     0.13%     0.13%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002ac9db
+     0.13%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8ac9e0
+     0.13%     0.13%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002b6015
+     0.13%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bfb32
+     0.13%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8b6018
+     0.13%     0.13%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002c6342
+     0.13%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8c6345
+     0.13%     0.13%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bfaf6
+     0.13%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bfafd
+     0.11%     0.11%  cv_model  [unknown]             [k] 0xffffffff8f6186f3
+     0.11%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] _dl_map_object_from_fd
+     0.11%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] mmap64
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f2078fe
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f261943
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f63906c
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f5fcfc3
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f63cd01
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f63c864
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f63c20e
+     0.11%     0.00%  cv_model  [unknown]             [.] 0xffffffff8f6186f9
+     0.10%     0.10%  cv_model  libc.so.6             [.] __mpn_cmp
+     0.10%     0.10%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002cb5d6
+     0.10%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8cb5d8
+     0.10%     0.10%  cv_model  [unknown]             [k] 0xffffffffc15164a1
+     0.10%     0.00%  cv_model  [unknown]             [.] 0xffffffffc1502caf
+     0.10%     0.00%  cv_model  [unknown]             [.] 0xffffffffc15164a5
+     0.08%     0.08%  cv_model  ld-linux-x86-64.so.2  [.] _dl_load_cache_lookup
+     0.08%     0.00%  cv_model  [unknown]             [k] 0x00007a57944eef3b
+     0.08%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f207697
+     0.08%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f701f37
+     0.08%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f701bd8
+     0.08%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f6ffa26
+     0.08%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f6ff932
+     0.08%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f6ff639
+     0.08%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f6ff0a7
+     0.05%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f792fe0
+     0.05%     0.05%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002aa8ec
+     0.05%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8aa8ef
+     0.04%     0.04%  cv_model  ld-linux-x86-64.so.2  [.] get_common_indices.constprop.0
+     0.04%     0.00%  cv_model  ld-linux-x86-64.so.2  [.] init_cpu_features.constprop.0
+     0.03%     0.03%  cv_model  [unknown]             [k] 0xffffffff8f66f750
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff903d4c80
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f2d7ff5
+     0.03%     0.03%  cv_model  [unknown]             [k] 0xffffffff8f639e23
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f62b830
+     0.03%     0.03%  cv_model  libgfortran.so.5.0.0  [.] 0x00000000002bfba0
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f5c3ab7
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff903d391b
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff903d2a2c
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f792304
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff903d27aa
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f63b293
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff903d0ce1
+     0.03%     0.00%  cv_model  libgfortran.so.5.0.0  [.] 0x000079841e8bfba7
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f639e26
+     0.03%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f66f753
+     0.02%     0.02%  cv_model  [unknown]             [k] 0xffffffff8fd52075
+     0.02%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f793778
+     0.02%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f26baed
+     0.02%     0.00%  cv_model  [unknown]             [k] 0xffffffff8f5fce91
+     0.02%     0.00%  cv_model  [unknown]             [k] 0xffffffff8fd52078
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
