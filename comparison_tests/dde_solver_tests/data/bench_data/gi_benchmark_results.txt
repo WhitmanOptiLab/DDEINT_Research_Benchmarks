@@ -1,0 +1,56 @@
+{
+  "context": {
+    "date": "2026-06-22T00:44:58-07:00",
+    "host_name": "juliodejesus",
+    "executable": "./bench_build/benchmark_gi",
+    "num_cpus": 12,
+    "mhz_per_cpu": 4242,
+    "cpu_scaling_enabled": false,
+    "caches": [
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 32768,
+        "num_sharing": 2
+      },
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 32768,
+        "num_sharing": 2
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 524288,
+        "num_sharing": 2
+      },
+      {
+        "type": "Unified",
+        "level": 3,
+        "size": 16777216,
+        "num_sharing": 12
+      }
+    ],
+    "load_avg": [1.94922,0.878418,0.345215],
+    "library_version": "v1.8.5-8-gebb5e392",
+    "library_build_type": "release",
+    "json_schema_version": 1
+  },
+  "benchmarks": [
+    {
+      "name": "DDE_SOLVER_BM_GI/real_time",
+      "family_index": 0,
+      "per_family_instance_index": 0,
+      "run_name": "DDE_SOLVER_BM_GI/real_time",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 4284,
+      "real_time": 1.6205759500466721e-01,
+      "cpu_time": 1.6159233566760037e-01,
+      "time_unit": "ms"
+    }
+  ]
+}

@@ -1,0 +1,910 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 27  of event 'cpu/cycles/Pu'
+# Event count (approx.): 12491158
+#
+# Children      Self  Command   Shared Object         Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+# ........  ........  ........  ....................  ..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    78.71%     0.00%  cw_model  [unknown]             [.] 0000000000000000
+            |
+            ---0
+               |          
+               |--70.91%--0x7ff5db827c8e
+               |          main
+               |          DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          
+               |          |--64.63%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          |          
+               |          |          |--41.28%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          |          
+               |          |          |          |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          |          |          
+               |          |          |           --12.52%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |                     |          
+               |          |          |                     |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          |          |                     |          
+               |          |          |                      --5.21%--RingBuffer<double>::operator[](unsigned long)
+               |          |          |                                std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |          |                                std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               |          |          |                                std::vector<double, std::allocator<double> >::size() const
+               |          |          |          
+               |          |          |--11.10%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          |          std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               |          |          |          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          |          |          |          
+               |          |          |          |--5.75%--_M_default_initialize (inlined)
+               |          |          |          |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          |          
+               |          |          |           --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+               |          |          |          
+               |          |          |--7.11%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          
+               |          |           --5.13%--fmaxf32x
+               |          |          
+               |           --6.28%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |                     std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |                     std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |                     std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          
+                --7.80%--0x7ff5dba46460
+                          0x7ff5db9aede7
+
+    70.91%     0.00%  cw_model  [unknown]             [.] 0x5f77632f646c6975
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          
+               |--64.63%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--41.28%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          
+               |          |          |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          |          
+               |          |           --12.52%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                     |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          |                     |          
+               |          |                      --5.21%--RingBuffer<double>::operator[](unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               |          |                                std::vector<double, std::allocator<double> >::size() const
+               |          |          
+               |          |--11.10%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               |          |          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          |          |          
+               |          |          |--5.75%--_M_default_initialize (inlined)
+               |          |          |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          
+               |          |           --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+               |          |          
+               |          |--7.11%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          
+               |           --5.13%--fmaxf32x
+               |          
+                --6.28%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+                          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+    70.91%     0.00%  cw_model  libc.so.6             [.] 0x00007ff5db827c8e
+            |
+            ---0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          
+               |--64.63%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--41.28%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          
+               |          |          |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          |          
+               |          |           --12.52%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                     |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          |                     |          
+               |          |                      --5.21%--RingBuffer<double>::operator[](unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               |          |                                std::vector<double, std::allocator<double> >::size() const
+               |          |          
+               |          |--11.10%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               |          |          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          |          |          
+               |          |          |--5.75%--_M_default_initialize (inlined)
+               |          |          |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          
+               |          |           --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+               |          |          
+               |          |--7.11%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          
+               |           --5.13%--fmaxf32x
+               |          
+                --6.28%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+                          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+    70.91%     0.00%  cw_model  cw_model              [.] DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+            |
+            ---DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          
+               |--64.63%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--41.28%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          
+               |          |          |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          |          
+               |          |           --12.52%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                     |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          |                     |          
+               |          |                      --5.21%--RingBuffer<double>::operator[](unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               |          |                                std::vector<double, std::allocator<double> >::size() const
+               |          |          
+               |          |--11.10%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               |          |          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          |          |          
+               |          |          |--5.75%--_M_default_initialize (inlined)
+               |          |          |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          
+               |          |           --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+               |          |          
+               |          |--7.11%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          
+               |           --5.13%--fmaxf32x
+               |          
+                --6.28%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+                          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+    70.91%     0.00%  cw_model  cw_model              [.] DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+            |
+            ---DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          
+               |--64.63%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          
+               |          |--41.28%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          
+               |          |          |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          |          
+               |          |           --12.52%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |                     |          
+               |          |                     |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          |                     |          
+               |          |                      --5.21%--RingBuffer<double>::operator[](unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::at(unsigned long)
+               |          |                                std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               |          |                                std::vector<double, std::allocator<double> >::size() const
+               |          |          
+               |          |--11.10%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          |          std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               |          |          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          |          |          
+               |          |          |--5.75%--_M_default_initialize (inlined)
+               |          |          |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          |          
+               |          |           --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+               |          |          
+               |          |--7.11%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          
+               |           --5.13%--fmaxf32x
+               |          
+                --6.28%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+                          std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+                          std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+    70.91%     0.00%  cw_model  cw_model              [.] main
+            |
+            ---main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               |          
+               |--49.46%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               |          |          
+               |          |--43.18%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          |          |          
+               |          |          |--36.07%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          |          |          
+               |          |          |          |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          |          |          
+               |          |          |           --7.31%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |          |          |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |          |          |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          |          |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          |          |                     CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          |          |                     std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          |          |                     std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          |          |          
+               |          |           --7.11%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          
+               |           --6.28%--std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               |                     std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               |                     std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               |                     std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+               |          
+                --21.45%--0x55c499d7ecb0
+                          0x55c499d813da
+                          |          
+                          |--11.10%--0x55c499d8405e
+                          |          0x55c499d8405e
+                          |          0x55c499d85130
+                          |          |          
+                          |          |--5.75%--0x55c499d86667
+                          |          |          0x55c499d86ff1
+                          |          |          0x55c499d87656
+                          |          |          0x55c499d87a58
+                          |          |          0x55c499d87a58
+                          |          |          0x55c499d87a58
+                          |          |          0x55c499d87a58
+                          |          |          0x55c499d87dec
+                          |          |          
+                          |           --5.35%--0x55c499d822c9
+                          |          
+                          |--5.21%--0x55c499d833cc
+                          |          0x55c499d82e9d
+                          |          0x55c499d79493
+                          |          0x55c499d79433
+                          |          0x55c499d79746
+                          |          0x55c499d79a35
+                          |          0x55c499d799c0
+                          |          0x55c499d7a2b9
+                          |          0x55c499d7a41a
+                          |          0x55c499d79906
+                          |          
+                           --5.13%--0x7ff5dc02b0c8
+
+    64.63%     0.00%  cw_model  cw_model              [.] DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+            |
+            ---DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               |          
+               |--41.28%--DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          |          
+               |          |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          |          std::vector<double, std::allocator<double> >::size() const
+               |          |          
+               |           --12.52%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               |                     cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               |                     History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |                     History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |                     |          
+               |                     |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |                     |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |                     |          
+               |                      --5.21%--RingBuffer<double>::operator[](unsigned long)
+               |                                std::vector<double, std::allocator<double> >::at(unsigned long)
+               |                                std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               |                                std::vector<double, std::allocator<double> >::size() const
+               |          
+               |--11.10%--History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               |          std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               |          std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          |          
+               |          |--5.75%--_M_default_initialize (inlined)
+               |          |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          |          
+               |           --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+               |          
+               |--7.11%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          
+                --5.13%--fmaxf32x
+
+    41.28%     0.00%  cw_model  cw_model              [.] DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+            |
+            ---DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          
+               |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          std::vector<double, std::allocator<double> >::size() const
+               |          
+                --12.52%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+                          History<double, double>::at_time(double, unsigned long, unsigned long*)
+                          History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          |          
+                          |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+                          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+                          |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+                          |          
+                           --5.21%--RingBuffer<double>::operator[](unsigned long)
+                                     std::vector<double, std::allocator<double> >::at(unsigned long)
+                                     std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+                                     std::vector<double, std::allocator<double> >::size() const
+
+    35.87%     7.11%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          
+            |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+            |          std::vector<double, std::allocator<double> >::size() const
+            |          
+             --7.11%--0x5f77632f646c6975
+                       0
+                       0x7ff5db827c8e
+                       main
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+                       DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+                       DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+                       std::vector<double, std::allocator<double> >::operator[](unsigned long)
+
+    33.97%    33.97%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::size() const
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               |          
+               |--28.76%--std::vector<double, std::allocator<double> >::operator[](unsigned long)
+               |          std::vector<double, std::allocator<double> >::size() const
+               |          
+                --5.21%--DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+                          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+                          cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+                          History<double, double>::at_time(double, unsigned long, unsigned long*)
+                          History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          RingBuffer<double>::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::at(unsigned long)
+                          std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+                          std::vector<double, std::allocator<double> >::size() const
+
+    13.04%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc127888
+            |
+            ---0x7ff5dc127888
+               |          
+                --12.67%--0x7ff5dc127303
+                          |          
+                          |--11.54%--0x7ff5dc1188a9
+                          |          |          
+                          |          |--4.22%--0x7ff5dc1156f6
+                          |          |          0x7ff5dc10fed2
+                          |          |          
+                          |          |--3.66%--0x7ff5dc115642
+                          |          |          
+                          |           --3.65%--0x7ff5dc1155e0
+                          |          
+                           --1.13%--0x7ff5dc12a9f2
+                                     0x7ff5dc106f72
+
+    12.67%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc127303
+            |
+            ---0x7ff5dc127303
+               |          
+               |--11.54%--0x7ff5dc1188a9
+               |          |          
+               |          |--4.22%--0x7ff5dc1156f6
+               |          |          0x7ff5dc10fed2
+               |          |          
+               |          |--3.66%--0x7ff5dc115642
+               |          |          
+               |           --3.65%--0x7ff5dc1155e0
+               |          
+                --1.13%--0x7ff5dc12a9f2
+                          0x7ff5dc106f72
+
+    12.52%     0.00%  cw_model  cw_model              [.] DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+            |
+            ---DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          
+               |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          
+                --5.21%--RingBuffer<double>::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::at(unsigned long)
+                          std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+                          std::vector<double, std::allocator<double> >::size() const
+
+    12.52%     0.00%  cw_model  cw_model              [.] cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+            |
+            ---cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          
+               |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          
+                --5.21%--RingBuffer<double>::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::at(unsigned long)
+                          std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+                          std::vector<double, std::allocator<double> >::size() const
+
+    12.52%     0.00%  cw_model  cw_model              [.] cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+            |
+            ---cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          
+               |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          
+                --5.21%--RingBuffer<double>::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::at(unsigned long)
+                          std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+                          std::vector<double, std::allocator<double> >::size() const
+
+    12.52%     0.00%  cw_model  cw_model              [.] History<double, double>::at_time(double, unsigned long, unsigned long*)
+            |
+            ---History<double, double>::at_time(double, unsigned long, unsigned long*)
+               |          
+               |--7.31%--0x55c499d79b37
+               |          0x55c499d79ff7
+               |          0x55c499d7a332
+               |          0x55c499d7a4a8
+               |          
+                --5.21%--History<double, double>::interpolate(double, unsigned long, unsigned long)
+                          RingBuffer<double>::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::at(unsigned long)
+                          std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+                          std::vector<double, std::allocator<double> >::size() const
+
+    12.52%     0.00%  cw_model  cw_model              [.] History<double, double>::interpolate(double, unsigned long, unsigned long)
+            |
+            ---History<double, double>::interpolate(double, unsigned long, unsigned long)
+               |          
+               |--7.31%--CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               |          std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+               |          
+                --5.21%--RingBuffer<double>::operator[](unsigned long)
+                          std::vector<double, std::allocator<double> >::at(unsigned long)
+                          std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+                          std::vector<double, std::allocator<double> >::size() const
+
+    11.54%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc1188a9
+            |
+            ---0x7ff5dc1188a9
+               |          
+               |--4.22%--0x7ff5dc1156f6
+               |          0x7ff5dc10fed2
+               |          
+               |--3.66%--0x7ff5dc115642
+               |          
+                --3.65%--0x7ff5dc1155e0
+
+    11.10%     0.00%  cw_model  cw_model              [.] History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+            |
+            ---History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          
+               |--5.75%--_M_default_initialize (inlined)
+               |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          
+                --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+
+    11.10%     0.00%  cw_model  cw_model              [.] std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+            |
+            ---std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          
+               |--5.75%--_M_default_initialize (inlined)
+               |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          
+                --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+
+    11.10%     0.00%  cw_model  cw_model              [.] std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+            |
+            ---std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               |          
+               |--5.75%--_M_default_initialize (inlined)
+               |          __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               |          fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               |          __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               |          
+                --5.35%--std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+
+     7.80%     7.80%  cw_model  libc.so.6             [.] 0x00000000001aede7
+            |
+            ---0x69667a7400524944
+               0
+               0x7ff5dba46460
+               0x7ff5db9aede7
+
+     7.80%     0.00%  cw_model  [unknown]             [.] 0x69667a7400524944
+            |
+            ---0x69667a7400524944
+               0
+               0x7ff5dba46460
+               0x7ff5db9aede7
+
+     7.80%     0.00%  cw_model  [unknown]             [.] 0x00007ff5dba46460
+            |
+            ---0x7ff5dba46460
+               0x7ff5db9aede7
+
+     7.80%     0.00%  cw_model  libc.so.6             [.] 0x00007ff5db9aede7
+            |
+            ---0x7ff5db9aede7
+
+     7.31%     7.31%  cw_model  cw_model              [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::dopri5_step(double)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::func_eval(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)
+               cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)::{lambda()#1}::operator()() const
+               History<double, double>::at_time(double, unsigned long, unsigned long*)
+               History<double, double>::interpolate(double, unsigned long, unsigned long)
+               CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+
+     7.31%     0.00%  cw_model  cw_model              [.] CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+            |
+            ---CompoundRingBuffer<std::array<double, 2ul>, double>::operator[](unsigned long) const
+               std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+
+     7.31%     0.00%  cw_model  cw_model              [.] std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+            |
+            ---std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::operator[](unsigned long) const
+               std::vector<RingBuffer<std::array<double, 2ul> >, std::allocator<RingBuffer<std::array<double, 2ul> > > >::size() const
+
+     6.28%     6.28%  cw_model  cw_model              [.] std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     6.28%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+            |
+            ---std::vector<double, std::allocator<double> >::operator=(std::vector<double, std::allocator<double> >&&)
+               std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     6.28%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+            |
+            ---std::vector<double, std::allocator<double> >::_M_move_assign(std::vector<double, std::allocator<double> >&&, std::integral_constant<bool, true>)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     6.28%     0.00%  cw_model  cw_model              [.] std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+            |
+            ---std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data&)
+               std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<double, std::allocator<double> >::_Vector_impl_data const&)
+
+     5.75%     5.75%  cw_model  cw_model              [.] void std::__fill_a1<std::array<double, 2ul>*, std::array<double, 2ul> >(std::array<double, 2ul>*, std::array<double, 2ul>*, std::array<double, 2ul> const&)
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               _M_default_initialize (inlined)
+               __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] _M_default_initialize (inlined)
+            |
+            ---_M_default_initialize (inlined)
+               __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] __uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+            |
+            ---__uninitialized_default_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] __uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+            |
+            ---__uninitialized_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] __uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+            |
+            ---__uninit_default_n<std::array<double, 2>*, long unsigned int> (inlined)
+               fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+            |
+            ---fill_n<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] __fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+            |
+            ---__fill_n_a<std::array<double, 2>*, long unsigned int, std::array<double, 2> > (inlined)
+               __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] __fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+            |
+            ---__fill_a<std::array<double, 2>*, std::array<double, 2> > (inlined)
+               __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.75%     0.00%  cw_model  cw_model              [.] __fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+            |
+            ---__fill_a1<std::array<double, 2>*, std::array<double, 2> > (inlined)
+
+     5.35%     5.35%  cw_model  cw_model              [.] std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               History<double, double>::save(double, std::vector<double, std::allocator<double> > const&, std::vector<double, std::allocator<double> > const&)
+               std::allocator<std::array<double, 2ul> >::~allocator() (inlined)
+               std::vector<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::vector(unsigned long, std::allocator<std::array<double, 2ul> > const&)
+               std::_Vector_base<std::array<double, 2ul>, std::allocator<std::array<double, 2ul> > >::_M_get_Tp_allocator()
+
+     5.21%     0.00%  cw_model  cw_model              [.] RingBuffer<double>::operator[](unsigned long)
+            |
+            ---RingBuffer<double>::operator[](unsigned long)
+               std::vector<double, std::allocator<double> >::at(unsigned long)
+               std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               std::vector<double, std::allocator<double> >::size() const
+
+     5.21%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::at(unsigned long)
+            |
+            ---std::vector<double, std::allocator<double> >::at(unsigned long)
+               std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               std::vector<double, std::allocator<double> >::size() const
+
+     5.21%     0.00%  cw_model  cw_model              [.] std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+            |
+            ---std::vector<double, std::allocator<double> >::_M_range_check(unsigned long) const
+               std::vector<double, std::allocator<double> >::size() const
+
+     5.13%     5.13%  cw_model  libm.so.6             [.] fmaxf32x
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7ff5db827c8e
+               main
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int)
+               DDEInt<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&)), DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))> >::solve(double, double, double, int, std::function<void (double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&)>)
+               DoPri_5<&(cw_dde(double, std::vector<double, std::allocator<double> >&, std::vector<double, std::allocator<double> >&, History<double, double>&))>::integrate_to(double, int)
+               fmaxf32x
+
+     4.66%     4.66%  cw_model  libc.so.6             [.] __wctype_l
+            |
+            ---__wctype_l
+
+     4.22%     4.22%  cw_model  ld-linux-x86-64.so.2  [.] 0x000000000000ced2
+            |
+            ---0x7ff5dc127888
+               0x7ff5dc127303
+               0x7ff5dc1188a9
+               0x7ff5dc1156f6
+               0x7ff5dc10fed2
+
+     4.22%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc1156f6
+            |
+            ---0x7ff5dc1156f6
+               0x7ff5dc10fed2
+
+     4.22%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc10fed2
+            |
+            ---0x7ff5dc10fed2
+
+     3.66%     3.66%  cw_model  ld-linux-x86-64.so.2  [.] 0x0000000000012642
+            |
+            ---0x7ff5dc127888
+               0x7ff5dc127303
+               0x7ff5dc1188a9
+               0x7ff5dc115642
+
+     3.66%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc115642
+            |
+            ---0x7ff5dc115642
+
+     3.65%     3.65%  cw_model  ld-linux-x86-64.so.2  [.] 0x00000000000125e0
+            |
+            ---0x7ff5dc127888
+               0x7ff5dc127303
+               0x7ff5dc1188a9
+               0x7ff5dc1155e0
+
+     3.65%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc1155e0
+            |
+            ---0x7ff5dc1155e0
+
+     3.58%     3.58%  cw_model  ld-linux-x86-64.so.2  [.] 0x000000000000c2af
+            |
+            ---0x7ff5dc10f2af
+
+     3.58%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc10f2af
+            |
+            ---0x7ff5dc10f2af
+
+     1.13%     1.13%  cw_model  ld-linux-x86-64.so.2  [.] 0x0000000000003f72
+            |
+            ---0x7ff5dc127888
+               0x7ff5dc127303
+               0x7ff5dc12a9f2
+               0x7ff5dc106f72
+
+     1.13%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc12a9f2
+            |
+            ---0x7ff5dc12a9f2
+               0x7ff5dc106f72
+
+     1.13%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc106f72
+            |
+            ---0x7ff5dc106f72
+
+     0.31%     0.31%  cw_model  [unknown]             [k] 0xffffffffa80be444
+     0.31%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc130de0
+     0.31%     0.00%  cw_model  [unknown]             [.] 0xffffffffa7e012a6
+     0.31%     0.00%  cw_model  [unknown]             [.] 0xffffffffa93b60e6
+     0.31%     0.00%  cw_model  [unknown]             [.] 0xffffffffa80d15d4
+     0.05%     0.05%  cw_model  ld-linux-x86-64.so.2  [.] 0x0000000000018e77
+     0.05%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc1272a7
+     0.05%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc11be77
+     0.01%     0.01%  cw_model  [unknown]             [k] 0xffffffffa7e01d02
+     0.01%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc128a67
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc128a77
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc12887a
+     0.00%     0.00%  cw_model  [unknown]             [k] 0xffffffffa7e01280
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x000000000002587a
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc127880
+     0.00%     0.00%  cw_model  [unknown]             [k] 0xffffffffa7e01284
+     0.00%     0.00%  cw_model  [unknown]             [k] 0xffffffffa7e01c81
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007ff5dc128822
+     0.00%     0.00%  cw_model  [unknown]             [.] 0xffffffffa7e0128d
+
+
+#
+# (Tip: To group events which need to be collected together for accuracy use {}: perf record -e {cycles,branches}' ...)
+#

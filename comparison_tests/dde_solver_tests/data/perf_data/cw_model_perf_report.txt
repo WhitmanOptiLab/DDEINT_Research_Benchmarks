@@ -1,0 +1,650 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 45  of event 'cpu/cycles/Pu'
+# Event count (approx.): 32987331
+#
+# Children      Self  Command   Shared Object         Symbol                           
+# ........  ........  ........  ....................  .................................
+#
+    97.92%     0.00%  cw_model  [unknown]             [.] 0000000000000000
+            |
+            ---0
+               |          
+               |--94.78%--0x7f0d05027c8e
+               |          main
+               |          cw_model (inlined)
+               |          dkl_4 (inlined)
+               |          dde_drv1 (inlined)
+               |          dde_drv2 (inlined)
+               |          |          
+               |          |--92.03%--dde_drv3 (inlined)
+               |          |          |          
+               |          |          |--86.22%--dde_step (inlined)
+               |          |          |          |          
+               |          |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          |          
+               |          |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          |          
+               |          |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |          |                     |          
+               |          |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          |          
+               |          |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          |          
+               |          |          |           --5.34%--dde_derv (inlined)
+               |          |          |          
+               |          |          |--3.14%--dde_err1 (inlined)
+               |          |          |          
+               |          |           --2.67%--dde_que1 (inlined)
+               |          |          
+               |           --2.75%--sol_out (inlined)
+               |                     expand_sol (inlined)
+               |          
+                --3.14%--0x7f0d05246460
+                          0x7f0d0506e20a
+                          0x7f0d0506bb40
+
+    94.78%     0.00%  cw_model  [unknown]             [.] 0x5f77632f646c6975
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               |          
+               |--92.03%--dde_drv3 (inlined)
+               |          |          
+               |          |--86.22%--dde_step (inlined)
+               |          |          |          
+               |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          
+               |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          
+               |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          
+               |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          
+               |          |           --5.34%--dde_derv (inlined)
+               |          |          
+               |          |--3.14%--dde_err1 (inlined)
+               |          |          
+               |           --2.67%--dde_que1 (inlined)
+               |          
+                --2.75%--sol_out (inlined)
+                          expand_sol (inlined)
+
+    94.78%     0.00%  cw_model  libc.so.6             [.] 0x00007f0d05027c8e
+            |
+            ---0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               |          
+               |--92.03%--dde_drv3 (inlined)
+               |          |          
+               |          |--86.22%--dde_step (inlined)
+               |          |          |          
+               |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          
+               |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          
+               |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          
+               |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          
+               |          |           --5.34%--dde_derv (inlined)
+               |          |          
+               |          |--3.14%--dde_err1 (inlined)
+               |          |          
+               |           --2.67%--dde_que1 (inlined)
+               |          
+                --2.75%--sol_out (inlined)
+                          expand_sol (inlined)
+
+    94.78%     0.00%  cw_model  cw_model              [.] main
+            |
+            ---main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               |          
+               |--92.03%--dde_drv3 (inlined)
+               |          |          
+               |          |--86.22%--dde_step (inlined)
+               |          |          |          
+               |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          
+               |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          
+               |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          
+               |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          
+               |          |           --5.34%--dde_derv (inlined)
+               |          |          
+               |          |--3.14%--dde_err1 (inlined)
+               |          |          
+               |           --2.67%--dde_que1 (inlined)
+               |          
+                --2.75%--sol_out (inlined)
+                          expand_sol (inlined)
+
+    94.78%     0.00%  cw_model  cw_model              [.] cw_model (inlined)
+            |
+            ---cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               |          
+               |--92.03%--dde_drv3 (inlined)
+               |          |          
+               |          |--86.22%--dde_step (inlined)
+               |          |          |          
+               |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          
+               |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          
+               |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          
+               |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          
+               |          |           --5.34%--dde_derv (inlined)
+               |          |          
+               |          |--3.14%--dde_err1 (inlined)
+               |          |          
+               |           --2.67%--dde_que1 (inlined)
+               |          
+                --2.75%--sol_out (inlined)
+                          expand_sol (inlined)
+
+    94.78%     0.00%  cw_model  cw_model              [.] dkl_4 (inlined)
+            |
+            ---dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               |          
+               |--92.03%--dde_drv3 (inlined)
+               |          |          
+               |          |--86.22%--dde_step (inlined)
+               |          |          |          
+               |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          
+               |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          
+               |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          
+               |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          
+               |          |           --5.34%--dde_derv (inlined)
+               |          |          
+               |          |--3.14%--dde_err1 (inlined)
+               |          |          
+               |           --2.67%--dde_que1 (inlined)
+               |          
+                --2.75%--sol_out (inlined)
+                          expand_sol (inlined)
+
+    94.78%     0.00%  cw_model  cw_model              [.] dde_drv1 (inlined)
+            |
+            ---dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               |          
+               |--92.03%--dde_drv3 (inlined)
+               |          |          
+               |          |--86.22%--dde_step (inlined)
+               |          |          |          
+               |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          
+               |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          
+               |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          
+               |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          
+               |          |           --5.34%--dde_derv (inlined)
+               |          |          
+               |          |--3.14%--dde_err1 (inlined)
+               |          |          
+               |           --2.67%--dde_que1 (inlined)
+               |          
+                --2.75%--sol_out (inlined)
+                          expand_sol (inlined)
+
+    94.78%     0.00%  cw_model  cw_model              [.] dde_drv2 (inlined)
+            |
+            ---dde_drv2 (inlined)
+               |          
+               |--92.03%--dde_drv3 (inlined)
+               |          |          
+               |          |--86.22%--dde_step (inlined)
+               |          |          |          
+               |          |          |--57.97%--dde_zset (inlined)
+               |          |          |          |          
+               |          |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          |          
+               |          |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          |          
+               |          |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |          |                     |          
+               |          |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          |          
+               |          |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          |          
+               |          |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          |          
+               |          |           --5.34%--dde_derv (inlined)
+               |          |          
+               |          |--3.14%--dde_err1 (inlined)
+               |          |          
+               |           --2.67%--dde_que1 (inlined)
+               |          
+                --2.75%--sol_out (inlined)
+                          expand_sol (inlined)
+
+    92.03%     0.00%  cw_model  cw_model              [.] dde_drv3 (inlined)
+            |
+            ---dde_drv3 (inlined)
+               |          
+               |--86.22%--dde_step (inlined)
+               |          |          
+               |          |--57.97%--dde_zset (inlined)
+               |          |          |          
+               |          |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          |          
+               |          |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          |          
+               |          |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |          |                     |          
+               |          |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          |          
+               |          |          |           --3.09%--dde_poly (inlined)
+               |          |          |          
+               |          |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          |          
+               |           --5.34%--dde_derv (inlined)
+               |          
+               |--3.14%--dde_err1 (inlined)
+               |          
+                --2.67%--dde_que1 (inlined)
+
+    86.22%     0.00%  cw_model  cw_model              [.] dde_step (inlined)
+            |
+            ---dde_step (inlined)
+               |          
+               |--57.97%--dde_zset (inlined)
+               |          |          
+               |          |--31.62%--dde_zset2 (inlined)
+               |          |          |          
+               |          |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          |          
+               |          |          |           --16.03%--dde_poly (inlined)
+               |          |          |                     |          
+               |          |          |                      --5.10%--dde_wset (inlined)
+               |          |          |          
+               |          |           --3.09%--dde_poly (inlined)
+               |          |          
+               |           --9.16%--__dde_solver_m_MOD_dde_zset2
+               |          
+                --5.34%--dde_derv (inlined)
+
+    57.97%     0.00%  cw_model  cw_model              [.] dde_zset (inlined)
+            |
+            ---dde_zset (inlined)
+               |          
+               |--31.62%--dde_zset2 (inlined)
+               |          |          
+               |          |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          |          
+               |          |           --16.03%--dde_poly (inlined)
+               |          |                     |          
+               |          |                      --5.10%--dde_wset (inlined)
+               |          |          
+               |           --3.09%--dde_poly (inlined)
+               |          
+                --9.16%--__dde_solver_m_MOD_dde_zset2
+
+    31.62%     0.00%  cw_model  cw_model              [.] dde_zset2 (inlined)
+            |
+            ---dde_zset2 (inlined)
+               |          
+               |--22.27%--__dde_solver_m_MOD_dde_zset3
+               |          |          
+               |           --16.03%--dde_poly (inlined)
+               |                     |          
+               |                      --5.10%--dde_wset (inlined)
+               |          
+                --3.09%--dde_poly (inlined)
+
+    22.91%    22.91%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_step
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+
+    22.27%     6.24%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_zset3
+            |          
+            |--16.03%--__dde_solver_m_MOD_dde_zset3
+            |          dde_poly (inlined)
+            |          |          
+            |           --5.10%--dde_wset (inlined)
+            |          
+             --6.24%--0x5f77632f646c6975
+                       0
+                       0x7f0d05027c8e
+                       main
+                       cw_model (inlined)
+                       dkl_4 (inlined)
+                       dde_drv1 (inlined)
+                       dde_drv2 (inlined)
+                       dde_drv3 (inlined)
+                       dde_step (inlined)
+                       dde_zset (inlined)
+                       dde_zset2 (inlined)
+                       __dde_solver_m_MOD_dde_zset3
+
+    19.12%     0.00%  cw_model  cw_model              [.] dde_poly (inlined)
+            |
+            ---dde_poly (inlined)
+               |          
+                --5.10%--dde_wset (inlined)
+
+    17.19%    17.19%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_zset
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+               dde_zset (inlined)
+
+    15.41%    15.41%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_zset2
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+               dde_zset (inlined)
+               |          
+               |--9.16%--__dde_solver_m_MOD_dde_zset2
+               |          
+                --6.25%--dde_zset2 (inlined)
+
+    14.03%    14.03%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_poly
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+               dde_zset (inlined)
+               dde_zset2 (inlined)
+               |          
+               |--10.94%--__dde_solver_m_MOD_dde_zset3
+               |          dde_poly (inlined)
+               |          
+                --3.09%--dde_poly (inlined)
+
+     5.34%     5.34%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_derv
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+               dde_derv (inlined)
+
+     5.34%     0.00%  cw_model  cw_model              [.] dde_derv (inlined)
+            |
+            ---dde_derv (inlined)
+
+     5.10%     5.10%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_wset
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_step (inlined)
+               dde_zset (inlined)
+               dde_zset2 (inlined)
+               __dde_solver_m_MOD_dde_zset3
+               dde_poly (inlined)
+               dde_wset (inlined)
+
+     5.10%     0.00%  cw_model  cw_model              [.] dde_wset (inlined)
+            |
+            ---dde_wset (inlined)
+
+     3.14%     3.14%  cw_model  libc.so.6             [.] 0x000000000006bb40
+            |
+            ---0x69667a7400524944
+               0
+               0x7f0d05246460
+               0x7f0d0506e20a
+               0x7f0d0506bb40
+
+     3.14%     0.00%  cw_model  [unknown]             [.] 0x69667a7400524944
+            |
+            ---0x69667a7400524944
+               0
+               0x7f0d05246460
+               0x7f0d0506e20a
+               0x7f0d0506bb40
+
+     3.14%     0.00%  cw_model  [unknown]             [.] 0x00007f0d05246460
+            |
+            ---0x7f0d05246460
+               0x7f0d0506e20a
+               0x7f0d0506bb40
+
+     3.14%     0.00%  cw_model  libc.so.6             [.] 0x00007f0d0506e20a
+            |
+            ---0x7f0d0506e20a
+               0x7f0d0506bb40
+
+     3.14%     0.00%  cw_model  libc.so.6             [.] 0x00007f0d0506bb40
+            |
+            ---0x7f0d0506bb40
+
+     3.14%     3.14%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_err1
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_err1 (inlined)
+
+     3.14%     0.00%  cw_model  cw_model              [.] dde_err1 (inlined)
+            |
+            ---dde_err1 (inlined)
+
+     2.75%     2.75%  cw_model  cw_model              [.] __dde_solver_m_MOD_expand_sol
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               sol_out (inlined)
+               expand_sol (inlined)
+
+     2.75%     0.00%  cw_model  cw_model              [.] sol_out (inlined)
+            |
+            ---sol_out (inlined)
+               expand_sol (inlined)
+
+     2.75%     0.00%  cw_model  cw_model              [.] expand_sol (inlined)
+            |
+            ---expand_sol (inlined)
+
+     2.67%     2.67%  cw_model  cw_model              [.] __dde_solver_m_MOD_dde_que1
+            |
+            ---0x5f77632f646c6975
+               0
+               0x7f0d05027c8e
+               main
+               cw_model (inlined)
+               dkl_4 (inlined)
+               dde_drv1 (inlined)
+               dde_drv2 (inlined)
+               dde_drv3 (inlined)
+               dde_que1 (inlined)
+
+     2.67%     0.00%  cw_model  cw_model              [.] dde_que1 (inlined)
+            |
+            ---dde_que1 (inlined)
+
+     1.63%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0e888
+            |
+            ---0x7f0d05e0e888
+               |          
+                --1.57%--0x7f0d05e0e303
+                          0x7f0d05dff8a9
+                          0x7f0d05dfc6f6
+                          0x7f0d05df6ed2
+
+     1.57%     1.57%  cw_model  ld-linux-x86-64.so.2  [.] 0x000000000000ced2
+            |
+            ---0x7f0d05e0e888
+               0x7f0d05e0e303
+               0x7f0d05dff8a9
+               0x7f0d05dfc6f6
+               0x7f0d05df6ed2
+
+     1.57%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0e303
+            |
+            ---0x7f0d05e0e303
+               0x7f0d05dff8a9
+               0x7f0d05dfc6f6
+               0x7f0d05df6ed2
+
+     1.57%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05dff8a9
+            |
+            ---0x7f0d05dff8a9
+               0x7f0d05dfc6f6
+               0x7f0d05df6ed2
+
+     1.57%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05dfc6f6
+            |
+            ---0x7f0d05dfc6f6
+               0x7f0d05df6ed2
+
+     1.57%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05df6ed2
+            |
+            ---0x7f0d05df6ed2
+
+     0.45%     0.45%  cw_model  ld-linux-x86-64.so.2  [.] 0x000000000002d8b7
+     0.45%     0.00%  cw_model  [unknown]             [.] 0x2e34362d3638782d
+     0.45%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e178b7
+     0.06%     0.06%  cw_model  [unknown]             [k] 0xffffffffa7e01280
+     0.06%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0e2b3
+     0.06%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e02e5d
+     0.01%     0.01%  cw_model  [unknown]             [k] 0xffffffffa7e01284
+     0.01%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0fa67
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x0000000000025a7a
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0fa7a
+     0.00%     0.00%  cw_model  [unknown]             [k] 0xffffffffa7e01290
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0fa77
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x0000000000025e2d
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0fe2d
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0e880
+     0.00%     0.00%  cw_model  [unknown]             [k] 0xffffffffa80d0940
+     0.00%     0.00%  cw_model  ld-linux-x86-64.so.2  [.] 0x00007f0d05e0f83a
+     0.00%     0.00%  cw_model  [unknown]             [k] 0xffffffffa7e01c86
+     0.00%     0.00%  cw_model  [unknown]             [.] 0xffffffffa7e012a6
+     0.00%     0.00%  cw_model  [unknown]             [.] 0xffffffffa7e0128d
+     0.00%     0.00%  cw_model  [unknown]             [.] 0xffffffffa93b60c8
+
+
+#
+# (Tip: To record callchains for each sample: perf record -g)
+#
