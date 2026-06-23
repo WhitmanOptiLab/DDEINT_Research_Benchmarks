@@ -1,34 +1,5 @@
-library(dde)
 library(microbenchmark)
-
-# ─── Parameters ───────────────────────────────────────────────────────────────
-pars <- c(
-  a     = -0.5,
-  b     =  1.5,
-  c     =  0.8,
-  d     =  0.0,
-  tau   =  1.5,
-  beta  =  0.6,
-  speed =  1.2
-)
-
-# ─── Model ────────────────────────────────────────────────────────────────────
-cw_model <- function(t, y, pars) {
-  p_now              <- y[1]
-  p_expected_delayed <- ylag(t - pars["tau"], 2L)
-
-  demand <- pars["a"] * p_now + pars["b"]
-  supply <- pars["c"] * p_expected_delayed + pars["d"]
-
-  dp  <- pars["speed"] * (demand - supply)
-  dpe <- pars["beta"]  * (p_now - y[2])
-
-  c(dp, dpe)
-}
-
-# ─── Initial conditions ───────────────────────────────────────────────────────
-y0 <- c(0.4, 0.4)
-tt <- seq(0.0, 1000.0, length.out = 500)
+source("Cobweb_Model/cw_functions.R")
 
 # ─── Solve ────────────────────────────────────────────────────────────────────
 res <- dopri(y0, tt, cw_model, pars,
@@ -39,8 +10,8 @@ res <- dopri(y0, tt, cw_model, pars,
 # ─── Save to CSV ──────────────────────────────────────────────────────────────
 dir.create("data/csv_files", recursive = TRUE, showWarnings = FALSE)
 df <- data.frame(
-  t                    = res[, 1],
-  price_values         = res[, 2],
+  t                     = res[, 1],
+  price_values          = res[, 2],
   expected_price_values = res[, 3]
 )
 write.csv(df, "data/csv_files/cw_model_dde.csv", row.names = FALSE)
@@ -54,7 +25,6 @@ mb <- microbenchmark(
         return_history = FALSE),
   times = 100
 )
-
 print(mb)
 dir.create("data/bench_data", recursive = TRUE, showWarnings = FALSE)
 write.csv(summary(mb), "data/bench_data/cw_benchmark_results.csv", row.names = FALSE)
