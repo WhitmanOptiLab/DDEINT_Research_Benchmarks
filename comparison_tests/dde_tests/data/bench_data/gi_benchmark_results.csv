@@ -1,2 +1,2 @@
 "expr","min","lq","mean","median","uq","max","neval"
-"dopri(y0, tt, gi_model, pars, n_history = 1000L, atol = 1e-12,      rtol = 1e-12, return_history = FALSE)",74.056824,75.179855,76.48722692,75.8234935,76.588697,86.037106,100
+"dopri(y0, tt, gi_model, pars, n_history = 1000L, atol = 1e-12,      rtol = 1e-12, return_history = FALSE)",73.914103,74.734882,76.46889131,75.5007825,76.2418165,111.282692,100
