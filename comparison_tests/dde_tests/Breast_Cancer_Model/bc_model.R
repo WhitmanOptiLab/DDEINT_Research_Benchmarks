@@ -16,8 +16,8 @@ cat("Done. Results saved to data/csv_files/bc_model_dde.csv\n")
 # ─── Benchmark ────────────────────────────────────────────────────────────────
 mb <- microbenchmark(
   dopri(y0, tt, bc_model, pars,
-        n_history = 1000L,
-        atol = 1e-9, rtol = 1e-9,
+        n_history = 10000L,
+        atol = 1e-12, rtol = 1e-12,
         return_history = FALSE),
   times = 100
 )

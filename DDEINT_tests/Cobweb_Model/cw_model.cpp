@@ -7,8 +7,8 @@
 #include <fstream>
 #include <filesystem>
 
-#define ABS_TOL 1e-9
-#define REL_TOL 1e-9
+#define ABS_TOL 1e-12
+#define REL_TOL 1e-12
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
     // Initial conditions and time span
     std::vector<double> u0 = {0.4, 0.4};
     double t_initial = 0.0;
-    double t_final = 1000.0;
+    double t_final = 10000.0;
 
     // Create the DDE problem and solve it
     std::vector<std::function<double(double)>> prehistory = {history_cw, history_cw};

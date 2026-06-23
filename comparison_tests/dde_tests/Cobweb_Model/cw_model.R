@@ -21,7 +21,7 @@ cat("Done. Results saved to data/csv_files/cw_model_dde.csv\n")
 mb <- microbenchmark(
   dopri(y0, tt, cw_model, pars,
         n_history = 1000L,
-        atol = 1e-9, rtol = 1e-9,
+        atol = 1e-12, rtol = 1e-12,
         return_history = FALSE),
   times = 100
 )

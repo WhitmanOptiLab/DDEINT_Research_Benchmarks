@@ -34,9 +34,9 @@ PROGRAM bc_model
 
   tau = 1.0D0
 
-  ! Build the output time array
+  ! Build the output time array 500 x 20 = 10000 final time 
   DO I = 1, NOUT
-    TSPAN(I) = (I-1) * 0.02D0
+    TSPAN(I) = (I-1) * 20.0D0
   END DO
 
   SOL = DDE_SOLVER(NVAR,DDES,DELAYS,HISTORY,TSPAN=TSPAN)

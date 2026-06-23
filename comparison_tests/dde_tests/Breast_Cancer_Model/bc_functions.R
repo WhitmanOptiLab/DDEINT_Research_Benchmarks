@@ -19,4 +19,4 @@ bc_model <- function(t, y, pars) {
 
 # ─── Initial Conditions ───────────────────────────────────────────────────────
 y0 <- c(1.0, 1.0, 1.0)
-tt <- seq(0.0, 10.0, length.out = 500)
+tt <- seq(0.0, 10000.0, length.out = 500)

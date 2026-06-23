@@ -28,7 +28,7 @@ PROGRAM cw_model
   
   ! Build the output time array
   DO I = 1, NOUT
-    TSPAN(I) = (I-1) * 0.02D0
+    TSPAN(I) = (I-1) * 1.0D0
   END DO
 
   SOL = DDE_SOLVER(NVAR,DDES,DELAYS,HISTORY,TSPAN=TSPAN)

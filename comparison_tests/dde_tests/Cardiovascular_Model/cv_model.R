@@ -3,8 +3,8 @@ source("Cardiovascular_Model/cv_functions.R")
 
 # ─── Solve ────────────────────────────────────────────────────────────────────
 res <- dopri(y0, tt, cv_model, pars,
-             n_history = 1000L,
-             atol = 1e-9, rtol = 1e-9,
+             n_history = 10000L,
+             atol = 1e-12, rtol = 1e-12,
              return_history = FALSE)
 
 # ─── Save to CSV ──────────────────────────────────────────────────────────────
@@ -16,8 +16,8 @@ cat("Done. Results saved to data/csv_files/cv_model_dde.csv\n")
 # ─── Benchmark ────────────────────────────────────────────────────────────────
 mb <- microbenchmark(
   dopri(y0, tt, cv_model, pars,
-        n_history = 1000L,
-        atol = 1e-9, rtol = 1e-9,
+        n_history = 10000L,
+        atol = 1e-12, rtol = 1e-12,
         return_history = FALSE),
   times = 100
 )

@@ -3,15 +3,15 @@
 #include "../../DDEINT/Methods/Dormand_Prince/DoPri_5.hpp"
 
 // Define the absolute and relative tolerances
-#define ABS_TOL 1e-9
-#define REL_TOL 1e-9
+#define ABS_TOL 1e-12
+#define REL_TOL 1e-12
 
 // Benchmark function specifically for the run function
 static void DDEINT_BM_CW(benchmark::State& state) {
     // Initial conditions and time span
     std::vector<double> u0 = {0.4, 0.4};
     double t_initial = 0.0;
-    double t_final = 200.0;
+    double t_final = 10000.0;
 
     // Create the DDE problem and solve it
     std::vector<std::function<double(double)>> prehistory = {history_cw, history_cw};

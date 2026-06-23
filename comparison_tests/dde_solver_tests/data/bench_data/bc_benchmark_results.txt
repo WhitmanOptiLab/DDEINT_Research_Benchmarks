@@ -1,6 +1,6 @@
 {
   "context": {
-    "date": "2026-06-23T13:38:28-07:00",
+    "date": "2026-06-23T15:25:21-07:00",
     "host_name": "Julios-MacBook-Pro.local",
     "executable": "./bench_build/benchmark_bc",
     "num_cpus": 12,
@@ -26,7 +26,7 @@
         "num_sharing": 1
       }
     ],
-    "load_avg": [2.63477,2.12549,2.15381],
+    "load_avg": [4.18408,3.21045,2.70557],
     "library_version": "v1.8.5-8-gebb5e392",
     "library_build_type": "release",
     "json_schema_version": 1
@@ -41,9 +41,9 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 22673,
-      "real_time": 3.1208693515365600e-02,
-      "cpu_time": 3.1201781855069916e-02,
+      "iterations": 5,
+      "real_time": 1.2082559159025550e+02,
+      "cpu_time": 1.2053159999999998e+02,
       "time_unit": "ms"
     }
   ]

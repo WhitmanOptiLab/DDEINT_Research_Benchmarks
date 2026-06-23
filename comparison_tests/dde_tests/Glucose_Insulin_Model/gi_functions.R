@@ -25,4 +25,4 @@ gi_model <- function(t, y, pars) {
 
 # ─── Initial Conditions ───────────────────────────────────────────────────────
 y0 <- c(90.0, 10.0)
-tt <- seq(0.0, 200.0, length.out = 500)
+tt <- seq(0.0, 10000.0, length.out = 500)
