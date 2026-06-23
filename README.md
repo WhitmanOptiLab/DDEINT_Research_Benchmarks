@@ -88,7 +88,7 @@ bash benchmark_tests.sh   # results → data/bench_data, data/csv_files
 
 To run benchmarks across all solvers at once from repo root:
 ```
-bash benchmark_all_tessts.sh
+bash benchmark_all_tests.sh
 ```
 Results will be saved:
 - `DDEINT_tests/data/bench_data`
