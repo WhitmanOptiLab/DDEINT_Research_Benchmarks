@@ -7,10 +7,12 @@ This repository contains experimental cases to test the DDEINT library against o
 Luke Samuels, Terence Mahlatini, Uli Raudales, Sebastian Wiedenhoeft, Julio De Jesus
 
 ## Folder Structure
-- `DDEINT_tests/` — benchmarks and performance tests for our library (DDEINT) -- **REQUIRED FOLDER**
-- `comparison_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran) -- **REQUIRED FOLDER**
+- `DDEINT_tests/` — benchmarks and performance tests for our library (DDEINT) 
+- `comparison_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran) 
 - `comparison_tests/dde_tests/` — equivalent tests for [dde](https://github.com/mrc-ide/dde) (R-based DDE solver)
 - `comparison_libraries/` — git submodules for external solvers
+
+Note: that [DDEINT](https://github.com/WhitmanOptiLab/DDEINT/tree/0265012fa5e706271ba44148650359d4c2869693) and [dde_solver](https://github.com/WarrenWeckesser/dde_solver) must be initialized as git submodules before running their respective tests. See Set Up step 3.
 
 ## Set Up
 
@@ -37,6 +39,8 @@ cd ..
 
 ## DDEINT
 
+The primary library being tested. Written in C++ and benchmarked using Google Benchmark
+
 ### Running Benchmark Tests
 
 Uses Google Benchmark to measure solver speed across different models. To run test on DDEINT:
@@ -57,21 +61,38 @@ cd DDEINT_tests
 bash performance_tests.sh
 ```
 The results will be saved to `DDEINT_tests/data/perf_data` & `DDEINT_tests/data/perf_plots` & `DDEINT_tests/data/csv_files`
+<!-- Comparison tests -->
 
 ## Running Comparison Libraries Tests
 
-Same structure as DDEINT_tests - interacting with `comparison_tests/dde_solver_tests`
-
-All results will be saved inside each respective folder under `/data`.
-
-### Benchmarking
+### dde_solver (Fortran)
+ 
+Uses Google Benchmark and Linux `perf` with FlameGraph. Requires `gfortran` and [dde_solver](https://github.com/WarrenWeckesser/dde_solver) initialized as a git submodule (See Set Up step 3).
+ 
 ```
 cd comparison_tests/dde_solver_tests
-bash benchmark_tests.sh
+bash benchmark_tests.sh   # results → data/bench_data
+bash performance_tests.sh # results → data/perf_data, data/perf_plots, data/csv_files
 ```
-### Performance (Linux)
+---
+### dde (R)
+ 
+Uses [microbenchmark](https://cran.r-project.org/package=microbenchmark) for benchmarking only — no performance profiling. Requires R with `dde` and `microbenchmark` packages installed.
+ 
 ```
-cd comparison_tests/dde_solver_tests
-bash performance_tests.sh
+cd comparison_tests/dde_tests
+bash benchmark_tests.sh   # results → data/bench_data, data/csv_files
 ```
+<!-- Running all benchmarks -->
+## Running All Benchmarks
 
+To run benchmarks across all solvers at once from repo root:
+```
+bash benchmark_all_tessts.sh
+```
+Results will be saved:
+- `DDEINT_tests/data/bench_data`
+- `comparison_tests/dde_solver_tests/data/bench_data`
+- `comparison_tests/dde_tests/data/bench_data`
+
+Note: There is no top-level performance test runner. Performance profiling must be run individually per solver.
