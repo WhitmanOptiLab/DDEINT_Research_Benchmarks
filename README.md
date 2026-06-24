@@ -10,6 +10,8 @@ Luke Samuels, Terence Mahlatini, Uli Raudales, Sebastian Wiedenhoeft, Julio De J
 - `DDEINT_tests/` — benchmarks and performance tests for our library (DDEINT) 
 - `comparison_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran) 
 - `comparison_tests/dde_tests/` — equivalent tests for [dde](https://github.com/mrc-ide/dde) (R-based DDE solver)
+- `comparison_tests/dde_tests_compiled/` - equivalent tests using the same `dde` solver, but with model equations implemented as compiled C functions. This directory exists to isolate and measure the performance impact of R callback overhead while keeping the underlying solver unchanged.
+
 - `comparison_libraries/` — git submodules for external solvers
 
 Note: that [DDEINT](https://github.com/WhitmanOptiLab/DDEINT/tree/0265012fa5e706271ba44148650359d4c2869693) and [dde_solver](https://github.com/WarrenWeckesser/dde_solver) must be initialized as git submodules before running their respective tests. See Set Up step 3.
@@ -83,6 +85,18 @@ Uses [microbenchmark](https://cran.r-project.org/package=microbenchmark) for ben
 cd comparison_tests/dde_tests
 bash benchmark_tests.sh   # results → data/bench_data, data/csv_files
 ```
+---
+### dde (Compiled C)
+
+Uses the same `dde` solver and `microbenchmark` package, but model equations are implemented as compiled C functions.
+
+These tests are meant to measure the R callback overhead while keeping the solver unchanged.
+
+```
+cd comparison_tests/dde_tests_compiled
+bash benchmark_tests.sh   # results → data/bench_data, data/csv_files
+```
+
 <!-- Running all benchmarks -->
 ## Running All Benchmarks
 
@@ -94,5 +108,6 @@ Results will be saved:
 - `DDEINT_tests/data/bench_data`
 - `comparison_tests/dde_solver_tests/data/bench_data`
 - `comparison_tests/dde_tests/data/bench_data`
+- `comparison_tests/dde_tests_compiled/data/bench_data`
 
 Note: There is no top-level performance test runner. Performance profiling must be run individually per solver.

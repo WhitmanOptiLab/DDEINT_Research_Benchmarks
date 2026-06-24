@@ -35,3 +35,5 @@ else
   echo "Glucose Insulin benchmark failed"
   exit 1
 fi
+
+echo "All dde R benchmarks complete. Results saved to data"

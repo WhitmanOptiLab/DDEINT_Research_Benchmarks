@@ -17,7 +17,14 @@ cd comparison_tests/dde_tests
 bash benchmark_tests.sh
 cd ../..
 
+echo "Running dde compiled benchmarks..."
+cd comparison_tests/dde_tests_compiled
+bash benchmark_tests.sh
+cd ../..
+
+
 echo "All benchmarks complete. Results saved to:"
 echo "  DDEINT_tests/data/bench_data"
 echo "  comparison_tests/dde_solver_tests/data/bench_data"
 echo "  comparison_tests/dde_tests/data/bench_data"
+echo "  comparison_tests/dde_tests_c/data/bench_data"

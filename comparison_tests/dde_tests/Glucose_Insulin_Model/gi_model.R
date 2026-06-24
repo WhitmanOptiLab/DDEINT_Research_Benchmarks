@@ -27,5 +27,5 @@ mb <- microbenchmark(
 )
 print(mb)
 dir.create("data/bench_data", recursive = TRUE, showWarnings = FALSE)
-write.csv(summary(mb), "data/bench_data/gi_benchmark_results.csv", row.names = FALSE)
-cat("Benchmark saved to data/bench_data/gi_benchmark_results.csv\n")
+write.csv(summary(mb), "data/bench_data/gi_benchmark_results.txt", row.names = FALSE)
+cat("Benchmark saved to data/bench_data/gi_benchmark_results.txt\n")

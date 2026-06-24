@@ -1,0 +1,2 @@
+"expr","min","lq","mean","median","uq","max","neval"
+"dopri(y0, tt, cv_model, pars, n_history = 10000L, atol = 1e-12,      rtol = 1e-12, return_history = FALSE)",1.081614317,1.094961498,1.11583058164,1.1026120775,1.132791173,1.257997629,100

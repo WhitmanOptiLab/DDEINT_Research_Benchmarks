@@ -1,38 +1,32 @@
 {
   "context": {
-    "date": "2026-06-23T20:47:15-07:00",
-    "host_name": "juliodejesus",
+    "date": "2026-06-24T00:41:44-07:00",
+    "host_name": "Mac-1789.lan",
     "executable": "./bench_build/benchmark_gi",
     "num_cpus": 12,
-    "mhz_per_cpu": 3402,
+    "mhz_per_cpu": 24,
     "cpu_scaling_enabled": false,
     "caches": [
       {
         "type": "Data",
         "level": 1,
-        "size": 32768,
-        "num_sharing": 2
+        "size": 65536,
+        "num_sharing": 0
       },
       {
         "type": "Instruction",
         "level": 1,
-        "size": 32768,
-        "num_sharing": 2
+        "size": 131072,
+        "num_sharing": 0
       },
       {
         "type": "Unified",
         "level": 2,
-        "size": 524288,
-        "num_sharing": 2
-      },
-      {
-        "type": "Unified",
-        "level": 3,
-        "size": 16777216,
-        "num_sharing": 12
+        "size": 4194304,
+        "num_sharing": 1
       }
     ],
-    "load_avg": [0.444824,0.133301,0.0405273],
+    "load_avg": [2.57422,2.41211,2.48096],
     "library_version": "v1.8.5-8-gebb5e392",
     "library_build_type": "release",
     "json_schema_version": 1
@@ -47,9 +41,9 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 509,
-      "real_time": 1.3736459076621164e+00,
-      "cpu_time": 1.3681741944990180e+00,
+      "iterations": 916,
+      "real_time": 7.6648899123751801e-01,
+      "cpu_time": 7.6571615720524011e-01,
       "time_unit": "ms"
     }
   ]
