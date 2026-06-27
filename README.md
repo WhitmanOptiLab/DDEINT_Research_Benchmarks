@@ -11,7 +11,7 @@ Luke Samuels, Terence Mahlatini, Uli Raudales, Sebastian Wiedenhoeft, Julio De J
 - `comparison_tests/dde_solver_tests/` — equivalent tests for [dde_solver](https://github.com/WarrenWeckesser/dde_solver) (Fortran) 
 - `comparison_tests/dde_tests/` — equivalent tests for [dde](https://github.com/mrc-ide/dde) (R-based DDE solver)
 - `comparison_tests/dde_tests_compiled/` - equivalent tests using the same `dde` solver, but with model equations implemented as compiled C functions. This directory exists to isolate and measure the performance impact of R callback overhead while keeping the underlying solver unchanged.
-- `comparison_tests/copasi_tests/` — validation tests comparing DDEINT output against COPASI reference solutions
+- `comparison_tests/copasi_tests/` — validation tests comparing Copasi output against DDEINT output
 - `comparison_libraries/` — git submodules for external solvers
 
 Note: that [DDEINT](https://github.com/WhitmanOptiLab/DDEINT/tree/0265012fa5e706271ba44148650359d4c2869693) and [dde_solver](https://github.com/WarrenWeckesser/dde_solver) must be initialized as git submodules before running their respective tests. See Set Up step 3.
