@@ -113,6 +113,20 @@ pip install matplotlib
 python3 test_copasi_accuracy.py
 ```
 
+## Validation COPASI (ddeint method and lsoda method)
+
+These tests validate DDEINT Method accuracy by comparing its output directly against LSODA METHOD. Models validated: breast cancer (`bc`), cardiovascular (`cv`), and cobweb (`cw`). The reference COPASI CSVs are not present; however, their output is stored in `copasi_methods_tests/data` as CSV files. To view the COPASI files `.cps,`, they are found in COPASI_DELAYS.
+
+Running the script generates comparison plots into `copasi_methods_tests/validation/`.
+
+```
+cd comparison_tests/copasi_tests
+python3 -m venv .venv
+source .venv/bin/activate
+pip install matplotlib
+python3 test_methods_accuracy.py
+```
+
 <!-- Running all benchmarks -->
 ## Running All Benchmarks
 
