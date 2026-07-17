@@ -3,9 +3,9 @@
 
 BCParams bc_p = {0.2, 0.3, 1.0, 5.0, 0.2, 0.3, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
 
-void bc_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history)
+void bc_dde(double t, std::vector<double>& u, std::vector<double>& du, SimContext& ctx)
 {
-    double hist3 = HIST_AT_TIME(history, t - bc_p.tau, 2);
+    double hist3 = HIST_AT_TIME(ctx.local_history, t - bc_p.tau, 2);
     du[0] = (bc_p.v0 / (1 + bc_p.beta0 * std::pow(hist3, 2))) * (bc_p.p0 - bc_p.q0) * u[0] - bc_p.d0 * u[0];
     du[1] = (bc_p.v0 / (1 + bc_p.beta0 * std::pow(hist3, 2))) * (1 - bc_p.p0 + bc_p.q0) * u[0] +
             (bc_p.v1 / (1 + bc_p.beta1 * std::pow(hist3, 2))) * (bc_p.p1 - bc_p.q1) * u[1] - bc_p.d1 * u[1];

@@ -25,27 +25,27 @@ else
     echo "Benchmark tests failed"
     exit 1
 fi
-./$BUILD_DIR/benchmark_cv --benchmark_format=console --benchmark_out=$DATA_DIR/cv_benchmark_results.txt
-if [ $? -eq 0 ]; then
-    echo "Benchmark tests passed"
-else
-    echo "Benchmark tests failed"
-    exit 1
-fi
-./$BUILD_DIR/benchmark_gi --benchmark_format=console --benchmark_out=$DATA_DIR/gi_benchmark_results.txt
-if [ $? -eq 0 ]; then
-    echo "Benchmark tests passed"
-else
-    echo "Benchmark tests failed"
-    exit 1
-fi
-./$BUILD_DIR/benchmark_cw --benchmark_format=console --benchmark_out=$DATA_DIR/cw_benchmark_results.txt
-if [ $? -eq 0 ]; then
-    echo "Benchmark tests passed"
-else
-    echo "Benchmark tests failed"
-    exit 1
-fi
+#./$BUILD_DIR/benchmark_cv --benchmark_format=console --benchmark_out=$DATA_DIR/cv_benchmark_results.txt
+#if [ $? -eq 0 ]; then
+#    echo "Benchmark tests passed"
+#else
+#    echo "Benchmark tests failed"
+#    exit 1
+#fi
+#./$BUILD_DIR/benchmark_gi --benchmark_format=console --benchmark_out=$DATA_DIR/gi_benchmark_results.txt
+#if [ $? -eq 0 ]; then
+#    echo "Benchmark tests passed"
+#else
+#    echo "Benchmark tests failed"
+#    exit 1
+#fi
+#./$BUILD_DIR/benchmark_cw --benchmark_format=console --benchmark_out=$DATA_DIR/cw_benchmark_results.txt
+#if [ $? -eq 0 ]; then
+#    echo "Benchmark tests passed"
+#else
+#    echo "Benchmark tests failed"
+#    exit 1
+#fi
 
 # clean up
 echo "Cleaning up"

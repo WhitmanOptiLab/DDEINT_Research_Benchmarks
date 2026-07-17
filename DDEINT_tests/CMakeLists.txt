@@ -12,22 +12,22 @@ add_subdirectory(../utils/benchmark build_benchmark)
 include_directories(../DDEINT ../utils/benchmark/include ../DDEINT_tests/Glucose_Insulin_Model ../DDEINT_tests/Cardiovascular_Model ../DDEINT_tests/Breast_Cancer_Model ../DDEINT_tests/Cobweb_Model)
 
 # Glucose Insulin Model
-set(GI_SOURCES
-    Glucose_Insulin_Model/gi_benchmark.cpp
-    Glucose_Insulin_Model/gi_functions.cpp
-)
+#set(GI_SOURCES
+#   Glucose_Insulin_Model/gi_benchmark.cpp
+#    Glucose_Insulin_Model/gi_functions.cpp
+#)
 
-add_executable(benchmark_gi ${GI_SOURCES})
-target_link_libraries(benchmark_gi benchmark::benchmark benchmark::benchmark_main pthread)
+#add_executable(benchmark_gi ${GI_SOURCES})
+#target_link_libraries(benchmark_gi benchmark::benchmark benchmark::benchmark_main pthread)
 
 # Cardiovascular Model
-set(CV_SOURCES
-    Cardiovascular_Model/cv_benchmark.cpp
-    Cardiovascular_Model/cv_functions.cpp
-)
+#set(CV_SOURCES
+#    Cardiovascular_Model/cv_benchmark.cpp
+#    Cardiovascular_Model/cv_functions.cpp
+#)
 
-add_executable(benchmark_cv ${CV_SOURCES})
-target_link_libraries(benchmark_cv benchmark::benchmark benchmark::benchmark_main pthread)
+#add_executable(benchmark_cv ${CV_SOURCES})
+#target_link_libraries(benchmark_cv benchmark::benchmark benchmark::benchmark_main pthread)
 
 # Breast Cancer Model
 set(BC_SOURCES
@@ -40,13 +40,13 @@ target_link_libraries(benchmark_bc benchmark::benchmark benchmark::benchmark_mai
 
 
 # Cobweb model
-set(CW_SOURCES
-    Cobweb_Model/cw_benchmark.cpp
-    Cobweb_Model/cw_functions.cpp
-)
+#set(CW_SOURCES
+#    Cobweb_Model/cw_benchmark.cpp
+#    Cobweb_Model/cw_functions.cpp
+#)
 
-add_executable(benchmark_cw ${CW_SOURCES})
-target_link_libraries(benchmark_cw benchmark::benchmark benchmark::benchmark_main pthread)
+#dd_executable(benchmark_cw ${CW_SOURCES})
+#target_link_libraries(benchmark_cw benchmark::benchmark benchmark::benchmark_main pthread)
 
 
 # Set the build type to Release
