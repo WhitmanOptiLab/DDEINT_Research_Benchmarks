@@ -1,4 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
+
+# Use real GCC (Homebrew) instead of AppleClang — needed for std::execution support
+set(CMAKE_C_COMPILER   /opt/homebrew/bin/gcc-16)
+set(CMAKE_CXX_COMPILER /opt/homebrew/bin/g++-16)
+
 project(BenchmarkTests)
 
 # Specify the C++ standard
@@ -11,14 +16,22 @@ add_subdirectory(../utils/benchmark build_benchmark)
 # Include directories
 include_directories(../DDEINT ../utils/benchmark/include ../DDEINT_tests/Glucose_Insulin_Model ../DDEINT_tests/Cardiovascular_Model ../DDEINT_tests/Breast_Cancer_Model ../DDEINT_tests/Cobweb_Model)
 
-# Glucose Insulin Model
-#set(GI_SOURCES
-#   Glucose_Insulin_Model/gi_benchmark.cpp
-#    Glucose_Insulin_Model/gi_functions.cpp
-#)
+# TBB (needed for std::execution::par/seq under libstdc++)
+find_program(BREW_EXECUTABLE brew)
+execute_process(COMMAND ${BREW_EXECUTABLE} --prefix tbb
+                OUTPUT_VARIABLE TBB_PREFIX
+                OUTPUT_STRIP_TRAILING_WHITESPACE)
+include_directories(${TBB_PREFIX}/include)
+link_directories(${TBB_PREFIX}/lib)
 
-#add_executable(benchmark_gi ${GI_SOURCES})
-#target_link_libraries(benchmark_gi benchmark::benchmark benchmark::benchmark_main pthread)
+# Glucose Insulin Model
+set(GI_SOURCES
+   Glucose_Insulin_Model/gi_benchmark.cpp
+    Glucose_Insulin_Model/gi_functions.cpp
+)
+
+add_executable(benchmark_gi ${GI_SOURCES})
+target_link_libraries(benchmark_gi benchmark::benchmark benchmark::benchmark_main pthread tbb)
 
 # Cardiovascular Model
 #set(CV_SOURCES
@@ -27,7 +40,7 @@ include_directories(../DDEINT ../utils/benchmark/include ../DDEINT_tests/Glucose
 #)
 
 #add_executable(benchmark_cv ${CV_SOURCES})
-#target_link_libraries(benchmark_cv benchmark::benchmark benchmark::benchmark_main pthread)
+#target_link_libraries(benchmark_cv benchmark::benchmark benchmark::benchmark_main pthread tbb)
 
 # Breast Cancer Model
 set(BC_SOURCES
@@ -36,7 +49,7 @@ set(BC_SOURCES
 )
 
 add_executable(benchmark_bc ${BC_SOURCES})
-target_link_libraries(benchmark_bc benchmark::benchmark benchmark::benchmark_main pthread)
+target_link_libraries(benchmark_bc benchmark::benchmark benchmark::benchmark_main pthread tbb)
 
 
 # Cobweb model
@@ -45,11 +58,11 @@ target_link_libraries(benchmark_bc benchmark::benchmark benchmark::benchmark_mai
 #    Cobweb_Model/cw_functions.cpp
 #)
 
-#dd_executable(benchmark_cw ${CW_SOURCES})
-#target_link_libraries(benchmark_cw benchmark::benchmark benchmark::benchmark_main pthread)
+#add_executable(benchmark_cw ${CW_SOURCES})
+#target_link_libraries(benchmark_cw benchmark::benchmark benchmark::benchmark_main pthread tbb)
 
 
 # Set the build type to Release
 if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_BUILD_TYPE Release)
 endif()

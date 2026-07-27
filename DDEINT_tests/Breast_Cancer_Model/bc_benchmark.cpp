@@ -2,7 +2,7 @@
 
 #include "bc_functions.hpp"
 #include "../../DDEINT/PolicyInterface/DDEInterface.hpp"
-c
+
 // Define the absolute and relative tolerances
 #define ABS_TOL 1e-12
 #define REL_TOL 1e-12
