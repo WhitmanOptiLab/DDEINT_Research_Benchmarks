@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "../../DDEINT/history/history.hpp"
+#include "../../DDEINT/PolicyInterface/policy.hpp"
 #include <vector>
 
 struct CVParams {
@@ -23,7 +23,7 @@ struct CVParams {
 
 extern CVParams cv_p;
 
-void cv_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
+void cv_dde(double t, std::vector<double>& u, std::vector<double>& du, SimContext& ctx);
 
 double history_Pa(double t);
 

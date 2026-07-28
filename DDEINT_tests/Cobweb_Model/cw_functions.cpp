@@ -3,12 +3,12 @@
 // cw params 
 CWParams cw_p = {-0.5, 1.5, 0.8, 0.0, 1.5, 0.6, 1.2};
 
-void cw_dde (double t, std::vector<double>& u, std::vector<double>& du, History<double,double>& history) 
+void cw_dde (double t, std::vector<double>& u, std::vector<double>& du, SimContext& ctx)
 { 
     double p_now = u[0];
     
     // Past expected price: p^E(t - tau) used to calculate delayed market supply
-    double p_expected_delayed = HIST_AT_TIME(history, t - cw_p.tau, 1);
+    double p_expected_delayed = HIST_AT_TIME(ctx.local_history, t - cw_p.tau, 1);
 
 
     double demand = cw_p.a * p_now + cw_p.b;

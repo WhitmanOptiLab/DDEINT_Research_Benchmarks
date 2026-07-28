@@ -2,10 +2,10 @@
 
 GIParams gi_p = {10.0, 5.0, 1.0, 90.0, 10.0, 0.1, 0.05, 5.0};
 
-void gi_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history)
+void gi_dde(double t, std::vector<double>& u, std::vector<double>& du, SimContext& ctx)
 {
-    double G_Tau = HIST_AT_TIME(history, t - gi_p.tau, 0);
-    double I_Tau = HIST_AT_TIME(history, t - gi_p.tau, 1);
+    double G_Tau = HIST_AT_TIME(ctx.local_history, t - gi_p.tau, 0);
+    double I_Tau = HIST_AT_TIME(ctx.local_history, t - gi_p.tau, 1);
 
     du[0] = (u[0] - gi_p.G_b) / gi_p.V_G - (gi_p.S_I * I_Tau * u[0]) / gi_p.V_G + 10.0;
     du[1] = - gi_p.n * (u[1] - gi_p.I_b) + (gi_p.gamma * G_Tau) / gi_p.V_I;

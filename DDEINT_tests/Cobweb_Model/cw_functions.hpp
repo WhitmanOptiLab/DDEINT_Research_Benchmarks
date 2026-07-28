@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "../../DDEINT/history/history.hpp"
+#include "../../DDEINT/PolicyInterface/policy.hpp"
 #include <vector>
 
 struct CWParams
@@ -17,6 +17,6 @@ struct CWParams
 
 extern CWParams cw_p;
 
-void cw_dde(double t, std::vector<double>& u, std::vector<double>& du, History<double, double>& history);
+void cw_dde(double t, std::vector<double>& u, std::vector<double>& du, SimContext& ctx);
 
 double history_cw(double t);
